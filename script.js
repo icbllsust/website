@@ -29,9 +29,43 @@
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const path = el.getAttribute("data-i18n");
       const value = getPath(data, path);
-      if (value !== null && typeof value === "string") {
-        el.textContent = value;
+      if (value === null || typeof value !== "string") return;
+
+      // Special-case: two-tone hero title.
+      // Splits the title on the core action phrase (per locale) and wraps
+      // it in <span class="hero-title-accent"> for emerald accent styling.
+      if (path === "hero.title") {
+        const splitMap = {
+          bn: { accent: "আন্তর্জাতিক গবেষণা সম্মেলন", fallback: "International Conference on" },
+          en: { accent: "International Conference on", fallback: "Bengali Language, Literature & Culture" },
+        };
+        const split = splitMap[lang] || splitMap.en;
+        const idx = value.indexOf(split.accent);
+        if (idx >= 0) {
+          const before = value.slice(0, idx);
+          const after = value.slice(idx + split.accent.length);
+          el.innerHTML =
+            `<span class="text-navy-900">${escapeHTML(before)}</span>` +
+            `<span class="hero-title-accent">${escapeHTML(split.accent)}</span>` +
+            (after ? `<span class="text-navy-900">${escapeHTML(after)}</span>` : "");
+        } else {
+          // Fallback: split on accent word to avoid a one-color h1 if JSON drifts
+          const fallbackIdx = value.indexOf(split.fallback);
+          if (fallbackIdx >= 0) {
+            const before = value.slice(0, fallbackIdx);
+            const after = value.slice(fallbackIdx + split.fallback.length);
+            el.innerHTML =
+              `<span class="text-navy-900">${escapeHTML(before)}</span>` +
+              `<span class="hero-title-accent">${escapeHTML(split.fallback)}</span>` +
+              (after ? `<span class="text-navy-900">${escapeHTML(after)}</span>` : "");
+          } else {
+            el.textContent = value;
+          }
+        }
+        return;
       }
+
+      el.textContent = value;
     });
   }
 
@@ -137,27 +171,29 @@
   const DATE_ICONS = ["file-text", "mail-check", "ticket", "file-check-2", "calendar-check"];
 
   function renderDates(lang) {
-    const dates = CONTENT[lang].important_dates;
+    const block = CONTENT[lang] || {};
+    const dates = block.important_dates || [];
+    const meta = block.dates_meta || {};
+    const eyebrow = meta.milestone_eyebrow || "";
+    const codes = Array.isArray(meta.milestones) ? meta.milestones : [];
     const list = document.getElementById("dates-list");
-    const lastIndex = dates.length - 1;
 
     list.innerHTML = dates
       .map((d, i) => {
         const icon = DATE_ICONS[i % DATE_ICONS.length];
-        const isLast = i === lastIndex;
+        const code = codes[i] || `M${String(i + 1).padStart(2, "0")}`;
         return `
-      <li class="relative flex items-start gap-5 pb-7 ${isLast ? "" : "timeline-connector"}">
-        <span class="relative z-10 shrink-0 w-12 h-12 rounded-xl bg-white/10 border border-gold-400/40 flex items-center justify-center shadow-sm backdrop-blur-sm">
-          <i data-lucide="${icon}" class="w-[18px] h-[18px]" style="color:#e7c27f;"></i>
+      <article class="date-card group relative flex flex-col items-baseline rounded-xl border border-slate-300 bg-white border-t-2 border-t-emerald-800/60 px-5 pt-5 pb-6 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-700/60 shadow-card hover:shadow-card-hover">
+        <span class="shrink-0 w-11 h-11 rounded-lg bg-emerald-50 border border-emerald-700/30 flex items-center justify-center mb-4 self-start">
+          <i data-lucide="${icon}" class="w-[18px] h-[18px]" style="color:#047857;"></i>
         </span>
-        <div class="flex-1 rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 hover:border-gold-400/40 transition-colors duration-200">
-          <div class="flex items-center gap-2">
-            <span class="label-tag bg-white/10 text-gold-400 border-gold-400/40">M${String(i + 1).padStart(2, "0")}</span>
-            <span class="text-white/90 text-[15px] font-medium">${escapeHTML(d.label)}</span>
-          </div>
-          <span class="font-heading text-[15px] tracking-wide px-3 py-1 rounded-md bg-white/10 border border-gold-400/30 self-start sm:self-auto" style="color:#e7c27f;">${escapeHTML(d.date)}</span>
+        <div class="flex items-baseline gap-2 mb-3 self-start">
+          <span class="label-tag">${escapeHTML(code)}</span>
+          <span class="text-[10px] uppercase tracking-[0.16em] text-slate-950 font-extrabold">${escapeHTML(eyebrow)}</span>
         </div>
-      </li>`;
+        <p class="text-slate-950 text-[14.5px] font-semibold leading-snug mb-5 self-start">${escapeHTML(d.label)}</p>
+        <span class="font-heading text-[14px] tracking-wide px-3 py-1.5 rounded-md bg-emerald-50 border border-emerald-800/60 text-emerald-900 font-semibold self-start">${escapeHTML(d.date)}</span>
+      </article>`;
       })
       .join("");
   }

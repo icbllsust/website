@@ -4,7 +4,8 @@
       "site_title": "ICBLLC 2027 — Dept. of Bengali, SUST",
       "conference_short": "ICBLLC 2027",
       "conference_dates": "18–20 February 2027",
-      "conference_venue": "Shahjalal University of Science and Technology, Sylhet"
+      "conference_venue": "Shahjalal University of Science and Technology, Sylhet",
+      "conf_year_label": "CONF · 2027"
     },
     "nav": {
       "home": "Home",
@@ -36,9 +37,13 @@
       "stat_tracks_num": "6",
       "stat_tracks_lbl": "Research Tracks",
       "stat_global_num": "3+",
-      "stat_global_lbl": "Countries Represented"
+      "stat_global_lbl": "Countries Represented",
+      "stat_days_tag": "SCALE",
+      "stat_tracks_tag": "TRACKS",
+      "stat_global_tag": "REACH"
     },
     "trust_block": {
+      "tag": "INSTITUTIONAL TRUST",
       "heading": "Under the patronage of",
       "patronage_label": "Chief Patron",
       "patronage_title": "Office of the Vice Chancellor",
@@ -51,6 +56,7 @@
       "publication_org": "SUST Press & Indexed Journals"
     },
     "about": {
+      "section_label": "SECTION · 01",
       "heading": "About the Conference",
       "paragraphs": [
         "The Department of Bengali at Shahjalal University of Science and Technology (SUST) invites researchers, academicians, and postgraduate scholars to an international conference examining the evolving landscape of Bengali language, literature and culture.",
@@ -59,6 +65,7 @@
       ]
     },
     "cfp": {
+      "section_label": "SECTION · 02",
       "heading": "Call for Papers",
       "intro": "We welcome original, unpublished research papers under (but not limited to) the following tracks:",
       "tracks": [
@@ -102,7 +109,15 @@
       { "label": "Full Paper Submission", "date": "15 January 2027" },
       { "label": "Conference Dates", "date": "18–20 February 2027" }
     ],
+    "dates_meta": {
+      "section_label": "SECTION · 03",
+      "heading": "Important Dates",
+      "intro": "Five deadlines that move from submission to presentation. Each is a hard cutoff — plan your writing schedule around them.",
+      "milestone_eyebrow": "Milestone",
+      "milestones": ["M01", "M02", "M03", "M04", "M05"]
+    },
     "speakers": {
+      "section_label": "SECTION · 04",
       "heading": "Keynote Speakers",
       "intro": "Sample entries — replace with confirmed speaker details and photographs.",
       "list": [
@@ -127,8 +142,12 @@
       ]
     },
     "registration_fees": {
+      "section_label": "SECTION · 05",
       "heading": "Registration Fees",
       "category_label": "Category",
+      "featured_label": "FEATURED",
+      "early_bird_label": "Early",
+      "regular_label": "Regular",
       "note": "Fees cover conference materials, meals during the conference, and the proceedings volume.",
       "rows": [
         { "category": "Bangladeshi Faculty / Researcher", "early_bird": "৳3,000", "regular": "৳3,500" },
@@ -138,6 +157,7 @@
       ]
     },
     "contact_info": {
+      "section_label": "SECTION · 06",
       "heading": "Contact",
       "intro": "Reach the conference secretariat for abstract submission, registration queries, and partnership enquiries.",
       "department": "Department of Bengali",
@@ -156,7 +176,8 @@
       "site_title": "আইসিবিএলএলসি ২০২৭ — বাংলা বিভাগ, শাবিপ্রবি",
       "conference_short": "আইসিবিএলএলসি ২০২৭",
       "conference_dates": "১৮–২০ ফেব্রুয়ারি ২০২৭",
-      "conference_venue": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়, সিলেট"
+      "conference_venue": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়, সিলেট",
+      "conf_year_label": "সম্মেলন · ২০২৭"
     },
     "nav": {
       "home": "প্রচ্ছদ",
@@ -188,9 +209,13 @@
       "stat_tracks_num": "৬",
       "stat_tracks_lbl": "গবেষণা ট্র্যাক",
       "stat_global_num": "৩+",
-      "stat_global_lbl": "অংশগ্রহণকারী দেশ"
+      "stat_global_lbl": "অংশগ্রহণকারী দেশ",
+      "stat_days_tag": "পরিসর",
+      "stat_tracks_tag": "ট্র্যাক",
+      "stat_global_tag": "প্রসার"
     },
     "trust_block": {
+      "tag": "প্রাতিষ্ঠানিক বিশ্বাস",
       "heading": "পৃষ্ঠপোষকতায়",
       "patronage_label": "প্রধান পৃষ্ঠপোষক",
       "patronage_title": "উপাচার্যের কার্যালয়",
@@ -203,6 +228,7 @@
       "publication_org": "শাবিপ্রবি প্রেস ও সূচিবদ্ধ জার্নাল"
     },
     "about": {
+      "section_label": "বিভাগ · ০১",
       "heading": "সম্মেলন পরিচিতি",
       "paragraphs": [
         "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়ের (শাবিপ্রবি) বাংলা বিভাগ বাংলা ভাষা, সাহিত্য ও সংস্কৃতির ক্রমবিকাশমান পরিসর নিয়ে আলোচনার জন্য গবেষক, শিক্ষাবিদ ও স্নাতকোত্তর শিক্ষার্থীদের একটি আন্তর্জাতিক সম্মেলনে আমন্ত্রণ জানাচ্ছে।",
@@ -211,6 +237,7 @@
       ]
     },
     "cfp": {
+      "section_label": "বিভাগ · ০২",
       "heading": "প্রবন্ধ আহ্বান",
       "intro": "নিম্নলিখিত (তবে এতে সীমাবদ্ধ নয়) বিষয়ে মৌলিক ও অপ্রকাশিত গবেষণা প্রবন্ধ আহ্বান করা হচ্ছে:",
       "tracks": [
@@ -254,7 +281,15 @@
       { "label": "সম্পূর্ণ প্রবন্ধ জমা", "date": "১৫ জানুয়ারি ২০২৭" },
       { "label": "সম্মেলনের তারিখ", "date": "১৮–২০ ফেব্রুয়ারি ২০২৭" }
     ],
+    "dates_meta": {
+      "section_label": "বিভাগ · ০৩",
+      "heading": "গুরুত্বপূর্ণ তারিখ",
+      "intro": "সারসংক্ষেপ জমা থেকে উপস্থাপনা পর্যন্ত পাঁচটি মেয়াদ — প্রতিটিই কঠোর সময়সীমা।",
+      "milestone_eyebrow": "ধাপ",
+      "milestones": ["ধাপ ০১", "ধাপ ০২", "ধাপ ০৩", "ধাপ ০৪", "ধাপ ০৫"]
+    },
     "speakers": {
+      "section_label": "বিভাগ · ০৪",
       "heading": "মূখ্য আলোচক",
       "intro": "নমুনা তথ্য — নিশ্চিত আলোচকের তথ্য ও ছবি দিয়ে প্রতিস্থাপন করুন।",
       "list": [
@@ -279,8 +314,12 @@
       ]
     },
     "registration_fees": {
+      "section_label": "বিভাগ · ০৫",
       "heading": "নিবন্ধন ফি",
       "category_label": "শ্রেণী",
+      "featured_label": "বৈশিষ্ট্যপূর্ণ",
+      "early_bird_label": "আর্লি বার্ড",
+      "regular_label": "রেগুলার",
       "note": "ফি-এর মধ্যে সম্মেলন সামগ্রী, সম্মেলনকালীন আহার এবং কার্যবিবরণী গ্রন্থ অন্তর্ভুক্ত।",
       "rows": [
         { "category": "বাংলাদেশি শিক্ষক / গবেষক", "early_bird": "৳৩,০০০", "regular": "৳৩,৫০০" },
@@ -290,6 +329,7 @@
       ]
     },
     "contact_info": {
+      "section_label": "বিভাগ · ০৬",
       "heading": "যোগাযোগ",
       "intro": "সারসংক্ষেপ জমা, নিবন্ধন সংক্রান্ত প্রশ্ন ও অংশীদারিতার প্রস্তাবের জন্য সম্মেলন সচিবালয়ের সাথে যোগাযোগ করুন।",
       "department": "বাংলা বিভাগ",

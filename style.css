@@ -30,6 +30,13 @@
   /* Canvas */
   --paper: #fbfaf7;
   --cream: #fcfbf7;
+
+  /* Round 17 — deep contrast ink scale + multi-color border system */
+  --ink-charcoal: #020617;   /* slate-950 — deepest print-grade black */
+  --ink-navy-deep: #102a43;  /* already navy-900; aliased for semantic reuse */
+  --border-default: #cbd5e1;        /* slate-300 — calm neutral hairline */
+  --border-accent-emerald: #065f46; /* emerald-800/60 family — institutional accent */
+  --border-accent-gold: #fde68a;    /* amber-200 — quiet data-zone highlight */
 }
 
 html {
@@ -42,10 +49,33 @@ body {
 }
 
 /* ---- Typography roles ---- */
+/* Global heading font-feature-settings (Round 15):
+     Enables contextual ligatures (clig), contextual alternates (calt),
+     standard ligatures (liga), and lining numerals (lnum) across all
+     heading elements for premium typographic rhythm. */
+h1, h2, h3, h4, h5, h6,
+.font-heading,
+.font-heading h1,
+.font-heading h2,
+.font-heading h3,
+.font-heading h4,
+.font-heading h5,
+.font-heading h6 {
+  font-feature-settings: "clig" 1, "calt" 1, "liga" 1, "lnum" 1;
+  -webkit-font-feature-settings: "clig" 1, "calt" 1, "liga" 1, "lnum" 1;
+}
+
 .font-heading {
   font-family: 'Playfair Display', 'Noto Serif Bengali', serif;
   letter-spacing: 0.01em;
   color: var(--navy-900);
+}
+
+/* Hero title accent — second half of the two-tone split.
+     Locked to Deep Emerald Green #064e3b (emerald-900) so the navy+emerald
+     institutional narrative reads through on the largest type on the page. */
+.hero-title-accent {
+  color: var(--emerald-900);
 }
 
 .font-body {
@@ -120,32 +150,42 @@ body {
 }
 
 /* Square brand chip — concentric circles removed per spec.
-   Single subtle navy drop-shadow only. */
+  White plate so the SUST crest's original navy+emerald+white palette
+  reads at full color (a navy plate collapses the crest to black-on-black).
+  Single subtle navy drop-shadow only. Hardware-accelerated lift on hover. */
 #brand-mark {
+  background-color: #ffffff;
   box-shadow:
     0 1px 2px rgba(16, 42, 67, 0.18),
     0 2px 6px -2px rgba(16, 42, 67, 0.12);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+#brand-mark:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow:
+    0 2px 4px rgba(16, 42, 67, 0.22),
+    0 8px 16px -2px rgba(16, 42, 67, 0.18),
+    0 0 0 1px rgba(6, 95, 70, 0.25);
+}
+#brand-mark:active {
+  transform: translateY(0) scale(1);
 }
 
 #brand-mark img {
-  border-radius: 6px;
-  object-fit: cover;
+  border-radius: 4px;
+  object-fit: contain;
+  background-color: #ffffff;
 }
 
 header.is-scrolled {
   box-shadow: 0 1px 0 rgba(16, 42, 67, 0.08), 0 8px 24px -16px rgba(16, 42, 67, 0.18);
 }
 
-/* ---- Important-dates timeline — emerald connector on navy ---- */
-.timeline-connector::before {
-  content: "";
-  position: absolute;
-  left: 22px;
-  top: 44px;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--emerald-700), rgba(52, 211, 153, 0.25));
-}
+
 
 /* ---- Label-tag — navy-900 sharp pill, font-weight 900 (max authority) ----
        Spec mandate: crisp high-contrast slate/emerald only — no champagne.
@@ -257,35 +297,72 @@ header.is-scrolled {
   flex-shrink: 0;
 }
 
-/* ---- Hero CTAs ---- */
+/* ---- Hero CTAs — glassmorphic translucent wash system ----
+     Primary:  emerald-50 wash + emerald-900 extrabold text
+     Secondary / Tertiary: slate-50 wash + navy-900 bold text
+     Cinematic cubic-bezier(0.25, 1, 0.5, 1) timing function —
+     3D translate-Y scale lift on hover + active press depression.
+     Hardware-accelerated via will-change + backface-visibility. */
+.hero-cta-primary,
+.hero-cta-secondary,
+.hero-cta-tertiary {
+  position: relative;
+  will-change: transform, box-shadow, border-color;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.hero-cta-primary:active,
+.hero-cta-secondary:active,
+.hero-cta-tertiary:active {
+  transform: translateY(0) scale(1);
+  transition-duration: 0.12s;
+}
+
 .hero-cta-primary {
   box-shadow:
-    0 1px 0 0 rgba(255,255,255,0.12) inset,
-    0 2px 0 0 var(--emerald-900),
-    0 8px 18px -6px rgba(4, 120, 87, 0.35);
-  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+    0 1px 0 0 rgba(255, 255, 255, 0.7) inset,
+    0 6px 16px -8px rgba(4, 120, 87, 0.28);
 }
 .hero-cta-primary:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.015);
+  border-color: rgba(4, 120, 87, 0.7);
   box-shadow:
-    0 1px 0 0 rgba(255,255,255,0.14) inset,
-    0 3px 0 0 var(--emerald-900),
-    0 12px 22px -6px rgba(4, 120, 87, 0.42);
+    0 1px 0 0 rgba(255, 255, 255, 0.95) inset,
+    0 14px 28px -10px rgba(4, 120, 87, 0.48),
+    0 4px 8px -4px rgba(16, 42, 67, 0.08);
 }
 
 .hero-cta-secondary {
   box-shadow:
-    0 1px 0 0 rgba(255,255,255,0.9) inset,
-    0 2px 0 0 rgba(16, 42, 67, 0.08),
-    0 6px 14px -8px rgba(16, 42, 67, 0.18);
-  transition: transform 220ms ease, box-shadow 220ms ease;
+    0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
+    0 4px 12px -8px rgba(16, 42, 67, 0.14);
 }
 .hero-cta-secondary:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.015);
+  border-color: rgba(4, 120, 87, 0.55);
   box-shadow:
-    0 1px 0 0 rgba(255,255,255,1) inset,
-    0 3px 0 0 rgba(16, 42, 67, 0.08),
-    0 10px 18px -8px rgba(16, 42, 67, 0.22);
+    0 1px 0 0 rgba(255, 255, 255, 1) inset,
+    0 12px 24px -10px rgba(16, 42, 67, 0.22),
+    0 4px 8px -4px rgba(4, 120, 87, 0.12);
+}
+
+.hero-cta-tertiary {
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
+    0 4px 12px -8px rgba(16, 42, 67, 0.14);
+}
+.hero-cta-tertiary:hover {
+  transform: translateY(-2px) scale(1.015);
+  border-color: rgba(4, 120, 87, 0.55);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 1) inset,
+    0 12px 24px -10px rgba(16, 42, 67, 0.22),
+    0 4px 8px -4px rgba(4, 120, 87, 0.12);
 }
 
 @media (min-width: 1024px) {
@@ -323,14 +400,84 @@ select:focus-visible {
 }
 .skip-link:focus { left: 0; }
 
+/* ---- Language toggle — cinematic cubic-bezier + 3D lift + emerald glow ---- */
+.lang-btn {
+  position: relative;
+  will-change: transform, box-shadow, background-color, color;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.lang-btn:hover {
+  transform: translateY(-1px);
+}
+.lang-btn:active {
+  transform: translateY(0) scale(1);
+  transition-duration: 0.12s;
+}
+.lang-btn.is-active {
+  background-color: var(--navy-900);
+  color: #ffffff;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 4px 10px -4px rgba(16, 42, 67, 0.4),
+    0 0 0 1px rgba(6, 95, 70, 0.3);
+}
+
+/* ---- Paper grain texture — whisper-thin noise on light surfaces ----
+     background-blend-mode: multiply keeps the grain organic without
+     washing the underlying white/cream surface. Layered radial gradients
+     mimic fiber paper texture (luxury printed textbook feel). */
+.paper-grain-bg {
+  position: relative;
+  isolation: isolate;
+}
+.paper-grain-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(16, 42, 67, 0.035) 1px, transparent 1px),
+    radial-gradient(rgba(4, 120, 87, 0.022) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
+  background-blend-mode: multiply;
+  opacity: 0.6;
+  z-index: 0;
+}
+.paper-grain-bg > * { position: relative; z-index: 1; }
+
+/* ---- Global ink scale + weight — print-grade typography lockdown ---- */
+p, li, .fee-cell, .track-desc, .date-card-label, .trust-cell p {
+  color: var(--ink-body);
+  font-weight: 500;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-cta-primary,
   .hero-cta-secondary,
+  .hero-cta-tertiary,
+  .lang-btn,
   .stat-card,
+  .trust-cell,
+  .info-card,
+  .track-card,
+  .date-card,
+  #brand-mark,
   [class*="hover:-translate-y-"] {
     transition: none !important;
     transform: none !important;
+    will-change: auto !important;
   }
+  .stat-card:hover,
+  .date-card:hover,
+  .info-card:hover,
+  .track-card:hover { transform: none !important; }
   html { scroll-behavior: auto; }
 }
 
@@ -423,17 +570,31 @@ header.is-scrolled {
   opacity: 0.7;
 }
 
-/* ---- Container cards — pure white + emerald top hairline + whisper-navy fade ---- */
+/* ---- Container cards — pure white + emerald top hairline + whisper-navy fade ----
+     Hardware-accelerated interaction layer:
+     will-change + backface-visibility prep the GPU before hover/translate fires.
+     Hover: 3D translate-Y scale lift + multi-color border intensification
+     (slate-300 → emerald-700) + soft shadow-glow. */
 .stat-card,
 .trust-cell,
 .info-card,
-.track-card {
+.track-card,
+.date-card {
   position: relative;
   background-color: #ffffff;
-  border-top: 2px solid var(--emerald-700);   /* user spec mandate */
+  border-top: 2px solid var(--emerald-800);
+  will-change: transform, box-shadow, border-color;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .stat-card::before,
-.info-card::before {
+.info-card::before,
+.date-card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -443,11 +604,45 @@ header.is-scrolled {
   z-index: 0;
 }
 .stat-card > *,
-.info-card > * { position: relative; z-index: 1; }
+.info-card > *,
+.date-card > * { position: relative; z-index: 1; }
 
-/* ---- Trust-cell hover — slate-50 whisper wash (no champagne) ---- */
-.trust-cell { transition: background-color 200ms ease, border-color 200ms ease; }
-.trust-cell:hover { background-color: #f8fafc; }
+/* ---- Multi-color border intensification on hover (stat + date + info cards) ---- */
+.stat-card:hover,
+.date-card:hover,
+.info-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--emerald-700);
+  box-shadow:
+    0 0 0 1px rgba(6, 95, 70, 0.4),
+    0 16px 32px -16px rgba(6, 95, 70, 0.28),
+    0 6px 12px -6px rgba(16, 42, 67, 0.12);
+}
+.stat-card:active,
+.date-card:active,
+.info-card:active {
+  transform: translateY(0);
+  transition-duration: 0.12s;
+}
+
+/* ---- Trust-cell hover — slate-50 whisper wash + soft border intensification ---- */
+.trust-cell { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.trust-cell:hover {
+  background-color: #f8fafc;
+  box-shadow:
+    inset 3px 0 0 var(--emerald-700),
+    0 6px 14px -10px rgba(6, 95, 70, 0.18);
+}
+.trust-cell:active { background-color: #f1f5f9; transition-duration: 0.12s; }
+
+/* ---- Track-card hover — emerald border sweep + shadow-glow ---- */
+.track-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--emerald-700);
+  box-shadow:
+    0 0 0 1px rgba(6, 95, 70, 0.35),
+    0 14px 28px -14px rgba(6, 95, 70, 0.24);
+}
 
 /* ---- Stat-card micro-interaction — count-up underline ---- */
 .stat-card .stat-number {
@@ -463,57 +658,14 @@ header.is-scrolled {
   height: 1.5px;
   background: var(--emerald-700);
   transform: translateX(-50%);
-  transition: width 320ms ease;
+  transition: width 320ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 .stat-card:hover .stat-number::after { width: 38%; }
 
-/* ---- Hero CTA — primary emerald + watermark pseudo-element ---- */
-.hero-cta-primary {
-  position: relative;
-  overflow: hidden;
-  box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.14) inset,
-    0 2px 0 0 var(--emerald-900),
-    0 10px 22px -8px rgba(4, 120, 87, 0.38);
-  transition: transform 220ms ease, box-shadow 220ms ease;
-}
-.hero-cta-primary::before {
-  content: "";
-  position: absolute;
-  top: -40%;
-  right: -30%;
-  width: 60%;
-  height: 180%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, transparent 60%);
-  pointer-events: none;
-  transform: rotate(20deg);
-}
-.hero-cta-primary:hover {
-  transform: translateY(-1.5px);
-  box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.18) inset,
-    0 3px 0 0 var(--emerald-900),
-    0 14px 26px -8px rgba(4, 120, 87, 0.46);
-}
-.hero-cta-primary > * { position: relative; z-index: 1; }
-
-.hero-cta-secondary {
-  position: relative;
-  overflow: hidden;
-  box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
-    0 2px 0 0 rgba(16, 42, 67, 0.08),
-    0 6px 14px -8px rgba(16, 42, 67, 0.18);
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
-}
-.hero-cta-secondary:hover {
-  transform: translateY(-1.5px);
-  border-color: var(--emerald-700);
-  box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 1) inset,
-    0 3px 0 0 rgba(16, 42, 67, 0.08),
-    0 10px 18px -8px rgba(16, 42, 67, 0.22);
-}
+/* ---- Hero CTA — unified glassmorphic wash rules consolidated above ----
+     The primary / secondary / tertiary rules live in the unified block
+     near the top of this section; this slot is reserved for any
+     tertiary-specific ornamentation (kept empty for now). */
 
 /* ---- Icon + text — forced baseline lock-up ---- */
 .icon-text-baseline {
@@ -548,3 +700,39 @@ header.is-scrolled {
 .ink-body   { color: var(--ink-body); }      /* #262626 */
 .ink-emerald{ color: var(--emerald-900); }
 .ink-navy   { color: var(--navy-900); }
+
+/* ---- Round 17 — Textbook-density section padding ----
+     Locks a tight 10–14rem scale so vertical rhythm never "loosens"
+     between sections. Overrides Tailwind py-20/24 utility at the CSS layer. */
+:where(section)[id] {
+  padding-block: clamp(2.75rem, 4.5vw, 3.5rem);
+}
+
+/* ---- Round 17 — Multi-color border system utilities ----
+     Three-tier hierarchy: default slate hairline, emerald institutional
+     accent, gold data-zone highlight. Pair with .bg-white surfaces
+     so colored borders read clearly without overpowering typography. */
+.box-default         { border: 1px solid var(--border-default); }
+.box-accent-emerald  { border: 1px solid var(--border-accent-emerald); }
+.box-accent-gold     { border: 1px solid var(--border-accent-gold); }
+
+/* Asymmetric corner radii — premium editorial cards */
+.asymmetric-corners { border-radius: 1rem 0.375rem 1rem 0.375rem; }
+
+/* Whisper-thin navy-to-white top fade for container grids */
+.top-fade {
+  background: linear-gradient(to bottom, rgba(16, 42, 67, 0.045) 0%, rgba(16, 42, 67, 0) 60%);
+}
+
+/* ---- Round 17 — Bengali text rhythm + ligatures ----
+     Extends heading ligature settings to Bengali-supporting text and
+     locks leading to 1.26 so conjunct characters never clip at any density. */
+[data-lang="bn"] .font-heading,
+[data-lang="bn"] h1,
+[data-lang="bn"] h2,
+[data-lang="bn"] h3,
+[data-lang="bn"] h4 {
+  font-feature-settings: "clig" 1, "liga" 1, "calt" 1;
+  -webkit-font-feature-settings: "clig" 1, "liga" 1, "calt" 1;
+  line-height: 1.26;
+}
