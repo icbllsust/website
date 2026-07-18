@@ -1,33 +1,35 @@
 /* ---------------------------------------------------------
-   ICBLLC 2027 — custom stylesheet
-   Only overrides/extensions that Tailwind utility classes
-   can't express directly (font stacks, the alpona divider,
-   focus rings, print rules).
+   ICBLLC 2027 — institutional color psychology system
+   Deep Emerald (#064e3b) + Administrative Navy (#102a43)
+   Champagne plates (#fef3c7) for inner depth only.
+   Zero harsh red/maroon. High-contrast ink throughout.
 --------------------------------------------------------- */
 
 :root {
-  /* Slate-based navy palette (deep authority) */
-  --navy: #102a43;
-  --navy-700: #1e3a8a;
+  /* Deep Administrative Navy — academic authority */
+  --navy-900: #102a43;
   --navy-800: #182f6f;
-  --navy-deep: #142a63;
-  /* Ink-charcoal — replaces washed-out text-neutral-500/600 */
-  --ink: #171f2d;
-  --ink-soft: #334155;
-  /* Muted amber/gold accent (graceful, institutional) */
-  --gold: #b45309;
-  --gold-soft: #d4a24c;
-  /* Premium paper canvas */
+  --navy-700: #1e3a8a;
+  --navy-50: #eef2fb;
+
+  /* Deep Emerald Green — Bengali cultural + institutional accent */
+  --emerald-900: #064e3b;
+  --emerald-800: #065f46;
+  --emerald-700: #047857;
+  --emerald-400: #34d399;
+
+  /* Warm Champagne — inner plates, tag backgrounds, hover washes ONLY */
+  --champagne: #fef3c7;
+  --champagne-soft: #fff8eb;
+
+  /* High-contrast ink (replaces all pale neutral-500/600) */
+  --ink-strong: #0f172a;   /* slate-900 */
+  --ink: #1e293b;          /* slate-800 */
+  --ink-body: #262626;     /* neutral-800 */
+
+  /* Canvas */
   --paper: #fbfaf7;
   --cream: #fcfbf7;
-  /* Premium Academic Multi-Color System: Emerald + Navy + Champagne.
-     Emerald replaces the former maroon as the institutional accent. */
-  --emerald: #047857;
-  --emerald-deep: #065f46;
-  --emerald-press: #064e3b;
-  --emerald-900: #064e3b;     /* dominant deep emerald for accents/text */
-  --champagne: #fef3c7;       /* warm gold/champagne tint for inner plates */
-  --champagne-soft: #fdf6ec;  /* lighter champagne for tag backgrounds */
 }
 
 html {
@@ -36,16 +38,14 @@ html {
 
 body {
   background-color: var(--paper);
-  color: #262626; /* text-neutral-800 */
+  color: var(--ink-body);
 }
 
 /* ---- Typography roles ---- */
-/* English: Playfair Display (headings) + Inter (body)      */
-/* Bengali: Noto Serif Bengali (headings) + Noto Sans Bengali (body) */
-
 .font-heading {
   font-family: 'Playfair Display', 'Noto Serif Bengali', serif;
   letter-spacing: 0.01em;
+  color: var(--navy-900);
 }
 
 .font-body {
@@ -61,7 +61,6 @@ body {
   font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
 }
 
-/* Slightly more breathing room for Bengali line-height */
 [data-lang="bn"] p,
 [data-lang="bn"] li,
 [data-lang="bn"] .fee-cell,
@@ -69,20 +68,12 @@ body {
   line-height: 1.9;
 }
 
-/* Bengali headings: prevent vertical clipping of conjuncts and "ি"-style marks.
-   Mixed Bengali + Latin/numerals can shift baselines; 1.4 line-height + a small
-   bottom padding gives conjunct characters headroom to render fully. */
 [data-lang="bn"] .font-heading {
   line-height: 1.4;
   padding-bottom: 0.2em;
 }
 
-/* ---- Signature element: the Alpona rule ----
-   A thin gold hairline with a small repeating diamond/petal
-   motif, echoing the rice-paste alpona line-drawings used at
-   Bengali festivals and thresholds. Used under headings and
-   as a section separator, in place of a generic gradient. */
-
+/* ---- Alpona rule — emerald hairline + diamond motif ---- */
 .alpona-rule {
   display: flex;
   align-items: center;
@@ -101,7 +92,7 @@ body {
   content: "";
   flex: 1 1 auto;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-soft) 50%, transparent);
+  background: linear-gradient(90deg, transparent, var(--emerald-700) 45%, var(--champagne) 55%, transparent);
 }
 
 .alpona-rule .alpona-motif {
@@ -110,61 +101,124 @@ body {
   height: 14px;
 }
 
-/* ---- Focus visibility (accessibility) ---- */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 2px;
-  border-radius: 2px;
+/* ---- Section title ornaments — emerald left rule (no maroon/gold) ---- */
+.section-title {
+  border-left: 4px solid var(--emerald-700);
+  padding-left: 1rem;
+  color: var(--navy-900);
 }
 
-/* ---- Header shadow on scroll (toggled via JS) ---- */
+.section-title-on-navy {
+  border-left: 4px solid var(--emerald-400);
+  padding-left: 1rem;
+  color: #ffffff;
+}
+
+/* ---- Compact header — tight corporate grid alignment ---- */
+#site-header .header-inner {
+  height: 68px;
+}
+
+#brand-mark {
+  box-shadow:
+    0 0 0 2px var(--navy-900),
+    0 0 0 3px var(--emerald-700),
+    0 1px 3px rgba(16, 42, 67, 0.12);
+}
+
+#brand-mark img {
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
 header.is-scrolled {
-  box-shadow: 0 1px 0 rgba(30, 58, 138, 0.08), 0 8px 24px -16px rgba(30, 58, 138, 0.25);
+  box-shadow: 0 1px 0 rgba(16, 42, 67, 0.08), 0 8px 24px -16px rgba(16, 42, 67, 0.18);
 }
 
-/* ---- Important-dates icon timeline: connecting line between milestones ---- */
+/* ---- Important-dates timeline — emerald connector on navy ---- */
 .timeline-connector::before {
   content: "";
   position: absolute;
-  left: 22px; /* center of the 44px icon circle */
+  left: 22px;
   top: 44px;
   bottom: 0;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.18);
+  width: 2px;
+  background: linear-gradient(to bottom, var(--emerald-700), rgba(52, 211, 153, 0.25));
 }
 
-/* ---- Card hover lift, kept subtle ---- */
-.lift-on-hover {
-  transition: transform 240ms ease, box-shadow 240ms ease;
-}
-.lift-on-hover:hover {
-  transform: translateY(-3px);
-}
-
-/* ---- Section titles — muted amber left accent rule ----
-   Used on every light-background section heading. Slightly
-   taller hit-area than border-l-4 alone so the rule breathes
-   against the heading's cap height. */
-.section-title {
-  border-left: 4px solid var(--gold);
-  padding-left: 1rem;
-}
-
-/* Gold-on-navy variant for the Important Dates section
-   (and any future dark sections). */
-.section-title-on-navy {
-  border-left: 4px solid var(--gold-soft);
-  padding-left: 1rem;
+/* ---- Label-tag — crisp slate-900 sharp pill (no washed-out champagne) ----
+       Spec mandate: bg-slate-100 + text-slate-800/900, font-bold.
+       High-contrast, modern minimalist alternative that eliminates the
+       faded amber/yellow-on-yellow problem on real mobile screens. */
+.label-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  font-family: Inter, "Noto Sans Bengali", sans-serif;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: var(--navy-900);
+  border: 1px solid var(--navy-900);
+  border-radius: 3px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-/* ---- CFP layered background ----
-   A subtle two-layer pattern: a wide diagonal wash + a
-   dotted navy grid. Composited via multiple backgrounds so
-   the SVG dot pattern sits on top of the wash. */
+/* Dark (navy section) variant — emerald on translucent white */
+.label-tag.on-navy,
+.label-tag.bg-white\/10 {
+  color: var(--emerald-400);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(52, 211, 153, 0.4);
+}
+
+/* ---- Card system — white surface + emerald top hairline ---- */
+.stat-card,
+.trust-cell,
+.info-card,
+.track-card {
+  background-color: #ffffff;
+}
+
+/* Spec-aligned: replaced champagne wash with subtle slate wash to eliminate
+   the faded yellow tint on real mobile/tablet screens. */
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(241, 245, 249, 0.5) 0%, rgba(255, 255, 255, 0) 55%);
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.info-card { position: relative; overflow: hidden; }
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(241, 245, 249, 0.4) 0%, rgba(255, 255, 255, 0) 55%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.trust-cell {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+@media (max-width: 767px) {
+  .trust-cell + .trust-cell {
+    border-top: 1px solid rgba(16, 42, 67, 0.08);
+    padding-top: 1.25rem;
+    margin-top: 1.25rem;
+  }
+}
+
+/* ---- CFP layered background ---- */
 .cfp-bg-pattern {
   position: relative;
   background-color: #ffffff;
@@ -176,151 +230,40 @@ header.is-scrolled {
   pointer-events: none;
   background-image:
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='2' cy='2' r='1' fill='%231e3a8a' fill-opacity='0.07'/></svg>"),
-    linear-gradient(135deg, rgba(30, 58, 138, 0.035) 0%, rgba(180, 83, 9, 0.02) 60%, transparent 100%);
+    linear-gradient(135deg, rgba(16, 42, 67, 0.03) 0%, rgba(4, 120, 87, 0.02) 60%, transparent 100%);
   background-size: 32px 32px, 100% 100%;
   background-repeat: repeat, no-repeat;
   z-index: 0;
 }
-.cfp-bg-pattern > * {
-  position: relative;
-  z-index: 1;
-}
 
-/* ---- Reduce motion: disable card hover lifts ---- */
-@media (prefers-reduced-motion: reduce) {
-  .lift-on-hover,
-  .stat-card,
-  [class*="hover:-translate-y-"],
-  [class*="hover:shadow-card"] {
-    transition: none !important;
-    transform: none !important;
-  }
-  html { scroll-behavior: auto; }
-}
-
-/* ---- Speaker avatar ring (real <img>, replaces the old char avatar) ---- */
-.speaker-avatar {
-  border: 1px solid rgba(30, 58, 138, 0.12);
-  background-color: #eef2fb;
-}
-
-/* ---- Label-tag / meta pill (compact uppercase metadata chip) ----
-   Used inside cards and above section headings. Default look is
-   a tiny amber-on-cream tag; the dark-on-navy variant is composed
-   inline via Tailwind utility overrides (bg-white/10 etc). */
-.label-tag {
+/* ---- Icon + text baseline alignment (EN + বাংলা mixed) ---- */
+.icon-text-baseline {
   display: inline-flex;
-  align-items: center;
-  height: 18px;
-  padding: 0 6px;
-  font-family: Inter, "Noto Sans Bengali", sans-serif;
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--emerald-press);
-  background-color: var(--champagne);            /* warm champagne tint */
-  border: 1px solid #fde6a8;
-  border-radius: 3px;
-  line-height: 1;
-  white-space: nowrap;
+  align-items: baseline;
+  gap: 0.5rem;
 }
-.label-tag.bg-white\/10 { line-height: 1; }
-
-/* ---- Info card (contact details) ---- */
-.info-card { position: relative; overflow: hidden; }
-.info-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(253, 246, 236, 0.4) 0%, rgba(255, 255, 255, 0) 55%);
-  pointer-events: none;
-  opacity: 0.6;
+.icon-text-baseline > [data-lucide],
+.icon-text-baseline > svg {
+  align-self: baseline;
+  flex-shrink: 0;
 }
 
-/* ---- Premium stats grid card (MSEI-Bangladesh-inspired density) ---- */
-.stat-card {
-  position: relative;
-  overflow: hidden;
-}
-.stat-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(253, 246, 236, 0.55) 0%, rgba(255, 255, 255, 0) 60%);
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-/* ---- Institutional Trust Block — divider polish ---- */
-.trust-cell {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-@media (max-width: 767px) {
-  .trust-cell + .trust-cell {
-    border-top: 1px solid rgba(30, 58, 138, 0.08);
-    padding-top: 1.25rem;
-    margin-top: 1.25rem;
-  }
-}
-
-/* ---- Skip link ---- */
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  background: var(--navy);
-  color: #fff;
-  padding: 0.6rem 1rem;
-  z-index: 100;
-  border-radius: 0 0 6px 0;
-}
-.skip-link:focus {
-  left: 0;
-}
-
-@media print {
-  header, footer, .no-print { display: none !important; }
-}
-
-/* =========================================================
-   HERO SECTION — Asymmetric 2-column publication-grade layout
-   ========================================================= */
-
-/* Sticky right rail: keeps stats + trust block visible while the
-   left title scrolls. Only sticks once the section is in view. */
-@media (min-width: 1024px) {
-  .hero-right-rail {
-    position: sticky;
-    top: 7rem; /* offset for fixed nav (~112px) */
-  }
-}
-
-/* Sharper flat shadow for the emerald CTA — tactile press feel. */
+/* ---- Hero CTAs ---- */
 .hero-cta-primary {
   box-shadow:
     0 1px 0 0 rgba(255,255,255,0.12) inset,
-    0 2px 0 0 rgba(6, 78, 59, 0.95),
-    0 8px 18px -6px rgba(15, 118, 110, 0.35);
+    0 2px 0 0 var(--emerald-900),
+    0 8px 18px -6px rgba(4, 120, 87, 0.35);
   transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
 }
 .hero-cta-primary:hover {
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 0 rgba(255,255,255,0.14) inset,
-    0 3px 0 0 rgba(6, 78, 59, 0.95),
-    0 12px 22px -6px rgba(15, 118, 110, 0.42);
-}
-.hero-cta-primary:active {
-  transform: translateY(1px);
-  box-shadow:
-    0 1px 0 0 rgba(255,255,255,0.10) inset,
-    0 1px 0 0 rgba(6, 78, 59, 0.95),
-    0 6px 14px -4px rgba(15, 118, 110, 0.30);
+    0 3px 0 0 var(--emerald-900),
+    0 12px 22px -6px rgba(4, 120, 87, 0.42);
 }
 
-/* The secondary CTA gets the same flat-shadow grammar in slate. */
 .hero-cta-secondary {
   box-shadow:
     0 1px 0 0 rgba(255,255,255,0.9) inset,
@@ -336,52 +279,267 @@ header.is-scrolled {
     0 10px 18px -8px rgba(16, 42, 67, 0.22);
 }
 
-/* Vertical divider between meta chips (visual link, not a real border). */
-.hero-meta-divider {
-  width: 1px;
-  height: 0.875rem;
-  background: linear-gradient(to bottom, transparent, #cbd5e1, transparent);
+@media (min-width: 1024px) {
+  .hero-right-rail {
+    position: sticky;
+    top: 5.5rem;
+  }
 }
 
-/* Hero institutional card row — small vertical breathing room tweaks. */
-.hero-stat-card {
-  background: #ffffff;
-}
-.hero-stat-card .value-plate {
-  font-variant-numeric: tabular-nums;
+.speaker-avatar {
+  border: 1px solid rgba(16, 42, 67, 0.12);
+  background-color: var(--navy-50);
 }
 
-/* Items-baseline micro-fix: when an icon sits next to a mixed-font label,
-   align both glyphs to the same baseline so Bengali conjuncts don’t clip. */
-.hero-icon-text {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.5rem;
-}
-.hero-icon-text > [data-lucide] {
-  align-self: baseline;
-  transform: translateY(0.0625em); /* nudge to optical baseline */
-}
-
-/* Emerald accent rule: replaces the former maroon left-border ornament. */
-.emerald-accent {
-  border-left: 3px solid var(--emerald-deep);
-  padding-left: 1rem;
-}
-
-/* Focus ring polish — sharp slate, no glow, publication tone. */
+/* ---- Focus visibility — navy ring, no red/gold glow ---- */
 a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--navy);
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--emerald-700);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Reduced motion respect: disable hero CTA lift & right-rail sticky shift. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--navy-900);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 100;
+  border-radius: 0 0 6px 0;
+}
+.skip-link:focus { left: 0; }
+
 @media (prefers-reduced-motion: reduce) {
   .hero-cta-primary,
-  .hero-cta-secondary {
+  .hero-cta-secondary,
+  .stat-card,
+  [class*="hover:-translate-y-"] {
     transition: none !important;
     transform: none !important;
   }
+  html { scroll-behavior: auto; }
 }
+
+@media print {
+  header, footer, .no-print { display: none !important; }
+}
+
+/* ===================================================================
+   ELITE UI/UX MODULES — Header + Hero polish (Round 10)
+   - Hybrid CSS architecture (custom modules + Tailwind utilities)
+   - Total purge of red/maroon/terracotta (#991b1b, #b45309)
+   - Deep emerald (#064e3b) + deep navy (#102a43) authority palette
+   - Champagne (#fef3c7) ONLY as plate wash
+   - All washed-out neutral-500/600 forbidden; ink is --ink / --ink-strong
+   =================================================================== */
+
+/* ---- Paper-grain micro-texture overlay (subtle institutional paper) ---- */
+.paper-grain {
+  position: relative;
+}
+.paper-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(16, 42, 67, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(4, 120, 87, 0.025) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  z-index: 0;
+}
+.paper-grain > * { position: relative; z-index: 1; }
+
+/* ---- Header — crisp glass-shadow when scrolled + paper underlay ---- */
+#site-header {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(160%) blur(8px);
+  -webkit-backdrop-filter: saturate(160%) blur(8px);
+  border-bottom: 1px solid rgba(16, 42, 67, 0.08);
+}
+#site-header .header-inner { height: 76px; }   /* hard-locked to user spec */
+header.is-scrolled {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 1px 0 rgba(16, 42, 67, 0.06),
+    0 10px 30px -16px rgba(16, 42, 67, 0.22),
+    0 2px 6px -4px rgba(4, 120, 87, 0.08);
+}
+
+/* ---- Brand mark — emerald hairline + navy ring (forged as 3-layer shadow) ---- */
+#brand-mark {
+  box-shadow:
+    0 0 0 1.5px var(--emerald-700),
+    0 0 0 3.5px var(--navy-900),
+    0 0 0 4.5px var(--emerald-400),
+    0 2px 6px rgba(16, 42, 67, 0.18);
+  transition: box-shadow 220ms ease, transform 220ms ease;
+}
+#brand-mark:hover {
+  transform: rotate(-3deg);
+  box-shadow:
+    0 0 0 1.5px var(--emerald-700),
+    0 0 0 3.5px var(--navy-900),
+    0 0 0 4.5px rgba(52, 211, 153, 0.65),
+    0 4px 10px rgba(16, 42, 67, 0.22);
+}
+#brand-mark img { border-radius: 9999px; object-fit: cover; }
+
+/* ---- Hero — asymmetric 7/5 grid, soft authority wash ---- */
+#home {
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(4, 120, 87, 0.06) 0%, transparent 60%),
+    radial-gradient(900px 500px at -5% 110%, rgba(16, 42, 67, 0.05) 0%, transparent 65%),
+    #ffffff;
+}
+#home .max-w-6xl { max-width: 72rem; }
+
+/* ---- Eyebrow hairline — institutional under-rule ---- */
+.hero-eyebrow {
+  position: relative;
+  padding-left: 0;
+}
+.hero-eyebrow .hero-eyebrow-rule {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--emerald-900);
+  vertical-align: baseline;
+  margin-right: 0.5rem;
+  transform: translateY(-4px);
+  opacity: 0.7;
+}
+
+/* ---- Container cards — emerald top hairline + soft champagne wash ---- */
+.stat-card,
+.trust-cell,
+.info-card,
+.track-card {
+  position: relative;
+  background-color: #ffffff;
+  border-top: 2px solid var(--emerald-700);   /* user spec mandate */
+}
+.stat-card::before,
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(254, 243, 199, 0.32) 0%, rgba(255, 255, 255, 0) 55%);
+  pointer-events: none;
+  opacity: 0.85;
+  z-index: 0;
+}
+.stat-card > *,
+.info-card > * { position: relative; z-index: 1; }
+
+/* ---- Trust-cell hover — emerald hairline reveal ---- */
+.trust-cell { transition: background-color 200ms ease, border-color 200ms ease; }
+.trust-cell:hover { background-color: rgba(254, 243, 199, 0.55); }
+
+/* ---- Stat-card micro-interaction — count-up underline ---- */
+.stat-card .stat-number {
+  position: relative;
+  display: inline-block;
+}
+.stat-card .stat-number::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 1.5px;
+  background: var(--emerald-700);
+  transform: translateX(-50%);
+  transition: width 320ms ease;
+}
+.stat-card:hover .stat-number::after { width: 38%; }
+
+/* ---- Hero CTA — primary emerald + watermark pseudo-element ---- */
+.hero-cta-primary {
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.14) inset,
+    0 2px 0 0 var(--emerald-900),
+    0 10px 22px -8px rgba(4, 120, 87, 0.38);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.hero-cta-primary::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -30%;
+  width: 60%;
+  height: 180%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, transparent 60%);
+  pointer-events: none;
+  transform: rotate(20deg);
+}
+.hero-cta-primary:hover {
+  transform: translateY(-1.5px);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.18) inset,
+    0 3px 0 0 var(--emerald-900),
+    0 14px 26px -8px rgba(4, 120, 87, 0.46);
+}
+.hero-cta-primary > * { position: relative; z-index: 1; }
+
+.hero-cta-secondary {
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
+    0 2px 0 0 rgba(16, 42, 67, 0.08),
+    0 6px 14px -8px rgba(16, 42, 67, 0.18);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.hero-cta-secondary:hover {
+  transform: translateY(-1.5px);
+  border-color: var(--emerald-700);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 1) inset,
+    0 3px 0 0 rgba(16, 42, 67, 0.08),
+    0 10px 18px -8px rgba(16, 42, 67, 0.22);
+}
+
+/* ---- Icon + text — forced baseline lock-up ---- */
+.icon-text-baseline {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.icon-text-baseline > [data-lucide],
+.icon-text-baseline > svg {
+  align-self: baseline;
+  flex-shrink: 0;
+  transform: translateY(2px);     /* optical center correction */
+}
+
+/* ---- Hero right-rail — sticky on lg+ ---- */
+@media (min-width: 1024px) {
+  .hero-right-rail { position: sticky; top: 6rem; }
+}
+
+/* ---- Hero — quiet luxury ornament: emerald keyline under title ---- */
+.hero-keyline {
+  height: 1px;
+  background: linear-gradient(90deg, var(--emerald-700) 0%, var(--emerald-700) 18%, transparent 18%, transparent 24%, var(--emerald-400) 24%, var(--emerald-400) 30%, transparent 30%);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 28rem;
+}
+
+/* ---- High-contrast ink scale (replaces washed-out neutrals) ---- */
+.ink-strong { color: var(--ink-strong); }    /* #0f172a */
+.ink        { color: var(--ink); }           /* #1e293b */
+.ink-body   { color: var(--ink-body); }      /* #262626 */
+.ink-emerald{ color: var(--emerald-900); }
+.ink-navy   { color: var(--navy-900); }

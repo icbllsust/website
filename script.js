@@ -89,18 +89,17 @@
       .map((t, i) => {
         const icon = TRACK_ICONS[i % TRACK_ICONS.length];
         return `
-      <article class="group relative rounded-xl border border-slate-200/60 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover overflow-hidden">
+      <article class="group relative rounded-xl border border-slate-200/60 border-t-2 border-t-emerald-700 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover overflow-hidden">
         <div class="flex items-center justify-between px-5 pt-4 pb-3 border-b border-slate-200/60 bg-cream">
           <span class="label-tag">TRACK · ${String(i + 1).padStart(2, "0")}</span>
-          <span class="w-7 h-7 rounded-md bg-amber-plate border border-amber-plateDeep flex items-center justify-center">
-            <i data-lucide="${icon}" class="w-3.5 h-3.5 text-amber-deep"></i>
+          <span class="w-7 h-7 rounded-md bg-amber-50 border border-amber-plateDeep flex items-center justify-center">
+            <i data-lucide="${icon}" class="w-3.5 h-3.5 text-emerald-900"></i>
           </span>
         </div>
         <div class="px-5 py-4">
           <h3 class="font-heading text-navy-900 text-[1.05rem] font-semibold leading-snug">${escapeHTML(t.title)}</h3>
-          <p class="track-desc font-body text-[14px] text-neutral-600 mt-2.5 leading-relaxed">${escapeHTML(t.description)}</p>
+          <p class="track-desc font-body text-[14px] text-slate-800 mt-2.5 leading-relaxed">${escapeHTML(t.description)}</p>
         </div>
-        <span class="absolute top-0 left-0 w-1 h-full bg-gold-600 transition-all duration-300 group-hover:w-1.5" aria-hidden="true"></span>
       </article>`;
       })
       .join("");
@@ -183,7 +182,7 @@
             <i data-lucide="building-2" class="w-3.5 h-3.5 self-baseline"></i>
             ${escapeHTML(s.affiliation)}
           </p>
-          <p class="font-body text-[13.5px] text-neutral-700 mt-3 leading-relaxed border-t border-slate-200/60 pt-3 text-left">${escapeHTML(s.topic)}</p>
+          <p class="font-body text-[13.5px] text-slate-800 mt-3 leading-relaxed border-t border-slate-200/60 pt-3 text-left">${escapeHTML(s.topic)}</p>
         </div>
         <span class="absolute top-0 left-0 w-full h-1 bg-gold-600" aria-hidden="true"></span>
       </article>`;
@@ -202,10 +201,10 @@
         const icon = FEE_ICONS[i % FEE_ICONS.length];
         const isFeatured = i === 0;
         return `
-      <tr class="hover:bg-amber-plate/40 transition-colors duration-200 ${isFeatured ? "bg-amber-plate/30" : ""}">
+      <tr class="hover:bg-amber-50/70 transition-colors duration-200 ${isFeatured ? "bg-amber-50" : ""}">
         <td class="fee-cell py-4 px-5 text-neutral-800 align-middle">
           <span class="flex items-center gap-2.5">
-            <span class="w-8 h-8 rounded-md bg-amber-plate text-amber-deep border border-amber-plateDeep flex items-center justify-center shrink-0 shadow-sm">
+            <span class="w-8 h-8 rounded-md bg-amber-50 text-emerald-900 border border-amber-plateDeep flex items-center justify-center shrink-0 shadow-sm">
               <i data-lucide="${icon}" class="w-3.5 h-3.5"></i>
             </span>
             <span class="flex flex-col leading-tight">
@@ -216,14 +215,14 @@
         </td>
         <td class="fee-cell py-4 px-5 align-middle">
           <span class="inline-flex flex-col items-start leading-tight">
-            <span class="text-[10px] tracking-[0.18em] uppercase text-gold-600 font-semibold font-body">Early</span>
+            <span class="text-[10px] tracking-[0.18em] uppercase text-emerald-900 font-semibold font-body">Early</span>
             <span class="font-heading text-navy-900 text-[15px] font-semibold">${escapeHTML(r.early_bird)}</span>
           </span>
         </td>
         <td class="fee-cell py-4 px-5 align-middle">
           <span class="inline-flex flex-col items-start leading-tight">
-            <span class="text-[10px] tracking-[0.18em] uppercase text-neutral-500 font-semibold font-body">Regular</span>
-            <span class="font-heading text-neutral-700 text-[15px]">${escapeHTML(r.regular)}</span>
+            <span class="text-[10px] tracking-[0.18em] uppercase text-navy-900 font-semibold font-body">Regular</span>
+            <span class="font-heading text-navy-900 text-[15px] font-semibold">${escapeHTML(r.regular)}</span>
           </span>
         </td>
       </tr>`;
