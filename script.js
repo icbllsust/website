@@ -35,12 +35,26 @@
     });
   }
 
-  /** Inject dynamic href targets (e.g. Hero CTA submission link) from content. */
+  /** Inject dynamic href targets (e.g. Hero CTA submission link) from content.
+   *  - #hero-cta-primary  : "Submit an Abstract" mailto fallback (preserved).
+   *  - #hero-cta-tertiary : "Submit Now" → Microsoft CMT3 portal (frictionless). */
   function renderDynamicLinks(lang) {
     const data = CONTENT[lang];
-    const cta = document.getElementById("hero-cta-primary");
-    if (cta && data.hero && typeof data.hero.submission_url === "string") {
-      cta.setAttribute("href", data.hero.submission_url);
+    const url = data && data.hero ? data.hero.submission_url : null;
+    const urlAlt = data && data.hero ? data.hero.submission_url_alt : null;
+    if (typeof url !== "string") return;
+
+    const primary = document.getElementById("hero-cta-primary");
+    if (primary) {
+      // Primary CTA always points at the CMT3 portal (primary submission path)
+      primary.setAttribute("href", url);
+      primary.setAttribute("target", "_blank");
+      primary.setAttribute("rel", "noopener noreferrer");
+    }
+
+    const tertiary = document.getElementById("hero-cta-tertiary");
+    if (tertiary) {
+      tertiary.setAttribute("href", url);
     }
   }
 

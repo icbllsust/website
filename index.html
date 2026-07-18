@@ -54,37 +54,30 @@
 <header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-cream/95 backdrop-blur border-b border-navy-700/10 transition-shadow">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 h-[76px] flex items-center justify-between gap-3">
 
-    <a href="#home" class="flex items-center gap-2.5 shrink-0" aria-label="Conference home">
+    <a href="#home" class="flex items-baseline gap-2.5 shrink-0 self-center" aria-label="Conference home">
       <!-- Brand emblem: original SUST crest (assets/sust-logo.png) + inline SVG fallback.
-           Ring stack: emerald hairline (1.5px) → navy ring (3px) → emerald glow (4px).
-           PNG is the primary visible mark; SVG is hidden via onload but reveals itself
-           if the PNG 404s — so the header never displays a broken-image icon. -->
-      <span id="brand-mark" class="relative shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
+           Square chip (no concentric ring stack — circles removed). PNG is the
+           primary visible mark; SVG is hidden via onload but reveals itself if
+           the PNG 404s — so the header never displays a broken-image icon. -->
+      <span id="brand-mark" class="relative shrink-0 w-10 h-10 rounded-md bg-white flex items-center justify-center overflow-hidden">
         <!-- Inline SVG fallback (always rendered behind the <img>) -->
         <svg id="brand-mark-fallback" viewBox="0 0 40 40" class="absolute inset-0 w-10 h-10" aria-hidden="true">
-          <!-- Outer ring (navy) -->
-          <circle cx="20" cy="20" r="19.25" fill="#102a43"/>
-          <!-- Inner ring (emerald) -->
-          <circle cx="20" cy="20" r="16.5" fill="none" stroke="#047857" stroke-width="1.25"/>
-          <!-- Cream disc -->
-          <circle cx="20" cy="20" r="14.5" fill="#fcfbf7"/>
-          <!-- Top arc label band -->
-          <path id="topArc" d="M 8 20 A 12 12 0 0 1 32 20" fill="none"/>
-          <text font-family="'Inter', 'Noto Sans Bengali', sans-serif" font-size="3.2" font-weight="700" fill="#047857" letter-spacing="0.6">
-            <textPath href="#topArc" startOffset="50%" text-anchor="middle">SUST</textPath>
-          </text>
+          <!-- Square navy plate -->
+          <rect x="0" y="0" width="40" height="40" fill="#102a43"/>
+          <!-- Emerald hairline frame -->
+          <rect x="2" y="2" width="36" height="36" fill="none" stroke="#047857" stroke-width="1.25"/>
           <!-- Center Bengali sigil "অ" -->
-          <text x="20" y="25.5" text-anchor="middle" font-family="'Noto Serif Bengali', 'Playfair Display', serif" font-size="13" font-weight="700" fill="#102a43">অ</text>
-          <!-- Bottom emerald dot pair (institutional motif) -->
-          <circle cx="16" cy="30" r="0.9" fill="#047857"/>
-          <circle cx="20" cy="30" r="0.9" fill="#047857"/>
-          <circle cx="24" cy="30" r="0.9" fill="#047857"/>
+          <text x="20" y="26" text-anchor="middle" font-family="'Noto Serif Bengali', 'Playfair Display', serif" font-size="18" font-weight="700" fill="#fcfbf7">অ</text>
+          <!-- SUST wordmark (top) -->
+          <text x="20" y="11" text-anchor="middle" font-family="'Inter', 'Noto Sans Bengali', sans-serif" font-size="4.8" font-weight="800" fill="#34d399" letter-spacing="1.2">SUST</text>
+          <!-- 1976 institutional mark (bottom) -->
+          <text x="20" y="35" text-anchor="middle" font-family="'Inter', 'Noto Sans Bengali', sans-serif" font-size="3.6" font-weight="700" fill="#34d399" letter-spacing="0.6">EST. 1986</text>
         </svg>
         <!-- Live image on top; if the PNG loads successfully the SVG fallback
              is hidden via the onload handler, but if the file 404s the inline
-             SVG crest (navy ring + emerald core + Bengali "অ" sigil) shows
-             through so the header never displays a broken-image icon. -->
-        <img src="assets/sust-logo.png" alt="Shahjalal University of Science and Technology Crest" class="relative w-10 h-10 rounded-full object-cover" onload="var f=document.getElementById('brand-mark-fallback'); if(f) f.style.display='none';" onerror="this.style.visibility='hidden';" />
+             SVG crest (square navy plate + emerald hairline + Bengali "অ" sigil)
+             shows through so the header never displays a broken-image icon. -->
+        <img src="assets/sust-logo.png" alt="Shahjalal University of Science and Technology Crest" class="relative w-10 h-10 rounded-md object-cover" onload="var f=document.getElementById('brand-mark-fallback'); if(f) f.style.display='none';" onerror="this.style.visibility='hidden';" />
       </span>
       <!-- Stacked bilingual name block -->
       <span class="hidden sm:flex flex-col items-baseline leading-[1.1]">
@@ -94,7 +87,7 @@
       </span>
     </a>
 
-    <nav aria-label="Primary" class="hidden lg:flex items-center gap-5 font-body text-[13.5px] text-navy-900 font-medium">
+    <nav aria-label="Primary" class="hidden lg:flex items-baseline gap-5 font-body text-[13.5px] text-navy-900 font-medium">
       <a href="#about" class="hover:text-emerald-900 transition-colors items-baseline" data-i18n="nav.about">About</a>
       <a href="#cfp" class="hover:text-emerald-900 transition-colors items-baseline" data-i18n="nav.cfp">Call for Papers</a>
       <a href="#dates" class="hover:text-emerald-900 transition-colors items-baseline" data-i18n="nav.dates">Important Dates</a>
@@ -103,7 +96,7 @@
       <a href="#contact" class="hover:text-emerald-900 transition-colors items-baseline" data-i18n="nav.contact">Contact</a>
     </nav>
 
-    <div class="flex items-center gap-2">
+    <div class="flex items-baseline gap-2 self-center">
       <!-- Language toggle -->
       <div role="group" aria-label="Language selector" class="flex items-center rounded-md border border-navy-700/20 overflow-hidden text-sm font-body">
         <button type="button" id="lang-en" aria-pressed="true" class="lang-btn px-3 py-1.5 bg-navy-700 text-white transition-colors">EN</button>
@@ -161,13 +154,13 @@
       <div class="lg:col-span-7 text-left">
 
         <!-- Eyebrow plate: labeled meta tag (matches reference site's tagged headers) -->
-        <div class="inline-flex items-center gap-2 rounded-md border border-navy-900/15 bg-white px-2.5 py-1 mb-6 shadow-card">
+        <div class="inline-flex items-baseline gap-2 rounded-md border border-navy-900/15 bg-white px-2.5 py-1 mb-6 shadow-card">
           <span class="label-tag">CONF · 2027</span>
           <span class="w-1 h-1 rounded-full bg-emerald-900" aria-hidden="true"></span>
-          <span class="font-body text-[11px] tracking-[0.18em] uppercase text-neutral-900 font-bold items-baseline" data-i18n="hero.badge">International Conference</span>
+          <span class="font-body text-[11px] tracking-[0.18em] uppercase text-slate-900 font-extrabold items-baseline" data-i18n="hero.badge">International Conference</span>
         </div>
 
-        <p class="font-body text-xs sm:text-sm tracking-[0.2em] uppercase text-navy-900 mb-4 font-bold flex items-baseline gap-2" data-i18n="hero.eyebrow">
+        <p class="font-body text-xs sm:text-sm tracking-[0.2em] uppercase text-navy-900 mb-4 font-extrabold flex items-baseline gap-2" data-i18n="hero.eyebrow">
           <span class="inline-block w-5 h-px bg-navy-900/70 self-baseline" aria-hidden="true"></span>
           <span>Department of Bengali, SUST</span>
         </p>
@@ -176,7 +169,7 @@
           International Conference on Bengali Language, Literature &amp; Culture
         </h1>
 
-        <!-- Hero ornament: alpona-rule with emerald diamond + emerald→champagne gradient hairline.
+        <!-- Hero ornament: alpona-rule with solid emerald diamond motif.
              Provides an institutional break between the title and the supporting subtitle. -->
         <div class="alpona-rule my-7" aria-hidden="true">
           <svg class="alpona-motif" viewBox="0 0 14 14"><path d="M7 0 L10 7 L7 14 L4 7 Z" fill="#047857"/></svg>
@@ -212,6 +205,17 @@
             </span>
             <span class="inline-flex items-center gap-2 px-5 py-3" data-i18n="hero.cta_secondary">View Important Dates</span>
           </a>
+          <!-- Tertiary CTA: frictionless "Submit Now" → Microsoft CMT3 portal (external).
+               Emerald-outlined tactile variant; secondary CTA language preserved above. -->
+          <a id="hero-cta-tertiary" href="https://cmt3.research.microsoft.com/ICECE2026" target="_blank" rel="noopener noreferrer" class="hero-cta-tertiary group inline-flex items-stretch rounded-lg bg-white text-emerald-800 font-body text-sm font-bold transition-all duration-300 overflow-hidden border-2 border-emerald-700 hover:bg-emerald-50 hover:border-emerald-800 hover:shadow-md">
+            <span class="flex items-center justify-center w-10 bg-emerald-50 text-emerald-900 border-r border-emerald-700/30">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </span>
+            <span class="inline-flex items-center gap-2 px-5 py-3" data-i18n="hero.cta_tertiary">Submit Now</span>
+            <span class="flex items-center justify-center pr-3 text-emerald-700/70 group-hover:text-emerald-900" aria-hidden="true">
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </a>
         </div>
 
       </div>
@@ -231,8 +235,8 @@
             <div class="px-3 pt-1 pb-3 text-center">
               <span class="stat-number block font-heading text-navy-900 text-[2.1rem] sm:text-[2.4rem] font-bold leading-none tracking-tight" data-i18n="hero.stat_days_num">3</span>
             </div>
-            <div class="border-t border-emerald-700/25 bg-slate-100 px-3 py-2">
-              <span class="text-[9.5px] sm:text-[10px] tracking-[0.18em] uppercase text-navy-900 font-body font-bold text-center block" data-i18n="hero.stat_days_lbl">Day Conference</span>
+            <div class="border-t border-slate-200/80 bg-white px-3 py-2">
+              <span class="text-[9.5px] sm:text-[10px] tracking-[0.18em] uppercase text-slate-800 font-body font-extrabold text-center block" data-i18n="hero.stat_days_lbl">Day Conference</span>
             </div>
           </div>
           <div class="stat-card group rounded-xl border border-slate-200/60 border-t-2 border-t-emerald-700 bg-white shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden">
@@ -243,10 +247,10 @@
               </span>
             </div>
             <div class="px-3 pt-1 pb-3 text-center">
-              <span class="stat-number block font-heading text-navy-900 text-[2.1rem] sm:text-[2.4rem] font-bold leading-none tracking-tight" data-i18n="hero.stat_tracks_num">6</span>
+              <span class="stat-number block font-heading text-navy-900 text-[2.1rem] sm:text-[2.4rem] font-extrabold leading-none tracking-tight" data-i18n="hero.stat_tracks_num">6</span>
             </div>
-            <div class="border-t border-emerald-700/25 bg-slate-100 px-3 py-2">
-              <span class="text-[9.5px] sm:text-[10px] tracking-[0.18em] uppercase text-navy-900 font-body font-bold text-center block" data-i18n="hero.stat_tracks_lbl">Research Tracks</span>
+            <div class="border-t border-slate-200/80 bg-white px-3 py-2">
+              <span class="text-[9.5px] sm:text-[10px] tracking-[0.18em] uppercase text-slate-800 font-body font-extrabold text-center block" data-i18n="hero.stat_tracks_lbl">Research Tracks</span>
             </div>
           </div>
           <div class="stat-card group rounded-xl border border-slate-200/60 border-t-2 border-t-emerald-700 bg-white shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden">
@@ -257,20 +261,20 @@
               </span>
             </div>
             <div class="px-3 pt-1 pb-3 text-center">
-              <span class="stat-number block font-heading text-navy-900 text-[2.1rem] sm:text-[2.4rem] font-bold leading-none tracking-tight" data-i18n="hero.stat_global_num">3+</span>
+              <span class="stat-number block font-heading text-navy-900 text-[2.1rem] sm:text-[2.4rem] font-extrabold leading-none tracking-tight" data-i18n="hero.stat_global_num">3+</span>
             </div>
-            <div class="border-t border-emerald-700/25 bg-slate-100 px-3 py-2">
-              <span class="text-[9.5px] sm:text-[10px] tracking-[0.18em] uppercase text-navy-900 font-body font-bold text-center block" data-i18n="hero.stat_global_lbl">Countries Represented</span>
+            <div class="border-t border-slate-200/80 bg-white px-3 py-2">
+              <span class="text-[9.5px] sm:text-[10px] tracking-[0.18em] uppercase text-slate-800 font-body font-extrabold text-center block" data-i18n="hero.stat_global_lbl">Countries Represented</span>
             </div>
           </div>
         </div>
 
         <!-- Institutional Trust Block -->
         <div class="rounded-xl border border-slate-200/60 border-t-2 border-t-emerald-700 bg-white shadow-card overflow-hidden">
-          <div class="flex items-center gap-2 px-5 pt-4 pb-3 border-b border-emerald-700/25 bg-slate-100">
+          <div class="flex items-baseline gap-2 px-5 pt-4 pb-3 border-b border-slate-200/80 bg-slate-50">
             <span class="label-tag">INSTITUTIONAL TRUST</span>
             <span class="w-1 h-1 rounded-full bg-emerald-900" aria-hidden="true"></span>
-            <span class="font-body text-[10.5px] tracking-[0.18em] uppercase text-navy-900 font-bold" data-i18n="trust_block.heading">Under the patronage of</span>
+            <span class="font-body text-[10.5px] tracking-[0.18em] uppercase text-navy-900 font-extrabold" data-i18n="trust_block.heading">Under the patronage of</span>
           </div>
 
           <div class="divide-y divide-slate-200/60">

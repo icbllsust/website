@@ -119,15 +119,16 @@ body {
   height: 68px;
 }
 
+/* Square brand chip — concentric circles removed per spec.
+   Single subtle navy drop-shadow only. */
 #brand-mark {
   box-shadow:
-    0 0 0 2px var(--navy-900),
-    0 0 0 3px var(--emerald-700),
-    0 1px 3px rgba(16, 42, 67, 0.12);
+    0 1px 2px rgba(16, 42, 67, 0.18),
+    0 2px 6px -2px rgba(16, 42, 67, 0.12);
 }
 
 #brand-mark img {
-  border-radius: 9999px;
+  border-radius: 6px;
   object-fit: cover;
 }
 
@@ -146,10 +147,10 @@ header.is-scrolled {
   background: linear-gradient(to bottom, var(--emerald-700), rgba(52, 211, 153, 0.25));
 }
 
-/* ---- Label-tag — crisp slate-900 sharp pill (no washed-out champagne) ----
-       Spec mandate: bg-slate-100 + text-slate-800/900, font-bold.
-       High-contrast, modern minimalist alternative that eliminates the
-       faded amber/yellow-on-yellow problem on real mobile screens. */
+/* ---- Label-tag — navy-900 sharp pill, font-weight 900 (max authority) ----
+       Spec mandate: crisp high-contrast slate/emerald only — no champagne.
+       White text on Deep Administrative Navy Blue delivers the sharpest
+       contrast on real mobile/tablet screens. */
 .label-tag {
   display: inline-flex;
   align-items: center;
@@ -157,7 +158,7 @@ header.is-scrolled {
   padding: 0 8px;
   font-family: Inter, "Noto Sans Bengali", sans-serif;
   font-size: 9.5px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #ffffff;
@@ -168,6 +169,13 @@ header.is-scrolled {
   white-space: nowrap;
 }
 
+/* Optional slate variant for inverted surfaces (light backgrounds) */
+.label-tag.slate {
+  color: var(--navy-900);
+  background-color: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
 /* Dark (navy section) variant — emerald on translucent white */
 .label-tag.on-navy,
 .label-tag.bg-white\/10 {
@@ -176,7 +184,7 @@ header.is-scrolled {
   border-color: rgba(52, 211, 153, 0.4);
 }
 
-/* ---- Card system — white surface + emerald top hairline ---- */
+/* ---- Card system — pure white surface + emerald top hairline ---- */
 .stat-card,
 .trust-cell,
 .info-card,
@@ -184,15 +192,16 @@ header.is-scrolled {
   background-color: #ffffff;
 }
 
-/* Spec-aligned: replaced champagne wash with subtle slate wash to eliminate
-   the faded yellow tint on real mobile/tablet screens. */
+/* Spec-aligned: whisper-thin navy-to-white top-fade on stat cards.
+   Eliminates all champagne/slate wash bleed; the emerald top hairline
+   is the only visual accent. */
 .stat-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(241, 245, 249, 0.5) 0%, rgba(255, 255, 255, 0) 55%);
+  background: linear-gradient(180deg, rgba(16, 42, 67, 0.04) 0%, rgba(255, 255, 255, 0) 35%);
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .info-card { position: relative; overflow: hidden; }
@@ -200,9 +209,9 @@ header.is-scrolled {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(241, 245, 249, 0.4) 0%, rgba(255, 255, 255, 0) 55%);
+  background: linear-gradient(180deg, rgba(16, 42, 67, 0.03) 0%, rgba(255, 255, 255, 0) 35%);
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .trust-cell {
@@ -374,24 +383,20 @@ header.is-scrolled {
     0 2px 6px -4px rgba(4, 120, 87, 0.08);
 }
 
-/* ---- Brand mark — emerald hairline + navy ring (forged as 3-layer shadow) ---- */
+/* ---- Brand mark — square chip, no concentric ring stack ---- */
 #brand-mark {
   box-shadow:
-    0 0 0 1.5px var(--emerald-700),
-    0 0 0 3.5px var(--navy-900),
-    0 0 0 4.5px var(--emerald-400),
-    0 2px 6px rgba(16, 42, 67, 0.18);
+    0 1px 2px rgba(16, 42, 67, 0.18),
+    0 2px 8px -2px rgba(16, 42, 67, 0.14);
   transition: box-shadow 220ms ease, transform 220ms ease;
 }
 #brand-mark:hover {
-  transform: rotate(-3deg);
+  transform: translateY(-1px);
   box-shadow:
-    0 0 0 1.5px var(--emerald-700),
-    0 0 0 3.5px var(--navy-900),
-    0 0 0 4.5px rgba(52, 211, 153, 0.65),
-    0 4px 10px rgba(16, 42, 67, 0.22);
+    0 2px 4px rgba(16, 42, 67, 0.22),
+    0 6px 12px -2px rgba(16, 42, 67, 0.18);
 }
-#brand-mark img { border-radius: 9999px; object-fit: cover; }
+#brand-mark img { border-radius: 6px; object-fit: cover; }
 
 /* ---- Hero — asymmetric 7/5 grid, soft authority wash ---- */
 #home {
@@ -418,7 +423,7 @@ header.is-scrolled {
   opacity: 0.7;
 }
 
-/* ---- Container cards — emerald top hairline + soft champagne wash ---- */
+/* ---- Container cards — pure white + emerald top hairline + whisper-navy fade ---- */
 .stat-card,
 .trust-cell,
 .info-card,
@@ -432,17 +437,17 @@ header.is-scrolled {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(254, 243, 199, 0.32) 0%, rgba(255, 255, 255, 0) 55%);
+  background: linear-gradient(180deg, rgba(16, 42, 67, 0.04) 0%, rgba(255, 255, 255, 0) 35%);
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 1;
   z-index: 0;
 }
 .stat-card > *,
 .info-card > * { position: relative; z-index: 1; }
 
-/* ---- Trust-cell hover — emerald hairline reveal ---- */
+/* ---- Trust-cell hover — slate-50 whisper wash (no champagne) ---- */
 .trust-cell { transition: background-color 200ms ease, border-color 200ms ease; }
-.trust-cell:hover { background-color: rgba(254, 243, 199, 0.55); }
+.trust-cell:hover { background-color: #f8fafc; }
 
 /* ---- Stat-card micro-interaction — count-up underline ---- */
 .stat-card .stat-number {
