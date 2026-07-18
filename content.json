@@ -1,0 +1,302 @@
+{
+  "en": {
+    "meta": {
+      "site_title": "ICBLLC 2027 — Dept. of Bengali, SUST",
+      "conference_short": "ICBLLC 2027",
+      "conference_dates": "18–20 February 2027",
+      "conference_venue": "Shahjalal University of Science and Technology, Sylhet"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "cfp": "Call for Papers",
+      "dates": "Important Dates",
+      "speakers": "Keynote Speakers",
+      "fees": "Registration",
+      "contact": "Contact",
+      "logo_char": "B"
+    },
+    "hero": {
+      "eyebrow": "Department of Bengali, SUST",
+      "title": "International Conference on Bengali Language, Literature & Culture",
+      "subtitle": "Marking the spirit of Ekushey February with three days of scholarship, dialogue and cultural exchange.",
+      "date_label": "18–20 February 2027",
+      "venue_label": "SUST, Sylhet, Bangladesh",
+      "cta_primary": "Submit an Abstract",
+      "cta_secondary": "View Important Dates",
+      "submission_url": "mailto:bengaliconference@sust.edu?subject=ICBLLC%202027%20%E2%80%94%20Abstract%20Submission",
+      "badge": "International Conference",
+      "stat_days": "3-Day Conference",
+      "stat_tracks": "6 Research Tracks",
+      "stat_global": "International Delegates",
+      "stat_days_num": "3",
+      "stat_days_lbl": "Day Conference",
+      "stat_tracks_num": "6",
+      "stat_tracks_lbl": "Research Tracks",
+      "stat_global_num": "3+",
+      "stat_global_lbl": "Countries Represented"
+    },
+    "trust_block": {
+      "heading": "Under the patronage of",
+      "patronage_label": "Chief Patron",
+      "patronage_title": "Office of the Vice Chancellor",
+      "patronage_org": "Shahjalal University of Science and Technology",
+      "organizer_label": "Organized by",
+      "organizer_title": "Department of Bengali",
+      "organizer_org": "Shahjalal University of Science and Technology",
+      "publication_label": "Publication Partner",
+      "publication_title": "Peer-Reviewed Proceedings",
+      "publication_org": "SUST Press & Indexed Journals"
+    },
+    "about": {
+      "heading": "About the Conference",
+      "paragraphs": [
+        "The Department of Bengali at Shahjalal University of Science and Technology (SUST) invites researchers, academicians, and postgraduate scholars to an international conference examining the evolving landscape of Bengali language, literature and culture.",
+        "Set against Sylhet's own rich literary and folk heritage, the conference creates a meeting ground for scholars from Bangladesh, India and the wider Bengali-speaking world to exchange research, renew old questions, and open new ones.",
+        "Selected papers presented at the conference will be considered for publication in a peer-reviewed conference proceedings volume."
+      ]
+    },
+    "cfp": {
+      "heading": "Call for Papers",
+      "intro": "We welcome original, unpublished research papers under (but not limited to) the following tracks:",
+      "tracks": [
+        {
+          "title": "Bengali Language: Structure, Change & Standardization",
+          "description": "Phonology, grammar, dialectology and the evolving standard of Bengali."
+        },
+        {
+          "title": "Modern & Postmodern Bengali Literature",
+          "description": "Fiction, poetry and criticism from the 19th century to the present."
+        },
+        {
+          "title": "Folklore, Oral Tradition & Regional Culture of Sylhet",
+          "description": "Baul and Sufi song traditions, oral epics, and regional performance forms."
+        },
+        {
+          "title": "Partition, Migration & Diaspora Narratives",
+          "description": "Memory, displacement and identity across Bengali diasporic writing."
+        },
+        {
+          "title": "Translation Studies & Comparative Literature",
+          "description": "Bengali in translation, and Bengali literature in comparative frames."
+        },
+        {
+          "title": "Digital Humanities & Bengali Corpus Linguistics",
+          "description": "Computational approaches to Bengali text, corpora and archives."
+        }
+      ],
+      "guidelines_heading": "Submission Guidelines",
+      "guidelines": [
+        "Abstracts: 250–300 words, in English or Bengali.",
+        "Full papers: 4,000–6,000 words, following APA 7th edition.",
+        "Submissions accepted via the conference email address only.",
+        "Each accepted paper requires at least one registered author to present."
+      ]
+    },
+    "important_dates": [
+      { "label": "Abstract Submission Deadline", "date": "30 October 2026" },
+      { "label": "Notification of Acceptance", "date": "30 November 2026" },
+      { "label": "Early Bird Registration Closes", "date": "31 December 2026" },
+      { "label": "Full Paper Submission", "date": "15 January 2027" },
+      { "label": "Conference Dates", "date": "18–20 February 2027" }
+    ],
+    "speakers": {
+      "heading": "Keynote Speakers",
+      "intro": "Sample entries — replace with confirmed speaker details and photographs.",
+      "list": [
+        {
+          "name": "Prof. Anindita Sengupta",
+          "affiliation": "Dept. of Bengali, University of Calcutta",
+          "topic": "Rethinking the Bengali Novel after Partition",
+          "image_url": ""
+        },
+        {
+          "name": "Prof. Kamal Uddin Ahmed",
+          "affiliation": "Dept. of Bangla, University of Dhaka",
+          "topic": "Oral Epics of the Sylhet-Sunamganj Haor Basin",
+          "image_url": ""
+        },
+        {
+          "name": "Dr. Farhana Islam",
+          "affiliation": "Bengali Studies, SOAS University of London",
+          "topic": "Bengali in the Diaspora: Language Loss and Renewal",
+          "image_url": ""
+        }
+      ]
+    },
+    "registration_fees": {
+      "heading": "Registration Fees",
+      "category_label": "Category",
+      "note": "Fees cover conference materials, meals during the conference, and the proceedings volume.",
+      "rows": [
+        { "category": "Bangladeshi Faculty / Researcher", "early_bird": "৳3,000", "regular": "৳3,500" },
+        { "category": "Bangladeshi Student / Research Fellow", "early_bird": "৳1,500", "regular": "৳2,000" },
+        { "category": "International Participant", "early_bird": "$100", "regular": "$120" },
+        { "category": "Accompanying Person", "early_bird": "৳1,000 / $30", "regular": "৳1,200 / $35" }
+      ]
+    },
+    "contact_info": {
+      "heading": "Contact",
+      "intro": "Reach the conference secretariat for abstract submission, registration queries, and partnership enquiries.",
+      "department": "Department of Bengali",
+      "university": "Shahjalal University of Science and Technology (SUST)",
+      "address": "Akhalia, Sylhet-3114, Bangladesh",
+      "email": "bengaliconference@sust.edu",
+      "phone": "+880-XXX-XXXXXXX"
+    },
+    "footer": {
+      "rights": "Department of Bengali, SUST. All rights reserved.",
+      "made_for": "Organized by the Department of Bengali, SUST"
+    }
+  },
+  "bn": {
+    "meta": {
+      "site_title": "আইসিবিএলএলসি ২০২৭ — বাংলা বিভাগ, শাবিপ্রবি",
+      "conference_short": "আইসিবিএলএলসি ২০২৭",
+      "conference_dates": "১৮–২০ ফেব্রুয়ারি ২০২৭",
+      "conference_venue": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়, সিলেট"
+    },
+    "nav": {
+      "home": "প্রচ্ছদ",
+      "about": "পরিচিতি",
+      "cfp": "প্রবন্ধ আহ্বান",
+      "dates": "গুরুত্বপূর্ণ তারিখ",
+      "speakers": "মূখ্য আলোচক",
+      "fees": "নিবন্ধন",
+      "contact": "যোগাযোগ",
+      "logo_char": "বা"
+    },
+    "hero": {
+      "eyebrow": "বাংলা বিভাগ, শাবিপ্রবি",
+      "title": "বাংলা ভাষা, সাহিত্য ও সংস্কৃতি বিষয়ক আন্তর্জাতিক গবেষণা সম্মেলন",
+      "subtitle": "একুশে ফেব্রুয়ারির চেতনাকে ধারণ করে তিন দিনের গবেষণা, মতবিনিময় ও সাংস্কৃতিক আদান-প্রদান।",
+      "date_label": "১৮–২০ ফেব্রুয়ারি ২০২৭",
+      "venue_label": "শাবিপ্রবি, সিলেট, বাংলাদেশ",
+      "cta_primary": "সারসংক্ষেপ জমা দিন",
+      "cta_secondary": "গুরুত্বপূর্ণ তারিখ দেখুন",
+      "submission_url": "mailto:bengaliconference@sust.edu?subject=ICBLLC%202027%20%E2%80%94%20%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A6%B8%E0%A6%82%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A7%87%E0%A6%AA%20%E0%A6%9C%E0%A6%AE%E0%A6%BE",
+      "badge": "আন্তর্জাতিক সম্মেলন",
+      "stat_days": "৩ দিনব্যাপী সম্মেলন",
+      "stat_tracks": "৬টি গবেষণা ট্র্যাক",
+      "stat_global": "আন্তর্জাতিক প্রতিনিধি",
+      "stat_days_num": "৩",
+      "stat_days_lbl": "দিনব্যাপী সম্মেলন",
+      "stat_tracks_num": "৬",
+      "stat_tracks_lbl": "গবেষণা ট্র্যাক",
+      "stat_global_num": "৩+",
+      "stat_global_lbl": "অংশগ্রহণকারী দেশ"
+    },
+    "trust_block": {
+      "heading": "পৃষ্ঠপোষকতায়",
+      "patronage_label": "প্রধান পৃষ্ঠপোষক",
+      "patronage_title": "উপাচার্যের কার্যালয়",
+      "patronage_org": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়",
+      "organizer_label": "আয়োজনে",
+      "organizer_title": "বাংলা বিভাগ",
+      "organizer_org": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়",
+      "publication_label": "প্রকাশনা সহযোগী",
+      "publication_title": "পিয়ার-রিভিউড কার্যবিবরণী",
+      "publication_org": "শাবিপ্রবি প্রেস ও সূচিবদ্ধ জার্নাল"
+    },
+    "about": {
+      "heading": "সম্মেলন পরিচিতি",
+      "paragraphs": [
+        "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়ের (শাবিপ্রবি) বাংলা বিভাগ বাংলা ভাষা, সাহিত্য ও সংস্কৃতির ক্রমবিকাশমান পরিসর নিয়ে আলোচনার জন্য গবেষক, শিক্ষাবিদ ও স্নাতকোত্তর শিক্ষার্থীদের একটি আন্তর্জাতিক সম্মেলনে আমন্ত্রণ জানাচ্ছে।",
+        "সিলেটের নিজস্ব সমৃদ্ধ সাহিত্য ও লোকঐতিহ্যের প্রেক্ষাপটে এই সম্মেলন বাংলাদেশ, ভারত ও বৃহত্তর বাংলাভাষী বিশ্বের গবেষকদের জন্য গবেষণা বিনিময়, পুরনো প্রশ্নের নবায়ন এবং নতুন প্রশ্নের সূচনার একটি মিলনক্ষেত্র তৈরি করে।",
+        "সম্মেলনে উপস্থাপিত নির্বাচিত প্রবন্ধ একটি পিয়ার-রিভিউড কার্যবিবরণী গ্রন্থে প্রকাশের জন্য বিবেচিত হবে।"
+      ]
+    },
+    "cfp": {
+      "heading": "প্রবন্ধ আহ্বান",
+      "intro": "নিম্নলিখিত (তবে এতে সীমাবদ্ধ নয়) বিষয়ে মৌলিক ও অপ্রকাশিত গবেষণা প্রবন্ধ আহ্বান করা হচ্ছে:",
+      "tracks": [
+        {
+          "title": "বাংলা ভাষা: গঠন, পরিবর্তন ও প্রমিতকরণ",
+          "description": "ধ্বনিতত্ত্ব, ব্যাকরণ, উপভাষাতত্ত্ব এবং বাংলার ক্রমবিকাশমান প্রমিত রূপ।"
+        },
+        {
+          "title": "আধুনিক ও উত্তর-আধুনিক বাংলা সাহিত্য",
+          "description": "ঊনবিংশ শতক থেকে বর্তমান পর্যন্ত কথাসাহিত্য, কবিতা ও সমালোচনা।"
+        },
+        {
+          "title": "সিলেটের লোকঐতিহ্য ও আঞ্চলিক সংস্কৃতি",
+          "description": "বাউল ও সুফি গানের ধারা, মৌখিক আখ্যান এবং আঞ্চলিক পরিবেশনা রীতি।"
+        },
+        {
+          "title": "দেশভাগ, অভিবাসন ও প্রবাসী বয়ান",
+          "description": "স্মৃতি, উদ্বাস্তুতা এবং প্রবাসী বাংলা রচনায় পরিচয়ের সংকট।"
+        },
+        {
+          "title": "অনুবাদ চর্চা ও তুলনামূলক সাহিত্য",
+          "description": "অনুবাদে বাংলা এবং তুলনামূলক পরিসরে বাংলা সাহিত্য।"
+        },
+        {
+          "title": "ডিজিটাল হিউম্যানিটিজ ও বাংলা করপাস ভাষাতত্ত্ব",
+          "description": "বাংলা টেক্সট, করপাস ও মহাফেজখানার কম্পিউটেশনাল বিশ্লেষণ।"
+        }
+      ],
+      "guidelines_heading": "জমাদানের নির্দেশনা",
+      "guidelines": [
+        "সারসংক্ষেপ: ২৫০–৩০০ শব্দ, ইংরেজি বা বাংলায়।",
+        "সম্পূর্ণ প্রবন্ধ: ৪,০০০–৬,০০০ শব্দ, APA ৭ম সংস্করণ অনুসরণে।",
+        "শুধুমাত্র সম্মেলনের ইমেইল ঠিকানার মাধ্যমে জমা গ্রহণযোগ্য।",
+        "গৃহীত প্রতিটি প্রবন্ধের জন্য অন্তত একজন নিবন্ধিত লেখকের উপস্থাপনা আবশ্যক।"
+      ]
+    },
+    "important_dates": [
+      { "label": "সারসংক্ষেপ জমাদানের শেষ তারিখ", "date": "৩০ অক্টোবর ২০২৬" },
+      { "label": "গৃহীত হওয়ার বিজ্ঞপ্তি", "date": "৩০ নভেম্বর ২০২৬" },
+      { "label": "আর্লি বার্ড নিবন্ধন শেষ", "date": "৩১ ডিসেম্বর ২০২৬" },
+      { "label": "সম্পূর্ণ প্রবন্ধ জমা", "date": "১৫ জানুয়ারি ২০২৭" },
+      { "label": "সম্মেলনের তারিখ", "date": "১৮–২০ ফেব্রুয়ারি ২০২৭" }
+    ],
+    "speakers": {
+      "heading": "মূখ্য আলোচক",
+      "intro": "নমুনা তথ্য — নিশ্চিত আলোচকের তথ্য ও ছবি দিয়ে প্রতিস্থাপন করুন।",
+      "list": [
+        {
+          "name": "অধ্যাপক অনিন্দিতা সেনগুপ্ত",
+          "affiliation": "বাংলা বিভাগ, কলকাতা বিশ্ববিদ্যালয়",
+          "topic": "দেশভাগ-উত্তর বাংলা উপন্যাসের পুনর্পাঠ",
+          "image_url": ""
+        },
+        {
+          "name": "অধ্যাপক কামাল উদ্দিন আহমেদ",
+          "affiliation": "বাংলা বিভাগ, ঢাকা বিশ্ববিদ্যালয়",
+          "topic": "সিলেট-সুনামগঞ্জ হাওরাঞ্চলের মৌখিক আখ্যান",
+          "image_url": ""
+        },
+        {
+          "name": "ড. ফারহানা ইসলাম",
+          "affiliation": "বেঙ্গলি স্টাডিজ, সোয়াস বিশ্ববিদ্যালয়, লন্ডন",
+          "topic": "প্রবাসে বাংলা: ভাষা বিলুপ্তি ও পুনরুজ্জীবন",
+          "image_url": ""
+        }
+      ]
+    },
+    "registration_fees": {
+      "heading": "নিবন্ধন ফি",
+      "category_label": "শ্রেণী",
+      "note": "ফি-এর মধ্যে সম্মেলন সামগ্রী, সম্মেলনকালীন আহার এবং কার্যবিবরণী গ্রন্থ অন্তর্ভুক্ত।",
+      "rows": [
+        { "category": "বাংলাদেশি শিক্ষক / গবেষক", "early_bird": "৳৩,০০০", "regular": "৳৩,৫০০" },
+        { "category": "বাংলাদেশি শিক্ষার্থী / গবেষণা ফেলো", "early_bird": "৳১,৫০০", "regular": "৳২,০০০" },
+        { "category": "আন্তর্জাতিক অংশগ্রহণকারী", "early_bird": "$১০০", "regular": "$১২০" },
+        { "category": "সহযাত্রী", "early_bird": "৳১,০০০ / $৩০", "regular": "৳১,২০০ / $৩৫" }
+      ]
+    },
+    "contact_info": {
+      "heading": "যোগাযোগ",
+      "intro": "সারসংক্ষেপ জমা, নিবন্ধন সংক্রান্ত প্রশ্ন ও অংশীদারিতার প্রস্তাবের জন্য সম্মেলন সচিবালয়ের সাথে যোগাযোগ করুন।",
+      "department": "বাংলা বিভাগ",
+      "university": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয় (শাবিপ্রবি)",
+      "address": "আখালিয়া, সিলেট-৩১১৪, বাংলাদেশ",
+      "email": "bengaliconference@sust.edu",
+      "phone": "+৮৮০-XXX-XXXXXXX"
+    },
+    "footer": {
+      "rights": "বাংলা বিভাগ, শাবিপ্রবি। সর্বস্বত্ব সংরক্ষিত।",
+      "made_for": "আয়োজনে বাংলা বিভাগ, শাবিপ্রবি"
+    }
+  }
+}

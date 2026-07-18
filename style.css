@@ -1,0 +1,387 @@
+/* ---------------------------------------------------------
+   ICBLLC 2027 — custom stylesheet
+   Only overrides/extensions that Tailwind utility classes
+   can't express directly (font stacks, the alpona divider,
+   focus rings, print rules).
+--------------------------------------------------------- */
+
+:root {
+  /* Slate-based navy palette (deep authority) */
+  --navy: #102a43;
+  --navy-700: #1e3a8a;
+  --navy-800: #182f6f;
+  --navy-deep: #142a63;
+  /* Ink-charcoal — replaces washed-out text-neutral-500/600 */
+  --ink: #171f2d;
+  --ink-soft: #334155;
+  /* Muted amber/gold accent (graceful, institutional) */
+  --gold: #b45309;
+  --gold-soft: #d4a24c;
+  /* Premium paper canvas */
+  --paper: #fbfaf7;
+  --cream: #fcfbf7;
+  /* Premium Academic Multi-Color System: Emerald + Navy + Champagne.
+     Emerald replaces the former maroon as the institutional accent. */
+  --emerald: #047857;
+  --emerald-deep: #065f46;
+  --emerald-press: #064e3b;
+  --emerald-900: #064e3b;     /* dominant deep emerald for accents/text */
+  --champagne: #fef3c7;       /* warm gold/champagne tint for inner plates */
+  --champagne-soft: #fdf6ec;  /* lighter champagne for tag backgrounds */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  color: #262626; /* text-neutral-800 */
+}
+
+/* ---- Typography roles ---- */
+/* English: Playfair Display (headings) + Inter (body)      */
+/* Bengali: Noto Serif Bengali (headings) + Noto Sans Bengali (body) */
+
+.font-heading {
+  font-family: 'Playfair Display', 'Noto Serif Bengali', serif;
+  letter-spacing: 0.01em;
+}
+
+.font-body {
+  font-family: 'Inter', 'Noto Sans Bengali', sans-serif;
+}
+
+[data-lang="bn"] .font-heading {
+  font-family: 'Noto Serif Bengali', 'Playfair Display', serif;
+  letter-spacing: 0;
+}
+
+[data-lang="bn"] .font-body {
+  font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
+}
+
+/* Slightly more breathing room for Bengali line-height */
+[data-lang="bn"] p,
+[data-lang="bn"] li,
+[data-lang="bn"] .fee-cell,
+[data-lang="bn"] .track-desc {
+  line-height: 1.9;
+}
+
+/* Bengali headings: prevent vertical clipping of conjuncts and "ি"-style marks.
+   Mixed Bengali + Latin/numerals can shift baselines; 1.4 line-height + a small
+   bottom padding gives conjunct characters headroom to render fully. */
+[data-lang="bn"] .font-heading {
+  line-height: 1.4;
+  padding-bottom: 0.2em;
+}
+
+/* ---- Signature element: the Alpona rule ----
+   A thin gold hairline with a small repeating diamond/petal
+   motif, echoing the rice-paste alpona line-drawings used at
+   Bengali festivals and thresholds. Used under headings and
+   as a section separator, in place of a generic gradient. */
+
+.alpona-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  max-width: 220px;
+}
+
+.alpona-rule.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alpona-rule::before,
+.alpona-rule::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-soft) 50%, transparent);
+}
+
+.alpona-rule .alpona-motif {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+}
+
+/* ---- Focus visibility (accessibility) ---- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---- Header shadow on scroll (toggled via JS) ---- */
+header.is-scrolled {
+  box-shadow: 0 1px 0 rgba(30, 58, 138, 0.08), 0 8px 24px -16px rgba(30, 58, 138, 0.25);
+}
+
+/* ---- Important-dates icon timeline: connecting line between milestones ---- */
+.timeline-connector::before {
+  content: "";
+  position: absolute;
+  left: 22px; /* center of the 44px icon circle */
+  top: 44px;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ---- Card hover lift, kept subtle ---- */
+.lift-on-hover {
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+.lift-on-hover:hover {
+  transform: translateY(-3px);
+}
+
+/* ---- Section titles — muted amber left accent rule ----
+   Used on every light-background section heading. Slightly
+   taller hit-area than border-l-4 alone so the rule breathes
+   against the heading's cap height. */
+.section-title {
+  border-left: 4px solid var(--gold);
+  padding-left: 1rem;
+}
+
+/* Gold-on-navy variant for the Important Dates section
+   (and any future dark sections). */
+.section-title-on-navy {
+  border-left: 4px solid var(--gold-soft);
+  padding-left: 1rem;
+}
+
+/* ---- CFP layered background ----
+   A subtle two-layer pattern: a wide diagonal wash + a
+   dotted navy grid. Composited via multiple backgrounds so
+   the SVG dot pattern sits on top of the wash. */
+.cfp-bg-pattern {
+  position: relative;
+  background-color: #ffffff;
+}
+.cfp-bg-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='2' cy='2' r='1' fill='%231e3a8a' fill-opacity='0.07'/></svg>"),
+    linear-gradient(135deg, rgba(30, 58, 138, 0.035) 0%, rgba(180, 83, 9, 0.02) 60%, transparent 100%);
+  background-size: 32px 32px, 100% 100%;
+  background-repeat: repeat, no-repeat;
+  z-index: 0;
+}
+.cfp-bg-pattern > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Reduce motion: disable card hover lifts ---- */
+@media (prefers-reduced-motion: reduce) {
+  .lift-on-hover,
+  .stat-card,
+  [class*="hover:-translate-y-"],
+  [class*="hover:shadow-card"] {
+    transition: none !important;
+    transform: none !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* ---- Speaker avatar ring (real <img>, replaces the old char avatar) ---- */
+.speaker-avatar {
+  border: 1px solid rgba(30, 58, 138, 0.12);
+  background-color: #eef2fb;
+}
+
+/* ---- Label-tag / meta pill (compact uppercase metadata chip) ----
+   Used inside cards and above section headings. Default look is
+   a tiny amber-on-cream tag; the dark-on-navy variant is composed
+   inline via Tailwind utility overrides (bg-white/10 etc). */
+.label-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 6px;
+  font-family: Inter, "Noto Sans Bengali", sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--emerald-press);
+  background-color: var(--champagne);            /* warm champagne tint */
+  border: 1px solid #fde6a8;
+  border-radius: 3px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.label-tag.bg-white\/10 { line-height: 1; }
+
+/* ---- Info card (contact details) ---- */
+.info-card { position: relative; overflow: hidden; }
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(253, 246, 236, 0.4) 0%, rgba(255, 255, 255, 0) 55%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* ---- Premium stats grid card (MSEI-Bangladesh-inspired density) ---- */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(253, 246, 236, 0.55) 0%, rgba(255, 255, 255, 0) 60%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* ---- Institutional Trust Block — divider polish ---- */
+.trust-cell {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+@media (max-width: 767px) {
+  .trust-cell + .trust-cell {
+    border-top: 1px solid rgba(30, 58, 138, 0.08);
+    padding-top: 1.25rem;
+    margin-top: 1.25rem;
+  }
+}
+
+/* ---- Skip link ---- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--navy);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 100;
+  border-radius: 0 0 6px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+@media print {
+  header, footer, .no-print { display: none !important; }
+}
+
+/* =========================================================
+   HERO SECTION — Asymmetric 2-column publication-grade layout
+   ========================================================= */
+
+/* Sticky right rail: keeps stats + trust block visible while the
+   left title scrolls. Only sticks once the section is in view. */
+@media (min-width: 1024px) {
+  .hero-right-rail {
+    position: sticky;
+    top: 7rem; /* offset for fixed nav (~112px) */
+  }
+}
+
+/* Sharper flat shadow for the emerald CTA — tactile press feel. */
+.hero-cta-primary {
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.12) inset,
+    0 2px 0 0 rgba(6, 78, 59, 0.95),
+    0 8px 18px -6px rgba(15, 118, 110, 0.35);
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+}
+.hero-cta-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.14) inset,
+    0 3px 0 0 rgba(6, 78, 59, 0.95),
+    0 12px 22px -6px rgba(15, 118, 110, 0.42);
+}
+.hero-cta-primary:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.10) inset,
+    0 1px 0 0 rgba(6, 78, 59, 0.95),
+    0 6px 14px -4px rgba(15, 118, 110, 0.30);
+}
+
+/* The secondary CTA gets the same flat-shadow grammar in slate. */
+.hero-cta-secondary {
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.9) inset,
+    0 2px 0 0 rgba(16, 42, 67, 0.08),
+    0 6px 14px -8px rgba(16, 42, 67, 0.18);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.hero-cta-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,1) inset,
+    0 3px 0 0 rgba(16, 42, 67, 0.08),
+    0 10px 18px -8px rgba(16, 42, 67, 0.22);
+}
+
+/* Vertical divider between meta chips (visual link, not a real border). */
+.hero-meta-divider {
+  width: 1px;
+  height: 0.875rem;
+  background: linear-gradient(to bottom, transparent, #cbd5e1, transparent);
+}
+
+/* Hero institutional card row — small vertical breathing room tweaks. */
+.hero-stat-card {
+  background: #ffffff;
+}
+.hero-stat-card .value-plate {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Items-baseline micro-fix: when an icon sits next to a mixed-font label,
+   align both glyphs to the same baseline so Bengali conjuncts don’t clip. */
+.hero-icon-text {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.hero-icon-text > [data-lucide] {
+  align-self: baseline;
+  transform: translateY(0.0625em); /* nudge to optical baseline */
+}
+
+/* Emerald accent rule: replaces the former maroon left-border ornament. */
+.emerald-accent {
+  border-left: 3px solid var(--emerald-deep);
+  padding-left: 1rem;
+}
+
+/* Focus ring polish — sharp slate, no glow, publication tone. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced motion respect: disable hero CTA lift & right-rail sticky shift. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    transition: none !important;
+    transform: none !important;
+  }
+}
