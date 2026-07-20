@@ -258,7 +258,7 @@
               <i data-lucide="${icon}" class="w-3.5 h-3.5"></i>
             </span>
             <span class="flex flex-col leading-tight">
-              ${isFeatured ? '<span class="label-tag self-start mb-1">FEATURED</span>' : ""}
+              ${isFeatured ? '<span class="label-tag self-start mb-1" data-i18n="registration_fees.featured_label">FEATURED</span>' : ""}
               <span class="font-semibold text-navy-900 text-[14px]">${escapeHTML(r.category)}</span>
             </span>
           </span>
@@ -278,6 +278,38 @@
       </tr>`;
       })
       .join("");
+
+    // Dynamic bank details binding
+    if (fees.bank_details) {
+      const accName = document.getElementById("bank-acc-name");
+      const accNum = document.getElementById("bank-acc-num");
+      const bankName = document.getElementById("bank-name");
+      const branch = document.getElementById("bank-branch");
+      if (accName) accName.textContent = fees.bank_details.account_name;
+      if (accNum) accNum.textContent = fees.bank_details.account_number;
+      if (bankName) bankName.textContent = fees.bank_details.bank_name;
+      if (branch) branch.textContent = fees.bank_details.branch;
+    }
+
+    // Dynamic sponsorship details binding
+    const sp = CONTENT[lang].sponsorship;
+    if (sp) {
+      const spHeading = document.getElementById("sponsorship-heading-val");
+      const spNote = document.getElementById("sponsorship-note-val");
+      const spRate = document.getElementById("sponsor-rate-val");
+      const spAudience = document.getElementById("sponsor-audience-val");
+
+      if (spHeading) spHeading.textContent = sp.heading;
+      if (spNote) spNote.textContent = sp.note;
+      if (spRate && sp.tiers && sp.tiers[0]) {
+        spRate.textContent = sp.tiers[0].rate;
+        const spTier = document.getElementById("sponsorship-tier-lbl");
+        if (spTier) spTier.textContent = sp.tiers[0].tier;
+      }
+      if (spAudience && sp.tiers && sp.tiers[0]) {
+        spAudience.textContent = sp.tiers[0].audience;
+      }
+    }
   }
 
   // One icon per contact line, matched by position to the fixed order in content.json
@@ -403,6 +435,36 @@
 
     adv.innerHTML = renderCol(c.advisory);
     loc.innerHTML = renderCol(c.local);
+
+    // Render Subcommittees
+    const subGrid = document.getElementById("subcommittees-grid");
+    if (subGrid && c.subcommittees) {
+      subGrid.innerHTML = c.subcommittees
+        .map(
+          (sub) => `
+        <article class="bg-white border border-slate-200/80 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <div class="border-b border-slate-100 pb-3 mb-3">
+            <h4 class="font-heading text-navy-900 text-[15px] font-semibold leading-snug">${escapeHTML(sub.title)}</h4>
+            <p class="font-body text-[12.5px] text-emerald-900 font-semibold mt-1">
+              Convenor: <span class="text-slate-800">${escapeHTML(sub.convenor)}</span>
+            </p>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block mb-1">Members:</span>
+            <ul class="list-disc list-inside space-y-0.5 font-body text-[13px] text-slate-700 font-medium">
+              ${sub.members.map(m => `<li>${escapeHTML(m)}</li>`).join("")}
+            </ul>
+          </div>
+        </article>`
+        )
+        .join("");
+    }
+
+    // Render Online Session Note
+    const noteEl = document.getElementById("online-session-note");
+    if (noteEl) {
+      noteEl.textContent = c.online_session_note || "";
+    }
   }
 
   // ---- Section 08: Logistics & Accommodation — 2-col hotel grid + route list ----
@@ -590,6 +652,15 @@
       }
     }
   }
+
+  // Expose to window for admin.js integration
+  window.ICBLLC = {
+    get CONTENT() { return CONTENT; },
+    set CONTENT(val) { CONTENT = val; },
+    renderAll: renderAll,
+    getInitialLang: getInitialLang,
+    setLang: setLang
+  };
 
   document.addEventListener("DOMContentLoaded", init);
 })();

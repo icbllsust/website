@@ -1,11 +1,11 @@
 {
   "en": {
     "meta": {
-      "site_title": "ICBLLC 2027 — Dept. of Bengali, SUST",
-      "conference_short": "ICBLLC 2027",
-      "conference_dates": "18–20 February 2027",
-      "conference_venue": "Shahjalal University of Science and Technology, Sylhet",
-      "conf_year_label": "CONF · 2027"
+      "site_title": "1st International Conference on Bengali Language & Literature 2026 (ICBLL-2026)",
+      "conference_short": "ICBLL-2026",
+      "conference_dates": "27–28 November 2026",
+      "conference_venue": "Central Auditorium, Shahjalal University of Science and Technology, Sylhet",
+      "conf_year_label": "CONF · 2026"
     },
     "nav": {
       "home": "Home",
@@ -20,24 +20,24 @@
     },
     "hero": {
       "eyebrow": "Department of Bengali, SUST",
-      "title": "International Conference on Bengali Language, Literature & Culture",
-      "subtitle": "Marking the spirit of Ekushey February with three days of scholarship, dialogue and cultural exchange.",
-      "date_label": "18–20 February 2027",
+      "title": "1st International Conference on Bengali Language & Literature 2026",
+      "subtitle": "Theme: The Centenary of the Muslim Sahitya Samaj and Nazrul in Sylhet: The Legacy of Intellectual Freedom and Resistance",
+      "date_label": "27–28 November 2026",
       "venue_label": "SUST, Sylhet, Bangladesh",
       "cta_primary": "Submit an Abstract",
       "cta_secondary": "View Important Dates",
       "cta_tertiary": "Submit Now",
-      "submission_url": "https://cmt3.research.microsoft.com/ICECE2026",
-      "submission_url_alt": "mailto:bengaliconference@sust.edu?subject=ICBLLC%202027%20%E2%80%94%20Abstract%20Submission",
+      "submission_url": "mailto:bangladeparment@yahoo.com",
+      "submission_url_alt": "mailto:bangladeparment@yahoo.com?subject=ICBLL%202026%20%E2%80%94%20Abstract%20Submission",
       "badge": "International Conference",
-      "stat_days": "3-Day Conference",
-      "stat_tracks": "6 Research Tracks",
+      "stat_days": "2-Day Conference",
+      "stat_tracks": "6 Research Fields",
       "stat_global": "International Delegates",
-      "stat_days_num": "3",
+      "stat_days_num": "2",
       "stat_days_lbl": "Day Conference",
       "stat_tracks_num": "6",
-      "stat_tracks_lbl": "Research Tracks",
-      "stat_global_num": "3+",
+      "stat_tracks_lbl": "Research Fields",
+      "stat_global_num": "2",
       "stat_global_lbl": "Countries Represented",
       "stat_days_tag": "SCALE",
       "stat_tracks_tag": "TRACKS",
@@ -46,9 +46,9 @@
     "trust_block": {
       "tag": "INSTITUTIONAL TRUST",
       "heading": "Under the patronage of",
-      "patronage_label": "Chief Patron",
-      "patronage_title": "Office of the Vice Chancellor",
-      "patronage_org": "Shahjalal University of Science and Technology",
+      "patronage_label": "Chief Patrons",
+      "patronage_title": "Prof. Dr. Sharadindu Bhattacharjee",
+      "patronage_org": "Prof. Dr. Md. Ashraful Karim",
       "organizer_label": "Organized by",
       "organizer_title": "Department of Bengali",
       "organizer_org": "Shahjalal University of Science and Technology",
@@ -60,86 +60,98 @@
       "section_label": "SECTION · 01",
       "heading": "About the Conference",
       "paragraphs": [
-        "The Department of Bengali at Shahjalal University of Science and Technology (SUST) invites researchers, academicians, and postgraduate scholars to an international conference examining the evolving landscape of Bengali language, literature and culture.",
-        "Set against Sylhet's own rich literary and folk heritage, the conference creates a meeting ground for scholars from Bangladesh, India and the wider Bengali-speaking world to exchange research, renew old questions, and open new ones.",
-        "The conference will address six thematic tracks spanning phonology and dialectology, modern and postmodern literary criticism, folk and oral tradition studies, translation and comparative literature, digital humanities, and pedagogical innovation in Bengali language teaching.",
-        "Sylhet, historically a crucible of Bengali literary and Sufi poetic traditions, provides an intellectually resonant setting. The university's campus at the foothills of the Khasi-Jaintia range offers a quiet scholarly retreat for three days of rigorous academic exchange.",
-        "Selected papers presented at the conference will be considered for publication in a peer-reviewed conference proceedings volume with an ISBN."
+        "The Department of Bengali at Shahjalal University of Science and Technology (SUST) invites researchers, academicians, and postgraduate scholars to the 1st International Conference on Bengali Language & Literature 2026 (ICBLL-2026).",
+        "Focusing on the theme 'The Centenary of the Muslim Sahitya Samaj and Nazrul in Sylhet: The Legacy of Intellectual Freedom and Resistance', the conference creates a meeting ground for scholars from Bangladesh, India, and the wider world.",
+        "The conference will address six thematic tracks spanning language, literature, culture, progressive movements, nature, and environment.",
+        "Sylhet, historically a crucible of literary and spiritual traditions, provides a resonant setting. The Central Auditorium at SUST offers a quiet scholarly retreat for two days of rigorous academic exchange.",
+        "Selected papers presented at the conference will be considered for publication in a peer-reviewed proceedings volume."
       ]
     },
     "cfp": {
       "section_label": "SECTION · 02",
       "heading": "Call for Papers",
-      "intro": "We welcome original, unpublished research papers under (but not limited to) the following tracks:",
+      "intro": "We welcome original, unpublished research papers under the following fields:",
       "tracks": [
         {
-          "title": "Bengali Language: Structure, Change & Standardization",
-          "description": "Phonology, grammar, dialectology and the evolving standard of Bengali."
+          "title": "Language, Literature & Culture",
+          "description": "Studies in Bengali linguistics, classical to modern literature, and cultural heritage."
         },
         {
-          "title": "Modern & Postmodern Bengali Literature",
-          "description": "Fiction, poetry and criticism from the 19th century to the present."
+          "title": "Comparative & Postcolonial Literature",
+          "description": "Analyzing Bengali literature in comparative frames and postcolonial contexts."
         },
         {
-          "title": "Folklore, Oral Tradition & Regional Culture of Sylhet",
-          "description": "Baul and Sufi song traditions, oral epics, and regional performance forms."
+          "title": "Progress & Women's Emancipation",
+          "description": "Movements for social progress and female empowerment in Bengali history."
         },
         {
-          "title": "Partition, Migration & Diaspora Narratives",
-          "description": "Memory, displacement and identity across Bengali diasporic writing."
+          "title": "Religion, Philosophy & Science",
+          "description": "Intersections of religious thought, philosophical traditions, and scientific outlook."
         },
         {
-          "title": "Translation Studies & Comparative Literature",
-          "description": "Bengali in translation, and Bengali literature in comparative frames."
+          "title": "Society, State, Economy",
+          "description": "Reflections of socio-political dynamics and economic realities in Bengali writing."
         },
         {
-          "title": "Digital Humanities & Bengali Corpus Linguistics",
-          "description": "Computational approaches to Bengali text, corpora and archives."
+          "title": "Nature & Environment",
+          "description": "Ecological criticism, riverine culture, and environmental representations."
         }
       ],
       "guidelines_heading": "Submission Guidelines",
       "guidelines": [
-        "Abstracts: 250–300 words, in English or Bengali.",
-        "Full papers: 4,000–6,000 words, following APA 7th edition.",
-        "Submissions accepted via the conference email address only.",
-        "Each accepted paper requires at least one registered author to present."
+        "DEMO: Abstract word count should be within 300 words. Typography must use SutonnijMJ or Nikosh font.",
+        "Abstracts: Submit in English or Bengali by 01 October 2026.",
+        "Acceptance notifications will be sent by 20 October 2026.",
+        "Registration deadline is 30 October 2026."
       ]
     },
     "important_dates": [
-      { "label": "Abstract Submission Deadline", "date": "30 October 2026" },
-      { "label": "Notification of Acceptance", "date": "30 November 2026" },
-      { "label": "Early Bird Registration Closes", "date": "31 December 2026" },
-      { "label": "Full Paper Submission", "date": "15 January 2027" },
-      { "label": "Conference Dates", "date": "18–20 February 2027" }
+      { "label": "Abstract Submission Deadline", "date": "01 October 2026" },
+      { "label": "Notification of Acceptance", "date": "20 October 2026" },
+      { "label": "Registration Deadline", "date": "30 October 2026" },
+      { "label": "Full Paper Submission", "date": "DEMO: To be announced" },
+      { "label": "Conference Dates", "date": "27–28 November 2026" }
     ],
     "dates_meta": {
       "section_label": "SECTION · 03",
       "heading": "Important Dates",
-      "intro": "Five deadlines that move from submission to presentation. Each is a hard cutoff — plan your writing schedule around them.",
+      "intro": "Deadlines that move from submission to presentation. Plan your writing schedule around them.",
       "milestone_eyebrow": "Milestone",
       "milestones": ["M01", "M02", "M03", "M04", "M05"]
     },
     "speakers": {
       "section_label": "SECTION · 04",
       "heading": "Keynote Speakers",
-      "intro": "Sample entries — replace with confirmed speaker details and photographs.",
+      "intro": "Distinguished national and international speakers presenting keynote and plenary lectures.",
       "list": [
         {
-          "name": "Prof. Anindita Sengupta",
-          "affiliation": "Dept. of Bengali, University of Calcutta",
-          "topic": "Rethinking the Bengali Novel after Partition",
+          "name": "Prof. Dr. Syed Azizul Huq",
+          "affiliation": "Dept. of Bengali, University of Dhaka",
+          "topic": "DEMO: Keynote lecture topic to be announced.",
           "image_url": ""
         },
         {
-          "name": "Prof. Kamal Uddin Ahmed",
-          "affiliation": "Dept. of Bangla, University of Dhaka",
-          "topic": "Oral Epics of the Sylhet-Sunamganj Haor Basin",
+          "name": "Prof. Dr. Mohammad Azam",
+          "affiliation": "Dept. of Bengali, University of Dhaka & DG, Bangla Academy",
+          "topic": "DEMO: Plenary lecture topic to be announced.",
           "image_url": ""
         },
         {
-          "name": "Dr. Farhana Islam",
-          "affiliation": "Bengali Studies, SOAS University of London",
-          "topic": "Bengali in the Diaspora: Language Loss and Renewal",
+          "name": "Prof. Dr. Barunkumar Chakraborty",
+          "affiliation": "Former Head, Dept. of Folklore, Kalyani University, India",
+          "topic": "DEMO: Guest lecture on folklore and tradition.",
+          "image_url": ""
+        },
+        {
+          "name": "Prof. Dr. Bela Das",
+          "affiliation": "Dept. of Bengali, Assam University, India",
+          "topic": "DEMO: Topic to be announced.",
+          "image_url": ""
+        },
+        {
+          "name": "Prof. Dr. Sumita Chakraborty",
+          "affiliation": "Burdwan University, India",
+          "topic": "DEMO: Topic to be announced.",
           "image_url": ""
         }
       ]
@@ -148,46 +160,102 @@
       "section_label": "SECTION · 05",
       "heading": "Registration Fees",
       "category_label": "Category",
-      "featured_label": "FEATURED",
+      "featured_label": "DEMO",
       "early_bird_label": "Early",
       "regular_label": "Regular",
-      "note": "Fees cover conference materials, meals during the conference, and the proceedings volume.",
+      "note": "DEMO: Fees breakdown below is a draft and will be officially finalized soon.",
+      "bank_title": "Bank Payment Details",
+      "bank_acc_name_lbl": "Account Name",
+      "bank_acc_num_lbl": "Account Number",
+      "bank_name_lbl": "Bank Name",
+      "bank_branch_lbl": "Branch",
       "rows": [
-        { "category": "Bangladeshi Faculty / Researcher", "early_bird": "৳3,000", "regular": "৳3,500" },
-        { "category": "Bangladeshi Student / Research Fellow", "early_bird": "৳1,500", "regular": "৳2,000" },
-        { "category": "International Participant", "early_bird": "$100", "regular": "$120" },
-        { "category": "Accompanying Person", "early_bird": "৳1,000 / $30", "regular": "৳1,200 / $35" }
+        { "category": "DEMO: Faculty / Researcher", "early_bird": "DEMO: 000 BDT", "regular": "DEMO: 000 BDT" },
+        { "category": "DEMO: Student / Research Fellow", "early_bird": "DEMO: 000 BDT", "regular": "DEMO: 000 BDT" },
+        { "category": "DEMO: SAARC / International Delegate", "early_bird": "DEMO: $00", "regular": "DEMO: $00" }
+      ],
+      "bank_details": {
+        "account_name": "International Conference Dept of Bangla",
+        "account_number": "5632502001242",
+        "bank_name": "SONALI BANK PLC",
+        "branch": "Amborkhana Branch, Sylhet"
+      }
+    },
+    "sponsorship": {
+      "heading": "Sponsorship & Souvenir Opportunities",
+      "note": "DEMO: Sponsorship rates for the Abstract Book / Souvenir. Contact the secretariat for details.",
+      "tiers": [
+        {
+          "tier": "Outside Back Cover (Prime)",
+          "rate": "DEMO: BDT 1,00,000 – 2,50,000",
+          "audience": "For leading educational institutions, mobile operators, IT firms, builders, etc."
+        }
       ]
     },
     "committees": {
       "section_label": "SECTION · 07",
       "eyebrow": "Governance · কমিটি",
       "heading": "Conference Committees",
-      "lede": "An advisory body and a host-institution organising team jointly oversee the academic integrity, peer-review process, and on-ground execution of ICBLLC 2027.",
-      "advisory_heading": "Advisory Committee",
-      "local_heading": "Local Organising Committee",
+      "lede": "An advisory body and sub-committees oversee the academic integrity, peer-review process, and execution of ICBLL-2026.",
+      "advisory_heading": "Advisors",
+      "local_heading": "Convenors Team",
+      "subcommittees_heading": "Sub-Committees & Members",
+      "online_session_note": "International scholars who face visa or travel difficulties may participate via a special online technical session.",
       "advisory": [
-        { "code": "A-01", "name": "Prof. Dr. Mohammad Shahidullah", "role": "Chair, Advisory Board", "affiliation": "University of Dhaka, Bangladesh" },
-        { "code": "A-02", "name": "Prof. Dr. Renu Elizabeth John", "role": "Member", "affiliation": "IIT Madras, India" },
-        { "code": "A-03", "name": "Prof. Dr. Kayoko Hashimoto", "role": "Member", "affiliation": "Keio University, Japan" },
-        { "code": "A-04", "name": "Prof. Dr. Ahmed Kabir", "role": "Member", "affiliation": "BRAC University, Bangladesh" },
-        { "code": "A-05", "name": "Prof. Dr. Maria Teresa Trinh", "role": "Member", "affiliation": "Hanoi University, Vietnam" },
-        { "code": "A-06", "name": "Prof. Dr. Catherine Walter", "role": "Member", "affiliation": "University of Oxford, UK" }
+        { "code": "A-01", "name": "Prof. Dr. Sharadindu Bhattacharjee", "role": "Advisor", "affiliation": "SUST, Bangladesh" },
+        { "code": "A-02", "name": "Prof. Dr. Md. Ashraful Karim", "role": "Advisor", "affiliation": "SUST, Bangladesh" }
       ],
       "local": [
-        { "code": "L-01", "name": "Prof. Dr. Mohammad Sumon", "role": "Convener", "affiliation": "Shahjalal University of Science and Technology" },
-        { "code": "L-02", "name": "Dr. Naznin Akter", "role": "Organising Secretary", "affiliation": "Department of English, SUST" },
-        { "code": "L-03", "name": "Dr. Rashedul Haque", "role": "Treasurer", "affiliation": "Department of Linguistics, SUST" },
-        { "code": "L-04", "name": "Md. Farhan Ahmed", "role": "Programme Coordinator", "affiliation": "Department of English, SUST" },
-        { "code": "L-05", "name": "Tahmina Akter", "role": "Logistics Lead", "affiliation": "SUST Conference Cell" },
-        { "code": "L-06", "name": "Sabbir Rahman", "role": "Technical Coordinator", "affiliation": "Department of CSE, SUST" }
+        { "code": "L-01", "name": "Prof. Dr. Farjana Siddika", "role": "Academic & Event Committee Convenor", "affiliation": "SUST" },
+        { "code": "L-02", "name": "Prof. Dr. Md. Zaphir Uddin", "role": "Paper Session Management Convenor", "affiliation": "SUST" },
+        { "code": "L-03", "name": "Prof. Dr. Md. Jahangir Alam", "role": "Registration, Certificate & Pub. Convenor", "affiliation": "SUST" },
+        { "code": "L-04", "name": "Prof. Dr. Nilufa Akter", "role": "Publicity Sub-Committee Convenor", "affiliation": "SUST" },
+        { "code": "L-05", "name": "Dr. Md. Masud Parvez", "role": "Entertainment, Accomm., Transport Convenor", "affiliation": "SUST" },
+        { "code": "L-06", "name": "Prof. Dr. Md. Riazul Islam", "role": "Fundraising Sub-Committee Convenor", "affiliation": "SUST" }
+      ],
+      "subcommittees": [
+        {
+          "title": "Academic Committee",
+          "convenor": "Prof. Dr. Farjana Siddika",
+          "members": ["Prof. Dr. Md. Zaphir Uddin", "Prof. Dr. Md. Jahangir Alam", "Dr. Mst. Anjumanara Begum"]
+        },
+        {
+          "title": "Event Management & Cultural Sub-Committee",
+          "convenor": "Prof. Dr. Farjana Siddika",
+          "members": ["Ms. Moshrefa Begum Misu", "Ms. Habiba Akter", "Mr. Md. Shamsuddin"]
+        },
+        {
+          "title": "Paper Session Management Sub-Committee",
+          "convenor": "Prof. Dr. Md. Zaphir Uddin",
+          "members": ["Mr. Md. Monirul Islam", "Mr. Muha. Zakir Hossain", "Mr. Golam Rabbani"]
+        },
+        {
+          "title": "Registration, Certificate & Publication Sub-Committee",
+          "convenor": "Prof. Dr. Md. Jahangir Alam",
+          "members": ["Mr. Md. Sohel Rana", "Mr. Muha. Zakir Hossain"]
+        },
+        {
+          "title": "Entertainment, Accommodation, Transport & Tour Sub-Committee",
+          "convenor": "Dr. Md. Masud Parvez",
+          "members": ["Ms. Habiba Akter", "Mr. Muha. Zakir Hossain", "Mr. Md. Shamsuddin"]
+        },
+        {
+          "title": "Fundraising Sub-Committee",
+          "convenor": "Prof. Dr. Md. Riazul Islam",
+          "members": ["All Professors of the Department"]
+        },
+        {
+          "title": "Publicity Sub-Committee",
+          "convenor": "Prof. Dr. Nilufa Akter",
+          "members": ["Dr. Mst. Anjumanara Begum", "Mr. Golam Rabbani"]
+        }
       ]
     },
     "logistics": {
       "section_label": "SECTION · 08",
       "eyebrow": "Travel & Lodging · যাতায়াত ও আবাসন",
       "heading": "Logistics & Accommodation",
-      "lede": "Sylhet city offers a measured cluster of comfortable, mid-budget hotels within a 4 km radius of the SUST campus. Routes from Osmani International Airport and Sylhet Railway Station are detailed below.",
+      "lede": "Sylhet city offers comfortable hotels. Travel routes from Osmani International Airport and Sylhet Railway Station are detailed below.",
       "hotels_heading": "Recommended Hotels",
       "routes_heading": "Travel Routes",
       "labels": {
@@ -198,81 +266,54 @@
       "hotels": [
         { "name": "Hotel Noorjahan Grand", "tag": "★★★ · 2.1 km", "distance": "2.1 km from SUST main gate", "tariff": "BDT 3,200 – 4,500 / night", "contact": "+880 821 720 880" },
         { "name": "Britannia Hotel Ltd.", "tag": "★★★★ · 3.4 km", "distance": "3.4 km from SUST main gate", "tariff": "BDT 4,800 – 6,500 / night", "contact": "+880 821 715 555" },
-        { "name": "Hotel Holy Gate", "tag": "★★ · 1.8 km", "distance": "1.8 km from SUST main gate", "tariff": "BDT 1,800 – 2,600 / night", "contact": "+880 821 716 300" },
-        { "name": "Panshi Inn", "tag": "★★ · 2.6 km", "distance": "2.6 km from SUST main gate", "tariff": "BDT 1,500 – 2,200 / night", "contact": "+880 1711 002 600" }
+        { "name": "Hotel Holy Gate", "tag": "★★ · 1.8 km", "distance": "1.8 km from SUST main gate", "tariff": "BDT 1,800 – 2,600 / night", "contact": "+880 821 716 300" }
       ],
       "routes": [
-        { "label": "Osmani International Airport (ZYL) → SUST", "detail": "12 km · 25–35 min by reserved taxi · Pre-paid taxi counter at terminal exit · BDT 800–1,200" },
-        { "label": "Sylhet Railway Station → SUST", "detail": "5 km · 15–20 min by CNG auto-rickshaw · Direct route via Amberkhana → Akhalia → SUST gate · BDT 150–200" },
-        { "label": "Dhaka → Sylhet by Bus", "detail": "Green Line, Shyamoli, Hanif Enterprise · Overnight AC coach · 6–7 hrs · BDT 1,200–1,800" },
-        { "label": "Dhaka → Sylhet by Train", "detail": "Parabat / Kalni Express · Reserved AC chair & sleeper · 7 hrs · BDT 550–1,400" }
+        { "label": "Osmani International Airport (ZYL) → SUST", "detail": "12 km · 25–35 min by taxi · BDT 800–1,200" },
+        { "label": "Sylhet Railway Station → SUST", "detail": "5 km · 15–20 min by CNG auto-rickshaw · BDT 150–200" }
       ]
     },
     "downloads": {
       "section_label": "SECTION · 09",
       "eyebrow": "Templates · ডাউনলোড জোন",
       "heading": "Download Templates",
-      "lede": "Use the official templates below for abstract and full-paper submissions. Manuscripts not conforming to these formats will be returned without review.",
+      "lede": "Use the official templates below for abstract and full-paper submissions.",
       "items": [
-        { "code": "DOC-01", "format": "MS Word · .docx · 64 KB", "title": "Abstract Submission Template", "note": "Structured abstract — 250 words · 4-section format · APA 7th citation style", "href": "assets/abstract-template.docx" },
-        { "code": "DOC-02", "format": "MS Word · .docx · 128 KB", "title": "Full Paper Template (APA 7th)", "note": "12 pt Times New Roman · 1.5 line spacing · 6–8 pages including references", "href": "assets/fullpaper-template.docx" }
+        { "code": "DOC-01", "format": "MS Word · .docx", "title": "Abstract Submission Template", "note": "Structured abstract format conforming to requirements.", "href": "assets/abstract-template.docx" }
       ]
     },
     "visa": {
       "section_label": "SECTION · 10",
-      "eyebrow": "Formalities · ভিসা নির্দেশিকা",
+      "eyebrow": "Formalities · visa info",
       "heading": "Visa & Travel Support",
       "lede": "Foreign delegates are advised to apply for an appropriate Bangladesh visa at least 8 weeks before the conference. The organising committee will issue an official invitation letter on request.",
-      "intro": "Most foreign nationals require a visa to enter Bangladesh. The Government of Bangladesh operates e-Visa, Visa-on-Arrival (for selected nationalities), and embassy-stamped visa regimes. Delegates are responsible for verifying their specific category with the nearest Bangladesh diplomatic mission.",
-      "step1": "Register on the ICBLLC 2027 portal and obtain your registration confirmation email (required for invitation letter).",
-      "step2": "Email the secretariat (visa@icbllc2027.sust.edu) with subject 'Invitation Letter — [Full Name] — [Passport No.]' to request the formal invitation letter.",
-      "step3": "Apply for the appropriate visa category (academic / conference) at the nearest Bangladesh Embassy or via the official e-Visa portal (visa.gov.bd).",
-      "step4": "Carry the printed invitation letter, registration receipt, and abstract acceptance email to the immigration counter on arrival.",
-      "foot": "For invitation letters or visa clarification, write to visa@icbllc2027.sust.edu with a minimum lead time of 6 weeks. The secretariat does not intervene in individual embassy decisions."
+      "intro": "Most foreign nationals require a visa to enter Bangladesh. Carry printed invitation letter and confirmation receipt.",
+      "step1": "Register on the ICBLL-2026 portal and obtain your registration confirmation email.",
+      "step2": "Email the secretariat (bangladeparment@yahoo.com) with passport details.",
+      "step3": "Apply at the nearest Bangladesh Embassy or via the official e-Visa portal (visa.gov.bd).",
+      "step4": "Carry the printed invitation letter, registration receipt, and abstract acceptance email to the immigration counter.",
+      "foot": "For invitation letters or visa clarification, write to bangladeparment@yahoo.com with a minimum lead time of 6 weeks."
     },
     "schedule": {
       "section_label": "SECTION · 11",
-      "eyebrow": "Programme · বিস্তারিত সেশন ফ্লো",
+      "eyebrow": "Programme · schedule flow",
       "heading": "Parallel Event Schedule",
-      "lede": "The three-day programme moves from the Inaugural Plenary into parallel academic tracks, closes with a Cultural Evening, and reserves the final morning for Valedictory and Awards.",
+      "lede": "The schedule moves from opening plenary sessions to parallel tracks and valedictory.",
       "days": [
         {
           "code": "D-01",
-          "day_title": "Day 1 · Inaugural Plenary",
-          "date": "15 March 2027",
+          "day_title": "Day 1 · Opening & Plenary Sessions",
+          "date": "27 November 2026",
           "sessions": [
-            { "time": "08:30 – 09:30", "code": "S-01", "title": "Registration & Welcome Coffee", "detail": "On-site check-in · conference kit distribution · badge activation" },
-            { "time": "09:30 – 10:30", "code": "S-02", "title": "Inaugural Ceremony", "detail": "Welcome address by the Vice-Chancellor, SUST · keynote opening · lamp-lighting" },
-            { "time": "10:30 – 11:30", "code": "S-03", "title": "Plenary Lecture 1", "detail": "Invited plenary by an internationally recognised applied-linguistics scholar" },
-            { "time": "11:30 – 12:00", "code": "S-04", "title": "Tea Break & Networking", "detail": "Structured networking round with sectional interest groups" },
-            { "time": "12:00 – 13:30", "code": "S-05", "title": "Plenary Lecture 2", "detail": "Invited plenary on contemporary language pedagogy and policy" },
-            { "time": "13:30 – 14:30", "code": "S-06", "title": "Lunch & Poster Walk", "detail": "Poster presentations on display along the central atrium" }
+            { "time": "09:00 – 12:30", "code": "S-01", "title": "Inaugural Ceremony & Keynote", "detail": "DEMO: Opening ceremony, keynote addresses, and plenary speaker sessions." }
           ]
         },
         {
           "code": "D-02",
-          "day_title": "Day 2 · Parallel Academic Tracks",
-          "date": "16 March 2027",
+          "day_title": "Day 2 · Sessions & Valedictory",
+          "date": "28 November 2026",
           "sessions": [
-            { "time": "09:00 – 10:30", "code": "S-07", "title": "Track A — Linguistics Research", "detail": "Three parallel papers · Q&A moderated by track chairs" },
-            { "time": "10:30 – 11:00", "code": "S-08", "title": "Tea Break", "detail": "Poster session open during the break" },
-            { "time": "11:00 – 12:30", "code": "S-09", "title": "Track B — Language & Literature Pedagogy", "detail": "Three parallel papers · classroom-focused studies" },
-            { "time": "12:30 – 13:30", "code": "S-10", "title": "Lunch", "detail": "Working lunch by thematic interest groups" },
-            { "time": "13:30 – 15:00", "code": "S-11", "title": "Track C — Cultural & Sociolinguistic Studies", "detail": "Three parallel papers · regional language case studies" },
-            { "time": "15:00 – 16:30", "code": "S-12", "title": "Panel Discussion", "detail": "Editors' panel — publishing in indexed applied-linguistics journals" },
-            { "time": "19:00 – 21:30", "code": "S-13", "title": "Cultural Evening", "detail": "Manipuri, Jhumur and Baul performances · conference dinner" }
-          ]
-        },
-        {
-          "code": "D-03",
-          "day_title": "Day 3 · Closing Sessions",
-          "date": "17 March 2027",
-          "sessions": [
-            { "time": "09:00 – 10:30", "code": "S-14", "title": "Workshop — Research Methodology", "detail": "Hands-on workshop on mixed-methods design (limited seats · pre-registration)" },
-            { "time": "10:30 – 11:00", "code": "S-15", "title": "Tea Break", "detail": "Informal networking by institutional cluster" },
-            { "time": "11:00 – 12:30", "code": "S-16", "title": "Track D — Translation & Interpretation Studies", "detail": "Three parallel papers · field reports" },
-            { "time": "12:30 – 13:30", "code": "S-17", "title": "Best Paper Awards", "detail": "Presentation by the awards committee · recognition ceremony" },
-            { "time": "13:30 – 14:30", "code": "S-18", "title": "Valedictory & Closing", "detail": "Valedictory address · conference resolution · group photograph" }
+            { "time": "09:00 – 16:00", "code": "S-02", "title": "Parallel Tracks & Certificate Distribution", "detail": "DEMO: Presentation sessions, closing remarks, and certificate distribution." }
           ]
         }
       ]
@@ -283,9 +324,10 @@
       "intro": "Reach the conference secretariat for abstract submission, registration queries, and partnership enquiries.",
       "department": "Department of Bengali",
       "university": "Shahjalal University of Science and Technology (SUST)",
-      "address": "Akhalia, Sylhet-3114, Bangladesh",
-      "email": "bengaliconference@sust.edu",
-      "phone": "+880-XXX-XXXXXXX"
+      "address": "Department of Bengali, Shahjalal University of Science and Technology, P.O.: University, Sylhet-3114, Bangladesh.",
+      "email": "bangladeparment@yahoo.com",
+      "phone": "PABX: +880-821-716123, 713491, 713850, 714479 Ext: 2275",
+      "fax": "+880-821-715257"
     },
     "footer": {
       "rights": "Department of Bengali, SUST. All rights reserved.",
@@ -294,11 +336,11 @@
   },
   "bn": {
     "meta": {
-      "site_title": "আইসিবিএলএলসি ২০২৭ — বাংলা বিভাগ, শাবিপ্রবি",
-      "conference_short": "আইসিবিএলএলসি ২০২৭",
-      "conference_dates": "১৮–২০ ফেব্রুয়ারি ২০২৭",
-      "conference_venue": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়, সিলেট",
-      "conf_year_label": "সম্মেলন · ২০২৭"
+      "site_title": "প্রথম আন্তর্জাতিক বাংলা ভাষা ও সাহিত্য সম্মেলন-২০২৬ (ICBLL-2026)",
+      "conference_short": "আইসিবিএলএল-২০২৬",
+      "conference_dates": "২৭–২৮ নভেম্বর ২০২৬",
+      "conference_venue": "সেন্ট্রাল অডিটোরিয়াম, শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়, সিলেট",
+      "conf_year_label": "সম্মেলন · ২০২৬"
     },
     "nav": {
       "home": "প্রচ্ছদ",
@@ -313,24 +355,24 @@
     },
     "hero": {
       "eyebrow": "বাংলা বিভাগ, শাবিপ্রবি",
-      "title": "বাংলা ভাষা, সাহিত্য ও সংস্কৃতি বিষয়ক আন্তর্জাতিক গবেষণা সম্মেলন",
-      "subtitle": "একুশে ফেব্রুয়ারির চেতনাকে ধারণ করে তিন দিনের গবেষণা, মতবিনিময় ও সাংস্কৃতিক আদান-প্রদান।",
-      "date_label": "১৮–২০ ফেব্রুয়ারি ২০২৭",
+      "title": "প্রথম আন্তর্জাতিক বাংলা ভাষা ও সাহিত্য সম্মেলন-২০২৬",
+      "subtitle": "মূল প্রতিপাদ্য: শতবর্ষে মুসলিম সাহিত্য সমাজ ও সিলেটে নজরুল: মুক্তচিন্তা ও দ্রোহের উত্তরাধিকার",
+      "date_label": "২৭–২৮ নভেম্বর ২০২৬",
       "venue_label": "শাবিপ্রবি, সিলেট, বাংলাদেশ",
       "cta_primary": "সারসংক্ষেপ জমা দিন",
       "cta_secondary": "গুরুত্বপূর্ণ তারিখ দেখুন",
       "cta_tertiary": "এখনই জমা দিন",
-      "submission_url": "https://cmt3.research.microsoft.com/ICECE2026",
-      "submission_url_alt": "mailto:bengaliconference@sust.edu?subject=ICBLLC%202027%20%E2%80%94%20%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A6%B8%E0%A6%82%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A7%87%E0%A6%AA%20%E0%A6%9C%E0%A6%AE%E0%A6%BE",
+      "submission_url": "mailto:bangladeparment@yahoo.com",
+      "submission_url_alt": "mailto:bangladeparment@yahoo.com?subject=ICBLL%202026%20%E2%80%94%20%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A6%B8%E0%A6%82%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A7%87%E0%A6%AA%20%E0%A6%9C%E0%A6%AE%E0%A6%BE",
       "badge": "আন্তর্জাতিক সম্মেলন",
-      "stat_days": "৩ দিনব্যাপী সম্মেলন",
-      "stat_tracks": "৬টি গবেষণা ট্র্যাক",
+      "stat_days": "২ দিনব্যাপী সম্মেলন",
+      "stat_tracks": "৬টি ক্ষেত্র",
       "stat_global": "আন্তর্জাতিক প্রতিনিধি",
-      "stat_days_num": "৩",
+      "stat_days_num": "২",
       "stat_days_lbl": "দিনব্যাপী সম্মেলন",
       "stat_tracks_num": "৬",
-      "stat_tracks_lbl": "গবেষণা ট্র্যাক",
-      "stat_global_num": "৩+",
+      "stat_tracks_lbl": "গবেষণা ক্ষেত্রসমূহ",
+      "stat_global_num": "২",
       "stat_global_lbl": "অংশগ্রহণকারী দেশ",
       "stat_days_tag": "পরিসর",
       "stat_tracks_tag": "ট্র্যাক",
@@ -338,13 +380,13 @@
     },
     "trust_block": {
       "tag": "প্রাতিষ্ঠানিক বিশ্বাস",
-      "heading": "পৃষ্ঠপোষকতায়",
-      "patronage_label": "প্রধান পৃষ্ঠপোষক",
-      "patronage_title": "উপাচার্যের কার্যালয়",
-      "patronage_org": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়",
-      "organizer_label": "আয়োজনে",
+      "heading": "উপদেষ্টামণ্ডলীর পৃষ্ঠপোষকতায়",
+      "patronage_label": "উপদেষ্টামণ্ডলী",
+      "patronage_title": "প্রফেসর ড. শরদিন্দু ভট্টাচার্য",
+      "patronage_org": "প্রফেসর ড. মো: আশরাফুল করিম",
+      "organizer_label": "আয়োজনে",
       "organizer_title": "বাংলা বিভাগ",
-      "organizer_org": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়",
+      "organizer_org": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়",
       "publication_label": "প্রকাশনা সহযোগী",
       "publication_title": "পিয়ার-রিভিউড কার্যবিবরণী",
       "publication_org": "শাবিপ্রবি প্রেস ও সূচিবদ্ধ জার্নাল"
@@ -353,86 +395,98 @@
       "section_label": "বিভাগ · ০১",
       "heading": "সম্মেলন পরিচিতি",
       "paragraphs": [
-        "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়ের (শাবিপ্রবি) বাংলা বিভাগ বাংলা ভাষা, সাহিত্য ও সংস্কৃতির ক্রমবিকাশমান পরিসর নিয়ে আলোচনার জন্য গবেষক, শিক্ষাবিদ ও স্নাতকোত্তর শিক্ষার্থীদের একটি আন্তর্জাতিক সম্মেলনে আমন্ত্রণ জানাচ্ছে।",
-        "সিলেটের নিজস্ব সমৃদ্ধ সাহিত্য ও লোকঐতিহ্যের প্রেক্ষাপটে এই সম্মেলন বাংলাদেশ, ভারত ও বৃহত্তর বাংলাভাষী বিশ্বের গবেষকদের জন্য গবেষণা বিনিময়, পুরনো প্রশ্নের নবায়ন এবং নতুন প্রশ্নের সূচনার একটি মিলনক্ষেত্র তৈরি করে।",
-        "সম্মেলনে ধ্বনিবিজ্ঞান ও উপভাষাবিদ্যা, আধুনিক ও পশ্চিমা-আধুনিক সাহিত্য সমালোচনা, লোক ও মৌখিক ঐতিহ্য অধ্যয়ন, অনুবাদ ও তুলনামূলক সাহিত্য, ডিজিটাল মানবিক এবং বাংলা ভাষা শিক্ষণে শিক্ষাগত উদ্ভাবন — এই ছয়টি থিমাটিক ট্র্যাক অন্তর্ভুক্ত থাকবে।",
-        "বাংলা সাহিত্য ও সুফি কাব্যঐতিহ্যের ঐতিহাসিক সংগমস্থল সিলেট একটি বুদ্ধিবৃত্তিক প্রেক্ষাপট প্রদান করে। খাসি-জৈন্তিয়া পাহাড়ের পাদদেশে অবস্থিত বিশ্ববিদ্যালয়ের ক্যাম্পাস তিন দিনের কঠোর একাডেমিক আলোচনার জন্য একটি শান্ত গবেষণা-উপযোগী প্রান্তর।",
-        "সম্মেলনে উপস্থাপিত নির্বাচিত প্রবন্ধ একটি আইএসবিএনসহ পিয়ার-রিভিউড কার্যবিবরণী গ্রন্থে প্রকাশের জন্য বিবেচিত হবে।"
+        "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়ের (শাবিপ্রবি) বাংলা বিভাগ বাংলা ভাষা, সাহিত্য ও সংস্কৃতির গবেষকদের প্রথম আন্তর্জাতিক বাংলা ভাষা ও সাহিত্য সম্মেলন-২০২৬ (ICBLL-2026)-এ আমন্ত্রণ জানাচ্ছে।",
+        "এবারের সম্মেলনের মূল প্রতিপাদ্য 'শতবর্ষে মুসলিম সাহিত্য সমাজ ও সিলেটে নজরুল: মুক্তচিন্তা ও দ্রোহের উত্তরাধিকার'। এই আয়োজন বাংলাদেশ, ভারত এবং বিশ্বের অন্যান্য দেশের গবেষকদের জন্য একটি মিলনক্ষেত্র তৈরি করবে।",
+        "সম্মেলনে ভাষা, সাহিত্য, সংস্কৃতি, প্রগতি ও নারীমুক্তি, ধর্ম, দর্শন ও বিজ্ঞান, সমাজ, রাষ্ট্র ও পরিবেশসহ ৬টি গুরুত্বপূর্ণ ক্ষেত্রে প্রবন্ধ উপস্থাপন করা হবে।",
+        "সাহিত্য ও সংস্কৃতির ঐতিহাসিক সংগমস্থল সিলেট এক অনন্য বুদ্ধিবৃত্তিক প্রেক্ষাপট প্রদান করে। শাবিপ্রবি-র সেন্ট্রাল অডিটোরিয়াম দুই দিনব্যাপী এই জ্ঞানগর্ভ আলোচনার এক চমৎকার মিলনমেলা।",
+        "সম্মেলনে উপস্থাপিত নির্বাচিত প্রবন্ধসমূহ একটি পিয়ার-রিভিউড কার্যবিবরণী গ্রন্থে প্রকাশের জন্য বিবেচিত হবে।"
       ]
     },
     "cfp": {
       "section_label": "বিভাগ · ০২",
       "heading": "প্রবন্ধ আহ্বান",
-      "intro": "নিম্নলিখিত (তবে এতে সীমাবদ্ধ নয়) বিষয়ে মৌলিক ও অপ্রকাশিত গবেষণা প্রবন্ধ আহ্বান করা হচ্ছে:",
+      "intro": "নিম্নলিখিত ক্ষেত্রসমূহে মৌলিক ও অপ্রকাশিত গবেষণা প্রবন্ধ আহ্বান করা হচ্ছে:",
       "tracks": [
         {
-          "title": "বাংলা ভাষা: গঠন, পরিবর্তন ও প্রমিতকরণ",
-          "description": "ধ্বনিতত্ত্ব, ব্যাকরণ, উপভাষাতত্ত্ব এবং বাংলার ক্রমবিকাশমান প্রমিত রূপ।"
+          "title": "ভাষা, সাহিত্য ও সংস্কৃতি",
+          "description": "বাংলা ভাষা, সাহিত্যের ইতিহাস, তত্ত্ব এবং সংস্কৃতির রূপান্তর নিয়ে আলোচনা।"
         },
         {
-          "title": "আধুনিক ও উত্তর-আধুনিক বাংলা সাহিত্য",
-          "description": "ঊনবিংশ শতক থেকে বর্তমান পর্যন্ত কথাসাহিত্য, কবিতা ও সমালোচনা।"
+          "title": "তুলনামূলক ও উত্তর ঔপনিবেশিক সাহিত্য",
+          "description": "অন্যান্য সাহিত্যের সাথে তুলনা এবং উত্তর-ঔপনিবেশিক দৃষ্টিভঙ্গিতে বাংলা সাহিত্যের পাঠ।"
         },
         {
-          "title": "সিলেটের লোকঐতিহ্য ও আঞ্চলিক সংস্কৃতি",
-          "description": "বাউল ও সুফি গানের ধারা, মৌখিক আখ্যান এবং আঞ্চলিক পরিবেশনা রীতি।"
+          "title": "প্রগতি ও নারীমুক্তি",
+          "description": "বাঙালি সমাজে নারী জাগরণ ও সামাজিক প্রগতির বিভিন্ন আন্দোলনের ইতিহাস।"
         },
         {
-          "title": "দেশভাগ, অভিবাসন ও প্রবাসী বয়ান",
-          "description": "স্মৃতি, উদ্বাস্তুতা এবং প্রবাসী বাংলা রচনায় পরিচয়ের সংকট।"
+          "title": "ধর্ম, দর্শন ও বিজ্ঞান",
+          "description": "ধর্মীয় ও দার্শনিক চিন্তার বিবর্তন এবং বিজ্ঞানমনস্ক সমাজ গঠনে সাহিত্যের ভূমিকা।"
         },
         {
-          "title": "অনুবাদ চর্চা ও তুলনামূলক সাহিত্য",
-          "description": "অনুবাদে বাংলা এবং তুলনামূলক পরিসরে বাংলা সাহিত্য।"
+          "title": "সমাজ, রাষ্ট্র, অর্থনীতি",
+          "description": "সাহিত্যের পাতায় প্রতিফলিত সামাজিক কাঠামো, রাষ্ট্রযন্ত্র ও অর্থনৈতিক বাস্তবতা।"
         },
         {
-          "title": "ডিজিটাল হিউম্যানিটিজ ও বাংলা করপাস ভাষাতত্ত্ব",
-          "description": "বাংলা টেক্সট, করপাস ও মহাফেজখানার কম্পিউটেশনাল বিশ্লেষণ।"
+          "title": "প্রকৃতি ও পরিবেশ",
+          "description": "পরিবেশ ও বাস্তুসংস্থানভিত্তিক আলোচনা, নদীমাতৃক সংস্কৃতি ও সাহিত্যের পরিবেশবাদী চেতনা।"
         }
       ],
       "guidelines_heading": "জমাদানের নির্দেশনা",
       "guidelines": [
-        "সারসংক্ষেপ: ২৫০–৩০০ শব্দ, ইংরেজি বা বাংলায়।",
-        "সম্পূর্ণ প্রবন্ধ: ৪,০০০–৬,০০০ শব্দ, APA ৭ম সংস্করণ অনুসরণে।",
-        "শুধুমাত্র সম্মেলনের ইমেইল ঠিকানার মাধ্যমে জমা গ্রহণযোগ্য।",
-        "গৃহীত প্রতিটি প্রবন্ধের জন্য অন্তত একজন নিবন্ধিত লেখকের উপস্থাপনা আবশ্যক।"
+        "নমুনা: গবেষণাপত্রের সারসংক্ষেপ সর্বোচ্চ ৩০০ শব্দের মধ্যে হতে হবে। টাইপোগ্রাফির জন্য সুতুন্নিএমজে (SutonnijMJ) বা নিখোশ (Nikosh) ফন্ট ব্যবহার করতে হবে।",
+        "সারসংক্ষেপ: ০১ অক্টোবর ২০২৬ তারিখের মধ্যে বাংলা বা ইংরেজিতে জমা দিতে হবে।",
+        "সারসংক্ষেপ গৃহীতের বিজ্ঞপ্তি ২০ অক্টোবর ২০২৬ তারিখের মধ্যে পাঠানো হবে।",
+        "নিবন্ধনের শেষ তারিখ ৩০ অক্টোবর ২০২৬।"
       ]
     },
     "important_dates": [
-      { "label": "সারসংক্ষেপ জমাদানের শেষ তারিখ", "date": "৩০ অক্টোবর ২০২৬" },
-      { "label": "গৃহীত হওয়ার বিজ্ঞপ্তি", "date": "৩০ নভেম্বর ২০২৬" },
-      { "label": "আর্লি বার্ড নিবন্ধন শেষ", "date": "৩১ ডিসেম্বর ২০২৬" },
-      { "label": "সম্পূর্ণ প্রবন্ধ জমা", "date": "১৫ জানুয়ারি ২০২৭" },
-      { "label": "সম্মেলনের তারিখ", "date": "১৮–২০ ফেব্রুয়ারি ২০২৭" }
+      { "label": "সারসংক্ষেপ জমাদানের শেষ তারিখ", "date": "০১ অক্টোবর ২০২৬" },
+      { "label": "গৃহীত হওয়ার বিজ্ঞপ্তি", "date": "২০ অক্টোবর ২০২৬" },
+      { "label": "নিবন্ধনের শেষ তারিখ", "date": "৩০ অক্টোবর ২০২৬" },
+      { "label": "পূর্ণাঙ্গ গবেষণাপত্র জমা", "date": "নমুনা: পরে জানানো হবে" },
+      { "label": "সম্মেলনের তারিখ", "date": "২৭–২৮ নভেম্বর ২০২৬" }
     ],
     "dates_meta": {
       "section_label": "বিভাগ · ০৩",
       "heading": "গুরুত্বপূর্ণ তারিখ",
-      "intro": "সারসংক্ষেপ জমা থেকে উপস্থাপনা পর্যন্ত পাঁচটি মেয়াদ — প্রতিটিই কঠোর সময়সীমা। আপনার লেখার সময়সূচী এদের চারপাশে পরিকল্পনা করুন।",
+      "intro": "সারসংক্ষেপ জমা থেকে উপস্থাপনা পর্যন্ত সব গুরুত্বপূর্ণ সময়সীমা। আপনার লেখার সময়সূচী এর ভিত্তিতে পরিকল্পনা করুন।",
       "milestone_eyebrow": "ধাপ",
       "milestones": ["ধাপ ০১", "ধাপ ০২", "ধাপ ০৩", "ধাপ ০৪", "ধাপ ০৫"]
     },
     "speakers": {
       "section_label": "বিভাগ · ০৪",
       "heading": "মূখ্য আলোচক",
-      "intro": "নমুনা তথ্য — নিশ্চিত আলোচকের তথ্য ও ছবি দিয়ে প্রতিস্থাপন করুন।",
+      "intro": "দেশ ও বিদেশের খ্যাতিমান গবেষক ও সমালোচকদের মূল প্রবন্ধ ও বক্তৃতা সেশনসমূহ।",
       "list": [
         {
-          "name": "অধ্যাপক অনিন্দিতা সেনগুপ্ত",
-          "affiliation": "বাংলা বিভাগ, কলকাতা বিশ্ববিদ্যালয়",
-          "topic": "দেশভাগ-উত্তর বাংলা উপন্যাসের পুনর্পাঠ",
+          "name": "প্রফেসর ড. সৈয়দ আজিজুল হক",
+          "affiliation": "বাংলা বিভাগ, ঢাকা বিশ্ববিদ্যালয়",
+          "topic": "নমুনা: আলোচনার বিষয় পরে জানানো হবে।",
           "image_url": ""
         },
         {
-          "name": "অধ্যাপক কামাল উদ্দিন আহমেদ",
-          "affiliation": "বাংলা বিভাগ, ঢাকা বিশ্ববিদ্যালয়",
-          "topic": "সিলেট-সুনামগঞ্জ হাওরাঞ্চলের মৌখিক আখ্যান",
+          "name": "প্রফেসর ড. মোহাম্মদ আজম",
+          "affiliation": "বাংলা বিভাগ, ঢাকা বিশ্ববিদ্যালয় ও মহাপরিচালক, বাংলা একাডেমি",
+          "topic": "নমুনা: আলোচনার বিষয় পরে জানানো হবে।",
           "image_url": ""
         },
         {
-          "name": "ড. ফারহানা ইসলাম",
-          "affiliation": "বেঙ্গলি স্টাডিজ, সোয়াস বিশ্ববিদ্যালয়, লন্ডন",
-          "topic": "প্রবাসে বাংলা: ভাষা বিলুপ্তি ও পুনরুজ্জীবন",
+          "name": "প্রফেসর ড. বরুণকুমার চক্রবর্তী",
+          "affiliation": "সাবেক বিভাগীয় প্রধান, লোকসংস্কৃতি বিভাগ, কল্যাণী বিশ্ববিদ্যালয়, ভারত",
+          "topic": "নমুনা: লোকসংস্কৃতি নিয়ে বিশেষ অতিথি আলোচনা।",
+          "image_url": ""
+        },
+        {
+          "name": "প্রফেসর ড. বেলা দাস",
+          "affiliation": "বাংলা বিভাগ, আসাম বিশ্ববিদ্যালয়, ভারত",
+          "topic": "নমুনা: আলোচনার বিষয় পরে জানানো হবে।",
+          "image_url": ""
+        },
+        {
+          "name": "প্রফেসর ড. সুমিতা চক্রবর্তী",
+          "affiliation": "বর্ধমান বিশ্ববিদ্যালয়, ভারত",
+          "topic": "নমুনা: আলোচনার বিষয় পরে জানানো হবে।",
           "image_url": ""
         }
       ]
@@ -441,148 +495,178 @@
       "section_label": "বিভাগ · ০৫",
       "heading": "নিবন্ধন ফি",
       "category_label": "শ্রেণী",
-      "featured_label": "বৈশিষ্ট্যপূর্ণ",
+      "featured_label": "নমুনা",
       "early_bird_label": "আর্লি বার্ড",
       "regular_label": "রেগুলার",
-      "note": "ফি-এর মধ্যে সম্মেলন সামগ্রী, সম্মেলনকালীন আহার এবং কার্যবিবরণী গ্রন্থ অন্তর্ভুক্ত।",
+      "note": "নমুনা: নিচের নিবন্ধনের ফির হার খসড়া এবং শীঘ্রই আনুষ্ঠানিকভাবে চূড়ান্ত করা হবে।",
+      "bank_title": "ব্যাংক হিসাব তথ্য",
+      "bank_acc_name_lbl": "অ্যাকাউন্টের নাম",
+      "bank_acc_num_lbl": "অ্যাকাউন্ট নম্বর",
+      "bank_name_lbl": "ব্যাংকের নাম",
+      "bank_branch_lbl": "শাখা",
       "rows": [
-        { "category": "বাংলাদেশি শিক্ষক / গবেষক", "early_bird": "৳৩,০০০", "regular": "৳৩,৫০০" },
-        { "category": "বাংলাদেশি শিক্ষার্থী / গবেষণা ফেলো", "early_bird": "৳১,৫০০", "regular": "৳২,০০০" },
-        { "category": "আন্তর্জাতিক অংশগ্রহণকারী", "early_bird": "$১০০", "regular": "$১২০" },
-        { "category": "সহযাত্রী", "early_bird": "৳১,০০০ / $৩০", "regular": "৳১,২০০ / $৩৫" }
-      ]
+        { "category": "নমুনা: সাধারণ শিক্ষক/গবেষক ফি", "early_bird": "নমুনা: ০০০ টাকা", "regular": "নমুনা: ০০০ টাকা" },
+        { "category": "নমুনা: শিক্ষার্থী ফি", "early_bird": "নমুনা: ০০০ টাকা", "regular": "নমুনা: ০০০ টাকা" },
+        { "category": "নমুনা: সার্ক/আন্তর্জাতিক ডেলিগেট ফি", "early_bird": "নমুনা: $০০ মার্কিন ডলার", "regular": "নমুনা: $০০ মার্কিন ডলার" }
+      ],
+      "bank_details": {
+        "account_name": "International Conference Dept of Bangla",
+        "account_number": "5632502001242",
+        "bank_name": "সোনালী ব্যাংক পিএলসি (SONALI BANK PLC)",
+        "branch": "আম্বরখানা শাখা, সিলেট"
+      }
     },
-    "contact_info": {
-      "section_label": "বিভাগ · ০৬",
-      "heading": "যোগাযোগ",
-      "intro": "সারসংক্ষেপ জমা, নিবন্ধন সংক্রান্ত প্রশ্ন ও অংশীদারিতার প্রস্তাবের জন্য সম্মেলন সচিবালয়ের সাথে যোগাযোগ করুন।",
-      "department": "বাংলা বিভাগ",
-      "university": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয় (শাবিপ্রবি)",
-      "address": "আখালিয়া, সিলেট-৩১১৪, বাংলাদেশ",
-      "email": "bengaliconference@sust.edu",
-      "phone": "+৮৮০-XXX-XXXXXXX"
+    "sponsorship": {
+      "heading": "স্পনসরশিপ ও স্যুভেনির সুযোগ",
+      "note": "নমুনা: অ্যাবস্ট্রাক্ট বুক / স্যুভেনিরে বিজ্ঞাপনের হার। বিস্তারিত প্রসপেক্টাসের জন্য সচিবালয়ে যোগাযোগ করুন।",
+      "tiers": [
+        {
+          "tier": "ব্যাক কভার (Outside Back Cover)",
+          "rate": "নমুনা: ১,০০,০০০ – ২,৫০,০০০ টাকা",
+          "audience": "শীর্ষস্থানীয় শিক্ষাপ্রতিষ্ঠান, মোবাইল অপারেটর, আইটি ফার্ম, বিল্ডার্স ইত্যাদির জন্য।"
+        }
+      ]
     },
     "committees": {
       "section_label": "বিভাগ · ০৭",
       "eyebrow": "পরিচালনা · কমিটি",
       "heading": "সম্মেলন কমিটি",
-      "lede": "একটি উপদেষ্টা পরিষদ ও আয়োজক প্রতিষ্ঠানের পরিচালনা দল যৌথভাবে ICBLLC ২০২৭-এর গবেষণামূলক সততা, পিয়ার-রিভিউ প্রক্রিয়া ও মাঠপর্যায়ের বাস্তবায়ন তত্ত্বাবধান করে।",
-      "advisory_heading": "উপদেষ্টা কমিটি",
-      "local_heading": "স্থানীয় পরিচালনা কমিটি",
+      "lede": "একটি উপদেষ্টা পরিষদ এবং বিভিন্ন উপ-কমিটি যৌথভাবে ICBLL-2026 এর একাডেমিক সততা ও সেশন পরিচালনা নিশ্চিত করে।",
+      "advisory_heading": "উপদেষ্টামণ্ডলী",
+      "local_heading": "আহ্বায়কবৃন্দ",
+      "subcommittees_heading": "উপ-কমিটি ও সদস্যবৃন্দ",
+      "online_session_note": "বিদেশি স্কলারদের ভিসা বা ভ্রমণে কোনো জটিলতা থাকলে তাদের জন্য বিশেষ অনলাইন টেকনিক্যাল সেশনের সুবিধা থাকবে।",
       "advisory": [
-        { "code": "A-০১", "name": "অধ্যাপক ড. মোহাম্মদ শহিদুল্লাহ", "role": "সভাপতি, উপদেষ্টা পরিষদ", "affiliation": "ঢাকা বিশ্ববিদ্যালয়, বাংলাদেশ" },
-        { "code": "A-০২", "name": "অধ্যাপক ড. রেনু এলিজাবেথ জন", "role": "সদস্য", "affiliation": "আইআইটি মাদ্রাস, ভারত" },
-        { "code": "A-০৩", "name": "অধ্যাপক ড. কায়োকো হাশিমোতো", "role": "সদস্য", "affiliation": "কেইও বিশ্ববিদ্যালয়, জাপান" },
-        { "code": "A-০৪", "name": "অধ্যাপক ড. আহমেদ কাবির", "role": "সদস্য", "affiliation": "ব্র্যাক বিশ্ববিদ্যালয়, বাংলাদেশ" },
-        { "code": "A-০৫", "name": "অধ্যাপক ড. মারিয়া টেরেসা ত্রিনহ", "role": "সদস্য", "affiliation": "হানয় বিশ্ববিদ্যালয়, ভিয়েতনাম" },
-        { "code": "A-০৬", "name": "অধ্যাপক ড. ক্যাথরিন ওয়াল্টার", "role": "সদস্য", "affiliation": "অক্সফোর্ড বিশ্ববিদ্যালয়, যুক্তরাজ্য" }
+        { "code": "A-০১", "name": "প্রফেসর ড. শরদিন্দু ভট্টাচার্য", "role": "উপদেষ্টা", "affiliation": "শাবিপ্রবি, বাংলাদেশ" },
+        { "code": "A-০২", "name": "প্রফেসর ড. মো: আশরাফুল করিম", "role": "উপদেষ্টা", "affiliation": "শাবিপ্রবি, বাংলাদেশ" }
       ],
       "local": [
-        { "code": "L-০১", "name": "অধ্যাপক ড. মোহাম্মদ সুমন", "role": "সমন্বয়কারী", "affiliation": "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়" },
-        { "code": "L-০২", "name": "ড. নাজনিন আক্তার", "role": "সাংগঠনিক সম্পাদক", "affiliation": "ইংরেজি বিভাগ, শাবিপ্রবি" },
-        { "code": "L-০৩", "name": "ড. রাশেদুল হক", "role": "কোষাধ্যক্ষ", "affiliation": "ভাষাবিজ্ঞান বিভাগ, শাবিপ্রবি" },
-        { "code": "L-০৪", "name": "মো. ফারহান আহমেদ", "role": "অনুষ্ঠান সমন্বয়কারী", "affiliation": "ইংরেজি বিভাগ, শাবিপ্রবি" },
-        { "code": "L-০৫", "name": "তাহমিনা আক্তার", "role": "স্থানোন্নয় প্রধান", "affiliation": "শাবিপ্রবি সম্মেলন কোষ" },
-        { "code": "L-০৬", "name": "সাব্বির রহমান", "role": "প্রযুক্তি সমন্বয়কারী", "affiliation": "সিএসই বিভাগ, শাবিপ্রবি" }
+        { "code": "L-০১", "name": "প্রফেসর ড. ফারজানা সিদ্দিকা", "role": "একাডেমিক ও ইভেন্ট উপ-কমিটি আহ্বায়ক", "affiliation": "শাবিপ্রবি" },
+        { "code": "L-০২", "name": "প্রফেসর ড. মো. জফির উদ্দিন", "role": "পেপার সেশন ম্যানেজমেন্ট আহ্বায়ক", "affiliation": "শাবিপ্রবি" },
+        { "code": "L-০৩", "name": "প্রফেসর ড. মো. জাহাঙ্গীর আলম", "role": "রেজিস্ট্রেশন, সার্টিফিকেট ও পাবলিকেশন আহ্বায়ক", "affiliation": "শাবিপ্রবি" },
+        { "code": "L-০৪", "name": "প্রফেসর ড. নিলুফা আক্তার", "role": "পাবলিসিটি উপ-কমিটি আহ্বায়ক", "affiliation": "শাবিপ্রবি" },
+        { "code": "L-০৫", "name": "ড. মো. মাসুদ পারভেজ", "role": "বিনোদন, আবাসন, পরিবহন ও ট্যুর আহ্বায়ক", "affiliation": "শাবিপ্রবি" },
+        { "code": "L-০৬", "name": "প্রফেসর ড. মো. রিয়াজুল ইসলাম", "role": "ফান্ডরেইজিং উপ-কমিটি আহ্বায়ক", "affiliation": "শাবিপ্রবি" }
+      ],
+      "subcommittees": [
+        {
+          "title": "একাডেমিক কমিটি",
+          "convenor": "প্রফেসর ড. ফারজানা সিদ্দিকা",
+          "members": ["প্রফেসর ড. মো. জফির উদ্দিন", "প্রফেসর ড. মো. জাহাঙ্গীর আলম", "ড. মোছাঃ আঞ্জুমানআরা বেগম"]
+        },
+        {
+          "title": "ইভেন্ট ম্যানেজমেন্ট অ্যান্ড কালচারাল সাব-কমিটি",
+          "convenor": "প্রফেসর ড. ফারজানা সিদ্দিকা",
+          "members": ["জনাব মোশরেফা বেগম মিসু", "জনাব হাবিবা আক্তার", "জনাব মোঃ শামছুদ্দীন"]
+        },
+        {
+          "title": "পেপার সেশন ম্যানেজমেন্ট সাব-কমিটি",
+          "convenor": "প্রফেসর ড. মো. জফির উদ্দিন",
+          "members": ["জনাব মো. মনিরুল ইসলাম", "জনাব মুহা. জাকির হোসাইন", "জনাব গোলাম রব্বানী"]
+        },
+        {
+          "title": "রেজিস্ট্রেশন, সার্টিফিকেট অ্যান্ড পাবলিকেশন সাব-কমিটি",
+          "convenor": "প্রফেসর ড. মো. জাহাঙ্গীর আলম",
+          "members": ["জনাব মো. সোহেল রানা", "জনাব মুহা. জাকির হোসাইন"]
+        },
+        {
+          "title": "এন্টারটেইনমেন্ট, অ্যাকোমোডেশন, ট্রান্সপোর্ট অ্যান্ড ট্যুর সাব-কমিটি",
+          "convenor": "ড. মো. মাসুদ পারভেজ",
+          "members": ["জনাব হাবিবা আক্তার", "জনাব মুহা. জাকির হোসাইন", "জনাব মোঃ শামছুদ্দীন"]
+        },
+        {
+          "title": "ফান্ডরেইজিং সাব-কমিটি",
+          "convenor": "প্রফেসর ড. মো. রিয়াজুল ইসলাম",
+          "members": ["বিভাগীয় সকল অধ্যাপক"]
+        },
+        {
+          "title": "পাবলিসিটি সাব-কমিটি",
+          "convenor": "প্রফেসর ড. নিলুফা আক্তার",
+          "members": ["ড. মোছাঃ আঞ্জুমানআরা বেগম", "জনাব গোলাম রব্বানী"]
+        }
       ]
     },
     "logistics": {
       "section_label": "বিভাগ · ০৮",
       "eyebrow": "যাতায়াত ও আবাসন",
       "heading": "যাতায়াত ও আবাসন",
-      "lede": "সিলেট শহরে শাবিপ্রবি ক্যাম্পাসের ৪ কিমি ব্যাসার্ধের মধ্যে আরামদায়ক, মাঝারি বাজেটের হোটেলগুলোর একটি সুশৃঙ্খল ক্লাস্টার রয়েছে। ওসমানী আন্তর্জাতিক বিমানবন্দর ও সিলেট রেলওয়ে স্টেশন থেকে আসার পথ নিচে বিস্তারিত দেওয়া হলো।",
+      "lede": "সিলেট শহরে শাবিপ্রবি ক্যাম্পাসের কাছাকাছি বিভিন্ন আরামদায়ক হোটেল রয়েছে। বিমানবন্দর ও রেলস্টেশন থেকে আসার সাধারণ রুটগুলো নিচে দেওয়া হলো।",
       "hotels_heading": "নির্বাচিত হোটেল",
       "routes_heading": "যাতায়াত পথ",
       "labels": {
         "distance": "দূরত্ব",
-        "tariff": "ভাড়া",
+        "tariff": "ভাড়া",
         "contact": "যোগাযোগ"
       },
       "hotels": [
-        { "name": "হোটেল নূরজাহান গ্র্যান্ড", "tag": "★★★ · ২.১ কিমি", "distance": "শাবিপ্রবি প্রধান ফটক থেকে ২.১ কিমি", "tariff": "৳৩,২০০ – ৪,৫০০ / রাত", "contact": "+৮৮০ ৮২১ ৭২০ ৮৮০" },
-        { "name": "ব্রিটানিয়া হোটেল লিমিটেড", "tag": "★★★★ · ৩.৪ কিমি", "distance": "শাবিপ্রবি প্রধান ফটক থেকে ৩.৪ কিমি", "tariff": "৳৪,৮০০ – ৬,৫০০ / রাত", "contact": "+৮৮০ ৮২১ ৭১৫ ৫৫৫" },
-        { "name": "হোটেল হোলি গেট", "tag": "★★ · ১.৮ কিমি", "distance": "শাবিপ্রবি প্রধান ফটক থেকে ১.৮ কিমি", "tariff": "৳১,৮০০ – ২,৬০০ / রাত", "contact": "+৮৮০ ৮২১ ৭১৬ ৩০০" },
-        { "name": "পাঁশী ইন", "tag": "★★ · ২.৬ কিমি", "distance": "শাবিপ্রবি প্রধান ফটক থেকে ২.৬ কিমি", "tariff": "৳১,৫০০ – ২,২০০ / রাত", "contact": "+৮৮০ ১৭১১ ০০২ ৬০০" }
+        { "name": "হোটেল নূরজাহান গ্র্যান্ড", "tag": "★★★ · ২.১ কিমি", "distance": "শাবিপ্রবি প্রধান ফটক থেকে ২.১ কিমি", "tariff": "৳৩,২০০ – ৪,৫০০ / রাত", "contact": "+৮৮০ ৪২১ ৭২০ ৮৮০" },
+        { "name": "ব্রিটানিয়া হোটেল লিমিটেড", "tag": "★★★★ · ৩.৪ kiমি", "distance": "শাবিপ্রবি প্রধান ফটক থেকে ৩.৪ কিমি", "tariff": "৳৪,৮০০ – ৬,৫০০ / রাত", "contact": "+৮৮০ ৪২১ ৭১৫ ৫৫৫" },
+        { "name": "হোটেল হোলি গেট", "tag": "★★ · ১.৮ কিমি", "distance": "শাবিপ্রবি প্রধান ফটক থেকে ১.৮ কিমি", "tariff": "৳১,৮০০ – ২,৬০০ / রাত", "contact": "+৮৮০ ৪২১ ৭১৬ ৩০০" }
       ],
       "routes": [
-        { "label": "ওসমানী আন্তর্জাতিক বিমানবন্দর (ZYL) → শাবিপ্রবি", "detail": "১২ কিমি · ২৫–৩৫ মিনিট সংরক্ষিত ট্যাক্সি · টার্মিনাল বাইরে প্রি-পেইড ট্যাক্সি কাউন্টার · ৳৮০০–১,২০০" },
-        { "label": "সিলেট রেলওয়ে স্টেশন → শাবিপ্রবি", "detail": "৫ কিমি · ১৫–২০ মিনিট সিএনজি অটোরিকশা · সরাসরি রুট: আম্বরখানা → আখালিয়া → শাবিপ্রবি ফটক · ৳১৫০–২০০" },
-        { "label": "ঢাকা → সিলেট (বাস)", "detail": "গ্রিন লাইন, শ্যামলী, হানিফ এন্টারপ্রাইজ · রাত্রিকালীন এসি কোচ · ৬–৭ ঘণ্টা · ৳১,২০০–১,৮০০" },
-        { "label": "ঢাকা → সিলেট (ট্রেন)", "detail": "পারাবত / কালনী এক্সপ্রেস · সংরক্ষিত এসি চেয়ার ও স্লিপার · ৭ ঘণ্টা · ৳৫৫০–১,৪০০" }
+        { "label": "ওসমানী আন্তর্জাতিক বিমানবন্দর (ZYL) → শাবিপ্রবি", "detail": "১২ কিমি · ২৫-৩৫ মিনিট ট্যাক্সিতে · ভাড়া আনুমানিক ৮০০-১,২০০ টাকা" },
+        { "label": "সিলেট রেলওয়ে স্টেশন → শাবিপ্রবি", "detail": "৫ কিমি · ১৫-২০ মিনিট সিএনজি অটোরিকশায় · ভাড়া আনুমানিক ১৫০-২০০ টাকা" }
       ]
     },
     "downloads": {
       "section_label": "বিভাগ · ০৯",
       "eyebrow": "টেমপ্লেট · ডাউনলোড জোন",
       "heading": "ডাউনলোড জোন",
-      "lede": "সারসংক্ষেপ ও সম্পূর্ণ প্রবন্ধ জমাদানের জন্য নিচের অফিসিয়াল টেমপ্লেট ব্যবহার করুন। এই ফর্ম্যাট অনুসরণ না করলে প্রবন্ধ পর্যালোচনা ছাড়াই ফেরত দেওয়া হবে।",
+      "lede": "সারসংক্ষেপ ও প্রবন্ধ জমা দেওয়ার অফিসিয়াল টেমপ্লেট নিচে দেওয়া হলো।",
       "items": [
-        { "code": "ডক-০১", "format": "এমএস ওয়ার্ড · .docx · ৬৪ কেবি", "title": "সারসংক্ষেপ জমাদানের টেমপ্লেট", "note": "গঠিত সারসংক্ষেপ — ২৫০ শব্দ · ৪-বিভাগের ফর্ম্যাট · APA ৭ম উদ্ধৃতি শৈলী", "href": "assets/abstract-template.docx" },
-        { "code": "ডক-০২", "format": "এমএস ওয়ার্ড · .docx · ১২৮ কেবি", "title": "সম্পূর্ণ প্রবন্ধের টেমপ্লেট (APA ৭ম)", "note": "১২ পিটি টাইমস নিউ রোমান · ১.৫ লাইন স্পেসিং · রেফারেন্সসহ ৬–৮ পৃষ্ঠা", "href": "assets/fullpaper-template.docx" }
+        { "code": "ডক-০১", "format": "এমএস ওয়ার্ড · .docx", "title": "সারসংক্ষেপ জমাদানের টেমপ্লেট", "note": "নির্ধারিত শব্দসীমা ও ফন্ট সাইজ অনুসরণে প্রস্তুতকৃত সারসংক্ষেপ ফরম্যাট।", "href": "assets/abstract-template.docx" }
       ]
     },
     "visa": {
       "section_label": "বিভাগ · ১০",
-      "eyebrow": "প্রশাসনিক · ভিসা নির্দেশিকা",
+      "eyebrow": "ভিসা নির্দেশিকা",
       "heading": "ভিসা ও যাতায়াত সহায়তা",
-      "lede": "বিদেশী প্রতিনিধিদের সম্মেলনের অন্তত ৮ সপ্তাহ আগে যথাযথ বাংলাদেশি ভিসার জন্য আবেদন করার পরামর্শ দেওয়া হচ্ছে। আয়োজন কমিটি অনুরোধে অফিসিয়াল আমন্ত্রণপত্র জারি করবে।",
-      "intro": "বেশিরভাগ বিদেশী নাগরিকের বাংলাদেশে প্রবেশের জন্য ভিসা প্রয়োজন। বাংলাদেশ সরকার ই-ভিসা, নির্বাচিত জাতীয়তার জন্য আগমনের সময় ভিসা এবং দূতাবাসের স্ট্যাম্পকৃত ভিসা ব্যবস্থা পরিচালনা করে। প্রতিনিধিরা নিকটতম বাংলাদেশি কূটনৈতিক মিশনে তাদের নির্দিষ্ট বিভাগ যাচাই করার দায়িত্বশীল।",
-      "step1": "ICBLLC ২০২৭ পোর্টালে নিবন্ধন করুন এবং আপনার নিবন্ধন নিশ্চিতকরণ ইমেইল পান (আমন্ত্রণপত্রের জন্য প্রয়োজনীয়)।",
-      "step2": "সচিবালয়ে ইমেইল করুন (visa@icbllc2027.sust.edu) বিষয় 'আমন্ত্রণপত্র — [পূর্ণ নাম] — [পাসপোর্ট নম্বর]' সহ আনুষ্ঠানিক আমন্ত্রণপত্রের অনুরোধ জানাতে।",
-      "step3": "নিকটতম বাংলাদেশি দূতাবাসে বা অফিসিয়াল ই-ভিসা পোর্টালে (visa.gov.bd) যথাযথ ভিসা বিভাগে (একাডেমিক / সম্মেলন) আবেদন করুন।",
-      "step4": "আগমনের সময় অভিবাসন কাউন্টারে মুদ্রিত আমন্ত্রণপত্র, নিবন্ধন রসিদ এবং সারসংক্ষেপ গৃহীতের ইমেইল সাথে বহন করুন।",
-      "foot": "আমন্ত্রণপত্র বা ভিসা সংক্রান্ত জিজ্ঞাসার জন্য অন্তত ৬ সপ্তাহের পূর্ববর্তী সময় নিশ্চিত করে visa@icbllc2027.sust.edu-তে লিখুন। সচিবালয় ব্যক্তিগত দূতাবাসের সিদ্ধান্তে হস্তক্ষেপ করে না।"
+      "lede": "বিদেশী ডেলিগেটদের কমপক্ষে ৮ সপ্তাহ পূর্বে ভিসার আবেদন সম্পন্ন করার পরামর্শ দেওয়া হচ্ছে। কমিটি থেকে অফিশিয়াল আমন্ত্রণপত্র পাঠানো হবে।",
+      "intro": "অধিকাংশ বিদেশী নাগরিকদের জন্য বাংলাদেশের ভিসা আবশ্যক। আমন্ত্রণপত্র এবং নিবন্ধন নিশ্চিতকরণ কপি সাথে রাখুন।",
+      "step1": "ICBLL-2026 পোর্টালে রেজিস্ট্রেশন করুন এবং কনফার্মেশন ইমেইল পান।",
+      "step2": "পাসপোর্ট ও নিবন্ধনের বিবরণী সহ সচিবালয়ে (bangladeparment@yahoo.com) ইমেল করুন।",
+      "step3": "নিকটস্থ বাংলাদেশ দূতাবাস বা ই-ভিসা পোর্টালে (visa.gov.bd) আবেদন করুন।",
+      "step4": "আগমনের সময় ইমিগ্রেশনে আমন্ত্রণপত্র ও রসিদের প্রিন্ট কপি প্রদর্শন করুন।",
+      "foot": "ভিসা সংক্রান্ত তথ্যের জন্য অন্তত ৬ সপ্তাহ পূর্বে bangladeparment@yahoo.com এ ইমেল করুন।"
     },
     "schedule": {
       "section_label": "বিভাগ · ১১",
-      "eyebrow": "অনুষ্ঠান · বিস্তারিত সেশন ফ্লো",
+      "eyebrow": "অনুষ্ঠানসূচী",
       "heading": "সমান্তরাল অনুষ্ঠানের সময়সূচি",
-      "lede": "তিন দিনের অনুষ্ঠানের কর্মসূচি উদ্বোধনী প্লেনারি থেকে সমান্তরাল গবেষণা ট্র্যাকে এগিয়ে যায়, সাংস্কৃতিক সন্ধ্যায় সমাপ্ত হয় এবং শেষ সকালটি সমাপনী ও পুরস্কার অনুষ্ঠানের জন্য সংরক্ষিত।",
+      "lede": "২ দিনব্যাপী সম্মেলনের উদ্বোধন, টেকনিক্যাল সেশন এবং সনদ বিতরণ কর্মসূচী নিচে দেওয়া হলো।",
       "days": [
         {
           "code": "দি-০১",
-          "day_title": "দিন ১ · উদ্বোধনী প্লেনারি",
-          "date": "১৫ মার্চ ২০২৭",
+          "day_title": "দিন ১ · উদ্বোধন ও কি-নোট সেশন",
+          "date": "২৭ নভেম্বর ২০২৬",
           "sessions": [
-            { "time": "০৮:৩০ – ০৯:৩০", "code": "স-০১", "title": "নিবন্ধন ও স্বাগত কফি", "detail": "অন-সাইট চেক-ইন · সম্মেলন কিট বিতরণ · ব্যাজ সক্রিয়করণ" },
-            { "time": "০৯:৩০ – ১০:৩০", "code": "স-০২", "title": "উদ্বোধনী অনুষ্ঠান", "detail": "শাবিপ্রবির উপাচার্যের স্বাগত বক্তৃতা · মূল বক্তৃতার উদ্বোধন · প্রদীপ প্রজ্বলন" },
-            { "time": "১০:৩০ – ১১:৩০", "code": "স-০৩", "title": "প্লেনারি বক্তৃতা ১", "detail": "আমন্ত্রিত প্লেনারি — আন্তর্জাতিকভাবে স্বীকৃত প্রয়োগ-ভাষাবিজ্ঞান গবেষক" },
-            { "time": "১১:৩০ – ১২:০০", "code": "স-০৪", "title": "চা বিরতি ও নেটওয়ার্কিং", "detail": "শাখাগত আগ্রহের গোষ্ঠীসহ সংগঠিত নেটওয়ার্কিং" },
-            { "time": "১২:০০ – ১৩:৩০", "code": "স-০৫", "title": "প্লেনারি বক্তৃতা ২", "detail": "সমসাময়িক ভাষা শিক্ষা ও নীতি বিষয়ক আমন্ত্রিত প্লেনারি" },
-            { "time": "১৩:৩০ – ১৪:৩০", "code": "স-০৬", "title": "দুপুরের খাবার ও পোস্টার প্রদর্শনী", "detail": "কেন্দ্রীয় অ্যাট্রিয়ামে পোস্টার উপস্থাপনা প্রদর্শিত" }
+            { "time": "০৯:০০ – ১২:৩০", "code": "স-০১", "title": "উদ্বোধনী অনুষ্ঠান ও মূল প্রবন্ধ সেশন", "detail": "নমুনা: প্রথম দিন (২৭ নভেম্বর) সকাল ০৯:০০ - উদ্বোধন পর্ব ও কি-নোট সেশন।" }
           ]
         },
         {
           "code": "দি-০২",
-          "day_title": "দিন ২ · সমান্তরাল গবেষণা ট্র্যাক",
-          "date": "১৬ মার্চ ২০২৭",
+          "day_title": "দিন ২ · সেমিনার ও সমাপনী",
+          "date": "২৮ নভেম্বর ২০২৬",
           "sessions": [
-            { "time": "০৯:০০ – ১০:৩০", "code": "স-০৭", "title": "ট্র্যাক ক — ভাষাবিজ্ঞান গবেষণা", "detail": "তিনটি সমান্তরাল প্রবন্ধ · ট্র্যাক চেয়ারম্যান পরিচালিত প্রশ্নোত্তর" },
-            { "time": "১০:৩০ – ১১:০০", "code": "স-০৮", "title": "চা বিরতি", "detail": "বিরতিকালে পোস্টার অধিবেশন খোলা" },
-            { "time": "১১:০০ – ১২:৩০", "code": "স-০৯", "title": "ট্র্যাক খ — ভাষা ও সাহিত্য শিক্ষা", "detail": "তিনটি সমান্তরাল প্রবন্ধ · শ্রেণিকক্ষ-কেন্দ্রিক গবেষণা" },
-            { "time": "১২:৩০ – ১৩:৩০", "code": "স-১০", "title": "দুপুরের খাবার", "detail": "বিষয়গত আগ্রহের গোষ্ঠীসহ কাজের খাবার" },
-            { "time": "১৩:৩০ – ১৫:০০", "code": "স-১১", "title": "ট্র্যাক গ — সাংস্কৃতিক ও সমাজ-ভাষাবিজ্ঞান", "detail": "তিনটি সমান্তরাল প্রবন্ধ · আঞ্চলিক ভাষা উপ-গবেষণা" },
-            { "time": "১৫:০০ – ১৬:৩০", "code": "স-১২", "title": "প্যানেল আলোচনা", "detail": "সম্পাদক প্যানেল — সূচিবদ্ধ প্রয়োগ-ভাষাবিজ্ঞান জার্নালে প্রকাশ" },
-            { "time": "১৯:০০ – ২১:৩০", "code": "স-১৩", "title": "সাংস্কৃতিক সন্ধ্যা", "detail": "মণিপুরী, ঝুমুর ও বাউল পরিবেশনা · সম্মেলন রাতের খাবার" }
-          ]
-        },
-        {
-          "code": "দি-০৩",
-          "day_title": "দিন ৩ · সমাপনী অনুষ্ঠান",
-          "date": "১৭ মার্চ ২০২৭",
-          "sessions": [
-            { "time": "০৯:০০ – ১০:৩০", "code": "স-১৪", "title": "কর্মশালা — গবেষণা পদ্ধতিবিদ্যা", "detail": "মিশ্র-পদ্ধতির নকশায় হাতে-কলমে কর্মশালা (সীমিত আসন · পূর্ব-নিবন্ধন)" },
-            { "time": "১০:৩০ – ১১:০০", "code": "স-১৫", "title": "চা বিরতি", "detail": "প্রতিষ্ঠান ক্লাস্টার অনুযায়ী অনানুষ্ঠানিক নেটওয়ার্কিং" },
-            { "time": "১১:০০ – ১২:৩০", "code": "স-১৬", "title": "ট্র্যাক ঘ — অনুবাদ ও ব্যাখ্যা গবেষণা", "detail": "তিনটি সমান্তরাল প্রবন্ধ · মাঠ প্রতিবেদন" },
-            { "time": "১২:৩০ – ১৩:৩০", "code": "স-১৭", "title": "সেরা প্রবন্ধ পুরস্কার", "detail": "পুরস্কার কমিটির পক্ষ থেকে প্রদান · সম্মাননা অনুষ্ঠান" },
-            { "time": "১৩:৩০ – ১৪:৩০", "code": "স-১৮", "title": "সমাপনী ও সমাপ্তি", "detail": "সমাপনী বক্তৃতা · সম্মেলন প্রস্তাব · গোষ্ঠী ছবি" }
+            { "time": "০৯:০০ – ১৬:০০", "code": "স-০২", "title": "প্রবন্ধ উপস্থাপন ও সমাপনী অনুষ্ঠান", "detail": "নমুনা: দ্বিতীয় দিন (২৮ নভেম্বর) বিকাল ০৪:০০ - সমাপনী অনুষ্ঠান ও সনদ বিতরণ।" }
           ]
         }
       ]
     },
+    "contact_info": {
+      "section_label": "বিভাগ · ০৬",
+      "heading": "যোগাযোগ",
+      "intro": "সারসংক্ষেপ জমাদান, নিবন্ধন বা যেকোনো জিজ্ঞাসার জন্য সরাসরি আমাদের সাথে যোগাযোগ করুন।",
+      "department": "বাংলা বিভাগ",
+      "university": "شاہجلال বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয় (শাবিপ্রবি)",
+      "address": "বাংলা বিভাগ, শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়, ডাকঘর: বিশ্ববিদ্যালয়, সিলেট-৩১১৪, বাংলাদেশ।",
+      "email": "bangladeparment@yahoo.com",
+      "phone": "PABX: +৮৮০-৮২১-৭১৬১২৩, ৭১৩৪৯১, ৭১৩৮৫০, ৭১৪৪৭৯ এক্সটেনশন: ২২৭৫",
+      "fax": "+৮৮০-৮২১-৭১৫২৫৭"
+    },
     "footer": {
       "rights": "বাংলা বিভাগ, শাবিপ্রবি। সর্বস্বত্ব সংরক্ষিত।",
-      "made_for": "আয়োজনে বাংলা বিভাগ, শাবিপ্রবি"
+      "made_for": "আয়োজনে: বাংলা বিভাগ, শাবিপ্রবি"
     }
   }
 }

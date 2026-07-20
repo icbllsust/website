@@ -439,6 +439,53 @@
           <tbody id="fees-rows" class="divide-y divide-slate-200/60"></tbody>
         </table>
       </div>
+
+      <!-- Financial grid: Bank + Sponsorship -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <!-- Bank Payment Details -->
+        <div class="bg-amber-50 border border-amber-plateDeep border-t-2 border-t-emerald-700 rounded-xl p-6 sm:p-7">
+          <h3 class="font-heading text-navy-900 text-lg font-semibold flex items-center gap-2 mb-4">
+            <i data-lucide="wallet" class="w-5 h-5 text-emerald-900"></i>
+            <span data-i18n="registration_fees.bank_title">Bank Payment Details</span>
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-body text-[14px] text-slate-950">
+            <div class="border-b border-slate-200/60 pb-2 sm:border-0 sm:pb-0">
+              <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block" data-i18n="registration_fees.bank_acc_name_lbl">Account Name</span>
+              <strong class="text-navy-900 text-[14px] break-all sm:break-normal" id="bank-acc-name">International Conference Dept of Bangla</strong>
+            </div>
+            <div class="border-b border-slate-200/60 pb-2 sm:border-0 sm:pb-0">
+              <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block" data-i18n="registration_fees.bank_acc_num_lbl">Account Number</span>
+              <strong class="text-navy-900 text-[15px]" id="bank-acc-num">5632502001242</strong>
+            </div>
+            <div class="border-b border-slate-200/60 pb-2 sm:border-0 sm:pb-0">
+              <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block" data-i18n="registration_fees.bank_name_lbl">Bank Name</span>
+              <span class="font-semibold text-slate-900 text-[14px]" id="bank-name">SONALI BANK PLC</span>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block" data-i18n="registration_fees.bank_branch_lbl">Branch</span>
+              <span class="font-semibold text-slate-900 text-[14px]" id="bank-branch">Amborkhana Branch, Sylhet</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sponsorship & Souvenir Details -->
+        <div class="bg-emerald-50/40 border border-slate-200/60 border-t-2 border-t-emerald-800 rounded-xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <h3 class="font-heading text-navy-900 text-lg font-semibold flex items-center gap-2 mb-4">
+              <i data-lucide="award" class="w-5 h-5 text-emerald-950"></i>
+              <span id="sponsorship-heading-val">Sponsorship &amp; Souvenir Opportunities</span>
+            </h3>
+            <p id="sponsorship-note-val" class="font-body text-xs text-slate-700 mb-4">Sponsorship rates for the Abstract Book / Souvenir.</p>
+            <div class="font-body text-[13.5px] text-slate-950 space-y-3">
+              <div class="border-b border-slate-200/60 pb-2">
+                <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block" id="sponsorship-tier-lbl">Back Cover (Outside Back Cover)</span>
+                <strong class="text-navy-900 text-[14.5px]" id="sponsor-rate-val">DEMO: BDT 1,00,000 – 2,50,000</strong>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 font-medium mt-3" id="sponsor-audience-val">For leading educational institutions, mobile operators, IT firms, builders, etc.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -452,7 +499,7 @@
         <div class="alpona-rule my-6">
           <svg class="alpona-motif" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 0 L10 7 L7 14 L4 7 Z" fill="#1F7A5C"/></svg>
         </div>
-        <p class="section-lede font-body text-[14.5px] text-slate-950 font-medium leading-relaxed max-w-2xl mb-8" data-i18n="committees.lede">An advisory body and a host-institution organising team jointly oversee the academic integrity, peer-review process, and on-ground execution of ICBLLC 2027.</p>
+        <p class="section-lede font-body text-[14.5px] text-slate-950 font-medium leading-relaxed max-w-2xl mb-8" data-i18n="committees.lede">An advisory body and sub-committees oversee the academic integrity, peer-review process, and execution of ICBLL-2026.</p>
       </header>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
@@ -464,6 +511,20 @@
           <h3 class="subhead font-heading text-navy-900 text-lg font-semibold flex items-center gap-2 mb-4 pb-3 border-b border-slate-200/80" data-i18n="committees.local_heading">Local Organising Committee</h3>
           <div id="local-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
         </div>
+      </div>
+
+      <!-- Sub-Committees Block -->
+      <div class="mt-12 pt-8 border-t border-slate-200/80">
+        <h3 class="subhead font-heading text-navy-900 text-lg font-semibold flex items-center gap-2 mb-6" data-i18n="committees.subcommittees_heading">Sub-Committees</h3>
+        <div id="subcommittees-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+      </div>
+
+      <!-- Technical Session Note Box -->
+      <div class="mt-8 bg-amber-50/50 border border-amber-plateDeep/40 rounded-xl p-5 flex items-start gap-3 max-w-3xl">
+        <span class="shrink-0 w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-700">
+          <i data-lucide="info" class="w-4 h-4"></i>
+        </span>
+        <div class="font-body text-[13.5px] text-slate-800 leading-relaxed" id="online-session-note"></div>
       </div>
     </div>
   </section>
@@ -637,5 +698,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="admin.js"></script>
 </body>
 </html>
