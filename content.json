@@ -62,7 +62,9 @@
       "paragraphs": [
         "The Department of Bengali at Shahjalal University of Science and Technology (SUST) invites researchers, academicians, and postgraduate scholars to an international conference examining the evolving landscape of Bengali language, literature and culture.",
         "Set against Sylhet's own rich literary and folk heritage, the conference creates a meeting ground for scholars from Bangladesh, India and the wider Bengali-speaking world to exchange research, renew old questions, and open new ones.",
-        "Selected papers presented at the conference will be considered for publication in a peer-reviewed conference proceedings volume."
+        "The conference will address six thematic tracks spanning phonology and dialectology, modern and postmodern literary criticism, folk and oral tradition studies, translation and comparative literature, digital humanities, and pedagogical innovation in Bengali language teaching.",
+        "Sylhet, historically a crucible of Bengali literary and Sufi poetic traditions, provides an intellectually resonant setting. The university's campus at the foothills of the Khasi-Jaintia range offers a quiet scholarly retreat for three days of rigorous academic exchange.",
+        "Selected papers presented at the conference will be considered for publication in a peer-reviewed conference proceedings volume with an ISBN."
       ]
     },
     "cfp": {
@@ -353,7 +355,9 @@
       "paragraphs": [
         "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়ের (শাবিপ্রবি) বাংলা বিভাগ বাংলা ভাষা, সাহিত্য ও সংস্কৃতির ক্রমবিকাশমান পরিসর নিয়ে আলোচনার জন্য গবেষক, শিক্ষাবিদ ও স্নাতকোত্তর শিক্ষার্থীদের একটি আন্তর্জাতিক সম্মেলনে আমন্ত্রণ জানাচ্ছে।",
         "সিলেটের নিজস্ব সমৃদ্ধ সাহিত্য ও লোকঐতিহ্যের প্রেক্ষাপটে এই সম্মেলন বাংলাদেশ, ভারত ও বৃহত্তর বাংলাভাষী বিশ্বের গবেষকদের জন্য গবেষণা বিনিময়, পুরনো প্রশ্নের নবায়ন এবং নতুন প্রশ্নের সূচনার একটি মিলনক্ষেত্র তৈরি করে।",
-        "সম্মেলনে উপস্থাপিত নির্বাচিত প্রবন্ধ একটি পিয়ার-রিভিউড কার্যবিবরণী গ্রন্থে প্রকাশের জন্য বিবেচিত হবে।"
+        "সম্মেলনে ধ্বনিবিজ্ঞান ও উপভাষাবিদ্যা, আধুনিক ও পশ্চিমা-আধুনিক সাহিত্য সমালোচনা, লোক ও মৌখিক ঐতিহ্য অধ্যয়ন, অনুবাদ ও তুলনামূলক সাহিত্য, ডিজিটাল মানবিক এবং বাংলা ভাষা শিক্ষণে শিক্ষাগত উদ্ভাবন — এই ছয়টি থিমাটিক ট্র্যাক অন্তর্ভুক্ত থাকবে।",
+        "বাংলা সাহিত্য ও সুফি কাব্যঐতিহ্যের ঐতিহাসিক সংগমস্থল সিলেট একটি বুদ্ধিবৃত্তিক প্রেক্ষাপট প্রদান করে। খাসি-জৈন্তিয়া পাহাড়ের পাদদেশে অবস্থিত বিশ্ববিদ্যালয়ের ক্যাম্পাস তিন দিনের কঠোর একাডেমিক আলোচনার জন্য একটি শান্ত গবেষণা-উপযোগী প্রান্তর।",
+        "সম্মেলনে উপস্থাপিত নির্বাচিত প্রবন্ধ একটি আইএসবিএনসহ পিয়ার-রিভিউড কার্যবিবরণী গ্রন্থে প্রকাশের জন্য বিবেচিত হবে।"
       ]
     },
     "cfp": {
@@ -404,7 +408,7 @@
     "dates_meta": {
       "section_label": "বিভাগ · ০৩",
       "heading": "গুরুত্বপূর্ণ তারিখ",
-      "intro": "সারসংক্ষেপ জমা থেকে উপস্থাপনা পর্যন্ত পাঁচটি মেয়াদ — প্রতিটিই কঠোর সময়সীমা।",
+      "intro": "সারসংক্ষেপ জমা থেকে উপস্থাপনা পর্যন্ত পাঁচটি মেয়াদ — প্রতিটিই কঠোর সময়সীমা। আপনার লেখার সময়সূচী এদের চারপাশে পরিকল্পনা করুন।",
       "milestone_eyebrow": "ধাপ",
       "milestones": ["ধাপ ০১", "ধাপ ০২", "ধাপ ০৩", "ধাপ ০৪", "ধাপ ০৫"]
     },

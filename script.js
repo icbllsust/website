@@ -99,9 +99,9 @@
     const svg =
       `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>` +
       `<rect width='64' height='64' rx='32' fill='#eef2fb'/>` +
-      `<circle cx='32' cy='25' r='10' fill='none' stroke='#1e3a8a' stroke-width='1.5'/>` +
-      `<path d='M14 56c0-10 8-16 18-16s18 6 18 16' fill='none' stroke='#1e3a8a' stroke-width='1.5'/>` +
-      `<text x='32' y='58' text-anchor='middle' font-family='Playfair Display, Noto Serif Bengali, serif' font-size='14' fill='#1e3a8a' font-weight='600'>${initialsSafe}</text>` +
+      `<circle cx='32' cy='25' r='10' fill='none' stroke='#2273C3' stroke-width='1.5'/>` +
+      `<path d='M14 56c0-10 8-16 18-16s18 6 18 16' fill='none' stroke='#2273C3' stroke-width='1.5'/>` +
+      `<text x='32' y='58' text-anchor='middle' font-family='Playfair Display, Noto Serif Bengali, serif' font-size='14' fill='#2273C3' font-weight='600'>${initialsSafe}</text>` +
       `</svg>`;
     return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
   }
@@ -114,8 +114,8 @@
         (p, i) =>
           `<div class="relative rounded-md ${
             i === 0
-              ? "border border-slate-200/60 bg-white px-5 py-4 border-l-4 border-l-amber-600 shadow-card"
-              : "border border-slate-200/60 bg-white px-5 py-4 border-l-2 border-l-gold-400/60 shadow-card"
+              ? "border border-slate-200/60 bg-white px-5 py-4 border-l-4 border-l-amber-600 "
+              : "border border-slate-200/60 bg-white px-5 py-4 border-l-2 border-l-gold-400/60 "
           }">
             <p class="relative ${
               i === 0
@@ -137,7 +137,7 @@
       .map((t, i) => {
         const icon = TRACK_ICONS[i % TRACK_ICONS.length];
         return `
-      <article class="group relative rounded-xl border border-slate-200/60 border-t-2 border-t-emerald-700 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover overflow-hidden">
+      <article class="group relative rounded-xl border border-slate-200/60 border-t-2 border-t-emerald-700 bg-white transition-all duration-300 hover:-translate-y-1 overflow-hidden">
         <div class="flex items-center justify-between px-5 pt-4 pb-3 border-b border-slate-200/60 bg-cream">
           <span class="label-tag">TRACK · ${String(i + 1).padStart(2, "0")}</span>
           <span class="w-7 h-7 rounded-md bg-amber-50 border border-amber-plateDeep flex items-center justify-center">
@@ -183,9 +183,9 @@
         const icon = DATE_ICONS[i % DATE_ICONS.length];
         const code = codes[i] || `M${String(i + 1).padStart(2, "0")}`;
         return `
-      <article class="date-card group relative flex flex-col items-baseline rounded-xl border border-slate-300 bg-white border-t-2 border-t-emerald-800/60 px-5 pt-5 pb-6 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-700/60 shadow-card hover:shadow-card-hover">
+      <article class="date-card group relative flex flex-col items-baseline rounded-xl border border-slate-300 bg-white border-t-2 border-t-emerald-800/60 px-5 pt-5 pb-6 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-700/60">
         <span class="shrink-0 w-11 h-11 rounded-lg bg-emerald-50 border border-emerald-700/30 flex items-center justify-center mb-4 self-start">
-          <i data-lucide="${icon}" class="w-[18px] h-[18px]" style="color:#047857;"></i>
+          <i data-lucide="${icon}" class="w-[18px] h-[18px]" style="color:#1F7A5C;"></i>
         </span>
         <div class="flex items-baseline gap-2 mb-3 self-start">
           <span class="label-tag">${escapeHTML(code)}</span>
@@ -208,10 +208,10 @@
         const fallback = speakerPlaceholderDataURI(initials);
         const imageUrl = (s.image_url || "").trim() || fallback;
         return `
-      <article class="group relative rounded-xl border border-slate-200/60 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover overflow-hidden text-center">
+      <article class="group relative rounded-xl border border-slate-200/60 bg-white transition-all duration-300 hover:-translate-y-1 overflow-hidden text-center">
         <div class="flex items-center justify-between px-5 pt-4 pb-3 border-b border-slate-200/60 bg-cream">
           <span class="label-tag">KEYNOTE</span>
-          <span class="w-7 h-7 rounded-full bg-gold-600 text-white flex items-center justify-center shadow-sm" title="Keynote Speaker">
+          <span class="w-7 h-7 rounded-full bg-gold-600 text-white flex items-center justify-center" title="Keynote Speaker">
             <i data-lucide="mic-2" class="w-3.5 h-3.5"></i>
           </span>
         </div>
@@ -254,7 +254,7 @@
       <tr class="hover:bg-amber-50/70 transition-colors duration-200 ${isFeatured ? "bg-amber-50" : ""}">
         <td class="fee-cell py-4 px-5 text-neutral-800 align-middle">
           <span class="flex items-center gap-2.5">
-            <span class="w-8 h-8 rounded-md bg-amber-50 text-emerald-900 border border-amber-plateDeep flex items-center justify-center shrink-0 shadow-sm">
+            <span class="w-8 h-8 rounded-md bg-amber-50 text-emerald-900 border border-amber-plateDeep flex items-center justify-center shrink-0">
               <i data-lucide="${icon}" class="w-3.5 h-3.5"></i>
             </span>
             <span class="flex flex-col leading-tight">
@@ -311,7 +311,7 @@
   function renderFooter(lang) {
     const f = CONTENT[lang].footer;
     document.getElementById("footer-made-for").textContent = f.made_for;
-    document.getElementById("footer-rights").textContent = `© 2026 ${f.rights}`;
+    document.getElementById("footer-rights").textContent = `© 2027 ${f.rights}`;
   }
 
   function renderMeta(lang) {
@@ -485,7 +485,7 @@
     container.innerHTML = c.days
       .map(
         (day) => `
-      <article class="rounded-xl border border-slate-300 border-t-2 border-t-emerald-800/60 bg-white overflow-hidden shadow-card">
+      <article class="rounded-xl border border-slate-300 border-t-2 border-t-emerald-800/60 bg-white overflow-hidden ">
         <header class="flex items-baseline justify-between gap-3 px-5 py-3 border-b border-slate-200/80 bg-slate-50">
           <div class="flex items-baseline gap-2">
             <span class="label-tag">${escapeHTML(day.code)}</span>
