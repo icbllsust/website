@@ -361,11 +361,158 @@
     renderSpeakers(lang);
     renderFees(lang);
     renderContact(lang);
+    renderCommittees(lang);
+    renderLogistics(lang);
+    renderDownloads(lang);
+    renderSchedule(lang);
     renderFooter(lang);
-    // Trust block + stats are bound via data-i18n in markup, so the static-text
-    // pass above already populates them. Only dynamic piece is the alt-lang
-    // bound heading + the lucide-icon rehydration after DOM mutation.
+    // Trust block + stats + committees + visa are bound via data-i18n in markup,
+    // so the static-text pass above already populates them. Only dynamic piece
+    // is the alt-lang bound heading + the lucide-icon rehydration after DOM mutation.
     renderIcons();
+  }
+
+  /* ===========================================================
+     R19 — Five new academic section renderers
+     Each renderer uses will-change + backface-visibility-ready
+     markup and respects the strict textbook-density padding
+     scale applied at the section CSS layer.
+     =========================================================== */
+
+  // ---- Section 07: Committees — dense multi-column grid ----
+  function renderCommittees(lang) {
+    const c = CONTENT[lang].committees;
+    const adv = document.getElementById("advisory-list");
+    const loc = document.getElementById("local-list");
+    if (!adv || !loc) return;
+
+    const renderCol = (members) =>
+      members
+        .map(
+          (m) => `
+        <article class="committee-cell rounded-md px-4 py-3.5 flex items-baseline gap-3">
+          <span class="label-tag shrink-0">${escapeHTML(m.code)}</span>
+          <div class="flex-1 min-w-0">
+            <p class="font-heading text-navy-900 text-[14.5px] font-semibold leading-snug">${escapeHTML(m.name)}</p>
+            <p class="font-body text-[12.5px] text-slate-950 font-medium mt-0.5 leading-snug">${escapeHTML(m.role)}</p>
+            <p class="font-body text-[11.5px] text-slate-700 font-medium mt-0.5 leading-snug">${escapeHTML(m.affiliation)}</p>
+          </div>
+        </article>`
+        )
+        .join("");
+
+    adv.innerHTML = renderCol(c.advisory);
+    loc.innerHTML = renderCol(c.local);
+  }
+
+  // ---- Section 08: Logistics & Accommodation — 2-col hotel grid + route list ----
+  function renderLogistics(lang) {
+    const c = CONTENT[lang].logistics;
+    const hotelGrid = document.getElementById("hotels-grid");
+    const routeList = document.getElementById("routes-list");
+    if (!hotelGrid || !routeList) return;
+
+    const labels = c.labels || { distance: "Distance", tariff: "Tariff", contact: "Contact" };
+
+    hotelGrid.innerHTML = c.hotels
+      .map(
+        (h) => `
+      <article class="hotel-card rounded-lg p-5">
+        <div class="flex items-baseline justify-between gap-2 pb-3 mb-3 border-b border-slate-200/80">
+          <span class="font-heading text-navy-900 text-[15.5px] font-semibold leading-snug">${escapeHTML(h.name)}</span>
+          <span class="hotel-tag shrink-0">${escapeHTML(h.tag)}</span>
+        </div>
+        <div class="space-y-1.5 font-body text-[13px] text-slate-950 font-medium leading-snug">
+          <p class="flex items-baseline gap-2">
+            <span class="text-[10px] tracking-[0.18em] uppercase text-emerald-900 font-bold w-16 shrink-0">${escapeHTML(labels.distance)}</span>
+            <span>${escapeHTML(h.distance)}</span>
+          </p>
+          <p class="flex items-baseline gap-2">
+            <span class="text-[10px] tracking-[0.18em] uppercase text-emerald-900 font-bold w-16 shrink-0">${escapeHTML(labels.tariff)}</span>
+            <span>${escapeHTML(h.tariff)}</span>
+          </p>
+          <p class="flex items-baseline gap-2">
+            <span class="text-[10px] tracking-[0.18em] uppercase text-emerald-900 font-bold w-16 shrink-0">${escapeHTML(labels.contact)}</span>
+            <span>${escapeHTML(h.contact)}</span>
+          </p>
+        </div>
+      </article>`
+      )
+      .join("");
+
+    routeList.innerHTML = c.routes
+      .map(
+        (r, i) => `
+      <div class="route-row">
+        <span class="route-num">${String(i + 1).padStart(2, "0")}</span>
+        <div>
+          <p class="font-heading text-navy-900 text-[13.5px] font-semibold leading-snug">${escapeHTML(r.label)}</p>
+          <p class="font-body text-[12.5px] text-slate-950 font-medium mt-0.5 leading-snug">${escapeHTML(r.detail)}</p>
+        </div>
+      </div>`
+      )
+      .join("");
+  }
+
+  // ---- Section 09: Download Templates — tactile link cards (no icons) ----
+  function renderDownloads(lang) {
+    const c = CONTENT[lang].downloads;
+    const grid = document.getElementById("downloads-grid");
+    if (!grid) return;
+
+    grid.innerHTML = c.items
+      .map(
+        (d) => `
+      <a href="${escapeHTML(d.href)}" download class="download-link rounded-lg px-5 py-4 group">
+        <div class="flex items-baseline justify-between gap-3 mb-2">
+          <span class="slot-code shrink-0">${escapeHTML(d.code)}</span>
+          <span class="text-[10px] tracking-[0.18em] uppercase text-slate-700 font-bold">${escapeHTML(d.format)}</span>
+        </div>
+        <p class="font-heading text-navy-900 text-[15px] font-semibold leading-snug mb-1.5 group-hover:text-emerald-900 cta-ink-vibrate">${escapeHTML(d.title)}</p>
+        <p class="font-body text-[12.5px] text-slate-950 font-medium leading-snug">${escapeHTML(d.note)}</p>
+        <span class="download-rule" aria-hidden="true"></span>
+      </a>`
+      )
+      .join("");
+  }
+
+  // ---- Section 11: Parallel Event Schedule — strict daily track matrix ----
+  function renderSchedule(lang) {
+    const c = CONTENT[lang].schedule;
+    const container = document.getElementById("schedule-days");
+    if (!container) return;
+
+    container.innerHTML = c.days
+      .map(
+        (day) => `
+      <article class="rounded-xl border border-slate-300 border-t-2 border-t-emerald-800/60 bg-white overflow-hidden shadow-card">
+        <header class="flex items-baseline justify-between gap-3 px-5 py-3 border-b border-slate-200/80 bg-slate-50">
+          <div class="flex items-baseline gap-2">
+            <span class="label-tag">${escapeHTML(day.code)}</span>
+            <h3 class="font-heading text-navy-900 text-[15px] font-semibold leading-snug">${escapeHTML(day.day_title)}</h3>
+          </div>
+          <span class="text-[10px] tracking-[0.18em] uppercase text-emerald-900 font-extrabold font-body">${escapeHTML(day.date)}</span>
+        </header>
+        <div class="schedule-matrix">
+          ${day.sessions
+            .map(
+              (s) => `
+            <div class="schedule-time px-5 py-3 font-body text-[11.5px] tracking-[0.14em] uppercase text-navy-900 font-bold flex items-baseline gap-2">
+              <span>${escapeHTML(s.time)}</span>
+            </div>
+            <div class="schedule-cell px-5 py-3">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="slot-code">${escapeHTML(s.code)}</span>
+                <span class="font-heading text-navy-900 text-[14px] font-semibold leading-snug">${escapeHTML(s.title)}</span>
+              </div>
+              <p class="font-body text-[12.5px] text-slate-950 font-medium leading-snug">${escapeHTML(s.detail)}</p>
+            </div>`
+            )
+            .join("")}
+        </div>
+      </article>`
+      )
+      .join("");
   }
 
   function setLang(lang) {

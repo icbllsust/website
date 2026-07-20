@@ -736,3 +736,448 @@ header.is-scrolled {
   -webkit-font-feature-settings: "clig" 1, "liga" 1, "calt" 1;
   line-height: 1.26;
 }
+
+/* ===================================================================
+   ROUND 19 — TACTILE CANVAS + NEW ACADEMIC SECTIONS
+   - Replaces flat dead-white body with luxury paper tint (#faf9f5)
+   - Injects blueprint grid (faint slate hairline grid for technical depth)
+   - Mix-blend-mode: multiply @ 0.45 organic fiber texture
+   - Premium 3D-lift hover + sharp ink vibration on translucent buttons
+   - 5 new section module classes: committee-cell, hotel-card,
+     download-link, visa-callout, schedule-cell
+   =================================================================== */
+
+/* ---- Canvas base — kill flat dead white, install warm paper ----
+   Two-tone paper tint with layered radial-gradient dot structure.
+   Top-half cream (#fcfbf8), bottom-half wheat (#faf9f5).
+   Secondary radial-gradient: fine navy dot matrix at 0.45 opacity
+   with mix-blend-mode: multiply — simulates premium fiber substrate
+   of a high-end printed literary journal. */
+body {
+  background-color: #faf9f5;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(4, 120, 87, 0.028) 0%, transparent 50%),
+    radial-gradient(circle at 10% 100%, rgba(16, 42, 67, 0.032) 0%, transparent 40%),
+    linear-gradient(180deg,
+      #fcfbf8 0%,
+      #faf9f5 20%,
+      #faf9f5 80%,
+      #fcfbf8 100%);
+  background-attachment: fixed;
+  color: var(--ink-body);
+}
+
+/* ---- Body dot-matrix overlay — premium fiber paper texture ----
+   Fine radial-gradient dots at 0.45 opacity, mix-blend-mode: multiply.
+   Mimics the tactile surface of high-end textbook stock. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(16, 42, 67, 0.04) 1px, transparent 1px),
+    radial-gradient(circle, rgba(4, 120, 87, 0.025) 1px, transparent 1px);
+  background-size: 5px 5px, 9px 9px;
+  background-position: 0 0, 2px 3px;
+  mix-blend-mode: multiply;
+  opacity: 0.45;
+  z-index: 0;
+}
+main, footer, header { position: relative; z-index: 1; }
+header { z-index: 50 !important; }
+
+/* ---- Blueprint grid — fine slate hairlines + emerald dot at intersections ----
+   Technical-depth overlay applied to navy-tinted sections (About, Contact)
+   for institutional architectural feel without overpowering typography. */
+.blueprint-grid {
+  position: relative;
+  isolation: isolate;
+}
+.blueprint-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(16, 42, 67, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 42, 67, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(16, 42, 67, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 42, 67, 0.025) 1px, transparent 1px),
+    radial-gradient(circle, rgba(4, 120, 87, 0.18) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px, 96px 96px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px, 48px 48px;
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  z-index: 0;
+}
+.blueprint-grid > * { position: relative; z-index: 1; }
+
+/* ---- Luxury paper grain (multi-layer) — R19 intensified version ----
+   Stacks three radial gradient fields:
+     1. Fine navy fiber (1px) — primary substrate
+     2. Emerald dust (1px) — institutional accent dust
+     3. Champagne grain (2px) — paper warmth
+   mix-blend-mode: multiply @ 0.45 keeps the grain organic without
+   washing the underlying paper tint. */
+.paper-grain-luxe {
+  position: relative;
+  isolation: isolate;
+}
+.paper-grain-luxe::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(16, 42, 67, 0.05) 1px, transparent 1px),
+    radial-gradient(rgba(4, 120, 87, 0.03) 1px, transparent 1px),
+    radial-gradient(rgba(254, 243, 199, 0.5) 2px, transparent 2px);
+  background-size: 3px 3px, 7px 7px, 13px 13px;
+  background-position: 0 0, 1px 2px, 2px 4px;
+  mix-blend-mode: multiply;
+  opacity: 0.45;
+  z-index: 0;
+}
+.paper-grain-luxe > * { position: relative; z-index: 1; }
+
+/* ---- Edge bleed — quarter-px hairline running down both outer edges ----
+   Mimics the gutter-shadow of a bound book. Subtle but institutional. */
+.edge-bleed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(16, 42, 67, 0.06), transparent 6%, transparent 94%, rgba(16, 42, 67, 0.06));
+  z-index: 0;
+}
+
+/* ---- Section: Committees — dense multi-column block grid ----
+   Committee cells share the same hardware-accelerated interaction layer
+   as stat/trust cards, with a slightly stronger 3D lift (translateY(-3px))
+   since committee cells carry more text weight. */
+.committee-cell {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid var(--border-default);
+  border-left: 3px solid var(--emerald-800);
+  will-change: transform, box-shadow, border-color;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.committee-cell:hover {
+  transform: translateY(-3px);
+  border-left-color: var(--emerald-700);
+  border-color: var(--emerald-700);
+  box-shadow:
+    0 0 0 1px rgba(6, 95, 70, 0.35),
+    0 14px 28px -14px rgba(6, 95, 70, 0.22),
+    0 6px 12px -6px rgba(16, 42, 67, 0.1);
+}
+.committee-cell:active {
+  transform: translateY(0);
+  transition-duration: 0.12s;
+}
+
+/* ---- Section: Logistics & Accommodation — hotel card ----
+   2-col grid, sharp-bordered hotel cards with booking tags.
+   Hotels use a stronger lift (translateY(-2px)) since the card
+   is taller (image + 4 metadata rows). */
+.hotel-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid var(--border-default);
+  border-top: 2px solid var(--emerald-800);
+  will-change: transform, box-shadow, border-color;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.hotel-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--emerald-700);
+  box-shadow:
+    0 0 0 1px rgba(6, 95, 70, 0.3),
+    0 12px 24px -12px rgba(6, 95, 70, 0.22);
+}
+.hotel-card:active {
+  transform: translateY(0);
+  transition-duration: 0.12s;
+}
+
+.hotel-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 6px;
+  font-family: Inter, "Noto Sans Bengali", sans-serif;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: var(--emerald-900);
+  border-radius: 2px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ---- Section: Download Templates — explicit structural underline link ----
+   No icons (per spec). Uses heavy 2px underline + emerald-on-hover transition
+   with a sharp ink vibration (translateY(-1px) + scale(1.005)) on hover. */
+.download-link {
+  position: relative;
+  display: block;
+  background-color: #ffffff;
+  border: 1px solid var(--border-default);
+  border-top: 2px solid var(--navy-900);
+  text-decoration: none;
+  will-change: transform, box-shadow, border-color;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.download-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--emerald-700);
+  background-color: #f8fafc;
+  box-shadow:
+    0 0 0 1px rgba(6, 95, 70, 0.3),
+    0 10px 20px -10px rgba(6, 95, 70, 0.2);
+}
+.download-link:active {
+  transform: translateY(0);
+  transition-duration: 0.12s;
+}
+.download-link .download-rule {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--emerald-700);
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.download-link:hover .download-rule { width: 100%; }
+
+/* ---- Section: Visa & Travel — formal administrative callout ----
+   Cream wash with sharp navy left rail (4px) + emerald top hairline.
+   No icon decorations; pure typographic authority. */
+.visa-callout {
+  position: relative;
+  background-color: #faf9f5;
+  border: 1px solid var(--border-default);
+  border-top: 2px solid var(--emerald-800);
+  border-left: 4px solid var(--navy-900);
+}
+
+/* ---- Section: Schedule — strict horizontal daily track matrix ----
+   Schedule cells share the date-card interaction layer but use a
+   flat baseline (no translateY lift, just border-color intensification)
+   so the matrix reads as a stable reference table. */
+.schedule-cell {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid var(--border-default);
+  border-left: 3px solid var(--emerald-800);
+  will-change: transform, box-shadow, border-color, background-color;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.schedule-cell:hover {
+  border-left-color: var(--emerald-700);
+  border-color: var(--emerald-700);
+  background-color: #f8fafc;
+  box-shadow:
+    inset 0 -2px 0 var(--emerald-700),
+    0 8px 16px -10px rgba(6, 95, 70, 0.18);
+}
+.schedule-cell:active {
+  background-color: #f1f5f9;
+  transition-duration: 0.12s;
+}
+
+/* ---- Schedule time-slot code — sharp emerald uppercase chip ---- */
+.slot-code {
+  display: inline-flex;
+  align-items: center;
+  height: 17px;
+  padding: 0 6px;
+  font-family: Inter, "Noto Sans Bengali", sans-serif;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--emerald-900);
+  background-color: #ecfdf5;
+  border: 1px solid rgba(4, 120, 87, 0.4);
+  border-radius: 2px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ---- Schedule matrix grid — sharp inner dividers ---- */
+.schedule-matrix {
+  display: grid;
+  border: 1px solid var(--border-default);
+  background-color: #ffffff;
+}
+.schedule-matrix > * + * { border-top: 1px solid var(--border-default); }
+@media (min-width: 640px) {
+  .schedule-matrix { grid-template-columns: 110px 1fr; }
+  .schedule-matrix > * + * { border-top: 0; }
+  .schedule-matrix > .schedule-time {
+    border-right: 1px solid var(--border-default);
+    background-color: #faf9f5;
+  }
+}
+
+/* ---- Travel-route cells — sharp bordered rows for transit instructions ---- */
+.route-row {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(16, 42, 67, 0.08);
+}
+.route-row:last-child { border-bottom: 0; }
+
+.route-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--emerald-800);
+  color: var(--emerald-900);
+  background-color: #ecfdf5;
+  font-family: 'Playfair Display', 'Noto Serif Bengali', serif;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 2px;
+  line-height: 1;
+}
+
+/* ---- R19 — Section padding lockdown (textbook density) ----
+   Tightens every <section> to compressed py-8 sm:py-12 padding.
+   Sections with #home/#hero specifically retain pt-24 pb-12 since they
+   need room for the sticky header offset. */
+:where(section)[id] {
+  padding-block: clamp(2rem, 3.5vw, 3rem) !important;
+}
+:where(section)#home,
+:where(section)#cfp,
+:where(section)#committees,
+:where(section)#logistics,
+:where(section)#downloads,
+:where(section)#visa,
+:where(section)#schedule {
+  padding-top: clamp(3rem, 6vw, 5rem) !important;
+  padding-bottom: clamp(2.25rem, 4vw, 3.5rem) !important;
+}
+
+/* ---- Structural bounding — all sections get explicit border-bottom ----
+   Ensures no component feels "floating" or AI-generated.
+   Sections 07-11 use border-b border-slate-300 for crisp separation. */
+#committees,
+#logistics,
+#downloads,
+#visa,
+#schedule {
+  border-bottom: 1px solid var(--border-default);
+}
+
+/* ---- Institutional accent — alternating sections get emerald border ----
+   Sections 08, 10 (even-numbered new sections) carry a secondary
+   emerald-900/40 border-bottom for visual rhythm variation. */
+#logistics,
+#visa {
+  border-bottom-color: rgba(6, 78, 59, 0.4);
+}
+
+/* ---- Sharp ink vibration — premium button accent ----
+   Used on translucent hero CTA / lang-btn / nav-cta. The ink color
+   shifts from navy-900 to ink-charcoal (slate-950) on hover, paired
+   with a -1px x-axis jitter to deliver a "sharp physical" feel. */
+.cta-ink-vibrate {
+  transition:
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.cta-ink-vibrate:hover {
+  color: var(--ink-charcoal);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+/* ---- Section canvas override — strip flat backgrounds so body texture shows ----
+   All sections inherit transparent background by default so the body's
+   organic paper tint + dot-matrix overlay bleeds through uniformly.
+   Alternating white/cream washes are applied via paper-grain-luxe. */
+section[id] {
+  background-color: transparent !important;
+}
+section#home {
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(4, 120, 87, 0.06) 0%, transparent 60%),
+    radial-gradient(900px 500px at -5% 110%, rgba(16, 42, 67, 0.05) 0%, transparent 65%),
+    transparent !important;
+}
+
+/* ---- Section white-wash panels — floating institutional card surfaces ----
+   Provides a subtle opaque ground for sections that need readable content
+   while still revealing the body paper texture at section edges (no full-bleed bg). */
+.panel-wash {
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(120%) blur(2px);
+  -webkit-backdrop-filter: saturate(120%) blur(2px);
+  border: 1px solid rgba(16, 42, 67, 0.06);
+  border-top: 2px solid var(--emerald-800);
+}
+
+/* ---- Section inner content wrapper — white card surface ----
+   Replaces the old full-bleed bg-white with a contained panel. */
+.section-inner {
+  background-color: #ffffff;
+  border: 1px solid var(--border-default);
+  border-top: 2px solid var(--emerald-800);
+  box-shadow: 0 1px 2px rgba(16, 42, 67, 0.04);
+}
+
+/* ---- R19 — Reduced motion extensions for new modules ---- */
+@media (prefers-reduced-motion: reduce) {
+  .committee-cell,
+  .hotel-card,
+  .download-link,
+  .schedule-cell,
+  .cta-ink-vibrate,
+  .blueprint-grid,
+  .paper-grain-luxe {
+    transition: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+  .committee-cell:hover,
+  .hotel-card:hover,
+  .download-link:hover,
+  .schedule-cell:hover {
+    transform: none !important;
+  }
+}
