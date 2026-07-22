@@ -13,10 +13,12 @@
       "cfp": "Call for Papers",
       "dates": "Important Dates",
       "speakers": "Keynote Speakers",
+      "schedule": "Programme",
       "fees": "Registration",
       "contact": "Contact",
       "committees": "Committees",
-      "logo_char": "B"
+      "logo_char": "B",
+      "register": "Register"
     },
     "hero": {
       "eyebrow": "Department of Bengali, SUST",
@@ -42,6 +44,21 @@
       "stat_days_tag": "SCALE",
       "stat_tracks_tag": "TRACKS",
       "stat_global_tag": "REACH"
+    },
+    "countdown": {
+      "intro": "Conference begins in",
+      "days": "Days",
+      "hours": "Hrs",
+      "mins": "Min",
+      "secs": "Sec",
+      "deadline_label": "Abstract Deadline:",
+      "deadline_date": "01 Oct 2026",
+      "deadline_pill": "OPEN"
+    },
+    "sticky": {
+      "label": "Abstract Deadline:",
+      "date": "01 October 2026",
+      "cta": "Submit Abstract →"
     },
     "trust_block": {
       "tag": "INSTITUTIONAL TRUST",
@@ -348,10 +365,12 @@
       "cfp": "প্রবন্ধ আহ্বান",
       "dates": "গুরুত্বপূর্ণ তারিখ",
       "speakers": "মূখ্য আলোচক",
+      "schedule": "কার্যক্রম",
       "fees": "নিবন্ধন",
       "contact": "যোগাযোগ",
       "committees": "কমিটি",
-      "logo_char": "বা"
+      "logo_char": "বা",
+      "register": "নিবন্ধন"
     },
     "hero": {
       "eyebrow": "বাংলা বিভাগ, শাবিপ্রবি",
@@ -377,6 +396,21 @@
       "stat_days_tag": "পরিসর",
       "stat_tracks_tag": "ট্র্যাক",
       "stat_global_tag": "প্রসার"
+    },
+    "countdown": {
+      "intro": "সম্মেলন শুরু হবে",
+      "days": "দিন",
+      "hours": "ঘণ্টা",
+      "mins": "মিনিট",
+      "secs": "সেকেন্ড",
+      "deadline_label": "সারসংক্ষেপ জমার শেষ তারিখ:",
+      "deadline_date": "০১ অক্টোবর ২০২৬",
+      "deadline_pill": "চলছে"
+    },
+    "sticky": {
+      "label": "সারসংক্ষেপ জমার শেষ তারিখ:",
+      "date": "০১ অক্টোবর ২০২৬",
+      "cta": "সারসংক্ষেপ জমা দিন →"
     },
     "trust_block": {
       "tag": "প্রাতিষ্ঠানিক বিশ্বাস",

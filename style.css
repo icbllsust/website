@@ -1,1114 +1,550 @@
-/* ---------------------------------------------------------
-   ICBLLC 2027 — institutional color psychology system
-   Brand Green (#1F7A5C) + Brand Blue (#2273C3)
-   Deep Navy (#102a43) for authority backgrounds.
-   Champagne plates (#fef3c7) for inner depth only.
-   Zero harsh red/maroon. High-contrast ink throughout.
---------------------------------------------------------- */
+/* ============================================================
+   ICBLL-2026 — Premium Bengali Academic Conference Design System
+   
+   Philosophy: Bengali literary heritage meets international
+   academic prestige. Inspired by Bangla Academy, Visva-Bharati,
+   and the typography of Rabindra-era literary journals.
 
+   Color Architecture:
+   ─────────────────────────────────────────────────────────────
+   NAVY     #1a2744   (Oxford/Deep Navy — Primary Authority)
+   FOREST   #1c4532   (Deep Heritage Emerald — Accent only)
+   GOLD     #b5863a   (Manuscript Brass — Highlight & Keyline)
+   GOLD_LT  #f5e6c8   (Warm Gold Tint — Badge backgrounds)
+   PAPER    #faf8f4   (Aged Manuscript Parchment — Canvas)
+   SMOKE    #f2f0eb   (Slightly darker parchment — alternate)
+   INK      #1a1f2e   (Near-black — All body text)
+   MIST     #e8e2d8   (Divider lines & borders)
+   ─────────────────────────────────────────────────────────────
+   
+   Ratios: 55% Parchment, 30% Navy/Ink, 15% Gold/Forest
+============================================================ */
+
+/* ── CSS Custom Properties ── */
 :root {
-  /* Brand Green — Bengali cultural + institutional accent */
-  --brand-green-900: #114a36;
-  --brand-green-800: #155a42;
-  --brand-green-700: #1a6b50;
-  --brand-green-600: #1F7A5C;
-  --brand-green-500: #268f6a;
-  --brand-green-400: #34a87e;
-  --brand-green-100: #c8ede0;
-  --brand-green-50:  #eaf8f2;
-
-  /* Brand Blue — secondary academic accent */
-  --brand-blue-800: #1a4f96;
-  --brand-blue-700: #1e62b0;
-  --brand-blue-600: #2273C3;
-  --brand-blue-500: #3d8ad4;
-  --brand-blue-400: #5da1e0;
-  --brand-blue-100: #d6e8f7;
-  --brand-blue-50:  #eaf2fb;
-
-  /* Deep Administrative Navy — backgrounds + headings only */
-  --navy-900: #102a43;
-  --navy-50: #eef2fb;
-
-  /* Backward-compat aliases → new brand palette */
-  --emerald-900: var(--brand-green-900);
-  --emerald-800: var(--brand-green-800);
-  --emerald-700: var(--brand-green-600);
-  --emerald-400: var(--brand-green-400);
-  --navy-800: var(--brand-blue-800);
-  --navy-700: var(--brand-blue-600);
-
-  /* Warm Champagne — inner plates, tag backgrounds, hover washes ONLY */
-  --champagne: #fef3c7;
-  --champagne-soft: #fff8eb;
-
-  /* High-contrast ink */
-  --ink-strong: #0F172A;
-  --ink: #1e293b;
-  --ink-body: #1e293b;
-
-  /* Canvas */
-  --paper: #FAF8F5;
-  --cream: #FAF8F5;
-
-  /* Border system */
-  --ink-charcoal: #020617;
-  --border-default: #cbd5e1;
-  --border-accent-green: #155a42;
-  --border-accent-emerald: var(--border-accent-green);
-  --border-accent-blue: #1e62b0;
-  --border-accent-gold: #fde68a;
+  --navy:      #1a2744;
+  --navy-dark: #111b33;
+  --forest:    #1c4532;
+  --gold:      #b5863a;
+  --gold-lt:   #f5e6c8;
+  --gold-pale: #fdf7ed;
+  --paper:     #faf8f4;
+  --smoke:     #f2f0eb;
+  --ink:       #1a1f2e;
+  --ink-light: #4a5568;
+  --mist:      #e2dcd2;
+  --line:      #e8e2d8;
+  --white:     #ffffff;
+  --shadow-sm: 0 1px 3px rgba(26,31,46,0.08), 0 1px 2px rgba(26,31,46,0.04);
+  --shadow-md: 0 4px 16px rgba(26,31,46,0.10), 0 2px 4px rgba(26,31,46,0.06);
+  --shadow-lg: 0 12px 40px rgba(26,31,46,0.14), 0 4px 8px rgba(26,31,46,0.08);
+  --shadow-xl: 0 24px 64px rgba(26,31,46,0.18), 0 8px 16px rgba(26,31,46,0.10);
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-2xl: 2.5rem;
 }
+
+/* ── Base Reset & Typography ── */
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: var(--paper);
-  background-image:
-    radial-gradient(circle at 50% 0%, rgba(31, 122, 92, 0.028) 0%, transparent 50%),
-    radial-gradient(circle at 10% 100%, rgba(16, 42, 67, 0.032) 0%, transparent 40%),
-    linear-gradient(180deg,
-      #FAF8F5 0%,
-      #FAF8F5 20%,
-      #FAF8F5 80%,
-      #FAF8F5 100%);
-  background-attachment: fixed;
-  color: var(--ink-body);
+  font-family: "DM Sans", "Noto Sans Bengali", "Inter", system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ---- Typography roles ---- */
-/* Global heading font-feature-settings (Round 15):
-     Enables contextual ligatures (clig), contextual alternates (calt),
-     standard ligatures (liga), and lining numerals (lnum) across all
-     heading elements for premium typographic rhythm. */
-h1, h2, h3, h4, h5, h6,
-.font-heading,
-.font-heading h1,
-.font-heading h2,
-.font-heading h3,
-.font-heading h4,
-.font-heading h5,
-.font-heading h6 {
-  font-feature-settings: "clig" 1, "calt" 1, "liga" 1, "lnum" 1;
-  -webkit-font-feature-settings: "clig" 1, "calt" 1, "liga" 1, "lnum" 1;
+/* ── Display / Serif Font ── */
+.font-display {
+  font-family: "Playfair Display", "Noto Serif Bengali", Georgia, serif;
 }
 
-.font-heading {
-  font-family: 'Playfair Display', 'Noto Serif Bengali', serif;
-  letter-spacing: 0.01em;
-  color: var(--navy-900);
+/* ── Section Typography Pattern ── */
+.section-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
 }
 
-/* Hero title accent — second half of the two-tone split.
-     Locked to Brand Green #1F7A5C (emerald-600) so the navy+emerald
-     institutional narrative reads through on the largest type on the page. */
-.hero-title-accent {
-  color: var(--emerald-900);
+.section-heading {
+  letter-spacing: -0.035em;
+  line-height: 1.18;
 }
 
-.font-body {
-  font-family: 'Inter', 'Noto Sans Bengali', sans-serif;
+.section-rule {
+  display: block;
+  width: 52px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin-top: 0.875rem;
 }
 
-[data-lang="bn"] .font-heading {
-  font-family: 'Noto Serif Bengali', 'Playfair Display', serif;
-  letter-spacing: 0;
-  line-height: 1.4;
-  padding-bottom: 0.2em;
-}
-
-[data-lang="bn"] .font-body {
-  font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
-}
-
-[data-lang="bn"] p,
-[data-lang="bn"] li,
-[data-lang="bn"] .fee-cell,
-[data-lang="bn"] .track-desc {
-  line-height: 1.9;
-}
-
-/* ---- Alpona rule — emerald hairline + diamond motif ---- */
-.alpona-rule {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  width: 100%;
-  max-width: 220px;
-}
-
-.alpona-rule.centered {
+.section-rule.centered {
   margin-left: auto;
   margin-right: auto;
 }
 
-.alpona-rule::before,
-.alpona-rule::after {
-  content: "";
-  flex: 1 1 auto;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--emerald-700) 45%, var(--champagne) 55%, transparent);
-}
-
-.alpona-rule .alpona-motif {
-  flex: 0 0 auto;
-  width: 14px;
-  height: 14px;
-}
-
-/* ---- Section title ornaments — emerald left rule (no maroon/gold) ---- */
-.section-title {
-  border-left: 4px solid var(--emerald-700);
-  padding-left: 1rem;
-  color: var(--navy-900);
-}
-
-.section-title-on-navy {
-  border-left: 4px solid var(--emerald-400);
-  padding-left: 1rem;
-  color: #ffffff;
-}
-
-/* ---- Compact header — tight corporate grid alignment ---- */
-#site-header .header-inner {
-  height: 68px;
-}
-
-/* Square brand chip — concentric circles removed per spec.
-   White plate so the SUST crest's original navy+emerald+white palette
-   reads at full color (a navy plate collapses the crest to black-on-black).
-   NO shadow — border-only grounding. Hardware-accelerated lift on hover. */
-#brand-mark {
-  background-color: #ffffff;
-  border: 1px solid var(--emerald-800);
-  will-change: transform, border-color;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-              border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-}
-#brand-mark:hover {
-  transform: translateY(-2px) scale(1.04);
-  border-color: var(--emerald-700);
-}
-#brand-mark:active {
-  transform: translateY(0) scale(1);
-}
-
-#brand-mark img {
-  border-radius: 4px;
-  object-fit: contain;
-  background-color: #ffffff;
-}
-
-/* ---- Brand mark ---- */
-
-
-
-/* ---- Label-tag — navy-900 sharp pill, font-weight 900 (max authority) ----
-       Spec mandate: crisp high-contrast slate/emerald only — no champagne.
-       White text on Deep Administrative Navy Blue delivers the sharpest
-       contrast on real mobile/tablet screens. */
-.label-tag {
-  display: inline-flex;
-  align-items: center;
-  height: 20px;
-  padding: 0 8px;
-  font-family: Inter, "Noto Sans Bengali", sans-serif;
-  font-size: 9.5px;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #ffffff;
-  background-color: var(--navy-900);
-  border: 1px solid var(--navy-900);
-  border-radius: 3px;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-/* Optional slate variant for inverted surfaces (light backgrounds) */
-.label-tag.slate {
-  color: var(--navy-900);
-  background-color: #f1f5f9;
-  border-color: #e2e8f0;
-}
-
-/* Dark (navy section) variant — emerald on translucent white */
-.label-tag.on-navy,
-.label-tag.bg-white\/10 {
-  color: var(--emerald-400);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(52, 168, 126, 0.4);
-}
-
-/* ---- Card system — pure white surface + emerald top hairline ---- */
-.stat-card,
-.trust-cell,
-.info-card,
-.track-card {
-  background-color: #ffffff;
-}
-
-/* Spec-aligned: whisper-thin navy-to-white top-fade on stat cards.
-   Eliminates all champagne/slate wash bleed; the emerald top hairline
-   is the only visual accent. */
-.stat-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(16, 42, 67, 0.04) 0%, rgba(255, 255, 255, 0) 35%);
-  pointer-events: none;
-  opacity: 1;
-}
-
-.info-card { position: relative; overflow: hidden; }
-.info-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(16, 42, 67, 0.03) 0%, rgba(255, 255, 255, 0) 35%);
-  pointer-events: none;
-  opacity: 1;
-}
-
-.trust-cell {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
-@media (max-width: 767px) {
-  .trust-cell + .trust-cell {
-    border-top: 1px solid rgba(16, 42, 67, 0.08);
-    padding-top: 1.25rem;
-    margin-top: 1.25rem;
-  }
-}
-
-/* ---- CFP layered background ---- */
-.cfp-bg-pattern {
-  position: relative;
-  background-color: #ffffff;
-}
-.cfp-bg-pattern::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='2' cy='2' r='1' fill='%231e3a8a' fill-opacity='0.07'/></svg>"),
-    linear-gradient(135deg, rgba(16, 42, 67, 0.03) 0%, rgba(31, 122, 92, 0.02) 60%, transparent 100%);
-  background-size: 32px 32px, 100% 100%;
-  background-repeat: repeat, no-repeat;
-  z-index: 0;
-}
-
-/* ---- Icon + text baseline alignment (EN + বাংলা mixed) ---- */
-/* ---- Hero CTAs — glassmorphic translucent wash system ----
-     Primary:  emerald-50 wash + emerald-900 extrabold text
-     Secondary / Tertiary: slate-50 wash + navy-900 bold text
-     Cinematic cubic-bezier(0.25, 1, 0.5, 1) timing function —
-     3D translate-Y scale lift on hover + active press depression.
-     Hardware-accelerated via will-change + backface-visibility. */
-.hero-cta-primary,
-.hero-cta-secondary,
-.hero-cta-tertiary {
-  position: relative;
-  will-change: transform, border-color;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition:
-    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-    background-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.hero-cta-primary:active,
-.hero-cta-secondary:active,
-.hero-cta-tertiary:active {
-  transform: translateY(0) scale(1);
-  transition-duration: 0.12s;
-}
-
-.hero-cta-primary {
-  box-shadow: none;
-}
-.hero-cta-primary:hover {
-  transform: translateY(-2px) scale(1.015);
-  border-color: rgba(31, 122, 92, 0.7);
-  box-shadow: none;
-}
-
-.hero-cta-secondary {
-  box-shadow: none;
-}
-.hero-cta-secondary:hover {
-  transform: translateY(-2px) scale(1.015);
-  border-color: rgba(31, 122, 92, 0.55);
-  box-shadow: none;
-}
-
-.hero-cta-tertiary {
-  box-shadow: none;
-}
-.hero-cta-tertiary:hover {
-  transform: translateY(-2px) scale(1.015);
-  border-color: rgba(31, 122, 92, 0.55);
-  box-shadow: none;
-}
-
-.speaker-avatar {
-  border: 1px solid rgba(16, 42, 67, 0.12);
-  background-color: var(--navy-50);
-}
-
-/* ---- Focus visibility — navy ring, no red/gold glow ---- */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 2px solid var(--emerald-700);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
+/* ── Accessibility ── */
 .skip-link {
   position: absolute;
-  left: -9999px;
-  top: 0;
-  background: var(--navy-900);
+  top: -120px;
+  left: 1.5rem;
+  z-index: 200;
+  background: var(--navy);
   color: #fff;
-  padding: 0.6rem 1rem;
-  z-index: 100;
-  border-radius: 0 0 6px 0;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: top 0.2s ease;
 }
-.skip-link:focus { left: 0; }
+.skip-link:focus { top: 1rem; }
 
-/* ---- Language toggle — cinematic cubic-bezier + 3D lift + emerald glow ---- */
-.lang-btn {
-  position: relative;
-  will-change: transform, background-color, color;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition:
-    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-    background-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-    color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.lang-btn:hover {
-  transform: translateY(-1px);
-}
-.lang-btn:active {
-  transform: translateY(0) scale(1);
-  transition-duration: 0.12s;
-}
-.lang-btn.is-active {
-  background-color: var(--navy-900);
-  color: #ffffff;
-  box-shadow: none;
-}
-
-/* ---- Paper grain texture — whisper-thin noise on light surfaces ----
-     background-blend-mode: multiply keeps the grain organic without
-     washing the underlying white/cream surface. Layered radial gradients
-     mimic fiber paper texture (luxury printed textbook feel). */
-.paper-grain-bg {
-  position: relative;
-  isolation: isolate;
-}
-.paper-grain-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(rgba(16, 42, 67, 0.035) 1px, transparent 1px),
-    radial-gradient(rgba(31, 122, 92, 0.022) 1px, transparent 1px);
-  background-size: 3px 3px, 7px 7px;
-  background-position: 0 0, 1px 2px;
-  background-blend-mode: multiply;
-  opacity: 0.6;
-  z-index: 0;
-}
-.paper-grain-bg > * { position: relative; z-index: 1; }
-
-/* ---- Global ink scale + weight — print-grade typography lockdown ---- */
-p, li, .fee-cell, .track-desc, .date-card-label, .trust-cell p {
-  color: var(--ink-body);
-  font-weight: 500;
-}
-
-@media print {
-  header, footer, .no-print { display: none !important; }
-}
-
-/* ===================================================================
-   ELITE UI/UX MODULES — Header + Hero polish (Round 10)
-   - Hybrid CSS architecture (custom modules + Tailwind utilities)
-   - Total purge of red/maroon/terracotta (#991b1b, #b45309)
-   - Brand Green (#1F7A5C) + Brand Blue (#2273C3) dual-tone system
-   - Deep Navy (#102a43) for authority backgrounds only
-   - Champagne (#fef3c7) ONLY as plate wash
-   - All washed-out neutral-500/600 forbidden; ink is --ink / --ink-strong
-   =================================================================== */
-
-/* ---- Paper-grain micro-texture overlay (subtle institutional paper) ---- */
-.paper-grain {
-  position: relative;
-}
-.paper-grain::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(rgba(16, 42, 67, 0.04) 1px, transparent 1px),
-    radial-gradient(rgba(31, 122, 92, 0.025) 1px, transparent 1px);
-  background-size: 3px 3px, 7px 7px;
-  background-position: 0 0, 1px 2px;
-  mix-blend-mode: multiply;
-  opacity: 0.55;
-  z-index: 0;
-}
-.paper-grain > * { position: relative; z-index: 1; }
-
-/* ---- Header — crisp glass-shadow when scrolled + paper underlay ---- */
-#site-header {
-  background-color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: saturate(160%) blur(8px);
-  -webkit-backdrop-filter: saturate(160%) blur(8px);
-  border-bottom: 1px solid rgba(16, 42, 67, 0.08);
-}
-header.is-scrolled {
-}
-
-/* ---- Brand mark — authoritative ruleset (object-fit: contain for crest) ---- */
-
-/* ---- Hero — asymmetric 7/5 grid, SOLID WHITE CANVAS ----
-   Pure white (#ffffff) with zero gradients, zero dots, zero texture.
-   Structural boundaries (border-b) and adjacent section contrast
-   provide all the visual separation needed. */
-#home {
-  background: #ffffff;
-}
-#home .max-w-6xl { max-width: 72rem; }
-
-/* ---- Eyebrow hairline — institutional under-rule ---- */
-.hero-eyebrow {
-  position: relative;
-  padding-left: 0;
-}
-.hero-eyebrow .hero-eyebrow-rule {
-  display: inline-block;
-  width: 28px;
-  height: 1px;
-  background: var(--emerald-900);
-  vertical-align: baseline;
-  margin-right: 0.5rem;
-  transform: translateY(-4px);
-  opacity: 0.7;
-}
-
-/* ---- Container cards — pure white + emerald top hairline + whisper-navy fade ----
-     Hardware-accelerated interaction layer:
-     will-change + backface-visibility prep the GPU before hover/translate fires.
-     Hover: 3D translate-Y scale lift + multi-color border intensification
-     (slate-300 → emerald-700) + soft shadow-glow. */
-.stat-card,
-.trust-cell,
-.info-card,
-.track-card,
-.date-card {
-  position: relative;
-  background-color: #ffffff;
-  border-top: 2px solid var(--emerald-800);
-  will-change: transform, border-color;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition:
-    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-    background-color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.stat-card::before,
-.info-card::before,
-.date-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(16, 42, 67, 0.04) 0%, rgba(255, 255, 255, 0) 35%);
-  pointer-events: none;
-  opacity: 1;
-  z-index: 0;
-}
-.stat-card > *,
-.info-card > *,
-.date-card > * { position: relative; z-index: 1; }
-
-/* ---- Border intensification on hover (stat + date + info cards) — NO shadows ---- */
-.stat-card:hover,
-.date-card:hover,
-.info-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--emerald-700);
-}
-.stat-card:active,
-.date-card:active,
-.info-card:active {
-  transform: translateY(0);
-  transition-duration: 0.12s;
-}
-
-/* ---- Trust-cell hover — slate-50 whisper wash + soft border intensification ---- */
-.trust-cell:hover {
-  background-color: #f8fafc;
-  box-shadow: inset 3px 0 0 var(--emerald-700);
-}
-.trust-cell:active { background-color: #f1f5f9; transition-duration: 0.12s; }
-
-/* ---- Track-card hover — emerald border sweep ---- */
-.track-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--emerald-700);
-}
-
-/* ---- Stat-card micro-interaction — count-up underline ---- */
-.stat-card .stat-number {
-  position: relative;
-  display: inline-block;
-}
-.stat-card .stat-number::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -4px;
-  width: 0;
-  height: 1.5px;
-  background: var(--emerald-700);
-  transform: translateX(-50%);
-  transition: width 320ms cubic-bezier(0.25, 1, 0.5, 1);
-}
-.stat-card:hover .stat-number::after { width: 38%; }
-
-/* ---- Hero CTA — unified glassmorphic wash rules consolidated above ----
-     The primary / secondary / tertiary rules live in the unified block
-     near the top of this section; this slot is reserved for any
-     tertiary-specific ornamentation (kept empty for now). */
-
-/* ---- Icon + text — forced baseline lock-up ---- */
-.icon-text-baseline {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.5rem;
-}
-.icon-text-baseline > [data-lucide],
-.icon-text-baseline > svg {
-  align-self: baseline;
-  flex-shrink: 0;
-  transform: translateY(2px);     /* optical center correction */
-}
-
-/* ---- Hero right-rail — sticky on lg+ ---- */
-@media (min-width: 1024px) {
-  .hero-right-rail { position: sticky; top: 6rem; }
-}
-
-/* ---- Hero — quiet luxury ornament: emerald keyline under title ---- */
-.hero-keyline {
-  height: 1px;
-  background: linear-gradient(90deg, var(--emerald-700) 0%, var(--emerald-700) 18%, transparent 18%, transparent 24%, var(--emerald-400) 24%, var(--emerald-400) 30%, transparent 30%);
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  max-width: 28rem;
-}
-
-/* ---- High-contrast ink scale (replaces washed-out neutrals) ---- */
-.ink-strong { color: var(--ink-strong); }    /* #0f172a */
-.ink        { color: var(--ink); }           /* #1e293b */
-.ink-body   { color: var(--ink-body); }      /* #262626 */
-.ink-emerald{ color: var(--emerald-900); }
-.ink-navy   { color: var(--navy-900); }
-
-/* ---- Round 17 — Textbook-density section padding ----
-     Locks a tight 10–14rem scale so vertical rhythm never "loosens"
-     between sections. Overrides Tailwind py-20/24 utility at the CSS layer. */
-/* ---- Round 17 — Multi-color border system utilities ----
-     Three-tier hierarchy: default slate hairline, emerald institutional
-     accent, gold data-zone highlight. Pair with .bg-white surfaces
-     so colored borders read clearly without overpowering typography. */
-.box-default         { border: 1px solid var(--border-default); }
-.box-accent-emerald  { border: 1px solid var(--border-accent-emerald); }
-.box-accent-gold     { border: 1px solid var(--border-accent-gold); }
-
-/* Asymmetric corner radii — premium editorial cards */
-.asymmetric-corners { border-radius: 1rem 0.375rem 1rem 0.375rem; }
-
-/* Whisper-thin navy-to-white top fade for container grids */
-.top-fade {
-  background: linear-gradient(to bottom, rgba(16, 42, 67, 0.045) 0%, rgba(16, 42, 67, 0) 60%);
-}
-
-/* ---- Round 17 — Bengali text rhythm + ligatures ----
-     Extends heading ligature settings to Bengali-supporting text and
-     locks leading to 1.26 so conjunct characters never clip at any density. */
-[data-lang="bn"] .font-heading,
-[data-lang="bn"] h1,
-[data-lang="bn"] h2,
-[data-lang="bn"] h3,
-[data-lang="bn"] h4 {
-  font-feature-settings: "clig" 1, "liga" 1, "calt" 1;
-  -webkit-font-feature-settings: "clig" 1, "liga" 1, "calt" 1;
-  line-height: 1.26;
-}
-
-/* ===================================================================
-   ROUND 19 — TACTILE CANVAS + NEW ACADEMIC SECTIONS
-   - Replaces flat dead-white body with luxury paper tint (#FAF8F5)
-   - Injects blueprint grid (faint slate hairline grid for technical depth)
-   - Mix-blend-mode: multiply @ 0.45 organic fiber texture
-   - Premium 3D-lift hover + sharp ink vibration on translucent buttons
-   - 5 new section module classes: committee-cell, hotel-card,
-     download-link, visa-callout, schedule-cell
-   =================================================================== */
-
-/* ---- Canvas base — kill flat dead white, install warm paper ----
-   Two-tone paper tint with layered radial-gradient dot structure.
-   Uniform warm paper canvas (#FAF8F5) for premium textbook feel.
-   Secondary radial-gradient: fine navy dot matrix at 0.45 opacity
-   with mix-blend-mode: multiply — simulates premium fiber substrate
-   of a high-end printed literary journal. */
-/* ---- Body dot-matrix overlay — premium fiber paper texture ----
-   Fine radial-gradient dots at 0.45 opacity, mix-blend-mode: multiply.
-   Mimics the tactile surface of high-end textbook stock. */
-body::before {
-  content: "";
+/* ── Navigation Shell ── */
+.nav-shell {
   position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, rgba(16, 42, 67, 0.04) 1px, transparent 1px),
-    radial-gradient(circle, rgba(31, 122, 92, 0.025) 1px, transparent 1px);
-  background-size: 5px 5px, 9px 9px;
-  background-position: 0 0, 2px 3px;
-  mix-blend-mode: multiply;
-  opacity: 0.45;
-  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(250, 248, 244, 0.96);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow 0.3s ease;
 }
-main, footer, header { position: relative; z-index: 1; }
-header { z-index: 50 !important; }
 
-/* ---- Blueprint grid — fine slate hairlines + emerald dot at intersections ----
-   Technical-depth overlay applied to navy-tinted sections (About, Contact)
-   for institutional architectural feel without overpowering typography. */
-.blueprint-grid {
-  position: relative;
-  isolation: isolate;
+.nav-shell.scrolled {
+  box-shadow: 0 2px 20px rgba(26,31,46,0.10);
 }
-.blueprint-grid::before {
-  content: "";
+
+.nav-link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-light);
+  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 0.1rem;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link:hover { color: var(--navy); }
+.nav-link:hover::after { transform: scaleX(1); }
+.nav-link.active { color: var(--navy); font-weight: 700; }
+.nav-link.active::after { transform: scaleX(1); }
+
+/* Language Toggle */
+.lang-switch { display: flex; border-radius: 999px; border: 1px solid var(--line); background: var(--white); padding: 0.2rem; gap: 0.1rem; }
+.lang-btn { border-radius: 999px; padding: 0.275rem 0.875rem; font-size: 0.75rem; font-weight: 700; color: var(--ink-light); transition: all 0.2s ease; border: none; cursor: pointer; background: transparent; }
+.lang-btn.is-active { background: var(--navy); color: #fff; box-shadow: 0 2px 8px rgba(26,39,68,0.20); }
+
+/* Primary CTA Button */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--navy); color: #fff;
+  border-radius: 999px;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.8125rem; font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  border: none; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(26,39,68,0.20);
+}
+.btn-primary:hover { background: var(--navy-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,39,68,0.28); }
+
+/* ── Notice/Announcement Bar ── */
+.notice-bar {
+  background: var(--navy);
+  border-bottom: 2px solid var(--gold);
+}
+
+/* ── HERO — The Marquee Section ── */
+.hero-section {
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background texture — subtle Bengali textile pattern */
+.hero-bg-texture {
   position: absolute;
   inset: 0;
-  pointer-events: none;
   background-image:
-    linear-gradient(rgba(16, 42, 67, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 42, 67, 0.045) 1px, transparent 1px),
-    linear-gradient(rgba(16, 42, 67, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 42, 67, 0.025) 1px, transparent 1px),
-    radial-gradient(circle, rgba(31, 122, 92, 0.18) 1px, transparent 1px);
-  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px, 96px 96px;
-  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px, 48px 48px;
-  mix-blend-mode: multiply;
-  opacity: 0.55;
-  z-index: 0;
-}
-.blueprint-grid > * { position: relative; z-index: 1; }
-
-/* ---- Luxury paper grain (multi-layer) — R19 intensified version ----
-   Stacks three radial gradient fields:
-     1. Fine navy fiber (1px) — primary substrate
-     2. Emerald dust (1px) — institutional accent dust
-     3. Champagne grain (2px) — paper warmth
-   mix-blend-mode: multiply @ 0.45 keeps the grain organic without
-   washing the underlying paper tint. */
-.paper-grain-luxe {
-  position: relative;
-  isolation: isolate;
-}
-.paper-grain-luxe::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(181, 134, 58, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 5% 90%, rgba(28, 69, 50, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 30% 30% at 90% 5%, rgba(26, 39, 68, 0.04) 0%, transparent 40%);
   pointer-events: none;
-  background-image:
-    radial-gradient(rgba(16, 42, 67, 0.05) 1px, transparent 1px),
-    radial-gradient(rgba(31, 122, 92, 0.03) 1px, transparent 1px),
-    radial-gradient(rgba(254, 243, 199, 0.5) 2px, transparent 2px);
-  background-size: 3px 3px, 7px 7px, 13px 13px;
-  background-position: 0 0, 1px 2px, 2px 4px;
-  mix-blend-mode: multiply;
-  opacity: 0.45;
-  z-index: 0;
-}
-.paper-grain-luxe > * { position: relative; z-index: 1; }
-
-/* ---- Edge bleed — quarter-px hairline running down both outer edges ----
-   Mimics the gutter-shadow of a bound book. Subtle but institutional. */
-.edge-bleed::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(90deg, rgba(16, 42, 67, 0.06), transparent 6%, transparent 94%, rgba(16, 42, 67, 0.06));
-  z-index: 0;
 }
 
-/* ---- Section: Committees — dense multi-column block grid ----
-   Committee cells share the same hardware-accelerated interaction layer
-   as stat/trust cards, with a slightly stronger 3D lift (translateY(-3px))
-   since committee cells carry more text weight. */
-.committee-cell {
-  position: relative;
-  background-color: #ffffff;
-  border: 1px solid var(--border-default);
-  border-left: 3px solid var(--emerald-800);
-  will-change: transform, border-color;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition:
-    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.committee-cell:hover {
-  transform: translateY(-3px);
-  border-left-color: var(--emerald-700);
-  border-color: var(--emerald-700);
-}
-.committee-cell:active {
-  transform: translateY(0);
-  transition-duration: 0.12s;
-}
-
-/* ---- Section: Logistics & Accommodation — hotel card ----
-   2-col grid, sharp-bordered hotel cards with booking tags.
-   Hotels use a stronger lift (translateY(-2px)) since the card
-   is taller (image + 4 metadata rows). */
-.hotel-card {
-  position: relative;
-  background-color: #ffffff;
-  border: 1px solid var(--border-default);
-  border-top: 2px solid var(--emerald-800);
-  will-change: transform, border-color;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition:
-    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.hotel-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--emerald-700);
-}
-.hotel-card:active {
-  transform: translateY(0);
-  transition-duration: 0.12s;
-}
-
-.hotel-tag {
-  display: inline-flex;
-  align-items: center;
-  height: 18px;
-  padding: 0 6px;
-  font-family: Inter, "Noto Sans Bengali", sans-serif;
-  font-size: 8.5px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #ffffff;
-  background-color: var(--emerald-900);
-  border-radius: 2px;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-/* ---- Section: Download Templates — explicit structural underline link ----
-   No icons (per spec). Uses heavy 2px underline + emerald-on-hover transition
-   with a sharp ink vibration (translateY(-1px) + scale(1.005)) on hover. */
-.download-link {
-  position: relative;
-  display: block;
-  background-color: #ffffff;
-  border: 1px solid var(--border-default);
-  border-top: 2px solid var(--navy-900);
-  text-decoration: none;
-  will-change: transform, border-color;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition:
-    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.download-link:hover {
-  transform: translateY(-2px);
-  border-color: var(--emerald-700);
-  background-color: #f8fafc;
-}
-.download-link:active {
-  transform: translateY(0);
-  transition-duration: 0.12s;
-}
-.download-link .download-rule {
+/* Hero side accent bar (left vertical gold line) */
+.hero-accent-bar {
   position: absolute;
   left: 0;
+  top: 0;
   bottom: 0;
-  width: 0;
-  height: 2px;
-  background: var(--emerald-700);
-  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.download-link:hover .download-rule { width: 100%; }
-
-/* ---- Section: Visa & Travel — formal administrative callout ----
-   Cream wash with sharp navy left rail (4px) + emerald top hairline.
-   No icon decorations; pure typographic authority. */
-.visa-callout {
-  position: relative;
-  background-color: #FAF8F5;
-  border: 1px solid var(--border-default);
-  border-top: 2px solid var(--emerald-800);
-  border-left: 4px solid var(--navy-900);
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-.visa-callout ol {
-  overflow-wrap: break-word;
-  word-break: break-word;
+  width: 5px;
+  background: linear-gradient(to bottom, var(--gold) 0%, rgba(181,134,58,0.2) 100%);
 }
 
-/* ---- Section: Schedule — strict horizontal daily track matrix ----
-   Schedule cells share the date-card interaction layer but use a
-   flat baseline (no translateY lift, just border-color intensification)
-   so the matrix reads as a stable reference table. */
-.schedule-cell {
-  position: relative;
-  background-color: #ffffff;
-  border: 1px solid var(--border-default);
-  border-left: 3px solid var(--emerald-800);
-  will-change: transform, border-color, background-color;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition:
-    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+/* ── Hero Stat Cards ── */
+.hero-stat-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
 }
-.schedule-cell:hover {
-  border-left-color: var(--emerald-700);
-  border-color: var(--emerald-700);
-  background-color: #f8fafc;
-}
-.schedule-cell:active {
-  background-color: #f1f5f9;
-  transition-duration: 0.12s;
-}
-
-/* ---- Schedule time-slot code — sharp emerald uppercase chip ---- */
-.slot-code {
-  display: inline-flex;
-  align-items: center;
-  height: 17px;
-  padding: 0 6px;
-  font-family: Inter, "Noto Sans Bengali", sans-serif;
-  font-size: 8.5px;
+.hero-stat-card:hover { box-shadow: var(--shadow-md); }
+.hero-stat-num {
+  font-family: "Playfair Display", serif;
+  font-size: 2.25rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--emerald-900);
-  background-color: #eaf8f2;
-  border: 1px solid rgba(31, 122, 92, 0.4);
-  border-radius: 2px;
+  color: var(--navy);
   line-height: 1;
+}
+.hero-stat-lbl {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--ink-light);
+  margin-top: 0.35rem;
+}
+
+/* Countdown cells */
+.cd-cell {
+  background: var(--smoke);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+.cd-cell.gold { background: var(--gold-lt); border-color: rgba(181,134,58,0.25); }
+.cd-num { font-size: 1.625rem; font-weight: 900; color: var(--navy); line-height: 1; display: block; }
+.cd-lbl { font-size: 0.625rem; font-weight: 700; color: var(--ink-light); display: block; margin-top: 0.2rem; }
+
+/* ── Hero Info Chips ── */
+.info-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.8125rem; font-weight: 600; color: var(--ink);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Panel & Track Cards ── */
+.panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.track-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  min-height: 200px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.track-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--navy);
+}
+.track-card:nth-child(3n+2)::before { background: var(--gold); }
+.track-card:nth-child(3n+3)::before { background: var(--forest); }
+.track-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+/* ── Speaker Card ── */
+.speaker-card {
+  text-align: center;
+  cursor: pointer;
+}
+.speaker-avatar {
+  width: 88px; height: 88px;
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--white);
+  box-shadow: var(--shadow-md);
+  background: linear-gradient(135deg, #e8e3f8, #e8f0e5);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto;
+  overflow: hidden;
+  color: var(--navy);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.speaker-card:hover .speaker-avatar {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Date Cards ── */
+.date-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1rem;
+  transition: box-shadow 0.2s ease;
+}
+.date-card:nth-child(even) { border-top-color: var(--gold); }
+.date-card:hover { box-shadow: var(--shadow-md); }
+
+/* ── Schedule Event Row ── */
+.schedule-row {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.125rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  transition: box-shadow 0.2s ease;
+}
+.schedule-row:hover { box-shadow: var(--shadow-sm); }
+.schedule-time { 
+  flex-shrink: 0;
+  font-size: 0.75rem; font-weight: 800;
+  color: var(--navy);
+  background: var(--smoke);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.7rem;
   white-space: nowrap;
 }
 
-/* ---- Schedule matrix grid — sharp inner dividers ---- */
-.schedule-matrix {
-  display: grid;
-  border: 1px solid var(--border-default);
-  background-color: #ffffff;
+/* Session type badges */
+.badge { display: inline-flex; align-items: center; padding: 0.2rem 0.65rem; border-radius: 0.25rem; font-size: 0.625rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+.badge-keynote { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.badge-paper   { background: #dcfce7; color: #14532d; border: 1px solid #bbf7d0; }
+.badge-cultural{ background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; }
+.badge-break   { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+.badge-plenary { background: #dbeafe; color: #1e3a8a; border: 1px solid #93c5fd; }
+
+/* ── Committee Members ── */
+.committee-member {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
 }
-.schedule-matrix > * + * { border-top: 1px solid var(--border-default); }
-@media (min-width: 640px) {
-  .schedule-matrix { grid-template-columns: 110px 1fr; }
-  .schedule-matrix > * + * { border-top: 0; }
-  .schedule-matrix > .schedule-time {
-    border-right: 1px solid var(--border-default);
-    background-color: #FAF8F5;
-  }
+.committee-member:last-child { border-bottom: none; }
+
+/* ── Publication Trust Strip ── */
+.trust-strip {
+  background: var(--navy);
+  color: #fff;
 }
 
-/* ---- Travel-route cells — sharp bordered rows for transit instructions ---- */
-.route-row {
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  gap: 0.75rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(16, 42, 67, 0.08);
+/* ── Contact & Download Cards ── */
+.resource-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: box-shadow 0.2s ease;
 }
-.route-row > * {
-  min-width: 0;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-.route-row:last-child { border-bottom: 0; }
+.resource-card:hover { box-shadow: var(--shadow-md); }
 
-.route-num {
-  display: inline-flex;
+.resource-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── CTA Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.btn-lg { padding: 0.875rem 2rem; font-size: 0.9375rem; }
+.btn-md { padding: 0.625rem 1.5rem; font-size: 0.8125rem; }
+.btn-sm { padding: 0.375rem 1rem; font-size: 0.75rem; }
+
+.btn-navy { background: var(--navy); color: #fff; box-shadow: 0 2px 10px rgba(26,39,68,0.20); }
+.btn-navy:hover { background: var(--navy-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,39,68,0.28); }
+
+.btn-gold { background: var(--gold); color: #fff; box-shadow: 0 2px 10px rgba(181,134,58,0.20); }
+.btn-gold:hover { background: #9a7030; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(181,134,58,0.30); }
+
+.btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--line); }
+.btn-outline:hover { background: var(--smoke); border-color: var(--mist); }
+
+.btn-forest { background: var(--forest); color: #fff; }
+.btn-forest:hover { background: #143627; transform: translateY(-1px); }
+
+/* ── Day Switcher Tabs ── */
+.sched-tab {
+  border-radius: 999px;
+  padding: 0.6rem 1.75rem;
+  font-size: 0.8125rem; font-weight: 700;
+  border: 1.5px solid var(--line);
+  background: var(--white);
+  color: var(--ink-light);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.sched-tab.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+  box-shadow: 0 4px 14px rgba(26,39,68,0.22);
+}
+.sched-tab:hover:not(.active) { border-color: var(--navy); color: var(--navy); }
+
+/* ── Section spacing ── */
+.section-py { padding-top: 5.5rem; padding-bottom: 5.5rem; }
+@media (max-width: 640px) { .section-py { padding-top: 3.5rem; padding-bottom: 3.5rem; } }
+
+/* ── Subtle decorative grid ── */
+.subtle-grid {
+  background-image:
+    linear-gradient(rgba(26,31,46,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,31,46,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── Quote block ── */
+.pull-quote {
+  border-left: 4px solid var(--gold);
+  background: var(--white);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Modal styles ── */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 50;
+  background: rgba(26,31,46,0.65);
+  backdrop-filter: blur(6px);
+  display: none;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
-  border: 1px solid var(--emerald-800);
-  color: var(--emerald-900);
-  background-color: #eaf8f2;
-  font-family: 'Playfair Display', 'Noto Serif Bengali', serif;
-  font-size: 11px;
-  font-weight: 700;
-  border-radius: 2px;
-  line-height: 1;
+  padding: 1.5rem;
+}
+.modal-backdrop.open { display: flex; }
+.modal-box {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  width: 100%; max-width: 38rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
 }
 
-/* ---- R19 — Section padding lockdown (textbook density) ----
-   Tightens every <section> to compressed py-8 sm:py-12 padding.
-   Sections with #home/#hero specifically retain pt-24 pb-12 since they
-   need room for the sticky header offset. */
-:where(section)[id] {
-  padding-block: clamp(2rem, 3.5vw, 3rem) !important;
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
 }
-:where(section)#home,
-:where(section)#cfp,
-:where(section)#committees,
-:where(section)#logistics,
-:where(section)#downloads,
-:where(section)#visa,
-:where(section)#schedule {
-  padding-top: clamp(3rem, 6vw, 5rem) !important;
-  padding-bottom: clamp(2.25rem, 4vw, 3.5rem) !important;
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── Hero Rise Animations ── */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+.h-rise { animation: hero-rise 0.72s cubic-bezier(0.16,1,0.3,1) both; }
+.h-rise.d1 { animation-delay: 0.06s; }
+.h-rise.d2 { animation-delay: 0.14s; }
+.h-rise.d3 { animation-delay: 0.22s; }
+.h-rise.d4 { animation-delay: 0.32s; }
+.h-rise.d5 { animation-delay: 0.42s; }
+
+/* ── Sticky Deadline Bar ── */
+.sticky-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  z-index: 40;
+  background: var(--navy-dark);
+  border-top: 2px solid var(--gold);
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.sticky-bar.visible { transform: translateY(0); }
+
+/* ── Focus visible ── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
-/* ---- Structural bounding — all sections get explicit border-bottom ----
-   Ensures no component feels "floating" or AI-generated.
-   Sections 07-11 use border-b border-slate-300 for crisp separation. */
-#committees,
-#logistics,
-#downloads,
-#visa,
-#schedule {
-  border-bottom: 1px solid var(--border-default);
+/* ── CSS Scroll Ticker (replaces deprecated <marquee>) ── */
+.ticker-wrap {
+  overflow: hidden;
+  flex: 1;
+  mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
 }
 
-/* ---- Institutional accent — alternating sections get emerald border ----
-   Sections 08, 10 (even-numbered new sections) carry a secondary
-   emerald-900/40 border-bottom for visual rhythm variation. */
-#logistics,
-#visa {
-  border-bottom-color: rgba(21, 90, 66, 0.4);
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* ---- Sharp ink vibration — premium button accent ----
-   Used on translucent hero CTA / lang-btn / nav-cta. The ink color
-   shifts from navy-900 to ink-charcoal (slate-950) on hover, paired
-   with a -1px x-axis jitter to deliver a "sharp physical" feel. */
-.cta-ink-vibrate {
-  transition:
-    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.cta-ink-vibrate:hover {
-  color: var(--ink-charcoal);
-  font-weight: 700;
-  letter-spacing: -0.005em;
+.ticker-track {
+  display: inline-flex;
+  gap: 0;
+  white-space: nowrap;
+  animation: ticker-scroll 38s linear infinite;
 }
 
-/* ---- Section canvas override — strip flat backgrounds so body texture shows ----
-   All sections inherit transparent background by default so the body's
-   organic paper tint + dot-matrix overlay bleeds through uniformly.
-   Alternating white/cream washes are applied via paper-grain-luxe. */
-section[id] {
-  background-color: transparent !important;
-}
-section#home {
-  background: #ffffff !important;
+.ticker-track:hover {
+  animation-play-state: paused;
 }
 
-/* ---- About section — warm cream contrast against white hero ---- */
-section#about {
-  background-color: #FAF8F5 !important;
-}
-
-/* ---- Section white-wash panels — floating institutional card surfaces ----
-   Provides a subtle opaque ground for sections that need readable content
-   while still revealing the body paper texture at section edges (no full-bleed bg). */
-.panel-wash {
-  background-color: rgba(255, 255, 255, 0.72);
-  backdrop-filter: saturate(120%) blur(2px);
-  -webkit-backdrop-filter: saturate(120%) blur(2px);
-  border: 1px solid rgba(16, 42, 67, 0.06);
-  border-top: 2px solid var(--emerald-800);
-}
-
-/* ---- Section inner content wrapper — white card surface ----
-   Replaces the old full-bleed bg-white with a contained panel. */
-.section-inner {
-  background-color: #ffffff;
-  border: 1px solid var(--border-default);
-  border-top: 2px solid var(--emerald-800);
-}
-
-/* ---- R19 — Reduced motion extensions for all interactive modules ---- */
-@media (prefers-reduced-motion: reduce) {
-  .hero-cta-primary,
-  .hero-cta-secondary,
-  .hero-cta-tertiary,
-  .lang-btn,
-  .stat-card,
-  .trust-cell,
-  .info-card,
-  .track-card,
-  .date-card,
-  .committee-cell,
-  .hotel-card,
-  .download-link,
-  .schedule-cell,
-  .cta-ink-vibrate,
-  .blueprint-grid,
-  .paper-grain-luxe,
-  #brand-mark,
-  [class*="hover:-translate-y-"] {
-    transition: none !important;
-    transform: none !important;
-    will-change: auto !important;
-  }
-  .stat-card:hover,
-  .date-card:hover,
-  .info-card:hover,
-  .track-card:hover,
-  .committee-cell:hover,
-  .hotel-card:hover,
-  .download-link:hover,
-  .schedule-cell:hover {
-    transform: none !important;
-  }
-  html { scroll-behavior: auto; }
-}
-
-/* ---- Footer — deep navy institutional base with green accent ---- */
-#site-footer a {
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-#site-footer a:hover {
-  color: var(--brand-blue-400);
+/* ── Image placeholder (when campus JPEGs not available) ── */
+.img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--smoke) 0%, #ece9e1 100%);
+  color: var(--ink-light);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
 }

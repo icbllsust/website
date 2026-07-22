@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="bn" data-lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration &amp; Payment Portal — ICBLL-2026</title>
+  <meta name="description" content="Official Registration and Payment Portal for the 1st International Conference on Bengali Language &amp; Literature 2026 (ICBLL-2026), SUST.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..700&family=Playfair+Display:ital,wght@0,600..900;1,600..800&family=Noto+Serif+Bengali:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/sust-logo.png">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ── NAVIGATION (Streamlined 5-link) ───────────────────── -->
+<nav id="site-header" class="nav-shell" aria-label="Primary navigation">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5">
+
+    <a href="index.html#home" class="flex items-center gap-3" aria-label="ICBLL-2026 Home">
+      <div class="h-10 w-10 rounded-full overflow-hidden border-2 flex-shrink-0"
+           style="border-color:var(--gold); box-shadow: 0 2px 8px rgba(181,134,58,0.18);">
+        <img src="assets/sust-logo.png" alt="SUST" class="h-full w-full object-cover"
+             onerror="this.style.display='none'">
+      </div>
+      <div>
+        <p class="font-display font-bold text-lg leading-none" style="color:var(--navy);">ICBLL-2026</p>
+        <p class="text-xs font-semibold mt-0.5 hidden sm:block" style="color:var(--ink-light);">Department of Bengali, SUST</p>
+      </div>
+    </a>
+
+    <div class="hidden lg:flex items-center gap-6">
+      <a href="index.html#about"    class="nav-link">Overview</a>
+      <a href="index.html#cfp"      class="nav-link">Call for Papers</a>
+      <a href="index.html#speakers" class="nav-link">Speakers</a>
+      <a href="index.html#schedule" class="nav-link">Programme</a>
+      <a href="registration.html"   class="nav-link active">Registration</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div role="group" aria-label="Language" class="lang-switch">
+        <button id="lang-bn" type="button" class="lang-btn is-active">বাংলা</button>
+        <button id="lang-en" type="button" class="lang-btn">EN</button>
+      </div>
+      <a href="index.html" class="btn btn-md btn-navy hidden sm:inline-flex" style="border-radius:999px;">
+        Return to Main Site
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ────────────────────────────────────────── -->
+<div style="padding-top:74px;">
+
+  <header class="hero-section section-py" style="border-bottom:1px solid var(--line);">
+    <div class="hero-bg-texture"></div>
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <span class="inline-flex rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider"
+            style="background:var(--gold-lt); color:#7a5420; border:1px solid rgba(181,134,58,0.25);">
+        Official Registration Portal
+      </span>
+      <h1 class="font-display mt-5 font-black leading-tight" style="font-size:clamp(1.875rem,3.5vw,3rem); color:var(--navy); letter-spacing:-0.03em;">
+        নিবন্ধন ও ফি পরিশোধ পোর্টাল
+      </h1>
+      <p class="mt-4 text-lg font-medium leading-relaxed max-w-2xl mx-auto" style="color:var(--ink-light);">
+        ICBLL-2026 এ অংশগ্রহণের জন্য আপনার ক্যাটাগরি অনুযায়ী ফি হিসাব ও পরিশোধ সম্পন্ন করুন।
+      </p>
+    </div>
+  </header>
+
+</div>
+
+<!-- ── MAIN REGISTRATION CONTENT ─────────────────────────── -->
+<main id="main" class="mx-auto max-w-5xl px-6 py-14 space-y-12">
+
+  <!-- 1. FEE CALCULATOR ──────────────────────────────────── -->
+  <section class="panel p-8 sm:p-10 space-y-8"
+           style="box-shadow:var(--shadow-lg);">
+
+    <div class="flex items-center gap-3.5">
+      <div class="resource-icon" style="background:var(--smoke); color:var(--navy); width:48px; height:48px;">
+        <i data-lucide="calculator" class="w-6 h-6"></i>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl font-bold" style="color:var(--navy);">১. স্বয়ংক্রিয় ফি ক্যালকুলেটর</h2>
+        <p class="text-xs font-semibold mt-0.5" style="color:var(--ink-light);">ক্যাটাগরি ও সংযোজন সিলেক্ট করে মোট ফি হিসাব করুন</p>
+      </div>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-12 items-start">
+
+      <!-- Inputs -->
+      <div class="lg:col-span-7 space-y-5">
+
+        <div>
+          <label class="block text-sm font-bold mb-2" style="color:var(--navy);">প্রতিনিধি ক্যাটাগরি (Delegate Category)</label>
+          <select id="calc-category"
+                  class="w-full rounded-xl border p-3.5 text-sm font-semibold"
+                  style="border-color:var(--line); color:var(--navy); background:var(--white);">
+            <option value="3000" data-currency="BDT">দেশি শিক্ষক / গবেষক (Faculty & Researcher) — BDT 3,000</option>
+            <option value="1500" data-currency="BDT">দেশি শিক্ষার্থী (Local Student) — BDT 1,500</option>
+            <option value="100"  data-currency="USD">আন্তর্জাতিক প্রতিনিধি (Foreign Delegate) — USD $100</option>
+            <option value="1000" data-currency="BDT">সহগামী ব্যক্তি (Accompanying Person) — BDT 1,000</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold mb-2" style="color:var(--navy);">নিবন্ধন সময়সীমা (Registration Phase)</label>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border cursor-pointer transition-colors hover:border-[var(--gold)]"
+                   style="border-color:var(--line);">
+              <input type="radio" name="phase" value="0" checked class="accent-[var(--navy)]">
+              <div>
+                <p class="text-xs font-bold" style="color:var(--navy);">Early Bird</p>
+                <p class="text-[11px]" style="color:var(--ink-light);">৩০ অক্টোবর ২০২৬ পর্যন্ত</p>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border cursor-pointer transition-colors hover:border-[var(--gold)]"
+                   style="border-color:var(--line);">
+              <input type="radio" name="phase" value="500" class="accent-[var(--navy)]">
+              <div>
+                <p class="text-xs font-bold" style="color:var(--navy);">Regular Registration</p>
+                <p class="text-[11px]" style="color:var(--ink-light);">১০ নভেম্বর ২০২৬ পর্যন্ত (+BDT 500)</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold mb-2" style="color:var(--navy);">ঐচ্ছিক সংযোজন (Optional Add-ons)</label>
+          <div class="space-y-2">
+            <label class="flex items-center justify-between p-3.5 rounded-xl border cursor-pointer hover:bg-[var(--smoke)] transition-colors"
+                   style="border-color:var(--line);">
+              <span class="flex items-center gap-2.5 text-xs font-bold" style="color:var(--navy);">
+                <input type="checkbox" id="add-banquet" value="500">
+                গালা ডিনার ও সাংস্কৃতিক সন্ধ্যা (Conference Gala Banquet)
+              </span>
+              <span class="text-xs font-bold flex-shrink-0" style="color:var(--gold);">+BDT 500</span>
+            </label>
+            <label class="flex items-center justify-between p-3.5 rounded-xl border cursor-pointer hover:bg-[var(--smoke)] transition-colors"
+                   style="border-color:var(--line);">
+              <span class="flex items-center gap-2.5 text-xs font-bold" style="color:var(--navy);">
+                <input type="checkbox" id="add-tour" value="1000">
+                পোস্ট-কনফারেন্স সিলেট ভ্রমণ (Jaflong &amp; Ratargul Excursion)
+              </span>
+              <span class="text-xs font-bold flex-shrink-0" style="color:var(--gold);">+BDT 1,000</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Result Box -->
+      <div class="lg:col-span-5 rounded-2xl p-7 text-center space-y-5 text-white"
+           style="background:var(--navy); box-shadow:var(--shadow-xl);">
+        <p class="text-[10px] font-extrabold uppercase tracking-widest" style="color:#a8b4c8; letter-spacing:0.2em;">
+          সর্বমোট প্রদেয় ফি (Total Payable)
+        </p>
+        <div>
+          <span id="calc-total-amount" class="block font-display font-black" style="font-size:2.75rem; color:#fff;">BDT 3,000</span>
+          <span id="calc-currency-label" class="block text-xs font-semibold mt-1" style="color:#8896b0;">Bangladeshi Taka (BDT)</span>
+        </div>
+        <div class="border-t pt-4 space-y-2 text-left" style="border-color:rgba(255,255,255,0.12);">
+          <p class="flex items-center gap-2 text-xs" style="color:#a8b4c8;">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 flex-shrink-0" style="color:var(--gold);"></i>
+            কনফারেন্স কিট ও ব্যাগ অন্তর্ভুক্ত
+          </p>
+          <p class="flex items-center gap-2 text-xs" style="color:#a8b4c8;">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 flex-shrink-0" style="color:var(--gold);"></i>
+            ২ দিনের মধ্যাহ্নভোজ ও টি-ব্রেক অন্তর্ভুক্ত
+          </p>
+          <p class="flex items-center gap-2 text-xs" style="color:#a8b4c8;">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 flex-shrink-0" style="color:var(--gold);"></i>
+            পিয়ার-রিভিউড সার্টিফিকেট অন্তর্ভুক্ত
+          </p>
+        </div>
+        <a href="#payment-methods"
+           class="block w-full btn btn-md btn-gold" style="justify-content:center; border-radius:var(--radius-lg);">
+          পেমেন্ট মাধ্যম দেখুন
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. PAYMENT METHODS ─────────────────────────────────── -->
+  <section id="payment-methods" class="space-y-5">
+
+    <div class="flex items-center gap-3.5">
+      <div class="resource-icon" style="background:var(--smoke); color:var(--navy); width:48px; height:48px;">
+        <i data-lucide="credit-card" class="w-6 h-6"></i>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl font-bold" style="color:var(--navy);">২. পেমেন্ট মাধ্যমসমূহ (Payment Options)</h2>
+        <p class="text-xs font-semibold mt-0.5" style="color:var(--ink-light);">আপনার সুবিধাজনক মাধ্যম বেছে নিন</p>
+      </div>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-3">
+
+      <!-- MFS -->
+      <div class="resource-card" style="border-top:3px solid var(--navy);">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-base" style="color:var(--navy);">bKash / Nagad / Rocket</h3>
+          <span class="badge badge-break">MFS</span>
+        </div>
+        <div class="rounded-xl p-4 space-y-1.5 text-xs" style="background:var(--smoke); border:1px solid var(--line);">
+          <p class="font-bold" style="color:var(--navy);">bKash Merchant: 01711000000</p>
+          <p class="font-bold" style="color:var(--navy);">Nagad Merchant: 01711000000</p>
+          <p class="font-bold" style="color:var(--navy);">Rocket Merchant: 017110000004</p>
+        </div>
+        <ol class="text-xs space-y-1.5 list-decimal pl-4" style="color:var(--ink-light);">
+          <li>অ্যাপ থেকে <strong>Make Payment</strong> বা <strong>Send Money</strong> সিলেক্ট করুন।</li>
+          <li>মার্চেন্ট নম্বর প্রবেশ করিয়ে মোট ফি প্রদান করুন।</li>
+          <li>রেফারেন্সে আপনার নাম বা Paper ID লিখুন।</li>
+          <li>Transaction ID (TrxID) সংরক্ষণ করুন।</li>
+        </ol>
+      </div>
+
+      <!-- Bank SWIFT -->
+      <div class="resource-card" style="border-top:3px solid var(--forest);">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-base" style="color:var(--navy);">ব্যাংক ট্রান্সফার / SWIFT</h3>
+          <span class="badge badge-paper">Bank</span>
+        </div>
+        <div class="rounded-xl p-4 space-y-1.5 text-xs" style="background:#f0fdf4; border:1px solid #bbf7d0;">
+          <p><span style="color:var(--ink-light);">Account Name:</span><br>
+             <strong style="color:var(--navy);">Department of Bengali Conference</strong></p>
+          <p><span style="color:var(--ink-light);">Account No:</span>
+             <strong style="color:var(--forest);">0200021589341</strong></p>
+          <p><span style="color:var(--ink-light);">Bank:</span> Janata Bank PLC, SUST Branch</p>
+          <p><span style="color:var(--ink-light);">SWIFT:</span>
+             <strong style="color:var(--navy);">JANBBDDH</strong></p>
+        </div>
+        <p class="text-xs leading-relaxed" style="color:var(--ink-light);">
+          যে কোনো ব্যাংক বা অনলাইন ব্যাংকিং অ্যাপ থেকে সরাসরি একাউন্টে ট্রান্সফার করুন। স্লিপের ছবি রাখুন।
+        </p>
+      </div>
+
+      <!-- CMT3 Portal -->
+      <div class="resource-card" style="border-top:3px solid var(--gold);">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-base" style="color:var(--navy);">Microsoft CMT Portal</h3>
+          <span class="badge badge-keynote">Online</span>
+        </div>
+        <p class="text-xs leading-relaxed" style="color:var(--ink-light);">
+          আন্তর্জাতিক প্রতিনিধি বা দূরবর্তী গবেষকরা Microsoft CMT পোর্টালের মাধ্যমে নিবন্ধন ও কাগজপত্র জমা দিতে পারেন।
+        </p>
+        <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer"
+           class="btn btn-md btn-gold" style="justify-content:center; border-radius:var(--radius-md);">
+          Go to CMT3 Portal
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. PAYMENT CONFIRMATION FORM ───────────────────────── -->
+  <section class="panel p-8 sm:p-10 space-y-6" style="box-shadow:var(--shadow-md);">
+
+    <div class="flex items-center gap-3.5">
+      <div class="resource-icon" style="background:var(--smoke); color:var(--navy); width:48px; height:48px;">
+        <i data-lucide="file-check-2" class="w-6 h-6"></i>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl font-bold" style="color:var(--navy);">৩. পেমেন্ট কনফার্মেশন ফর্ম</h2>
+        <p class="text-xs font-semibold mt-0.5" style="color:var(--ink-light);">ফি পরিশোধের পর তথ্য দিয়ে ফর্মটি পূরণ করুন</p>
+      </div>
+    </div>
+
+    <form id="verify-form" class="grid gap-5 md:grid-cols-2">
+
+      <div>
+        <label class="block text-xs font-bold mb-1.5" style="color:var(--navy);">আপনার নাম (Full Name) *</label>
+        <input type="text" required placeholder="ড. মোঃ আব্দুর রহিম"
+               class="w-full rounded-xl border p-3 text-sm"
+               style="border-color:var(--line); color:var(--navy);"
+               onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--line)'">
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold mb-1.5" style="color:var(--navy);">ইমেইল (Email Address) *</label>
+        <input type="email" required placeholder="example@university.edu"
+               class="w-full rounded-xl border p-3 text-sm"
+               style="border-color:var(--line); color:var(--navy);"
+               onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--line)'">
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold mb-1.5" style="color:var(--navy);">মোবাইল (Phone Number) *</label>
+        <input type="tel" required placeholder="01700000000"
+               class="w-full rounded-xl border p-3 text-sm"
+               style="border-color:var(--line); color:var(--navy);"
+               onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--line)'">
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold mb-1.5" style="color:var(--navy);">Paper ID (যদি থাকে)</label>
+        <input type="text" placeholder="ICBLL-104"
+               class="w-full rounded-xl border p-3 text-sm"
+               style="border-color:var(--line); color:var(--navy);"
+               onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--line)'">
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold mb-1.5" style="color:var(--navy);">পেমেন্ট মাধ্যম *</label>
+        <select required class="w-full rounded-xl border p-3 text-sm"
+                style="border-color:var(--line); color:var(--navy);">
+          <option value="bkash">bKash</option>
+          <option value="nagad">Nagad</option>
+          <option value="bank">Janata Bank / Bank Deposit</option>
+          <option value="swift">International Wire / SWIFT</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold mb-1.5" style="color:var(--navy);">Transaction ID / Reference *</label>
+        <input type="text" required placeholder="TRX982736412"
+               class="w-full rounded-xl border p-3 text-sm"
+               style="border-color:var(--line); color:var(--navy);"
+               onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--line)'">
+      </div>
+
+      <div class="md:col-span-2">
+        <label class="block text-xs font-bold mb-1.5" style="color:var(--navy);">পেমেন্ট স্লিপ / রসিদ আপলোড</label>
+        <input type="file" accept="image/*,.pdf"
+               class="w-full rounded-xl border p-3 text-sm"
+               style="border-color:var(--line); color:var(--ink-light);">
+      </div>
+
+      <div class="md:col-span-2">
+        <button type="submit"
+                class="btn btn-lg btn-navy w-full" style="justify-content:center; border-radius:var(--radius-md);">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          কনফার্মেশন স্লিপ জমা দিন (Submit Verification)
+        </button>
+      </div>
+
+    </form>
+
+    <!-- Success message -->
+    <div id="submit-success-msg"
+         class="hidden rounded-xl border p-4 text-sm font-semibold flex items-center gap-3"
+         style="background:#f0fdf4; border-color:#86efac; color:#14532d;">
+      <i data-lucide="check-circle-2" class="w-5 h-5 flex-shrink-0" style="color:var(--forest);"></i>
+      আপনার পেমেন্ট কনফার্মেশন সফলভাবে জমা হয়েছে। আয়োজক কমিটি ইমেইলে নিশ্চিতকরণ পাঠাবে।
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer style="background:var(--navy-dark); border-top:4px solid var(--gold); color:#c8d0e0;"
+        class="px-6 py-12 text-sm">
+  <div class="mx-auto max-w-7xl grid gap-8 md:grid-cols-3">
+    <div>
+      <p class="font-display font-bold text-base" style="color:#e8d5a8;">বাংলা বিভাগ</p>
+      <p class="mt-2" style="color:#8896b0;">শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়</p>
+    </div>
+    <div>
+      <p style="color:#8896b0;">সিলেট-৩১১৪, বাংলাদেশ</p>
+      <p class="mt-2" style="color:#8896b0;">ইমেইল: bangladepartment@yahoo.com</p>
+    </div>
+    <div class="md:text-right">
+      <p class="font-semibold text-white">© 2026 বাংলা বিভাগ, শাবিপ্রবি।</p>
+    </div>
+  </div>
+
+  <!-- Developer Credit -->
+  <div class="mx-auto max-w-7xl mt-8 pt-6 border-t flex flex-col sm:flex-row items-center justify-center gap-1.5 text-center"
+       style="border-color:rgba(255,255,255,0.08);">
+    <span class="text-xs" style="color:#4a5568;">Designed &amp; Developed by</span>
+    <span class="text-xs font-bold" style="color:#8896b0;">Md Golam Mubasshir Rafi</span>
+  </div>
+</footer>
+
+<!-- Form & Calculator JS -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.lucide) lucide.createIcons();
+
+    const catSel     = document.getElementById("calc-category");
+    const phaseRadios = document.querySelectorAll("input[name='phase']");
+    const banquetCk  = document.getElementById("add-banquet");
+    const tourCk     = document.getElementById("add-tour");
+    const totalEl    = document.getElementById("calc-total-amount");
+    const currEl     = document.getElementById("calc-currency-label");
+
+    function calc() {
+      const opt      = catSel.options[catSel.selectedIndex];
+      const base     = parseInt(opt.value, 10);
+      const currency = opt.getAttribute("data-currency");
+      let phase = 0;
+      phaseRadios.forEach((r) => { if (r.checked) phase = parseInt(r.value, 10); });
+      const banquet = banquetCk?.checked ? 500 : 0;
+      const tour    = tourCk?.checked   ? 1000 : 0;
+      const total   = base + (currency === "BDT" ? (phase + banquet + tour) : 0);
+
+      if (currency === "USD") {
+        totalEl.textContent = "USD $" + total;
+        currEl.textContent  = "United States Dollar (USD)";
+      } else {
+        totalEl.textContent = "BDT " + total.toLocaleString("bn-BD");
+        currEl.textContent  = "Bangladeshi Taka (BDT)";
+      }
+    }
+
+    catSel.addEventListener("change", calc);
+    phaseRadios.forEach((r) => r.addEventListener("change", calc));
+    banquetCk?.addEventListener("change", calc);
+    tourCk?.addEventListener("change", calc);
+    calc();
+
+    // Form submit
+    const form       = document.getElementById("verify-form");
+    const successMsg = document.getElementById("submit-success-msg");
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      successMsg?.classList.remove("hidden");
+      form.reset();
+      calc();
+    });
+
+    // Nav scroll effect
+    const nav = document.getElementById("site-header");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) nav?.classList.add("scrolled");
+      else nav?.classList.remove("scrolled");
+    }, { passive: true });
+  });
+</script>
+</body>
+</html>

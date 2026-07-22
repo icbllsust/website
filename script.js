@@ -1,8 +1,8 @@
-/* ---------------------------------------------------------
-   ICBLLC 2027 — site script
-   Loads content.json, renders EN/বাংলা content, and persists
-   the chosen language in localStorage. No frameworks.
---------------------------------------------------------- */
+/* ============================================================
+   ICBLL-2026 — Premium Conference JavaScript Engine
+   Handles: Content loading, i18n, countdown, schedule tabs,
+   speaker modals, scroll reveal, sticky bar, nav scroll.
+============================================================ */
 
 (function () {
   "use strict";
@@ -10,657 +10,473 @@
   const LANG_KEY = "icbllc_lang";
   let CONTENT = null;
 
-  /** Safely resolve a dotted path like "hero.title" against an object. */
+  /* ── Utilities ─────────────────────────────────────────── */
   function getPath(obj, path) {
-    return path.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : null), obj);
+    return path.split(".").reduce(
+      (acc, k) => (acc && acc[k] !== undefined ? acc[k] : null),
+      obj
+    );
   }
 
-  function escapeHTML(str) {
-    return String(str)
+  function esc(str) {
+    return String(str || "")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
 
-  /** Render every element carrying a data-i18n="path.to.value" attribute. */
+  function toBn(numStr) {
+    const lang = document.documentElement.getAttribute("data-lang") || "bn";
+    if (lang === "bn") {
+      return String(numStr).replace(/\d/g, (d) => "০১২৩৪৫৬৭৮৯"[d]);
+    }
+    return String(numStr);
+  }
+
+  /* ── Static i18n Text ──────────────────────────────────── */
   function renderStaticText(lang) {
     const data = CONTENT[lang];
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const path = el.getAttribute("data-i18n");
-      const value = getPath(data, path);
-      if (value === null || typeof value !== "string") return;
-
-      // Special-case: two-tone hero title.
-      // Splits the title on the core action phrase (per locale) and wraps
-      // it in <span class="hero-title-accent"> for emerald accent styling.
-      if (path === "hero.title") {
-        const splitMap = {
-          bn: { accent: "আন্তর্জাতিক গবেষণা সম্মেলন", fallback: "International Conference on" },
-          en: { accent: "International Conference on", fallback: "Bengali Language, Literature & Culture" },
-        };
-        const split = splitMap[lang] || splitMap.en;
-        const idx = value.indexOf(split.accent);
-        if (idx >= 0) {
-          const before = value.slice(0, idx);
-          const after = value.slice(idx + split.accent.length);
-          el.innerHTML =
-            `<span class="text-navy-900">${escapeHTML(before)}</span>` +
-            `<span class="hero-title-accent">${escapeHTML(split.accent)}</span>` +
-            (after ? `<span class="text-navy-900">${escapeHTML(after)}</span>` : "");
-        } else {
-          // Fallback: split on accent word to avoid a one-color h1 if JSON drifts
-          const fallbackIdx = value.indexOf(split.fallback);
-          if (fallbackIdx >= 0) {
-            const before = value.slice(0, fallbackIdx);
-            const after = value.slice(fallbackIdx + split.fallback.length);
-            el.innerHTML =
-              `<span class="text-navy-900">${escapeHTML(before)}</span>` +
-              `<span class="hero-title-accent">${escapeHTML(split.fallback)}</span>` +
-              (after ? `<span class="text-navy-900">${escapeHTML(after)}</span>` : "");
-          } else {
-            el.textContent = value;
-          }
-        }
-        return;
-      }
-
-      el.textContent = value;
+      const val = getPath(data, path);
+      if (val && typeof val === "string") el.textContent = val;
     });
   }
 
-  /** Inject dynamic href targets (e.g. Hero CTA submission link) from content.
-   *  - #hero-cta-primary  : "Submit an Abstract" mailto fallback (preserved).
-   *  - #hero-cta-tertiary : "Submit Now" → Microsoft CMT3 portal (frictionless). */
+  /* ── Dynamic Links ─────────────────────────────────────── */
   function renderDynamicLinks(lang) {
     const data = CONTENT[lang];
-    const url = data && data.hero ? data.hero.submission_url : null;
-    const urlAlt = data && data.hero ? data.hero.submission_url_alt : null;
-    if (typeof url !== "string") return;
-
-    const primary = document.getElementById("hero-cta-primary");
-    if (primary) {
-      // Primary CTA always points at the CMT3 portal (primary submission path)
-      primary.setAttribute("href", url);
-      primary.setAttribute("target", "_blank");
-      primary.setAttribute("rel", "noopener noreferrer");
-    }
-
-    const tertiary = document.getElementById("hero-cta-tertiary");
-    if (tertiary) {
-      tertiary.setAttribute("href", url);
-    }
+    if (!data?.hero) return;
+    const url = data.hero.submission_url || "https://cmt3.research.microsoft.com/";
+    const ctaPrimary = document.getElementById("hero-cta-primary");
+    if (ctaPrimary) ctaPrimary.setAttribute("href", url);
   }
 
-  /** Sleek light-gray SVG placeholder for speakers without an image_url. */
-  function speakerPlaceholderDataURI(initials) {
-    // Calibrated to the new tonal palette: light gray background, navy accent, serif glyph.
-    const initialsSafe = escapeHTML(initials || "");
-    const svg =
-      `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>` +
-      `<rect width='64' height='64' rx='32' fill='#eef2fb'/>` +
-      `<circle cx='32' cy='25' r='10' fill='none' stroke='#2273C3' stroke-width='1.5'/>` +
-      `<path d='M14 56c0-10 8-16 18-16s18 6 18 16' fill='none' stroke='#2273C3' stroke-width='1.5'/>` +
-      `<text x='32' y='58' text-anchor='middle' font-family='Playfair Display, Noto Serif Bengali, serif' font-size='14' fill='#2273C3' font-weight='600'>${initialsSafe}</text>` +
-      `</svg>`;
-    return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
-  }
-
+  /* ── About Paragraphs ──────────────────────────────────── */
   function renderAbout(lang) {
-    const about = CONTENT[lang].about;
+    const about = CONTENT[lang]?.about;
     const container = document.getElementById("about-paragraphs");
+    if (!container || !about?.paragraphs) return;
     container.innerHTML = about.paragraphs
-      .map(
-        (p, i) =>
-          `<div class="relative rounded-md ${
-            i === 0
-              ? "border border-slate-200/60 bg-white px-5 py-4 border-l-4 border-l-amber-600 "
-              : "border border-slate-200/60 bg-white px-5 py-4 border-l-2 border-l-gold-400/60 "
-          }">
-            <p class="relative ${
-              i === 0
-                ? "text-navy-800 font-medium text-[17px] leading-[1.75]"
-                : "text-navy-700/90 text-[15.5px] leading-relaxed"
-            }">${escapeHTML(p)}</p>
-          </div>`
-      )
+      .map((p) => `<p class="leading-relaxed" style="color:var(--ink-light);">${esc(p)}</p>`)
       .join("");
   }
 
-  // One icon per track, matched by position to the fixed order of tracks in content.json
-  const TRACK_ICONS = ["languages", "book-open", "drama", "footprints", "repeat", "database"];
-
+  /* ── Track Cards (CFP) ─────────────────────────────────── */
   function renderTracks(lang) {
-    const tracks = CONTENT[lang].cfp.tracks;
+    const cfp = CONTENT[lang]?.cfp;
     const grid = document.getElementById("tracks-grid");
-    grid.innerHTML = tracks
-      .map((t, i) => {
-        const icon = TRACK_ICONS[i % TRACK_ICONS.length];
-        return `
-      <article class="group relative rounded-xl border border-slate-200/60 border-t-2 border-t-emerald-700 bg-white transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-        <div class="flex items-center justify-between px-5 pt-4 pb-3 border-b border-slate-200/60 bg-cream">
-          <span class="label-tag">TRACK · ${String(i + 1).padStart(2, "0")}</span>
-          <span class="w-7 h-7 rounded-md bg-amber-50 border border-amber-plateDeep flex items-center justify-center">
-            <i data-lucide="${icon}" class="w-3.5 h-3.5 text-emerald-900"></i>
-          </span>
-        </div>
-        <div class="px-5 py-4">
-          <h3 class="font-heading text-navy-900 text-[1.05rem] font-semibold leading-snug">${escapeHTML(t.title)}</h3>
-          <p class="track-desc font-body text-[14px] text-slate-800 mt-2.5 leading-relaxed">${escapeHTML(t.description)}</p>
-        </div>
-      </article>`;
-      })
-      .join("");
-  }
+    if (!grid || !cfp?.tracks) return;
 
-  function renderGuidelines(lang) {
-    const guidelines = CONTENT[lang].cfp.guidelines;
-    const list = document.getElementById("guidelines-list");
-    list.innerHTML = guidelines
+    grid.innerHTML = cfp.tracks
       .map(
-        (g) => `
-      <li class="flex items-start gap-2.5">
-        <i data-lucide="check-circle-2" class="w-[18px] h-[18px] text-gold-600 mt-0.5 shrink-0"></i>
-        <span>${escapeHTML(g)}</span>
-      </li>`
+        (t, i) => `
+      <article class="track-card">
+        <p class="text-xs font-bold uppercase tracking-widest mb-5" style="color:var(--gold); letter-spacing:0.18em;">
+          Track ${String(i + 1).padStart(2, "0")}
+        </p>
+        <h3 class="font-display font-bold text-lg leading-snug" style="color:var(--navy);">${esc(t.title)}</h3>
+        <p class="mt-3 text-sm leading-relaxed" style="color:var(--ink-light);">${esc(t.description)}</p>
+      </article>`
       )
       .join("");
   }
 
-  // One icon per milestone, matched by position to the fixed order in content.json
-  const DATE_ICONS = ["file-text", "mail-check", "ticket", "file-check-2", "calendar-check"];
-
+  /* ── Important Dates ────────────────────────────────────── */
   function renderDates(lang) {
-    const block = CONTENT[lang] || {};
-    const dates = block.important_dates || [];
-    const meta = block.dates_meta || {};
-    const eyebrow = meta.milestone_eyebrow || "";
-    const codes = Array.isArray(meta.milestones) ? meta.milestones : [];
+    const dates = CONTENT[lang]?.important_dates || [];
     const list = document.getElementById("dates-list");
+    if (!list || !dates.length) return;
 
     list.innerHTML = dates
-      .map((d, i) => {
-        const icon = DATE_ICONS[i % DATE_ICONS.length];
-        const code = codes[i] || `M${String(i + 1).padStart(2, "0")}`;
-        return `
-      <article class="date-card group relative flex flex-col items-baseline rounded-xl border border-slate-300 bg-white border-t-2 border-t-emerald-800/60 px-5 pt-5 pb-6 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-700/60">
-        <span class="shrink-0 w-11 h-11 rounded-lg bg-emerald-50 border border-emerald-700/30 flex items-center justify-center mb-4 self-start">
-          <i data-lucide="${icon}" class="w-[18px] h-[18px]" style="color:#1F7A5C;"></i>
+      .map(
+        (d, i) => `
+      <article class="date-card">
+        <p class="text-sm font-bold leading-snug" style="color:var(--navy);">${esc(d.label)}</p>
+        <span class="block mt-4 rounded-lg px-3 py-2 text-center text-xs font-bold"
+              style="${i % 2 === 0
+                ? "background:var(--smoke); color:var(--navy); border:1px solid var(--line);"
+                : "background:var(--gold-pale); color:#7a5420; border:1px solid rgba(181,134,58,0.25);"}">
+          ${esc(d.date)}
         </span>
-        <div class="flex items-baseline gap-2 mb-3 self-start">
-          <span class="label-tag">${escapeHTML(code)}</span>
-          <span class="text-[10px] uppercase tracking-[0.16em] text-slate-950 font-extrabold">${escapeHTML(eyebrow)}</span>
-        </div>
-        <p class="text-slate-950 text-[14.5px] font-semibold leading-snug mb-5 self-start">${escapeHTML(d.label)}</p>
-        <span class="font-heading text-[14px] tracking-wide px-3 py-1.5 rounded-md bg-emerald-50 border border-emerald-800/60 text-emerald-900 font-semibold self-start">${escapeHTML(d.date)}</span>
-      </article>`;
-      })
+      </article>`
+      )
       .join("");
   }
 
+  /* ── Keynote Speakers ──────────────────────────────────── */
   function renderSpeakers(lang) {
-    const speakers = CONTENT[lang].speakers.list;
+    const speakers = CONTENT[lang]?.speakers?.list;
     const grid = document.getElementById("speakers-grid");
+    if (!grid || !speakers) return;
+
     grid.innerHTML = speakers
-      .map((s) => {
-        const safeName = escapeHTML(s.name);
-        const initials = (s.name || "").trim().charAt(0) || "•";
-        const fallback = speakerPlaceholderDataURI(initials);
-        const imageUrl = (s.image_url || "").trim() || fallback;
+      .map((s, idx) => {
+        const imgMarkup = (s.image_url || "").trim()
+          ? `<img src="${esc(s.image_url)}" alt="${esc(s.name)}"
+                   class="w-full h-full object-cover"
+                   onerror="this.outerHTML='<i data-lucide=\\'user-round\\' style=\\'width:40px;height:40px;color:var(--navy);\\' class=\\'m-auto\\'></i>';if(window.lucide)lucide.createIcons();">`
+          : `<i data-lucide="user-round" style="width:40px;height:40px;color:var(--navy);"></i>`;
+
         return `
-      <article class="group relative rounded-xl border border-slate-200/60 bg-white transition-all duration-300 hover:-translate-y-1 overflow-hidden text-center">
-        <div class="flex items-center justify-between px-5 pt-4 pb-3 border-b border-slate-200/60 bg-cream">
-          <span class="label-tag">KEYNOTE</span>
-          <span class="w-7 h-7 rounded-full bg-gold-600 text-white flex items-center justify-center" title="Keynote Speaker">
-            <i data-lucide="mic-2" class="w-3.5 h-3.5"></i>
-          </span>
-        </div>
-        <div class="px-5 py-5">
-          <div class="relative inline-block">
-            <img
-              src="${escapeHTML(imageUrl)}"
-              alt="${safeName}"
-              loading="lazy"
-              width="72"
-              height="72"
-              class="speaker-avatar w-[72px] h-[72px] rounded-full object-cover mx-auto bg-navy-50 ring-4 ring-amber-plate"
-              onerror="this.onerror=null;this.src='${fallback}';"
-            />
-          </div>
-          <h3 class="font-heading text-navy-900 text-[1.05rem] font-semibold mt-4 leading-snug">${safeName}</h3>
-          <p class="font-body text-[13px] text-gold-600 mt-1.5 flex items-baseline justify-center gap-1.5 font-medium">
-            <i data-lucide="building-2" class="w-3.5 h-3.5 self-baseline"></i>
-            ${escapeHTML(s.affiliation)}
+        <article class="speaker-card" data-speaker-idx="${idx}" tabindex="0" role="button"
+                 aria-label="View bio: ${esc(s.name)}">
+          <div class="speaker-avatar">${imgMarkup}</div>
+          <h3 class="font-display font-bold text-base mt-4 leading-snug"
+              style="color:var(--navy);">${esc(s.name)}</h3>
+          <p class="text-xs font-semibold mt-1.5" style="color:var(--ink-light);">${esc(s.affiliation || "")}</p>
+          <p class="text-xs mt-2 font-bold" style="color:var(--gold); text-decoration:underline dotted;">
+            View Profile
           </p>
-          <p class="font-body text-[13.5px] text-slate-800 mt-3 leading-relaxed border-t border-slate-200/60 pt-3 text-left">${escapeHTML(s.topic)}</p>
+        </article>`;
+      })
+      .join("");
+
+    initSpeakerModal(speakers);
+  }
+
+  /* ── Speaker Bio Modal ─────────────────────────────────── */
+  function initSpeakerModal(speakers) {
+    const modal   = document.getElementById("speaker-bio-modal");
+    const closeBtn = document.getElementById("modal-close-btn");
+    const nameEl  = document.getElementById("modal-speaker-name");
+    const affEl   = document.getElementById("modal-speaker-affiliation");
+    const topicEl = document.getElementById("modal-speaker-topic");
+    const bioEl   = document.getElementById("modal-speaker-bio");
+    if (!modal) return;
+
+    function openModal(idx) {
+      const s = speakers[idx];
+      if (!s) return;
+      if (nameEl)  nameEl.textContent  = s.name || "";
+      if (affEl)   affEl.textContent   = s.affiliation || "";
+      if (topicEl) topicEl.textContent = s.topic || "বিষয়বস্তু শীঘ্রই ঘোষণা করা হবে।";
+      if (bioEl)   bioEl.textContent   = s.bio   || `${s.name} বাংলা সাহিত্য ও সংস্কৃতি বিষয়ের আন্তর্জাতিকভাবে স্বীকৃত গবেষক ও প্রখ্যাত শিক্ষাবিদ।`;
+      modal.classList.add("open");
+      document.body.style.overflow = "hidden";
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".speaker-card").forEach((card) => {
+      card.addEventListener("click", () => openModal(card.getAttribute("data-speaker-idx")));
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openModal(card.getAttribute("data-speaker-idx"));
+        }
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+  }
+
+  /* ── Programme Schedule Tabs ────────────────────────────── */
+  function initScheduleTabs() {
+    const btnDay1 = document.getElementById("sched-tab-day1");
+    const btnDay2 = document.getElementById("sched-tab-day2");
+    const container = document.getElementById("schedule-events-container");
+    if (!btnDay1 || !btnDay2 || !container) return;
+
+    function makeRow(time, badgeClass, badgeText, title, venue) {
+      return `<div class="schedule-row">
+        <span class="schedule-time">${esc(time)}</span>
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-1">
+            <span class="badge ${badgeClass}">${badgeText}</span>
+          </div>
+          <h4 class="text-sm font-bold" style="color:var(--navy);">${esc(title)}</h4>
+          <p class="text-xs mt-1" style="color:var(--ink-light);">${esc(venue)}</p>
         </div>
-        <span class="absolute top-0 left-0 w-full h-1 bg-gold-600" aria-hidden="true"></span>
-      </article>`;
-      })
-      .join("");
-  }
-
-  // One icon per fee category, matched by position to the fixed order in content.json
-  const FEE_ICONS = ["briefcase", "graduation-cap", "globe", "users"];
-
-  function renderFees(lang) {
-    const fees = CONTENT[lang].registration_fees;
-    const rows = document.getElementById("fees-rows");
-    rows.innerHTML = fees.rows
-      .map((r, i) => {
-        const icon = FEE_ICONS[i % FEE_ICONS.length];
-        const isFeatured = i === 0;
-        return `
-      <tr class="hover:bg-amber-50/70 transition-colors duration-200 ${isFeatured ? "bg-amber-50" : ""}">
-        <td class="fee-cell py-4 px-5 text-neutral-800 align-middle">
-          <span class="flex items-center gap-2.5">
-            <span class="w-8 h-8 rounded-md bg-amber-50 text-emerald-900 border border-amber-plateDeep flex items-center justify-center shrink-0">
-              <i data-lucide="${icon}" class="w-3.5 h-3.5"></i>
-            </span>
-            <span class="flex flex-col leading-tight">
-              ${isFeatured ? '<span class="label-tag self-start mb-1" data-i18n="registration_fees.featured_label">FEATURED</span>' : ""}
-              <span class="font-semibold text-navy-900 text-[14px]">${escapeHTML(r.category)}</span>
-            </span>
-          </span>
-        </td>
-        <td class="fee-cell py-4 px-5 align-middle">
-          <span class="inline-flex flex-col items-start leading-tight">
-            <span class="text-[10px] tracking-[0.18em] uppercase text-emerald-900 font-semibold font-body">Early</span>
-            <span class="font-heading text-navy-900 text-[15px] font-semibold">${escapeHTML(r.early_bird)}</span>
-          </span>
-        </td>
-        <td class="fee-cell py-4 px-5 align-middle">
-          <span class="inline-flex flex-col items-start leading-tight">
-            <span class="text-[10px] tracking-[0.18em] uppercase text-navy-900 font-semibold font-body">Regular</span>
-            <span class="font-heading text-navy-900 text-[15px] font-semibold">${escapeHTML(r.regular)}</span>
-          </span>
-        </td>
-      </tr>`;
-      })
-      .join("");
-
-    // Dynamic bank details binding
-    if (fees.bank_details) {
-      const accName = document.getElementById("bank-acc-name");
-      const accNum = document.getElementById("bank-acc-num");
-      const bankName = document.getElementById("bank-name");
-      const branch = document.getElementById("bank-branch");
-      if (accName) accName.textContent = fees.bank_details.account_name;
-      if (accNum) accNum.textContent = fees.bank_details.account_number;
-      if (bankName) bankName.textContent = fees.bank_details.bank_name;
-      if (branch) branch.textContent = fees.bank_details.branch;
+      </div>`;
     }
 
-    // Dynamic sponsorship details binding
-    const sp = CONTENT[lang].sponsorship;
-    if (sp) {
-      const spHeading = document.getElementById("sponsorship-heading-val");
-      const spNote = document.getElementById("sponsorship-note-val");
-      const spRate = document.getElementById("sponsor-rate-val");
-      const spAudience = document.getElementById("sponsor-audience-val");
+    const day1 = [
+      makeRow("09:00 – 10:30", "badge-keynote", "Keynote", "উদ্বোধনী অধিবেশন ও মূল প্রবন্ধ উপস্থাপন (Inaugural Session)", "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"),
+      makeRow("11:00 – 13:00", "badge-paper", "Paper Sessions", "প্যারালাল টেকনিক্যাল সেশন ১ (Tracks 01–03)", "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"),
+      makeRow("13:00 – 14:30", "badge-break", "Break", "মধ্যাহ্নভোজ ও নামাজের বিরতি (Lunch & Prayer Break)", "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"),
+      makeRow("14:30 – 17:00", "badge-paper", "Paper Sessions", "প্যারালাল টেকনিক্যাল সেশন ২ (Tracks 04–06)", "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"),
+      makeRow("18:30 – 20:30", "badge-cultural", "Cultural", "সাংস্কৃতিক সন্ধ্যা — সিলেটে নজরুল ও লোকঐতিহ্য (Cultural Evening & Gala)", "মুক্তমঞ্চ · শাবিপ্রবি ক্যাম্পাস"),
+    ];
 
-      if (spHeading) spHeading.textContent = sp.heading;
-      if (spNote) spNote.textContent = sp.note;
-      if (spRate && sp.tiers && sp.tiers[0]) {
-        spRate.textContent = sp.tiers[0].rate;
-        const spTier = document.getElementById("sponsorship-tier-lbl");
-        if (spTier) spTier.textContent = sp.tiers[0].tier;
-      }
-      if (spAudience && sp.tiers && sp.tiers[0]) {
-        spAudience.textContent = sp.tiers[0].audience;
-      }
+    const day2 = [
+      makeRow("09:30 – 11:30", "badge-plenary", "Plenary", "বিশেষ প্লেনারি সেশন: শতবর্ষে মুসলিম সাহিত্য সমাজ (Special Plenary)", "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"),
+      makeRow("11:30 – 13:30", "badge-keynote", "Panel Discussion", "বিশেষজ্ঞ প্যানেল আলোচনা — মুক্তচিন্তা ও দ্রোহ (Expert Panel Discussion)", "মিনি অডিটোরিয়াম"),
+      makeRow("13:30 – 14:30", "badge-break", "Break", "মধ্যাহ্নভোজ ও নামাজের বিরতি (Lunch & Prayer Break)", "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"),
+      makeRow("15:00 – 17:00", "badge-paper", "Valedictory", "সমাপনী অনুষ্ঠান ও সেরা গবেষণা প্রবন্ধ পুরস্কার বিতরণ (Valedictory Session)", "কেন্দ্রীয় অডিটোরিয়াম"),
+    ];
+
+    function renderDay(events) {
+      container.innerHTML = events.join("");
     }
-  }
 
-  // One icon per contact line, matched by position to the fixed order in content.json
-  const CONTACT_ICONS = ["building-2", "graduation-cap", "map-pin", "mail", "phone"];
+    renderDay(day1);
 
-  function renderContact(lang) {
-    const c = CONTENT[lang].contact_info;
-    document.getElementById("contact-department").textContent = c.department;
-    document.getElementById("contact-university").textContent = c.university;
-    document.getElementById("contact-address").textContent = c.address;
+    btnDay1.addEventListener("click", () => {
+      btnDay1.classList.add("active");
+      btnDay2.classList.remove("active");
+      renderDay(day1);
+    });
 
-    const emailEl = document.getElementById("contact-email");
-    emailEl.href = `mailto:${c.email}`;
-    const emailLabel = emailEl.querySelector("span");
-    if (emailLabel) emailLabel.textContent = c.email;
-
-    const phoneEl = document.getElementById("contact-phone");
-    phoneEl.textContent = c.phone;
-
-    // Tag every contact line with its matching Lucide icon (in declaration order)
-    const lineIds = ["contact-department", "contact-university", "contact-address", "contact-email", "contact-phone"];
-    lineIds.forEach((id, i) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const icon = el.querySelector("i[data-lucide]");
-      if (!icon) return;
-      icon.setAttribute("data-lucide", CONTACT_ICONS[i] || "circle");
+    btnDay2.addEventListener("click", () => {
+      btnDay2.classList.add("active");
+      btnDay1.classList.remove("active");
+      renderDay(day2);
     });
   }
 
-  function renderFooter(lang) {
-    const f = CONTENT[lang].footer;
-    document.getElementById("footer-made-for").textContent = f.made_for;
-    document.getElementById("footer-rights").textContent = `© 2027 ${f.rights}`;
-  }
+  /* ── Committees ─────────────────────────────────────────── */
+  function renderCommittees(lang) {
+    const c = CONTENT[lang]?.committees;
+    const advEl = document.getElementById("advisory-list");
+    const locEl = document.getElementById("local-list");
+    if (!c) return;
 
-  function renderMeta(lang) {
-    const meta = CONTENT[lang].meta;
-    document.getElementById("doc-title").textContent = meta.site_title;
-    document.title = meta.site_title;
-  }
+    if (advEl && c.advisory) {
+      advEl.innerHTML = c.advisory
+        .map(
+          (m) => `
+        <div class="committee-member">
+          <p class="font-bold text-sm" style="color:var(--navy);">${esc(m.name)}</p>
+          <p class="text-xs mt-0.5" style="color:var(--ink-light);">${esc(m.role || m.affiliation || "")}</p>
+        </div>`
+        )
+        .join("");
+    }
 
-  function updateLangControls(lang) {
-    const html = document.documentElement;
-    html.setAttribute("lang", lang);
-    html.setAttribute("data-lang", lang);
-
-    const enBtn = document.getElementById("lang-en");
-    const bnBtn = document.getElementById("lang-bn");
-    const isEn = lang === "en";
-
-    enBtn.setAttribute("aria-pressed", String(isEn));
-    bnBtn.setAttribute("aria-pressed", String(!isEn));
-
-    enBtn.classList.toggle("bg-navy-700", isEn);
-    enBtn.classList.toggle("text-white", isEn);
-    enBtn.classList.toggle("text-navy-700", !isEn);
-
-    bnBtn.classList.toggle("bg-navy-700", !isEn);
-    bnBtn.classList.toggle("text-white", !isEn);
-    bnBtn.classList.toggle("text-navy-700", isEn);
-  }
-
-  /** Convert every <i data-lucide="..."> placeholder into an inline SVG icon. */
-  function renderIcons() {
-    if (window.lucide && typeof window.lucide.createIcons === "function") {
-      window.lucide.createIcons();
+    if (locEl && (c.local || c.convenors)) {
+      const list = c.local || c.convenors;
+      locEl.innerHTML = list
+        .map(
+          (m) => `
+        <div class="committee-member">
+          <p class="font-bold text-sm" style="color:var(--navy);">${esc(m.name)}</p>
+          <p class="text-xs mt-0.5" style="color:var(--ink-light);">${esc(m.role || m.affiliation || "")}</p>
+        </div>`
+        )
+        .join("");
     }
   }
 
+  /* ── Registration Fees (legacy) ─────────────────────────── */
+  function renderFees(lang) {
+    const fees = CONTENT[lang]?.registration_fees;
+    const rows = document.getElementById("fees-rows");
+    if (!rows || !fees?.rows) return;
+    rows.innerHTML = fees.rows
+      .map(
+        (r) => `
+      <tr class="border-b" style="border-color:var(--line);">
+        <td class="py-3 pr-4 font-bold text-sm" style="color:var(--navy);">${esc(r.category)}</td>
+        <td class="py-3 pr-4 font-bold text-sm" style="color:var(--forest);">${esc(r.early_bird)}</td>
+        <td class="py-3 text-sm" style="color:var(--ink-light);">${esc(r.regular)}</td>
+      </tr>`
+      )
+      .join("");
+  }
+
+  /* ── Lucide Icons ───────────────────────────────────────── */
+  function renderIcons() {
+    if (window.lucide?.createIcons) window.lucide.createIcons();
+  }
+
+  /* ── Master Render ──────────────────────────────────────── */
   function renderAll(lang) {
-    if (!CONTENT || !CONTENT[lang]) return;
+    if (!CONTENT?.[lang]) return;
     updateLangControls(lang);
-    renderMeta(lang);
     renderStaticText(lang);
     renderDynamicLinks(lang);
     renderAbout(lang);
     renderTracks(lang);
-    renderGuidelines(lang);
     renderDates(lang);
     renderSpeakers(lang);
-    renderFees(lang);
-    renderContact(lang);
     renderCommittees(lang);
-    renderLogistics(lang);
-    renderDownloads(lang);
-    renderSchedule(lang);
-    renderFooter(lang);
-    // Trust block + stats + committees + visa are bound via data-i18n in markup,
-    // so the static-text pass above already populates them. Only dynamic piece
-    // is the alt-lang bound heading + the lucide-icon rehydration after DOM mutation.
+    renderFees(lang);
     renderIcons();
+    initScrollReveal();
+    initScheduleTabs();
   }
 
-  /* ===========================================================
-     R19 — Five new academic section renderers
-     Each renderer uses will-change + backface-visibility-ready
-     markup and respects the strict textbook-density padding
-     scale applied at the section CSS layer.
-     =========================================================== */
-
-  // ---- Section 07: Committees — dense multi-column grid ----
-  function renderCommittees(lang) {
-    const c = CONTENT[lang].committees;
-    const adv = document.getElementById("advisory-list");
-    const loc = document.getElementById("local-list");
-    if (!adv || !loc) return;
-
-    const renderCol = (members) =>
-      members
-        .map(
-          (m) => `
-        <article class="committee-cell rounded-md px-4 py-3.5 flex items-baseline gap-3">
-          <span class="label-tag shrink-0">${escapeHTML(m.code)}</span>
-          <div class="flex-1 min-w-0">
-            <p class="font-heading text-navy-900 text-[14.5px] font-semibold leading-snug">${escapeHTML(m.name)}</p>
-            <p class="font-body text-[12.5px] text-slate-950 font-medium mt-0.5 leading-snug">${escapeHTML(m.role)}</p>
-            <p class="font-body text-[11.5px] text-slate-700 font-medium mt-0.5 leading-snug">${escapeHTML(m.affiliation)}</p>
-          </div>
-        </article>`
-        )
-        .join("");
-
-    adv.innerHTML = renderCol(c.advisory);
-    loc.innerHTML = renderCol(c.local);
-
-    // Render Subcommittees
-    const subGrid = document.getElementById("subcommittees-grid");
-    if (subGrid && c.subcommittees) {
-      subGrid.innerHTML = c.subcommittees
-        .map(
-          (sub) => `
-        <article class="bg-white border border-slate-200/80 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
-          <div class="border-b border-slate-100 pb-3 mb-3">
-            <h4 class="font-heading text-navy-900 text-[15px] font-semibold leading-snug">${escapeHTML(sub.title)}</h4>
-            <p class="font-body text-[12.5px] text-emerald-900 font-semibold mt-1">
-              Convenor: <span class="text-slate-800">${escapeHTML(sub.convenor)}</span>
-            </p>
-          </div>
-          <div class="space-y-1">
-            <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block mb-1">Members:</span>
-            <ul class="list-disc list-inside space-y-0.5 font-body text-[13px] text-slate-700 font-medium">
-              ${sub.members.map(m => `<li>${escapeHTML(m)}</li>`).join("")}
-            </ul>
-          </div>
-        </article>`
-        )
-        .join("");
-    }
-
-    // Render Online Session Note
-    const noteEl = document.getElementById("online-session-note");
-    if (noteEl) {
-      noteEl.textContent = c.online_session_note || "";
-    }
-  }
-
-  // ---- Section 08: Logistics & Accommodation — 2-col hotel grid + route list ----
-  function renderLogistics(lang) {
-    const c = CONTENT[lang].logistics;
-    const hotelGrid = document.getElementById("hotels-grid");
-    const routeList = document.getElementById("routes-list");
-    if (!hotelGrid || !routeList) return;
-
-    const labels = c.labels || { distance: "Distance", tariff: "Tariff", contact: "Contact" };
-
-    hotelGrid.innerHTML = c.hotels
-      .map(
-        (h) => `
-      <article class="hotel-card rounded-lg p-5">
-        <div class="flex items-baseline justify-between gap-2 pb-3 mb-3 border-b border-slate-200/80">
-          <span class="font-heading text-navy-900 text-[15.5px] font-semibold leading-snug">${escapeHTML(h.name)}</span>
-          <span class="hotel-tag shrink-0">${escapeHTML(h.tag)}</span>
-        </div>
-        <div class="space-y-1.5 font-body text-[13px] text-slate-950 font-medium leading-snug">
-          <p class="flex items-baseline gap-2">
-            <span class="text-[10px] tracking-[0.18em] uppercase text-emerald-900 font-bold w-16 shrink-0">${escapeHTML(labels.distance)}</span>
-            <span>${escapeHTML(h.distance)}</span>
-          </p>
-          <p class="flex items-baseline gap-2">
-            <span class="text-[10px] tracking-[0.18em] uppercase text-emerald-900 font-bold w-16 shrink-0">${escapeHTML(labels.tariff)}</span>
-            <span>${escapeHTML(h.tariff)}</span>
-          </p>
-          <p class="flex items-baseline gap-2">
-            <span class="text-[10px] tracking-[0.18em] uppercase text-emerald-900 font-bold w-16 shrink-0">${escapeHTML(labels.contact)}</span>
-            <span>${escapeHTML(h.contact)}</span>
-          </p>
-        </div>
-      </article>`
-      )
-      .join("");
-
-    routeList.innerHTML = c.routes
-      .map(
-        (r, i) => `
-      <div class="route-row">
-        <span class="route-num">${String(i + 1).padStart(2, "0")}</span>
-        <div>
-          <p class="font-heading text-navy-900 text-[13.5px] font-semibold leading-snug">${escapeHTML(r.label)}</p>
-          <p class="font-body text-[12.5px] text-slate-950 font-medium mt-0.5 leading-snug">${escapeHTML(r.detail)}</p>
-        </div>
-      </div>`
-      )
-      .join("");
-  }
-
-  // ---- Section 09: Download Templates — tactile link cards (no icons) ----
-  function renderDownloads(lang) {
-    const c = CONTENT[lang].downloads;
-    const grid = document.getElementById("downloads-grid");
-    if (!grid) return;
-
-    grid.innerHTML = c.items
-      .map(
-        (d) => `
-      <a href="${escapeHTML(d.href)}" download class="download-link rounded-lg px-5 py-4 group">
-        <div class="flex items-baseline justify-between gap-3 mb-2">
-          <span class="slot-code shrink-0">${escapeHTML(d.code)}</span>
-          <span class="text-[10px] tracking-[0.18em] uppercase text-slate-700 font-bold">${escapeHTML(d.format)}</span>
-        </div>
-        <p class="font-heading text-navy-900 text-[15px] font-semibold leading-snug mb-1.5 group-hover:text-emerald-900 cta-ink-vibrate">${escapeHTML(d.title)}</p>
-        <p class="font-body text-[12.5px] text-slate-950 font-medium leading-snug">${escapeHTML(d.note)}</p>
-        <span class="download-rule" aria-hidden="true"></span>
-      </a>`
-      )
-      .join("");
-  }
-
-  // ---- Section 11: Parallel Event Schedule — strict daily track matrix ----
-  function renderSchedule(lang) {
-    const c = CONTENT[lang].schedule;
-    const container = document.getElementById("schedule-days");
-    if (!container) return;
-
-    container.innerHTML = c.days
-      .map(
-        (day) => `
-      <article class="rounded-xl border border-slate-300 border-t-2 border-t-emerald-800/60 bg-white overflow-hidden ">
-        <header class="flex items-baseline justify-between gap-3 px-5 py-3 border-b border-slate-200/80 bg-slate-50">
-          <div class="flex items-baseline gap-2">
-            <span class="label-tag">${escapeHTML(day.code)}</span>
-            <h3 class="font-heading text-navy-900 text-[15px] font-semibold leading-snug">${escapeHTML(day.day_title)}</h3>
-          </div>
-          <span class="text-[10px] tracking-[0.18em] uppercase text-emerald-900 font-extrabold font-body">${escapeHTML(day.date)}</span>
-        </header>
-        <div class="schedule-matrix">
-          ${day.sessions
-            .map(
-              (s) => `
-            <div class="schedule-time px-5 py-3 font-body text-[11.5px] tracking-[0.14em] uppercase text-navy-900 font-bold flex items-baseline gap-2">
-              <span>${escapeHTML(s.time)}</span>
-            </div>
-            <div class="schedule-cell px-5 py-3">
-              <div class="flex items-baseline gap-2 mb-1">
-                <span class="slot-code">${escapeHTML(s.code)}</span>
-                <span class="font-heading text-navy-900 text-[14px] font-semibold leading-snug">${escapeHTML(s.title)}</span>
-              </div>
-              <p class="font-body text-[12.5px] text-slate-950 font-medium leading-snug">${escapeHTML(s.detail)}</p>
-            </div>`
-            )
-            .join("")}
-        </div>
-      </article>`
-      )
-      .join("");
-  }
-
-  function setLang(lang) {
-    try {
-      localStorage.setItem(LANG_KEY, lang);
-    } catch (e) {
-      /* localStorage unavailable — fail silently, language just won't persist */
-    }
-    renderAll(lang);
+  /* ── Language Control ───────────────────────────────────── */
+  function updateLangControls(lang) {
+    const html = document.documentElement;
+    html.setAttribute("lang", lang);
+    html.setAttribute("data-lang", lang);
+    const enBtn = document.getElementById("lang-en");
+    const bnBtn = document.getElementById("lang-bn");
+    if (!enBtn || !bnBtn) return;
+    const isEn = lang === "en";
+    enBtn.setAttribute("aria-pressed", String(isEn));
+    bnBtn.setAttribute("aria-pressed", String(!isEn));
+    enBtn.classList.toggle("is-active", isEn);
+    bnBtn.classList.toggle("is-active", !isEn);
   }
 
   function initLangToggle() {
-    document.getElementById("lang-en").addEventListener("click", () => setLang("en"));
-    document.getElementById("lang-bn").addEventListener("click", () => setLang("bn"));
+    document.getElementById("lang-en")?.addEventListener("click", () => {
+      localStorage.setItem(LANG_KEY, "en");
+      renderAll("en");
+    });
+    document.getElementById("lang-bn")?.addEventListener("click", () => {
+      localStorage.setItem(LANG_KEY, "bn");
+      renderAll("bn");
+    });
   }
 
+  /* ── Mobile Menu ────────────────────────────────────────── */
   function initMobileMenu() {
     const toggle = document.getElementById("menu-toggle");
-    const nav = document.getElementById("mobile-nav");
-    const iconOpen = document.getElementById("menu-icon-open");
-    const iconClose = document.getElementById("menu-icon-close");
-
+    const nav    = document.getElementById("mobile-nav");
+    if (!toggle || !nav) return;
     toggle.addEventListener("click", () => {
-      const isOpen = !nav.classList.contains("hidden");
+      const open = !nav.classList.contains("hidden");
       nav.classList.toggle("hidden");
-      toggle.setAttribute("aria-expanded", String(!isOpen));
-      iconOpen.classList.toggle("hidden");
-      iconClose.classList.toggle("hidden");
+      toggle.setAttribute("aria-expanded", String(!open));
     });
-
-    // Close mobile menu after choosing a link
-    nav.querySelectorAll("a").forEach((link) =>
-      link.addEventListener("click", () => {
-        nav.classList.add("hidden");
-        toggle.setAttribute("aria-expanded", "false");
-        iconOpen.classList.remove("hidden");
-        iconClose.classList.add("hidden");
-      })
+    nav.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => nav.classList.add("hidden"))
     );
   }
 
-  function initHeaderShadow() {
-    const header = document.getElementById("site-header");
-    const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
-    document.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+  /* ── Countdown Timer ────────────────────────────────────── */
+  function initCountdown() {
+    const CONF_DATE = new Date("2026-11-27T09:00:00+06:00").getTime();
+    const elD = document.getElementById("cd-days");
+    const elH = document.getElementById("cd-hours");
+    const elM = document.getElementById("cd-mins");
+    const elS = document.getElementById("cd-secs");
+    if (!elD) return;
+
+    function pad(n) { return String(Math.max(0, n)).padStart(2, "0"); }
+
+    function tick() {
+      const diff = CONF_DATE - Date.now();
+      if (diff <= 0) {
+        [elD, elH, elM, elS].forEach((e) => (e.textContent = toBn("00")));
+        return;
+      }
+      elD.textContent = toBn(pad(Math.floor(diff / 86400000)));
+      elH.textContent = toBn(pad(Math.floor((diff % 86400000) / 3600000)));
+      elM.textContent = toBn(pad(Math.floor((diff % 3600000) / 60000)));
+      elS.textContent = toBn(pad(Math.floor((diff % 60000) / 1000)));
+    }
+    tick();
+    setInterval(tick, 1000);
   }
 
+  /* ── Scroll Reveal ──────────────────────────────────────── */
+  function initScrollReveal() {
+    if (!("IntersectionObserver" in window)) {
+      document.querySelectorAll(".reveal").forEach((el) => el.classList.add("visible"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+            io.unobserve(e.target);
+          }
+        }),
+      { threshold: 0.07 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  }
+
+  /* ── Sticky Deadline Bar ────────────────────────────────── */
+  function initStickyBar() {
+    const bar   = document.getElementById("deadline-sticky-bar");
+    const close = document.getElementById("deadline-bar-close");
+    if (!bar) return;
+
+    // Only show bar if deadline hasn't passed and user hasn't dismissed
+    const DEADLINE = new Date("2026-10-01T23:59:59+06:00").getTime();
+    if (Date.now() > DEADLINE) return;
+    if (sessionStorage.getItem("icbllc_bar_dismissed") === "1") return;
+
+    setTimeout(() => bar.classList.add("visible"), 2800);
+
+    close?.addEventListener("click", () => {
+      bar.classList.remove("visible");
+      sessionStorage.setItem("icbllc_bar_dismissed", "1");
+    });
+  }
+
+  /* ── Nav Scroll Effect ──────────────────────────────────── */
+  function initNavScroll() {
+    const nav = document.getElementById("site-header");
+    if (!nav) return;
+    const handler = () => {
+      if (window.scrollY > 20) nav.classList.add("scrolled");
+      else nav.classList.remove("scrolled");
+    };
+    window.addEventListener("scroll", handler, { passive: true });
+    handler();
+  }
+
+  /* ── Active Nav Highlight ───────────────────────────────── */
+  function initActiveNav() {
+    const sections = document.querySelectorAll("section[id], header[id]");
+    const navLinks = document.querySelectorAll("#site-header .nav-link[href^='#']");
+    if (!sections.length || !navLinks.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            navLinks.forEach((a) => {
+              const match = a.getAttribute("href") === "#" + e.target.id;
+              a.classList.toggle("active", match);
+            });
+          }
+        }),
+      { rootMargin: "-40% 0px -40% 0px" }
+    );
+    sections.forEach((s) => io.observe(s));
+  }
+
+  /* ── Get Saved Language ─────────────────────────────────── */
   function getInitialLang() {
     try {
       const stored = localStorage.getItem(LANG_KEY);
       if (stored === "en" || stored === "bn") return stored;
-    } catch (e) {
-      /* localStorage unavailable */
-    }
-    return "en";
+    } catch (_) {}
+    return "bn";
   }
 
+  /* ── Bootstrap ──────────────────────────────────────────── */
   async function init() {
     initLangToggle();
     initMobileMenu();
-    initHeaderShadow();
+    initCountdown();
+    initStickyBar();
+    initNavScroll();
+    initActiveNav();
+    initScheduleTabs();
+    initScrollReveal();
 
     try {
       const res = await fetch("content.json");
-      if (!res.ok) throw new Error(`Failed to load content.json (${res.status})`);
+      if (!res.ok) throw new Error(`content.json failed: ${res.status}`);
       CONTENT = await res.json();
       renderAll(getInitialLang());
     } catch (err) {
-      console.error("ICBLLC site: could not load content.json", err);
-      const main = document.getElementById("main");
-      if (main) {
-        main.innerHTML =
-          '<p style="padding:4rem 1.5rem;text-align:center;font-family:sans-serif;color:#7a2323;">Content could not be loaded. Please make sure content.json is in the same folder as index.html and that you are viewing this over a local server (not a bare file:// path).</p>';
-      }
+      console.warn("ICBLLC: content.json not loaded:", err.message);
+      // Site remains functional with inline HTML content
+      renderIcons();
     }
   }
 
-  // Expose to window for admin.js integration
-  window.ICBLLC = {
-    get CONTENT() { return CONTENT; },
-    set CONTENT(val) { CONTENT = val; },
-    renderAll: renderAll,
-    getInitialLang: getInitialLang,
-    setLang: setLang
-  };
-
-  document.addEventListener("DOMContentLoaded", init);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();
