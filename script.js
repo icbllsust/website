@@ -70,7 +70,7 @@
     const container = document.getElementById("about-paragraphs");
     if (!container || !about?.paragraphs) return;
     container.innerHTML = about.paragraphs
-      .map((p) => `<p class="leading-relaxed" style="color:var(--ink-light);">${esc(p)}</p>`)
+      .map((p, i) => `<p class="leading-relaxed" style="color:var(--ink-light);" data-i18n="about.paragraphs.${i}">${esc(p)}</p>`)
       .join("");
   }
 
@@ -87,8 +87,8 @@
         <p class="text-xs font-bold uppercase tracking-widest mb-5" style="color:var(--gold); letter-spacing:0.18em;">
           Track ${String(i + 1).padStart(2, "0")}
         </p>
-        <h3 class="font-display font-bold text-lg leading-snug" style="color:var(--navy);">${esc(t.title)}</h3>
-        <p class="mt-3 text-sm leading-relaxed" style="color:var(--ink-light);">${esc(t.description)}</p>
+        <h3 class="font-display font-bold text-lg leading-snug" style="color:var(--navy);" data-i18n="cfp.tracks.${i}.title">${esc(t.title)}</h3>
+        <p class="mt-3 text-sm leading-relaxed" style="color:var(--ink-light);" data-i18n="cfp.tracks.${i}.description">${esc(t.description)}</p>
       </article>`
       )
       .join("");
@@ -104,11 +104,11 @@
       .map(
         (d, i) => `
       <article class="date-card">
-        <p class="text-sm font-bold leading-snug" style="color:var(--navy);">${esc(d.label)}</p>
+        <p class="text-sm font-bold leading-snug" style="color:var(--navy);" data-i18n="important_dates.${i}.label">${esc(d.label)}</p>
         <span class="block mt-4 rounded-lg px-3 py-2 text-center text-xs font-bold"
               style="${i % 2 === 0
                 ? "background:var(--smoke); color:var(--navy); border:1px solid var(--line);"
-                : "background:var(--gold-pale); color:#7a5420; border:1px solid rgba(181,134,58,0.25);"}">
+                : "background:var(--gold-pale); color:#7a5420; border:1px solid rgba(181,134,58,0.25);"}" data-i18n="important_dates.${i}.date">
           ${esc(d.date)}
         </span>
       </article>`
@@ -135,8 +135,8 @@
                  aria-label="View bio: ${esc(s.name)}">
           <div class="speaker-avatar">${imgMarkup}</div>
           <h3 class="font-display font-bold text-base mt-4 leading-snug"
-              style="color:var(--navy);">${esc(s.name)}</h3>
-          <p class="text-xs font-semibold mt-1.5" style="color:var(--ink-light);">${esc(s.affiliation || "")}</p>
+              style="color:var(--navy);" data-i18n="speakers.list.${idx}.name">${esc(s.name)}</h3>
+          <p class="text-xs font-semibold mt-1.5" style="color:var(--ink-light);" data-i18n="speakers.list.${idx}.affiliation">${esc(s.affiliation || "")}</p>
           <p class="text-xs mt-2 font-bold" style="color:var(--gold); text-decoration:underline dotted;">
             View Profile
           </p>
@@ -190,73 +190,49 @@
   }
 
   /* ── Programme Schedule Tabs ────────────────────────────── */
-  function initScheduleTabs() {
+  function initScheduleTabs(lang) {
     const btnDay1 = document.getElementById("sched-tab-day1");
     const btnDay2 = document.getElementById("sched-tab-day2");
     const container = document.getElementById("schedule-events-container");
     if (!btnDay1 || !btnDay2 || !container) return;
 
-    const lang = document.documentElement.getAttribute("data-lang") || "bn";
-    const isBn = lang === "bn";
+    if (!CONTENT || !CONTENT[lang]) return;
+    const scheduleData = CONTENT[lang]?.schedule?.days;
+    if (!scheduleData || scheduleData.length < 2) return;
 
-    if (btnDay1) btnDay1.textContent = isBn ? "১ম দিন — ২৭ নভেম্বর ২০২৬" : "Day 1 — 27 November 2026";
-    if (btnDay2) btnDay2.textContent = isBn ? "২য় দিন — ২৮ নভেম্বর ২০২৬" : "Day 2 — 28 November 2026";
+    // Set tab button labels
+    if (btnDay1) btnDay1.textContent = scheduleData[0].tab_label || "";
+    if (btnDay2) btnDay2.textContent = scheduleData[1].tab_label || "";
 
-    function makeRow(time, badgeClass, badgeText, title, venue) {
-      return `<div class="schedule-row">
-        <span class="schedule-time">${esc(time)}</span>
-        <div class="flex-1">
-          <div class="flex flex-wrap items-center gap-2 mb-1">
-            <span class="badge ${badgeClass}">${badgeText}</span>
+    function renderEvents(dayIndex) {
+      const events = scheduleData[dayIndex]?.events || [];
+      const html = events.map((ev, i) => {
+        return `<div class="schedule-row">
+          <span class="schedule-time" data-i18n="schedule.days.${dayIndex}.events.${i}.time">${esc(ev.time)}</span>
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-2 mb-1">
+              <span class="badge ${esc(ev.badgeClass)}" data-i18n="schedule.days.${dayIndex}.events.${i}.badgeText">${esc(ev.badgeText)}</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900" data-i18n="schedule.days.${dayIndex}.events.${i}.title">${esc(ev.title)}</h4>
+            <p class="text-xs mt-1 text-slate-600" data-i18n="schedule.days.${dayIndex}.events.${i}.venue">${esc(ev.venue)}</p>
           </div>
-          <h4 class="text-sm font-bold text-slate-900">${esc(title)}</h4>
-          <p class="text-xs mt-1 text-slate-600">${esc(venue)}</p>
-        </div>
-      </div>`;
+        </div>`;
+      }).join("");
+      container.innerHTML = html;
     }
 
-    const day1 = isBn ? [
-      makeRow("০৯:০০ – ১০:৩০", "badge-keynote", "মূল প্রবন্ধ", "উদ্বোধনী অধিবেশন ও মূল প্রবন্ধ উপস্থাপন", "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"),
-      makeRow("১১:০০ – ১৩:০০", "badge-paper", "গবেষণা সেশন", "প্যারালাল টেকনিক্যাল সেশন ১ (ট্র্যাক ০১–০৩)", "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"),
-      makeRow("১৩:০০ – ১৪:৩০", "badge-break", "বিরতি", "মধ্যাহ্নভোজ ও নামাজের বিরতি", "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"),
-      makeRow("১৪:৩০ – ১৭:০০", "badge-paper", "গবেষণা সেশন", "প্যারালাল টেকনিক্যাল সেশন ২ (ট্র্যাক ০৪–০৬)", "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"),
-      makeRow("১৮:৩০ – ২০:৩০", "badge-cultural", "সাংস্কৃতিক অনুষ্ঠান", "সাংস্কৃতিক সন্ধ্যা — সিলেটে নজরুল ও লোকঐতিহ্য", "মুক্তমঞ্চ · শাবিপ্রবি ক্যাম্পাস"),
-    ] : [
-      makeRow("09:00 – 10:30", "badge-keynote", "Keynote", "Inaugural Session & Keynote Presentation", "Central Auditorium, SUST"),
-      makeRow("11:00 – 13:00", "badge-paper", "Paper Sessions", "Parallel Technical Sessions 1 (Tracks 01–03)", "Academic Building · Seminar Rooms 1, 2 & 3"),
-      makeRow("13:00 – 14:30", "badge-break", "Break", "Lunch & Prayer Break", "University Cafeteria"),
-      makeRow("14:30 – 17:00", "badge-paper", "Paper Sessions", "Parallel Technical Sessions 2 (Tracks 04–06)", "Academic Building · Seminar Rooms 1, 2 & 3"),
-      makeRow("18:30 – 20:30", "badge-cultural", "Cultural", "Cultural Evening — Nazrul in Sylhet & Folk Heritage", "Open Air Stage, SUST Campus"),
-    ];
-
-    const day2 = isBn ? [
-      makeRow("০৯:৩০ – ১১:৩০", "badge-plenary", "প্লেনারি সেশন", "বিশেষ প্লেনারি সেশন: শতবর্ষে মুসলিম সাহিত্য সমাজ", "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"),
-      makeRow("১১:৩০ – ১৩:৩০", "badge-keynote", "প্যানেল আলোচনা", "বিশেষজ্ঞ প্যানেল আলোচনা — মুক্তচিন্তা ও দ্রোহ", "মিনি অডিটোরিয়াম · শাবিপ্রবি"),
-      makeRow("১৩:৩০ – ১৪:৩০", "badge-break", "বিরতি", "মধ্যাহ্নভোজ ও নামাজের বিরতি", "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"),
-      makeRow("১৫:০০ – ১৭:০০", "badge-paper", "সমাপনী সেশন", "সমাপনী অনুষ্ঠান ও সেরা গবেষণা প্রবন্ধ পুরস্কার বিতরণ", "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"),
-    ] : [
-      makeRow("09:30 – 11:30", "badge-plenary", "Plenary", "Special Plenary Session: Centenary of Muslim Sahitya Samaj", "Central Auditorium, SUST"),
-      makeRow("11:30 – 13:30", "badge-keynote", "Panel Discussion", "Expert Panel Discussion — Intellectual Freedom & Resistance", "Mini Auditorium, SUST"),
-      makeRow("13:30 – 14:30", "badge-break", "Break", "Lunch & Prayer Break", "University Cafeteria"),
-      makeRow("15:00 – 17:00", "badge-paper", "Valedictory", "Valedictory Session & Best Paper Award Ceremony", "Central Auditorium, SUST"),
-    ];
-
-    function renderDay(events) {
-      container.innerHTML = events.join("");
-    }
-
-    renderDay(day1);
+    renderEvents(0);
 
     btnDay1.addEventListener("click", () => {
       btnDay1.classList.add("active");
       btnDay2.classList.remove("active");
-      renderDay(day1);
+      renderEvents(0);
     });
 
     btnDay2.addEventListener("click", () => {
       btnDay2.classList.add("active");
       btnDay1.classList.remove("active");
-      renderDay(day2);
+      renderEvents(1);
     });
   }
 
@@ -270,10 +246,10 @@
     if (advEl && c.advisory) {
       advEl.innerHTML = c.advisory
         .map(
-          (m) => `
+          (m, idx) => `
         <div class="committee-member">
-          <p class="font-bold text-sm" style="color:var(--navy);">${esc(m.name)}</p>
-          <p class="text-xs mt-0.5" style="color:var(--ink-light);">${esc(m.role || m.affiliation || "")}</p>
+          <p class="font-bold text-sm" style="color:var(--navy);" data-i18n="committees.advisory.${idx}.name">${esc(m.name)}</p>
+          <p class="text-xs mt-0.5" style="color:var(--ink-light);" data-i18n="committees.advisory.${idx}.affiliation">${esc(m.role || m.affiliation || "")}</p>
         </div>`
         )
         .join("");
@@ -283,10 +259,10 @@
       const list = c.local || c.convenors;
       locEl.innerHTML = list
         .map(
-          (m) => `
+          (m, idx) => `
         <div class="committee-member">
-          <p class="font-bold text-sm" style="color:var(--navy);">${esc(m.name)}</p>
-          <p class="text-xs mt-0.5" style="color:var(--ink-light);">${esc(m.role || m.affiliation || "")}</p>
+          <p class="font-bold text-sm" style="color:var(--navy);" data-i18n="committees.local.${idx}.name">${esc(m.name)}</p>
+          <p class="text-xs mt-0.5" style="color:var(--ink-light);" data-i18n="committees.local.${idx}.affiliation">${esc(m.role || m.affiliation || "")}</p>
         </div>`
         )
         .join("");
@@ -321,6 +297,7 @@
     updateLangControls(lang);
     renderStaticText(lang);
     renderDynamicLinks(lang);
+    initScheduleTabs(lang);
     renderAbout(lang);
     renderTracks(lang);
     renderDates(lang);
@@ -479,6 +456,95 @@
     return "bn";
   }
 
+  /* ── Live Visual Inline Editor (Admin Mode) ──────────────── */
+  let isAdminMode = false;
+  let hasPendingChanges = false;
+  const changedPaths = {}; 
+
+  function createSaveButton() {
+    const btn = document.createElement('button');
+    btn.id = 'live-save-btn';
+    btn.innerHTML = '<i data-lucide="save" class="w-4 h-4"></i> পরিবর্তন সেভ করুন';
+    document.body.appendChild(btn);
+    
+    btn.addEventListener('click', async () => {
+      btn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4"></i> সেভ হচ্ছে...';
+      try {
+        const res = await fetch("content.json");
+        const fullContent = await res.json();
+        
+        const currentLang = document.documentElement.getAttribute("data-lang") || "bn";
+        for (const [path, newVal] of Object.entries(changedPaths)) {
+          const parts = path.split('.');
+          let ref = fullContent[currentLang];
+          for (let i = 0; i < parts.length - 1; i++) {
+            if (!ref[parts[i]]) ref[parts[i]] = {};
+            ref = ref[parts[i]];
+          }
+          ref[parts[parts.length - 1]] = newVal;
+        }
+
+        const saveRes = await fetch("/api/save", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(fullContent)
+        });
+
+        if (saveRes.ok) {
+          btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i> সেভ সম্পন্ন!';
+          setTimeout(() => {
+            btn.innerHTML = '<i data-lucide="save" class="w-4 h-4"></i> পরিবর্তন সেভ করুন';
+            btn.classList.remove('visible');
+            hasPendingChanges = false;
+            for (let prop in changedPaths) delete changedPaths[prop];
+          }, 2000);
+          CONTENT = fullContent; 
+        } else {
+          throw new Error('Save failed');
+        }
+      } catch (err) {
+        console.error("Save error:", err);
+        btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4"></i> সেভ ব্যর্থ';
+      }
+      renderIcons();
+    });
+  }
+
+  function initLiveEditor() {
+    createSaveButton();
+    const saveBtn = document.getElementById('live-save-btn');
+
+    document.addEventListener('keydown', (e) => {
+      // Ctrl + Shift + E toggles Admin Mode
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'e') {
+        e.preventDefault();
+        isAdminMode = !isAdminMode;
+        
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          if (isAdminMode) {
+            el.setAttribute("contenteditable", "true");
+            if (!el.dataset.editorInit) {
+              el.dataset.editorInit = "true";
+              el.addEventListener('input', (ev) => {
+                const path = el.getAttribute("data-i18n");
+                // Avoid capturing HTML tags, just raw text for JSON strings
+                changedPaths[path] = el.innerText.trim();
+                hasPendingChanges = true;
+                saveBtn.classList.add('visible');
+              });
+            }
+          } else {
+            el.removeAttribute("contenteditable");
+          }
+        });
+        
+        if (!isAdminMode && !hasPendingChanges) {
+          saveBtn.classList.remove('visible');
+        }
+      }
+    });
+  }
+
   /* ── Bootstrap ──────────────────────────────────────────── */
   async function init() {
     initLangToggle();
@@ -487,8 +553,8 @@
     initStickyBar();
     initNavScroll();
     initActiveNav();
-    initScheduleTabs();
     initScrollReveal();
+    initLiveEditor();
 
     try {
       const res = await fetch("content.json");

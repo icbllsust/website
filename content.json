@@ -58,7 +58,9 @@
     "sticky": {
       "label": "Abstract Deadline:",
       "date": "01 October 2026",
-      "cta": "Submit Abstract →"
+      "cta": "Submit Abstract →",
+      "btn_submit": "Submit Abstract",
+      "btn_register": "Register Now"
     },
     "trust_block": {
       "tag": "INSTITUTIONAL TRUST",
@@ -82,7 +84,8 @@
         "The conference will address six thematic tracks spanning language, literature, culture, progressive movements, nature, and environment.",
         "Sylhet, historically a crucible of literary and spiritual traditions, provides a resonant setting. The Central Auditorium at SUST offers a quiet scholarly retreat for two days of rigorous academic exchange.",
         "Selected papers presented at the conference will be considered for publication in a peer-reviewed proceedings volume."
-      ]
+      ],
+      "quote": "Historically, the Sylhet region has been a fertile ground for the practice of literature, culture, and free thought."
     },
     "cfp": {
       "section_label": "SECTION · 02",
@@ -123,18 +126,39 @@
       ]
     },
     "important_dates": [
-      { "label": "Abstract Submission Deadline", "date": "01 October 2026" },
-      { "label": "Notification of Acceptance", "date": "20 October 2026" },
-      { "label": "Registration Deadline", "date": "30 October 2026" },
-      { "label": "Full Paper Submission", "date": "DEMO: To be announced" },
-      { "label": "Conference Dates", "date": "27–28 November 2026" }
+      {
+        "label": "Abstract Submission Deadline",
+        "date": "01 October 2026"
+      },
+      {
+        "label": "Notification of Acceptance",
+        "date": "20 October 2026"
+      },
+      {
+        "label": "Registration Deadline",
+        "date": "30 October 2026"
+      },
+      {
+        "label": "Full Paper Submission",
+        "date": "DEMO: To be announced"
+      },
+      {
+        "label": "Conference Dates",
+        "date": "27–28 November 2026"
+      }
     ],
     "dates_meta": {
       "section_label": "SECTION · 03",
       "heading": "Important Dates",
       "intro": "Deadlines that move from submission to presentation. Plan your writing schedule around them.",
       "milestone_eyebrow": "Milestone",
-      "milestones": ["M01", "M02", "M03", "M04", "M05"]
+      "milestones": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05"
+      ]
     },
     "speakers": {
       "section_label": "SECTION · 04",
@@ -187,9 +211,21 @@
       "bank_name_lbl": "Bank Name",
       "bank_branch_lbl": "Branch",
       "rows": [
-        { "category": "DEMO: Faculty / Researcher", "early_bird": "DEMO: 000 BDT", "regular": "DEMO: 000 BDT" },
-        { "category": "DEMO: Student / Research Fellow", "early_bird": "DEMO: 000 BDT", "regular": "DEMO: 000 BDT" },
-        { "category": "DEMO: SAARC / International Delegate", "early_bird": "DEMO: $00", "regular": "DEMO: $00" }
+        {
+          "category": "DEMO: Faculty / Researcher",
+          "early_bird": "DEMO: 000 BDT",
+          "regular": "DEMO: 000 BDT"
+        },
+        {
+          "category": "DEMO: Student / Research Fellow",
+          "early_bird": "DEMO: 000 BDT",
+          "regular": "DEMO: 000 BDT"
+        },
+        {
+          "category": "DEMO: SAARC / International Delegate",
+          "early_bird": "DEMO: $00",
+          "regular": "DEMO: $00"
+        }
       ],
       "bank_details": {
         "account_name": "International Conference Dept of Bangla",
@@ -219,52 +255,116 @@
       "subcommittees_heading": "Sub-Committees & Members",
       "online_session_note": "International scholars who face visa or travel difficulties may participate via a special online technical session.",
       "advisory": [
-        { "code": "A-01", "name": "Prof. Dr. Sharadindu Bhattacharjee", "role": "Advisor", "affiliation": "SUST, Bangladesh" },
-        { "code": "A-02", "name": "Prof. Dr. Md. Ashraful Karim", "role": "Advisor", "affiliation": "SUST, Bangladesh" }
+        {
+          "code": "A-01",
+          "name": "Prof. Dr. Sharadindu Bhattacharjee",
+          "role": "Advisor",
+          "affiliation": "SUST, Bangladesh"
+        },
+        {
+          "code": "A-02",
+          "name": "Prof. Dr. Md. Ashraful Karim",
+          "role": "Advisor",
+          "affiliation": "SUST, Bangladesh"
+        }
       ],
       "local": [
-        { "code": "L-01", "name": "Prof. Dr. Farjana Siddika", "role": "Academic & Event Committee Convenor", "affiliation": "SUST" },
-        { "code": "L-02", "name": "Prof. Dr. Md. Zaphir Uddin", "role": "Paper Session Management Convenor", "affiliation": "SUST" },
-        { "code": "L-03", "name": "Prof. Dr. Md. Jahangir Alam", "role": "Registration, Certificate & Pub. Convenor", "affiliation": "SUST" },
-        { "code": "L-04", "name": "Prof. Dr. Nilufa Akter", "role": "Publicity Sub-Committee Convenor", "affiliation": "SUST" },
-        { "code": "L-05", "name": "Dr. Md. Masud Parvez", "role": "Entertainment, Accomm., Transport Convenor", "affiliation": "SUST" },
-        { "code": "L-06", "name": "Prof. Dr. Md. Riazul Islam", "role": "Fundraising Sub-Committee Convenor", "affiliation": "SUST" }
+        {
+          "code": "L-01",
+          "name": "Prof. Dr. Farjana Siddika",
+          "role": "Academic & Event Committee Convenor",
+          "affiliation": "SUST"
+        },
+        {
+          "code": "L-02",
+          "name": "Prof. Dr. Md. Zaphir Uddin",
+          "role": "Paper Session Management Convenor",
+          "affiliation": "SUST"
+        },
+        {
+          "code": "L-03",
+          "name": "Prof. Dr. Md. Jahangir Alam",
+          "role": "Registration, Certificate & Pub. Convenor",
+          "affiliation": "SUST"
+        },
+        {
+          "code": "L-04",
+          "name": "Prof. Dr. Nilufa Akter",
+          "role": "Publicity Sub-Committee Convenor",
+          "affiliation": "SUST"
+        },
+        {
+          "code": "L-05",
+          "name": "Dr. Md. Masud Parvez",
+          "role": "Entertainment, Accomm., Transport Convenor",
+          "affiliation": "SUST"
+        },
+        {
+          "code": "L-06",
+          "name": "Prof. Dr. Md. Riazul Islam",
+          "role": "Fundraising Sub-Committee Convenor",
+          "affiliation": "SUST"
+        }
       ],
       "subcommittees": [
         {
           "title": "Academic Committee",
           "convenor": "Prof. Dr. Farjana Siddika",
-          "members": ["Prof. Dr. Md. Zaphir Uddin", "Prof. Dr. Md. Jahangir Alam", "Dr. Mst. Anjumanara Begum"]
+          "members": [
+            "Prof. Dr. Md. Zaphir Uddin",
+            "Prof. Dr. Md. Jahangir Alam",
+            "Dr. Mst. Anjumanara Begum"
+          ]
         },
         {
           "title": "Event Management & Cultural Sub-Committee",
           "convenor": "Prof. Dr. Farjana Siddika",
-          "members": ["Ms. Moshrefa Begum Misu", "Ms. Habiba Akter", "Mr. Md. Shamsuddin"]
+          "members": [
+            "Ms. Moshrefa Begum Misu",
+            "Ms. Habiba Akter",
+            "Mr. Md. Shamsuddin"
+          ]
         },
         {
           "title": "Paper Session Management Sub-Committee",
           "convenor": "Prof. Dr. Md. Zaphir Uddin",
-          "members": ["Mr. Md. Monirul Islam", "Mr. Muha. Zakir Hossain", "Mr. Golam Rabbani"]
+          "members": [
+            "Mr. Md. Monirul Islam",
+            "Mr. Muha. Zakir Hossain",
+            "Mr. Golam Rabbani"
+          ]
         },
         {
           "title": "Registration, Certificate & Publication Sub-Committee",
           "convenor": "Prof. Dr. Md. Jahangir Alam",
-          "members": ["Mr. Md. Sohel Rana", "Mr. Muha. Zakir Hossain"]
+          "members": [
+            "Mr. Md. Sohel Rana",
+            "Mr. Muha. Zakir Hossain"
+          ]
         },
         {
           "title": "Entertainment, Accommodation, Transport & Tour Sub-Committee",
           "convenor": "Dr. Md. Masud Parvez",
-          "members": ["Ms. Habiba Akter", "Mr. Muha. Zakir Hossain", "Mr. Md. Shamsuddin"]
+          "members": [
+            "Ms. Habiba Akter",
+            "Mr. Muha. Zakir Hossain",
+            "Mr. Md. Shamsuddin"
+          ]
         },
         {
           "title": "Fundraising Sub-Committee",
           "convenor": "Prof. Dr. Md. Riazul Islam",
-          "members": ["All Professors of the Department"]
+          "members": [
+            "All Professors of the Department"
+          ]
         },
         {
           "title": "Publicity Sub-Committee",
           "convenor": "Prof. Dr. Nilufa Akter",
-          "members": ["Dr. Mst. Anjumanara Begum", "Mr. Golam Rabbani"]
+          "members": [
+            "Dr. Mst. Anjumanara Begum",
+            "Mr. Golam Rabbani"
+          ]
         }
       ]
     },
@@ -281,13 +381,37 @@
         "contact": "Contact"
       },
       "hotels": [
-        { "name": "Hotel Noorjahan Grand", "tag": "★★★ · 2.1 km", "distance": "2.1 km from SUST main gate", "tariff": "BDT 3,200 – 4,500 / night", "contact": "+880 821 720 880" },
-        { "name": "Britannia Hotel Ltd.", "tag": "★★★★ · 3.4 km", "distance": "3.4 km from SUST main gate", "tariff": "BDT 4,800 – 6,500 / night", "contact": "+880 821 715 555" },
-        { "name": "Hotel Holy Gate", "tag": "★★ · 1.8 km", "distance": "1.8 km from SUST main gate", "tariff": "BDT 1,800 – 2,600 / night", "contact": "+880 821 716 300" }
+        {
+          "name": "Hotel Noorjahan Grand",
+          "tag": "★★★ · 2.1 km",
+          "distance": "2.1 km from SUST main gate",
+          "tariff": "BDT 3,200 – 4,500 / night",
+          "contact": "+880 821 720 880"
+        },
+        {
+          "name": "Britannia Hotel Ltd.",
+          "tag": "★★★★ · 3.4 km",
+          "distance": "3.4 km from SUST main gate",
+          "tariff": "BDT 4,800 – 6,500 / night",
+          "contact": "+880 821 715 555"
+        },
+        {
+          "name": "Hotel Holy Gate",
+          "tag": "★★ · 1.8 km",
+          "distance": "1.8 km from SUST main gate",
+          "tariff": "BDT 1,800 – 2,600 / night",
+          "contact": "+880 821 716 300"
+        }
       ],
       "routes": [
-        { "label": "Osmani International Airport (ZYL) → SUST", "detail": "12 km · 25–35 min by taxi · BDT 800–1,200" },
-        { "label": "Sylhet Railway Station → SUST", "detail": "5 km · 15–20 min by CNG auto-rickshaw · BDT 150–200" }
+        {
+          "label": "Osmani International Airport (ZYL) → SUST",
+          "detail": "12 km · 25–35 min by taxi · BDT 800–1,200"
+        },
+        {
+          "label": "Sylhet Railway Station → SUST",
+          "detail": "5 km · 15–20 min by CNG auto-rickshaw · BDT 150–200"
+        }
       ]
     },
     "downloads": {
@@ -296,7 +420,13 @@
       "heading": "Download Templates",
       "lede": "Use the official templates below for abstract and full-paper submissions.",
       "items": [
-        { "code": "DOC-01", "format": "MS Word · .docx", "title": "Abstract Submission Template", "note": "Structured abstract format conforming to requirements.", "href": "assets/abstract-template.docx" }
+        {
+          "code": "DOC-01",
+          "format": "MS Word · .docx",
+          "title": "Abstract Submission Template",
+          "note": "Structured abstract format conforming to requirements.",
+          "href": "assets/abstract-template.docx"
+        }
       ]
     },
     "visa": {
@@ -312,25 +442,82 @@
       "foot": "For invitation letters or visa clarification, write to bangladeparment@yahoo.com with a minimum lead time of 6 weeks."
     },
     "schedule": {
-      "section_label": "SECTION · 11",
-      "eyebrow": "Programme · schedule flow",
-      "heading": "Parallel Event Schedule",
-      "lede": "The schedule moves from opening plenary sessions to parallel tracks and valedictory.",
+      "section_label": "Section · 11",
+      "eyebrow": "Programme",
+      "heading": "Parallel Sessions Schedule",
+      "lede": "The 2-day conference inaugural, technical sessions, and valedictory program are listed below.",
       "days": [
         {
-          "code": "D-01",
-          "day_title": "Day 1 · Opening & Plenary Sessions",
-          "date": "27 November 2026",
-          "sessions": [
-            { "time": "09:00 – 12:30", "code": "S-01", "title": "Inaugural Ceremony & Keynote", "detail": "DEMO: Opening ceremony, keynote addresses, and plenary speaker sessions." }
+          "tab_label": "Day 1 — 27 November 2026",
+          "events": [
+            {
+              "time": "09:00 – 10:30",
+              "badgeClass": "badge-keynote",
+              "badgeText": "Keynote",
+              "title": "Inaugural Session & Keynote Presentation",
+              "venue": "Central Auditorium, SUST"
+            },
+            {
+              "time": "11:00 – 13:00",
+              "badgeClass": "badge-paper",
+              "badgeText": "Paper Sessions",
+              "title": "Parallel Technical Sessions 1 (Tracks 01–03)",
+              "venue": "Academic Building · Seminar Rooms 1, 2 & 3"
+            },
+            {
+              "time": "13:00 – 14:30",
+              "badgeClass": "badge-break",
+              "badgeText": "Break",
+              "title": "Lunch & Prayer Break",
+              "venue": "University Cafeteria"
+            },
+            {
+              "time": "14:30 – 17:00",
+              "badgeClass": "badge-paper",
+              "badgeText": "Paper Sessions",
+              "title": "Parallel Technical Sessions 2 (Tracks 04–06)",
+              "venue": "Academic Building · Seminar Rooms 1, 2 & 3"
+            },
+            {
+              "time": "18:30 – 20:30",
+              "badgeClass": "badge-cultural",
+              "badgeText": "Cultural",
+              "title": "Cultural Evening — Nazrul in Sylhet & Folk Heritage",
+              "venue": "Open Air Stage, SUST Campus"
+            }
           ]
         },
         {
-          "code": "D-02",
-          "day_title": "Day 2 · Sessions & Valedictory",
-          "date": "28 November 2026",
-          "sessions": [
-            { "time": "09:00 – 16:00", "code": "S-02", "title": "Parallel Tracks & Certificate Distribution", "detail": "DEMO: Presentation sessions, closing remarks, and certificate distribution." }
+          "tab_label": "Day 2 — 28 November 2026",
+          "events": [
+            {
+              "time": "09:30 – 11:30",
+              "badgeClass": "badge-plenary",
+              "badgeText": "Plenary",
+              "title": "Special Plenary Session: Centenary of Muslim Sahitya Samaj",
+              "venue": "Central Auditorium, SUST"
+            },
+            {
+              "time": "11:30 – 13:30",
+              "badgeClass": "badge-keynote",
+              "badgeText": "Panel Discussion",
+              "title": "Expert Panel Discussion — Intellectual Freedom & Resistance",
+              "venue": "Mini Auditorium, SUST"
+            },
+            {
+              "time": "13:30 – 14:30",
+              "badgeClass": "badge-break",
+              "badgeText": "Break",
+              "title": "Lunch & Prayer Break",
+              "venue": "University Cafeteria"
+            },
+            {
+              "time": "15:00 – 17:00",
+              "badgeClass": "badge-paper",
+              "badgeText": "Valedictory",
+              "title": "Valedictory Session & Best Paper Award Ceremony",
+              "venue": "Central Auditorium, SUST"
+            }
           ]
         }
       ]
@@ -348,7 +535,9 @@
     },
     "footer": {
       "rights": "Department of Bengali, SUST. All rights reserved.",
-      "made_for": "Organized by the Department of Bengali, SUST"
+      "made_for": "Organized by the Department of Bengali, SUST",
+      "dev_prefix": "Designed & Developed by",
+      "dev_name": "Md Golam Mubasshir Rafi"
     }
   },
   "bn": {
@@ -410,7 +599,9 @@
     "sticky": {
       "label": "সারসংক্ষেপ জমার শেষ তারিখ:",
       "date": "০১ অক্টোবর ২০২৬",
-      "cta": "সারসংক্ষেপ জমা দিন →"
+      "cta": "সারসংক্ষেপ জমা দিন →",
+      "btn_submit": "সারসংক্ষেপ জমা দিন",
+      "btn_register": "নিবন্ধন করুন"
     },
     "trust_block": {
       "tag": "প্রাতিষ্ঠানিক বিশ্বাস",
@@ -430,11 +621,12 @@
       "heading": "সম্মেলন পরিচিতি",
       "paragraphs": [
         "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়ের (শাবিপ্রবি) বাংলা বিভাগ বাংলা ভাষা, সাহিত্য ও সংস্কৃতির গবেষকদের প্রথম আন্তর্জাতিক বাংলা ভাষা ও সাহিত্য সম্মেলন-২০২৬ (ICBLL-2026)-এ আমন্ত্রণ জানাচ্ছে।",
-        "এবারের সম্মেলনের মূল প্রতিপাদ্য 'শতবর্ষে মুসলিম সাহিত্য সমাজ ও সিলেটে নজরুল: মুক্তচিন্তা ও দ্রোহের উত্তরাধিকার'। এই আয়োজন বাংলাদেশ, ভারত এবং বিশ্বের অন্যান্য দেশের গবেষকদের জন্য একটি মিলনক্ষেত্র তৈরি করবে।",
+        "এবারের সম্মেলনের মূল প্রতিপাদ্য 'শতবর্ষে মুসলিম সাহিত্য সমাজ ও সিলেটে নজরুল: মুক্তচিন্তা ও দ্রোহের উত্তরাধিকার'। এই আয়োজন বাংলাদেশ, ভারত এবং বিশ্বের অন্যান্য দেশের গবেষকদের জন্য একটি আয়োজন তৈরি হবে।",
         "সম্মেলনে ভাষা, সাহিত্য, সংস্কৃতি, প্রগতি ও নারীমুক্তি, ধর্ম, দর্শন ও বিজ্ঞান, সমাজ, রাষ্ট্র ও পরিবেশসহ ৬টি গুরুত্বপূর্ণ ক্ষেত্রে প্রবন্ধ উপস্থাপন করা হবে।",
         "সাহিত্য ও সংস্কৃতির ঐতিহাসিক সংগমস্থল সিলেট এক অনন্য বুদ্ধিবৃত্তিক প্রেক্ষাপট প্রদান করে। শাবিপ্রবি-র সেন্ট্রাল অডিটোরিয়াম দুই দিনব্যাপী এই জ্ঞানগর্ভ আলোচনার এক চমৎকার মিলনমেলা।",
         "সম্মেলনে উপস্থাপিত নির্বাচিত প্রবন্ধসমূহ একটি পিয়ার-রিভিউড কার্যবিবরণী গ্রন্থে প্রকাশের জন্য বিবেচিত হবে।"
-      ]
+      ],
+      "quote": "ঐতিহাসিকভাবেই সিলেট অঞ্চল সাহিত্য, সংস্কৃতি ও মুক্তচিন্তা চর্চার এক উর্বর ভূমি।"
     },
     "cfp": {
       "section_label": "বিভাগ · ০২",
@@ -475,18 +667,39 @@
       ]
     },
     "important_dates": [
-      { "label": "সারসংক্ষেপ জমাদানের শেষ তারিখ", "date": "০১ অক্টোবর ২০২৬" },
-      { "label": "গৃহীত হওয়ার বিজ্ঞপ্তি", "date": "২০ অক্টোবর ২০২৬" },
-      { "label": "নিবন্ধনের শেষ তারিখ", "date": "৩০ অক্টোবর ২০২৬" },
-      { "label": "পূর্ণাঙ্গ গবেষণাপত্র জমা", "date": "নমুনা: পরে জানানো হবে" },
-      { "label": "সম্মেলনের তারিখ", "date": "২৭–২৮ নভেম্বর ২০২৬" }
+      {
+        "label": "সারসংক্ষেপ জমাদানের শেষ তারিখ",
+        "date": "০১ অক্টোবর ২০২৬"
+      },
+      {
+        "label": "গৃহীত হওয়ার বিজ্ঞপ্তি",
+        "date": "২০ অক্টোবর ২০২৬"
+      },
+      {
+        "label": "নিবন্ধনের শেষ তারিখ",
+        "date": "৩০ অক্টোবর ২০২৬"
+      },
+      {
+        "label": "পূর্ণাঙ্গ গবেষণাপত্র জমা",
+        "date": "নমুনা: পরে জানানো হবে"
+      },
+      {
+        "label": "সম্মেলনের তারিখ",
+        "date": "২৭–২৮ নভেম্বর ২০২৬"
+      }
     ],
     "dates_meta": {
       "section_label": "বিভাগ · ০৩",
       "heading": "গুরুত্বপূর্ণ তারিখ",
       "intro": "সারসংক্ষেপ জমা থেকে উপস্থাপনা পর্যন্ত সব গুরুত্বপূর্ণ সময়সীমা। আপনার লেখার সময়সূচী এর ভিত্তিতে পরিকল্পনা করুন।",
       "milestone_eyebrow": "ধাপ",
-      "milestones": ["ধাপ ০১", "ধাপ ০২", "ধাপ ০৩", "ধাপ ০৪", "ধাপ ০৫"]
+      "milestones": [
+        "ধাপ ০১",
+        "ধাপ ০২",
+        "ধাপ ০৩",
+        "ধাপ ০৪",
+        "ধাপ ০৫"
+      ]
     },
     "speakers": {
       "section_label": "বিভাগ · ০৪",
@@ -539,9 +752,21 @@
       "bank_name_lbl": "ব্যাংকের নাম",
       "bank_branch_lbl": "শাখা",
       "rows": [
-        { "category": "নমুনা: সাধারণ শিক্ষক/গবেষক ফি", "early_bird": "নমুনা: ০০০ টাকা", "regular": "নমুনা: ০০০ টাকা" },
-        { "category": "নমুনা: শিক্ষার্থী ফি", "early_bird": "নমুনা: ০০০ টাকা", "regular": "নমুনা: ০০০ টাকা" },
-        { "category": "নমুনা: সার্ক/আন্তর্জাতিক ডেলিগেট ফি", "early_bird": "নমুনা: $০০ মার্কিন ডলার", "regular": "নমুনা: $০০ মার্কিন ডলার" }
+        {
+          "category": "নমুনা: সাধারণ শিক্ষক/গবেষক ফি",
+          "early_bird": "নমুনা: ০০০ টাকা",
+          "regular": "নমুনা: ০০০ টাকা"
+        },
+        {
+          "category": "নমুনা: শিক্ষার্থী ফি",
+          "early_bird": "নমুনা: ০০০ টাকা",
+          "regular": "নমুনা: ০০০ টাকা"
+        },
+        {
+          "category": "নমুনা: সার্ক/আন্তর্জাতিক ডেলিগেট ফি",
+          "early_bird": "নমুনা: $০০ মার্কিন ডলার",
+          "regular": "নমুনা: $০০ মার্কিন ডলার"
+        }
       ],
       "bank_details": {
         "account_name": "International Conference Dept of Bangla",
@@ -571,52 +796,116 @@
       "subcommittees_heading": "উপ-কমিটি ও সদস্যবৃন্দ",
       "online_session_note": "বিদেশি স্কলারদের ভিসা বা ভ্রমণে কোনো জটিলতা থাকলে তাদের জন্য বিশেষ অনলাইন টেকনিক্যাল সেশনের সুবিধা থাকবে।",
       "advisory": [
-        { "code": "A-০১", "name": "প্রফেসর ড. শরদিন্দু ভট্টাচার্য", "role": "উপদেষ্টা", "affiliation": "শাবিপ্রবি, বাংলাদেশ" },
-        { "code": "A-০২", "name": "প্রফেসর ড. মো: আশরাফুল করিম", "role": "উপদেষ্টা", "affiliation": "শাবিপ্রবি, বাংলাদেশ" }
+        {
+          "code": "A-০১",
+          "name": "প্রফেসর ড. শরদিন্দু ভট্টাচার্য",
+          "role": "উপদেষ্টা",
+          "affiliation": "শাবিপ্রবি, বাংলাদেশ"
+        },
+        {
+          "code": "A-০২",
+          "name": "প্রফেসর ড. মো: আশরাফুল করিম",
+          "role": "উপদেষ্টা",
+          "affiliation": "শাবিপ্রবি, বাংলাদেশ"
+        }
       ],
       "local": [
-        { "code": "L-০১", "name": "প্রফেসর ড. ফারজানা সিদ্দিকা", "role": "একাডেমিক ও ইভেন্ট উপ-কমিটি আহ্বায়ক", "affiliation": "শাবিপ্রবি" },
-        { "code": "L-০২", "name": "প্রফেসর ড. মো. জফির উদ্দিন", "role": "পেপার সেশন ম্যানেজমেন্ট আহ্বায়ক", "affiliation": "শাবিপ্রবি" },
-        { "code": "L-০৩", "name": "প্রফেসর ড. মো. জাহাঙ্গীর আলম", "role": "রেজিস্ট্রেশন, সার্টিফিকেট ও পাবলিকেশন আহ্বায়ক", "affiliation": "শাবিপ্রবি" },
-        { "code": "L-০৪", "name": "প্রফেসর ড. নিলুফা আক্তার", "role": "পাবলিসিটি উপ-কমিটি আহ্বায়ক", "affiliation": "শাবিপ্রবি" },
-        { "code": "L-০৫", "name": "ড. মো. মাসুদ পারভেজ", "role": "বিনোদন, আবাসন, পরিবহন ও ট্যুর আহ্বায়ক", "affiliation": "শাবিপ্রবি" },
-        { "code": "L-০৬", "name": "প্রফেসর ড. মো. রিয়াজুল ইসলাম", "role": "ফান্ডরেইজিং উপ-কমিটি আহ্বায়ক", "affiliation": "শাবিপ্রবি" }
+        {
+          "code": "L-০১",
+          "name": "প্রফেসর ড. ফারজানা সিদ্দিকা",
+          "role": "একাডেমিক ও ইভেন্ট উপ-কমিটি আহ্বায়ক",
+          "affiliation": "শাবিপ্রবি"
+        },
+        {
+          "code": "L-০২",
+          "name": "প্রফেসর ড. মো. জফির উদ্দিন",
+          "role": "পেপার সেশন ম্যানেজমেন্ট আহ্বায়ক",
+          "affiliation": "শাবিপ্রবি"
+        },
+        {
+          "code": "L-০৩",
+          "name": "প্রফেসর ড. মো. জাহাঙ্গীর আলম",
+          "role": "রেজিস্ট্রেশন, সার্টিফিকেট ও পাবলিকেশন আহ্বায়ক",
+          "affiliation": "শাবিপ্রবি"
+        },
+        {
+          "code": "L-০৪",
+          "name": "প্রফেসর ড. নিলুফা আক্তার",
+          "role": "পাবলিসিটি উপ-কমিটি আহ্বায়ক",
+          "affiliation": "শাবিপ্রবি"
+        },
+        {
+          "code": "L-০৫",
+          "name": "ড. মো. মাসুদ পারভেজ",
+          "role": "বিনোদন, আবাসন, পরিবহন ও ট্যুর আহ্বায়ক",
+          "affiliation": "শাবিপ্রবি"
+        },
+        {
+          "code": "L-০৬",
+          "name": "প্রফেসর ড. মো. রিয়াজুল ইসলাম",
+          "role": "ফান্ডরেইজিং উপ-কমিটি আহ্বায়ক",
+          "affiliation": "শাবিপ্রবি"
+        }
       ],
       "subcommittees": [
         {
           "title": "একাডেমিক কমিটি",
           "convenor": "প্রফেসর ড. ফারজানা সিদ্দিকা",
-          "members": ["প্রফেসর ড. মো. জফির উদ্দিন", "প্রফেসর ড. মো. জাহাঙ্গীর আলম", "ড. মোছাঃ আঞ্জুমানআরা বেগম"]
+          "members": [
+            "প্রফেসর ড. মো. জফির উদ্দিন",
+            "প্রফেসর ড. মো. জাহাঙ্গীর আলম",
+            "ড. মোছাঃ আঞ্জুমানআরা বেগম"
+          ]
         },
         {
           "title": "ইভেন্ট ম্যানেজমেন্ট অ্যান্ড কালচারাল সাব-কমিটি",
           "convenor": "প্রফেসর ড. ফারজানা সিদ্দিকা",
-          "members": ["জনাব মোশরেফা বেগম মিসু", "জনাব হাবিবা আক্তার", "জনাব মোঃ শামছুদ্দীন"]
+          "members": [
+            "জনাব মোশরেফা বেগম মিসু",
+            "জনাব হাবিবা আক্তার",
+            "জনাব মোঃ শামছুদ্দীন"
+          ]
         },
         {
           "title": "পেপার সেশন ম্যানেজমেন্ট সাব-কমিটি",
           "convenor": "প্রফেসর ড. মো. জফির উদ্দিন",
-          "members": ["জনাব মো. মনিরুল ইসলাম", "জনাব মুহা. জাকির হোসাইন", "জনাব গোলাম রব্বানী"]
+          "members": [
+            "জনাব মো. মনিরুল ইসলাম",
+            "জনাব মুহা. জাকির হোসাইন",
+            "জনাব গোলাম রব্বানী"
+          ]
         },
         {
           "title": "রেজিস্ট্রেশন, সার্টিফিকেট অ্যান্ড পাবলিকেশন সাব-কমিটি",
           "convenor": "প্রফেসর ড. মো. জাহাঙ্গীর আলম",
-          "members": ["জনাব মো. সোহেল রানা", "জনাব মুহা. জাকির হোসাইন"]
+          "members": [
+            "জনাব মো. সোহেল রানা",
+            "জনাব মুহা. জাকির হোসাইন"
+          ]
         },
         {
           "title": "এন্টারটেইনমেন্ট, অ্যাকোমোডেশন, ট্রান্সপোর্ট অ্যান্ড ট্যুর সাব-কমিটি",
           "convenor": "ড. মো. মাসুদ পারভেজ",
-          "members": ["জনাব হাবিবা আক্তার", "জনাব মুহা. জাকির হোসাইন", "জনাব মোঃ শামছুদ্দীন"]
+          "members": [
+            "জনাব হাবিবা আক্তার",
+            "জনাব মুহা. জাকির হোসাইন",
+            "জনাব মোঃ শামছুদ্দীন"
+          ]
         },
         {
           "title": "ফান্ডরেইজিং সাব-কমিটি",
           "convenor": "প্রফেসর ড. মো. রিয়াজুল ইসলাম",
-          "members": ["বিভাগীয় সকল অধ্যাপক"]
+          "members": [
+            "বিভাগীয় সকল অধ্যাপক"
+          ]
         },
         {
           "title": "পাবলিসিটি সাব-কমিটি",
           "convenor": "প্রফেসর ড. নিলুফা আক্তার",
-          "members": ["ড. মোছাঃ আঞ্জুমানআরা বেগম", "জনাব গোলাম রব্বানী"]
+          "members": [
+            "ড. মোছাঃ আঞ্জুমানআরা বেগম",
+            "জনাব গোলাম রব্বানী"
+          ]
         }
       ]
     },
@@ -633,13 +922,37 @@
         "contact": "যোগাযোগ"
       },
       "hotels": [
-        { "name": "হোটেল নূরজাহান গ্র্যান্ড", "tag": "★★★ · ২.১ কিমি", "distance": "শাবিপ্রবি প্রধান ফটক থেকে ২.১ কিমি", "tariff": "৳৩,২০০ – ৪,৫০০ / রাত", "contact": "+৮৮০ ৪২১ ৭২০ ৮৮০" },
-        { "name": "ব্রিটানিয়া হোটেল লিমিটেড", "tag": "★★★★ · ৩.৪ kiমি", "distance": "শাবিপ্রবি প্রধান ফটক থেকে ৩.৪ কিমি", "tariff": "৳৪,৮০০ – ৬,৫০০ / রাত", "contact": "+৮৮০ ৪২১ ৭১৫ ৫৫৫" },
-        { "name": "হোটেল হোলি গেট", "tag": "★★ · ১.৮ কিমি", "distance": "শাবিপ্রবি প্রধান ফটক থেকে ১.৮ কিমি", "tariff": "৳১,৮০০ – ২,৬০০ / রাত", "contact": "+৮৮০ ৪২১ ৭১৬ ৩০০" }
+        {
+          "name": "হোটেল নূরজাহান গ্র্যান্ড",
+          "tag": "★★★ · ২.১ কিমি",
+          "distance": "শাবিপ্রবি প্রধান ফটক থেকে ২.১ কিমি",
+          "tariff": "৳৩,২০০ – ৪,৫০০ / রাত",
+          "contact": "+৮৮০ ৪২১ ৭২০ ৮৮০"
+        },
+        {
+          "name": "ব্রিটানিয়া হোটেল লিমিটেড",
+          "tag": "★★★★ · ৩.৪ kiমি",
+          "distance": "শাবিপ্রবি প্রধান ফটক থেকে ৩.৪ কিমি",
+          "tariff": "৳৪,৮০০ – ৬,৫০০ / রাত",
+          "contact": "+৮৮০ ৪২১ ৭১৫ ৫৫৫"
+        },
+        {
+          "name": "হোটেল হোলি গেট",
+          "tag": "★★ · ১.৮ কিমি",
+          "distance": "শাবিপ্রবি প্রধান ফটক থেকে ১.৮ কিমি",
+          "tariff": "৳১,৮০০ – ২,৬০০ / রাত",
+          "contact": "+৮৮০ ৪২১ ৭১৬ ৩০০"
+        }
       ],
       "routes": [
-        { "label": "ওসমানী আন্তর্জাতিক বিমানবন্দর (ZYL) → শাবিপ্রবি", "detail": "১২ কিমি · ২৫-৩৫ মিনিট ট্যাক্সিতে · ভাড়া আনুমানিক ৮০০-১,২০০ টাকা" },
-        { "label": "সিলেট রেলওয়ে স্টেশন → শাবিপ্রবি", "detail": "৫ কিমি · ১৫-২০ মিনিট সিএনজি অটোরিকশায় · ভাড়া আনুমানিক ১৫০-২০০ টাকা" }
+        {
+          "label": "ওসমানী আন্তর্জাতিক বিমানবন্দর (ZYL) → শাবিপ্রবি",
+          "detail": "১২ কিমি · ২৫-৩৫ মিনিট ট্যাক্সিতে · ভাড়া আনুমানিক ৮০০-১,২০০ টাকা"
+        },
+        {
+          "label": "সিলেট রেলওয়ে স্টেশন → শাবিপ্রবি",
+          "detail": "৫ কিমি · ১৫-২০ মিনিট সিএনজি অটোরিকশায় · ভাড়া আনুমানিক ১৫০-২০০ টাকা"
+        }
       ]
     },
     "downloads": {
@@ -648,7 +961,13 @@
       "heading": "ডাউনলোড জোন",
       "lede": "সারসংক্ষেপ ও প্রবন্ধ জমা দেওয়ার অফিসিয়াল টেমপ্লেট নিচে দেওয়া হলো।",
       "items": [
-        { "code": "ডক-০১", "format": "এমএস ওয়ার্ড · .docx", "title": "সারসংক্ষেপ জমাদানের টেমপ্লেট", "note": "নির্ধারিত শব্দসীমা ও ফন্ট সাইজ অনুসরণে প্রস্তুতকৃত সারসংক্ষেপ ফরম্যাট।", "href": "assets/abstract-template.docx" }
+        {
+          "code": "ডক-০১",
+          "format": "এমএস ওয়ার্ড · .docx",
+          "title": "সারসংক্ষেপ জমাদানের টেমপ্লেট",
+          "note": "নির্ধারিত শব্দসীমা ও ফন্ট সাইজ অনুসরণে প্রস্তুতকৃত সারসংক্ষেপ ফরম্যাট।",
+          "href": "assets/abstract-template.docx"
+        }
       ]
     },
     "visa": {
@@ -670,19 +989,76 @@
       "lede": "২ দিনব্যাপী সম্মেলনের উদ্বোধন, টেকনিক্যাল সেশন এবং সনদ বিতরণ কর্মসূচী নিচে দেওয়া হলো।",
       "days": [
         {
-          "code": "দি-০১",
-          "day_title": "দিন ১ · উদ্বোধন ও কি-নোট সেশন",
-          "date": "২৭ নভেম্বর ২০২৬",
-          "sessions": [
-            { "time": "০৯:০০ – ১২:৩০", "code": "স-০১", "title": "উদ্বোধনী অনুষ্ঠান ও মূল প্রবন্ধ সেশন", "detail": "নমুনা: প্রথম দিন (২৭ নভেম্বর) সকাল ০৯:০০ - উদ্বোধন পর্ব ও কি-নোট সেশন।" }
+          "tab_label": "১ম দিন — ২৭ নভেম্বর ২০২৬",
+          "events": [
+            {
+              "time": "০৯:০০ – ১০:৩০",
+              "badgeClass": "badge-keynote",
+              "badgeText": "মূল প্রবন্ধ",
+              "title": "উদ্বোধনী অধিবেশন ও মূল প্রবন্ধ উপস্থাপন",
+              "venue": "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"
+            },
+            {
+              "time": "১১:০০ – ১৩:০০",
+              "badgeClass": "badge-paper",
+              "badgeText": "গবেষণা সেশন",
+              "title": "প্যারালাল টেকনিক্যাল সেশন ১ (ট্র্যাক ০১–০৩)",
+              "venue": "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"
+            },
+            {
+              "time": "১৩:০০ – ১৪:৩০",
+              "badgeClass": "badge-break",
+              "badgeText": "বিরতি",
+              "title": "মধ্যাহ্নভোজ ও নামাজের বিরতি",
+              "venue": "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"
+            },
+            {
+              "time": "১৪:৩০ – ১৭:০০",
+              "badgeClass": "badge-paper",
+              "badgeText": "গবেষণা সেশন",
+              "title": "প্যারালাল টেকনিক্যাল সেশন ২ (ট্র্যাক ০৪–০৬)",
+              "venue": "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"
+            },
+            {
+              "time": "১৮:৩০ – ২০:৩০",
+              "badgeClass": "badge-cultural",
+              "badgeText": "সাংস্কৃতিক অনুষ্ঠান",
+              "title": "সাংস্কৃতিক সন্ধ্যা — সিলেটে নজরুল ও লোকঐতিহ্য",
+              "venue": "মুক্তমঞ্চ · শাবিপ্রবি ক্যাম্পাস"
+            }
           ]
         },
         {
-          "code": "দি-০২",
-          "day_title": "দিন ২ · সেমিনার ও সমাপনী",
-          "date": "২৮ নভেম্বর ২০২৬",
-          "sessions": [
-            { "time": "০৯:০০ – ১৬:০০", "code": "স-০২", "title": "প্রবন্ধ উপস্থাপন ও সমাপনী অনুষ্ঠান", "detail": "নমুনা: দ্বিতীয় দিন (২৮ নভেম্বর) বিকাল ০৪:০০ - সমাপনী অনুষ্ঠান ও সনদ বিতরণ।" }
+          "tab_label": "২য় দিন — ২৮ নভেম্বর ২০২৬",
+          "events": [
+            {
+              "time": "০৯:৩০ – ১১:৩০",
+              "badgeClass": "badge-plenary",
+              "badgeText": "প্লেনারি সেশন",
+              "title": "বিশেষ প্লেনারি সেশন: শতবর্ষে মুসলিম সাহিত্য সমাজ",
+              "venue": "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"
+            },
+            {
+              "time": "১১:৩০ – ১৩:৩০",
+              "badgeClass": "badge-keynote",
+              "badgeText": "প্যানেল আলোচনা",
+              "title": "বিশেষজ্ঞ প্যানেল আলোচনা — মুক্তচিন্তা ও দ্রোহ",
+              "venue": "মিনি অডিটোরিয়াম · শাবিপ্রবি"
+            },
+            {
+              "time": "১৩:৩০ – ১৪:৩০",
+              "badgeClass": "badge-break",
+              "badgeText": "বিরতি",
+              "title": "মধ্যাহ্নভোজ ও নামাজের বিরতি",
+              "venue": "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"
+            },
+            {
+              "time": "১৫:০০ – ১৭:০০",
+              "badgeClass": "badge-paper",
+              "badgeText": "সমাপনী সেশন",
+              "title": "সমাপনী অনুষ্ঠান ও সেরা গবেষণা প্রবন্ধ পুরস্কার বিতরণ",
+              "venue": "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"
+            }
           ]
         }
       ]
@@ -700,7 +1076,9 @@
     },
     "footer": {
       "rights": "বাংলা বিভাগ, শাবিপ্রবি। সর্বস্বত্ব সংরক্ষিত।",
-      "made_for": "আয়োজনে: বাংলা বিভাগ, শাবিপ্রবি"
+      "made_for": "আয়োজনে: বাংলা বিভাগ, শাবিপ্রবি",
+      "dev_prefix": "Designed & Developed by",
+      "dev_name": "Md Golam Mubasshir Rafi"
     }
   }
 }

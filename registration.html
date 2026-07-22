@@ -6,9 +6,10 @@
   <title>নিবন্ধন ও ফি পরিশোধ পোর্টাল — ICBLL-2026</title>
   <meta name="description" content="প্রথম আন্তর্জাতিক বাংলা ভাষা ও সাহিত্য সম্মেলন-২০২৬ (ICBLL-2026), শাবিপ্রবি-র অফিশিয়াল নিবন্ধন ও পেমেন্ট পোর্টাল।">
 
+  <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..700&family=Playfair+Display:ital,wght@0,600..900;1,600..800&family=Noto+Serif+Bengali:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -174,74 +175,69 @@
 
       </div>
 
-      <!-- Result Voucher Card — Human Craftsman Official Receipt Style -->
-      <div class="lg:col-span-5 rounded-2xl p-6 bg-white border-2 border-slate-300 shadow-xl space-y-5 text-slate-900 relative overflow-hidden">
-        <!-- Top Official Watermark Header -->
-        <div class="flex items-center justify-between pb-3 border-b-2 border-slate-200">
-          <div class="flex items-center gap-2">
-            <img src="assets/sust-logo.png" alt="SUST Logo" class="h-8 w-auto object-contain">
-            <div>
-              <p class="text-xs font-extrabold text-slate-950">অফিশিয়াল ফি মেমো</p>
-              <p class="text-[10px] font-bold text-emerald-800">শাবিপ্রবি কনফারেন্স তহবিল</p>
+      <!-- Premium Registration Package Card -->
+      <div class="lg:col-span-5 relative bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100 overflow-hidden flex flex-col">
+        
+        <!-- Elegant Header Accent -->
+        <div class="h-2 w-full bg-gradient-to-r from-emerald-600 to-[#b5863a]"></div>
+
+        <div class="p-8 flex-1 flex flex-col">
+          <!-- Title Section -->
+          <div class="text-center mb-8">
+            <h3 class="font-display text-2xl font-bold text-slate-900">সম্মেলন নিবন্ধন</h3>
+            <p class="text-sm font-medium text-slate-500 mt-2">২ দিনব্যাপী সম্পূর্ণ আয়োজনে অংশগ্রহণ</p>
+          </div>
+
+          <!-- Price Section -->
+          <div class="text-center mb-8 pb-8 border-b border-slate-100">
+            <div class="flex items-center justify-center gap-2">
+              <span class="text-3xl font-bold text-slate-900">৳</span>
+              <span id="calc-total-amount" class="text-5xl font-display font-black text-emerald-900 tracking-tight">৩,০০০</span>
+            </div>
+            <span class="inline-block mt-3 text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
+              জনপ্রতি ফি (BDT)
+            </span>
+          </div>
+
+          <!-- Features Checklist -->
+          <div class="flex-1 space-y-4 mb-8">
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 bg-emerald-100 text-emerald-600 rounded-full p-1">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <p class="text-sm font-medium text-slate-700">সম্মেলন কিট, আইডি ব্যাজ ও বিশেষ ফোল্ডার</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 bg-emerald-100 text-emerald-600 rounded-full p-1">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <p class="text-sm font-medium text-slate-700">উভয় দিনের বুফে মধ্যাহ্নভোজ ও ঐতিহ্যবাহী টি-ব্রেক</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 bg-emerald-100 text-emerald-600 rounded-full p-1">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <p class="text-sm font-medium text-slate-700">অফিশিয়াল পিয়ার-রিভিউড হার্ডকপি সার্টিফিকেট</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 bg-emerald-100 text-emerald-600 rounded-full p-1">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <p class="text-sm font-medium text-slate-700">সকল সেশন ও উদ্বোধনী/সমাপনী অনুষ্ঠানে প্রবেশাধিকার</p>
             </div>
           </div>
-          <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-slate-100 text-slate-700 border border-slate-300">
-            ICBLL-2026
-          </span>
-        </div>
 
-        <!-- Itemized Table Breakdown -->
-        <div class="space-y-2 text-xs">
-          <div class="flex justify-between py-1 border-b border-dashed border-slate-200">
-            <span class="font-semibold text-slate-700">মূল নিবন্ধন ফি (Base Fee):</span>
-            <strong id="item-base-val" class="text-slate-950 font-bold">BDT 3,000</strong>
+          <!-- Dynamic Add-ons Alert (Hidden by default, shown via JS if add-ons selected) -->
+          <div id="addons-alert" class="hidden mb-6 bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs font-semibold text-amber-800 text-center">
+            ঐচ্ছিক সংযোজন (Add-ons) যুক্ত করা হয়েছে
           </div>
-          <div class="flex justify-between py-1 border-b border-dashed border-slate-200">
-            <span class="font-semibold text-slate-700">সময়সীমা এডজাস্টমেন্ট (Phase):</span>
-            <strong id="item-phase-val" class="text-slate-950 font-bold">BDT 0</strong>
-          </div>
-          <div class="flex justify-between py-1 border-b border-dashed border-slate-200">
-            <span class="font-semibold text-slate-700">ঐচ্ছিক অনুষ্ঠান ও ভ্রমণ (Add-ons):</span>
-            <strong id="item-addon-val" class="text-slate-950 font-bold">BDT 0</strong>
-          </div>
+
+          <!-- Call to Action -->
+          <a href="#payment-methods" class="w-full py-4 px-6 bg-slate-900 hover:bg-emerald-800 text-white text-center rounded-xl font-bold text-sm transition-all duration-300 shadow-lg shadow-emerald-900/20 flex items-center justify-center gap-2 group">
+            পেমেন্ট মাধ্যম বেছে নিন
+            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+          </a>
         </div>
-
-        <!-- Grand Total Banner -->
-        <div class="rounded-xl p-4 bg-[#003829] text-white text-center space-y-1 shadow-md">
-          <p class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-200">
-            সর্বমোট প্রদেয় ফি (Total Payable)
-          </p>
-          <span id="calc-total-amount" class="block font-display font-black text-white" style="font-size:2.25rem; line-height:1.1;">BDT 3,000</span>
-          <span id="calc-currency-label" class="block text-[11px] font-bold text-amber-300">Bangladeshi Taka (BDT)</span>
-        </div>
-
-        <!-- Inclusions Checklist -->
-        <div class="space-y-1.5 text-left text-xs font-semibold text-slate-800 pt-1">
-          <p class="flex items-center gap-2">
-            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 flex-shrink-0 text-emerald-700"></i>
-            সম্মেলন কিট, আইডি ব্যাজ ও ফোল্ডার অন্তর্ভুক্ত
-          </p>
-          <p class="flex items-center gap-2">
-            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 flex-shrink-0 text-emerald-700"></i>
-            ২ দিনের মধ্যাহ্নভোজ ও ঐতিহ্যবাহী টি-ব্রেক
-          </p>
-          <p class="flex items-center gap-2">
-            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 flex-shrink-0 text-emerald-700"></i>
-            অফিশিয়াল পিয়ার-রিভিউড সার্টিফিকেট
-          </p>
-        </div>
-
-        <!-- Action Button -->
-        <a href="#payment-methods"
-           class="block w-full btn btn-md btn-gold" style="justify-content:center; border-radius:var(--radius-md);">
-          পেমেন্ট মাধ্যম বেছে নিন
-          <i data-lucide="arrow-down" class="w-4 h-4"></i>
-        </a>
-
-        <!-- Seal & Subtext -->
-        <p class="text-[10px] text-center font-bold text-slate-500 pt-1 border-t border-slate-200">
-          স্বাক্ষরিত: অর্থ ও নিবন্ধন উপ-কমিটি, ICBLL-২০২৬, শাবিপ্রবি
-        </p>
       </div>
 
     </div>
@@ -445,22 +441,24 @@
       const tour    = tourCk?.checked   ? 1000 : 0;
       const total   = base + (currency === "BDT" ? (phase + banquet + tour) : 0);
 
-      const itemBaseEl  = document.getElementById("item-base-val");
-      const itemPhaseEl = document.getElementById("item-phase-val");
-      const itemAddonEl = document.getElementById("item-addon-val");
+      const addonsAlert = document.getElementById("addons-alert");
 
       if (currency === "USD") {
-        totalEl.textContent = "USD $" + total;
+        totalEl.textContent = total;
         currEl.textContent  = "United States Dollar (USD)";
-        if (itemBaseEl)  itemBaseEl.textContent  = "USD $" + base;
-        if (itemPhaseEl) itemPhaseEl.textContent = "USD $0";
-        if (itemAddonEl) itemAddonEl.textContent = "USD $0";
+        // In USD, the currency symbol is hardcoded to $ in HTML typically, but since we used ৳, we might need to change it.
+        // For simplicity, let's just update the total. The symbol is adjacent.
       } else {
-        totalEl.textContent = "BDT " + total.toLocaleString("bn-BD");
+        totalEl.textContent = total.toLocaleString("bn-BD");
         currEl.textContent  = "Bangladeshi Taka (BDT)";
-        if (itemBaseEl)  itemBaseEl.textContent  = "BDT " + base.toLocaleString("bn-BD");
-        if (itemPhaseEl) itemPhaseEl.textContent = "BDT " + phase.toLocaleString("bn-BD");
-        if (itemAddonEl) itemAddonEl.textContent = "BDT " + (banquet + tour).toLocaleString("bn-BD");
+      }
+
+      if (addonsAlert) {
+        if (banquet > 0 || tour > 0) {
+          addonsAlert.classList.remove("hidden");
+        } else {
+          addonsAlert.classList.add("hidden");
+        }
       }
     }
 
