@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="doc-title">ICBLL-2026 — 1st International Conference on Bengali Language &amp; Literature</title>
-  <meta name="description" content="The 1st International Conference on Bengali Language &amp; Literature (ICBLL-2026), hosted by the Department of Bengali, SUST, Sylhet. 27–28 November 2026.">
+  <title id="doc-title">ICBLL-2026 — প্রথম আন্তর্জাতিক বাংলা ভাষা ও সাহিত্য সম্মেলন</title>
+  <meta name="description" content="প্রথম আন্তর্জাতিক বাংলা ভাষা ও সাহিত্য সম্মেলন-২০২৬ (ICBLL-2026), বাংলা বিভাগ, শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়, সিলেট। ২৭–২৮ নভেম্বর ২০২৬।">
 
   <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..700&family=Playfair+Display:ital,wght@0,600..900;1,600..800&family=Noto+Serif+Bengali:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..700&family=Playfair+Display:ital,wght@0,600..900;1,600..800&family=Noto+Serif+Bengali:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind (utility resets & grid helpers) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,73 +23,75 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/sust-logo.png">
 </head>
-<body>
+<body class="bg-white text-slate-900">
 
 <!-- Skip to content -->
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ============================================================
-     NAVIGATION HEADER
-     Clean, 5-link, glass-morphism nav — world-class standard
+     NAVIGATION HEADER — Clean White Header with Borderless Logo
 ============================================================ -->
-<nav id="site-header" class="nav-shell" aria-label="Primary navigation">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5">
+<nav id="site-header" class="nav-shell border-b border-slate-200" aria-label="Primary navigation">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8 py-3.5">
 
-    <!-- Brand Identity -->
-    <a href="#home" class="flex items-center gap-3" aria-label="ICBLL-2026 Home">
-      <div class="h-10 w-10 rounded-full overflow-hidden border-2 flex-shrink-0" style="border-color:var(--gold); box-shadow: 0 2px 8px rgba(181,134,58,0.18);">
-        <img src="assets/sust-logo.png" alt="SUST" class="h-full w-full object-cover"
-          onerror="this.outerHTML='<div style=\'width:40px;height:40px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Playfair Display,serif;color:#fff;font-weight:700;font-size:16px;\'>বা</div>'">
-      </div>
+    <!-- Brand Identity (Clean borderless logo) -->
+    <a href="#home" class="flex items-center gap-3 sm:gap-3.5" aria-label="ICBLL-2026 Home">
+      <img src="assets/sust-logo.png" alt="SUST Logo" class="h-10 sm:h-11 w-auto object-contain shrink-0">
       <div>
-        <p class="font-display font-bold text-lg leading-none" style="color:var(--navy)" data-i18n="meta.conference_short">ICBLL-2026</p>
-        <p class="text-xs font-semibold mt-0.5 hidden sm:block" style="color:var(--ink-light)" data-i18n="hero.eyebrow">Department of Bengali, SUST</p>
+        <p class="font-display font-bold text-lg sm:text-xl leading-none text-slate-950" data-i18n="meta.conference_short">ICBLL-2026</p>
+        <p class="text-xs font-bold mt-1 text-emerald-700 hidden sm:block" data-i18n="hero.eyebrow">বাংলা বিভাগ, শাবিপ্রবি</p>
       </div>
     </a>
 
-    <!-- Desktop Nav — 5 Items -->
-    <div class="hidden lg:flex items-center gap-6">
-      <a href="#about"      class="nav-link" data-i18n="nav.about">Overview</a>
-      <a href="#cfp"        class="nav-link" data-i18n="nav.cfp">Call for Papers</a>
-      <a href="#schedule"   class="nav-link" data-i18n="nav.schedule">Programme</a>
-      <a href="#speakers"   class="nav-link" data-i18n="nav.speakers">Keynote Speakers</a>
-      <a href="#committees" class="nav-link" data-i18n="nav.committees">Committees</a>
+    <!-- Desktop Nav — 5 Logical Core Items -->
+    <div class="hidden lg:flex items-center gap-7">
+      <a href="#about"      class="nav-link" data-i18n="nav.about">পরিচিতি</a>
+      <a href="#cfp"        class="nav-link" data-i18n="nav.cfp">প্রবন্ধ আহ্বান</a>
+      <a href="#dates"        class="nav-link" data-i18n="nav.dates">গুরুত্বপূর্ণ তারিখ</a>
+      <a href="#speakers"   class="nav-link" data-i18n="nav.speakers">মূখ্য আলোচক</a>
+      <a href="#schedule"   class="nav-link" data-i18n="nav.schedule">অনুষ্ঠানসূচি</a>
     </div>
 
     <!-- Right Cluster: Language + CTA -->
     <div class="flex items-center gap-3">
+      <!-- Search Input -->
+      <div class="hidden xl:flex items-center gap-2 rounded-lg px-3 py-1.5 text-xs bg-slate-100 border border-slate-300">
+        <i data-lucide="search" class="w-3.5 h-3.5 text-slate-500"></i>
+        <input type="search" placeholder="গবেষক বা বিষয় খুঁজুন…"
+               class="bg-transparent outline-none w-36 text-slate-900 placeholder:text-slate-500 text-xs font-medium"
+               oninput="handleSearch(this.value)">
+      </div>
+
       <div role="group" aria-label="Language selector" class="lang-switch">
         <button id="lang-bn" type="button" aria-pressed="true"  class="lang-btn is-active">বাংলা</button>
         <button id="lang-en" type="button" aria-pressed="false" class="lang-btn">EN</button>
       </div>
 
       <a id="nav-cta-btn" href="registration.html"
-         class="btn btn-md btn-navy hidden sm:inline-flex" style="border-radius:999px;">
+         class="btn btn-md btn-green hidden sm:inline-flex">
         নিবন্ধন করুন
       </a>
 
       <!-- Mobile toggle -->
       <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav"
               aria-label="Toggle menu"
-              class="lg:hidden w-9 h-9 flex items-center justify-center rounded-lg border"
-              style="border-color:var(--line); color:var(--ink-light);">
+              class="lg:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm">
         <i data-lucide="menu" class="w-5 h-5"></i>
       </button>
     </div>
   </div>
 
   <!-- Mobile Menu -->
-  <nav id="mobile-nav" class="hidden border-t px-6 py-4 flex flex-col gap-2 lg:hidden"
-       style="border-color:var(--line); background:var(--paper);">
-    <a href="#about"        class="py-2 text-sm font-semibold hover:text-[var(--navy)] border-b" style="border-color:var(--line); color:var(--ink-light);" data-i18n="nav.about">Overview</a>
-    <a href="#cfp"          class="py-2 text-sm font-semibold hover:text-[var(--navy)] border-b" style="border-color:var(--line); color:var(--ink-light);" data-i18n="nav.cfp">Call for Papers</a>
-    <a href="#schedule"     class="py-2 text-sm font-semibold hover:text-[var(--navy)] border-b" style="border-color:var(--line); color:var(--ink-light);">Programme Schedule</a>
-    <a href="#dates"        class="py-2 text-sm font-semibold hover:text-[var(--navy)] border-b" style="border-color:var(--line); color:var(--ink-light);" data-i18n="nav.dates">Important Dates</a>
-    <a href="#speakers"     class="py-2 text-sm font-semibold hover:text-[var(--navy)] border-b" style="border-color:var(--line); color:var(--ink-light);" data-i18n="nav.speakers">Keynote Speakers</a>
-    <a href="#committees"   class="py-2 text-sm font-semibold hover:text-[var(--navy)] border-b" style="border-color:var(--line); color:var(--ink-light);" data-i18n="nav.committees">Committees</a>
-    <a href="#downloads"    class="py-2 text-sm font-semibold hover:text-[var(--navy)] border-b" style="border-color:var(--line); color:var(--ink-light);">Downloads</a>
-    <a href="#travel"       class="py-2 text-sm font-semibold hover:text-[var(--navy)] border-b" style="border-color:var(--line); color:var(--ink-light);">Sylhet Guide</a>
-    <a href="registration.html" class="py-2 text-sm font-bold" style="color:var(--navy);">Registration Portal</a>
+  <nav id="mobile-nav" class="hidden border-t border-slate-200 bg-white px-6 py-4 flex flex-col gap-2 lg:hidden">
+    <a href="#about"        class="py-2 text-sm font-semibold hover:text-[var(--forest-bright)] border-b border-slate-100 text-slate-800" data-i18n="nav.about">পরিচিতি</a>
+    <a href="#cfp"          class="py-2 text-sm font-semibold hover:text-[var(--forest-bright)] border-b border-slate-100 text-slate-800" data-i18n="nav.cfp">প্রবন্ধ আহ্বান</a>
+    <a href="#dates"        class="py-2 text-sm font-semibold hover:text-[var(--forest-bright)] border-b border-slate-100 text-slate-800" data-i18n="nav.dates">গুরুত্বপূর্ণ তারিখ</a>
+    <a href="#speakers"     class="py-2 text-sm font-semibold hover:text-[var(--forest-bright)] border-b border-slate-100 text-slate-800" data-i18n="nav.speakers">মূখ্য আলোচক</a>
+    <a href="#schedule"     class="py-2 text-sm font-semibold hover:text-[var(--forest-bright)] border-b border-slate-100 text-slate-800" data-i18n="nav.schedule">অনুষ্ঠানসূচি</a>
+    <a href="#committees"   class="py-2 text-sm font-semibold hover:text-[var(--forest-bright)] border-b border-slate-100 text-slate-800" data-i18n="nav.committees">কমিটি</a>
+    <a href="#downloads"    class="py-2 text-sm font-semibold hover:text-[var(--forest-bright)] border-b border-slate-100 text-slate-800">ডাউনলোড হাব</a>
+    <a href="#travel"       class="py-2 text-sm font-semibold hover:text-[var(--forest-bright)] border-b border-slate-100 text-slate-800">সিলেট ভ্রমণ নির্দেশিকা</a>
+    <a href="registration.html" class="py-2 text-sm font-bold text-emerald-700">নিবন্ধন পোর্টাল</a>
   </nav>
 </nav>
 
@@ -98,19 +100,14 @@
 ============================================================ -->
 <main id="main" style="padding-top: 74px;">
 
-  <!-- ── ANNOUNCEMENT TICKER ─────────────────────────────────
-       Separated from header by 8px gap + bottom border accent
-  ──────────────────────────────────────────────────────────── -->
-  <div class="notice-bar py-2.5 px-4" style="border-bottom: 2px solid var(--gold);">
+  <!-- ── ANNOUNCEMENT TICKER ───────────────────────────────── -->
+  <div class="notice-bar py-2.5 px-4 border-b-2 border-amber-500">
     <div class="mx-auto max-w-7xl flex items-center gap-3">
-      <span class="flex-shrink-0 text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded"
-            style="background:var(--gold); color:#fff; letter-spacing:0.15em;">
-        ANNOUNCEMENT
+      <span class="flex-shrink-0 text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded bg-amber-500 text-white">
+        জরুরি বিজ্ঞপ্তি
       </span>
-      <!-- Modern CSS ticker replaces deprecated <marquee> -->
       <div class="ticker-wrap">
-        <div class="ticker-track text-xs font-medium" style="color:#e2d5b8;">
-          <!-- Content doubled for seamless loop -->
+        <div class="ticker-track text-xs font-semibold text-emerald-50">
           <span>
             &nbsp;&nbsp;&nbsp;সারসংক্ষেপ জমাদানের শেষ তারিখ: ০১ অক্টোবর ২০২৬ (Abstract Deadline: 01 Oct 2026)
             &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
@@ -120,7 +117,6 @@
             &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
             অনলাইন নিবন্ধন ও ফি পরিশোধ পোর্টাল সক্রিয় রয়েছে&nbsp;&nbsp;&nbsp;
           </span>
-          <!-- Duplicate for seamless infinite loop -->
           <span>
             &nbsp;&nbsp;&nbsp;সারসংক্ষেপ জমাদানের শেষ তারিখ: ০১ অক্টোবর ২০২৬ (Abstract Deadline: 01 Oct 2026)
             &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
@@ -135,67 +131,56 @@
     </div>
   </div>
 
-  <!-- ── HERO SECTION ─────────────────────────────────────────
-       Light Parchment canvas, navy typography, gold accents.
-       No heavy green. Two-column editorial layout.
-  ──────────────────────────────────────────────────────────── -->
-  <header id="home" class="hero-section section-py" style="border-bottom: 1px solid var(--line);">
+  <!-- ── HERO SECTION ───────────────────────────────────────── -->
+  <header id="home" class="hero-section section-py border-b-2 border-slate-200">
     <div class="hero-bg-texture"></div>
 
     <div class="relative mx-auto max-w-7xl px-6 grid lg:grid-cols-[1.2fr_.8fr] gap-12 items-center">
 
       <!-- Left: Primary Content -->
       <div>
-        <!-- Eyebrow badge -->
         <div class="h-rise d1">
-          <span class="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider"
-                style="background:var(--gold-lt); color:#7a5420; border:1px solid rgba(181,134,58,0.25);"
+          <span class="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider bg-emerald-50 text-emerald-900 border border-emerald-300"
                 data-i18n="hero.badge">
             আন্তর্জাতিক সম্মেলন · ২০২৬
           </span>
         </div>
 
-        <!-- Conference Title -->
         <h1 id="hero-title"
-            class="h-rise d2 font-display mt-5 leading-tight"
-            style="font-size:clamp(2rem,4vw,3.25rem); font-weight:900; color:var(--navy); letter-spacing:-0.03em; line-height:1.16;"
+            class="h-rise d2 font-display mt-5 leading-tight text-slate-950 font-black"
+            style="font-size:clamp(2rem,4vw,3.25rem); letter-spacing:-0.03em; line-height:1.16;"
             data-i18n="hero.title">
           প্রথম আন্তর্জাতিক বাংলা ভাষা ও সাহিত্য সম্মেলন-২০২৬
         </h1>
 
-        <!-- Thematic Subtitle -->
-        <p class="h-rise d3 mt-4 text-lg font-medium leading-relaxed"
-           style="color:var(--ink-light); max-width:560px;"
+        <p class="h-rise d3 mt-4 text-lg font-medium leading-relaxed text-slate-800 max-w-xl"
            data-i18n="hero.subtitle">
           মূল প্রতিপাদ্য: শতবর্ষে মুসলিম সাহিত্য সমাজ ও সিলেটে নজরুল —
           মুক্তচিন্তা ও দ্রোহের উত্তরাধিকার
         </p>
 
-        <!-- Info Chips: Date + Venue -->
         <div class="h-rise d3 mt-6 flex flex-wrap gap-3">
           <span class="info-chip">
-            <i data-lucide="calendar" class="w-4 h-4" style="color:var(--gold);"></i>
+            <i data-lucide="calendar" class="w-4 h-4 text-amber-600"></i>
             <span data-i18n="hero.date_label">২৭–২৮ নভেম্বর ২০২৬</span>
           </span>
           <span class="info-chip">
-            <i data-lucide="map-pin" class="w-4 h-4" style="color:var(--forest);"></i>
+            <i data-lucide="map-pin" class="w-4 h-4 text-emerald-700"></i>
             <span data-i18n="hero.venue_label">শাবিপ্রবি, সিলেট, বাংলাদেশ</span>
           </span>
         </div>
 
-        <!-- Divider rule -->
         <div class="h-rise d4 mt-8 flex items-center gap-4">
-          <span class="block h-px flex-1" style="background:var(--line);"></span>
-          <span class="text-xs font-bold uppercase tracking-widest" style="color:var(--gold); letter-spacing:0.2em;">ICBLL-2026</span>
-          <span class="block h-px flex-1" style="background:var(--line);"></span>
+          <span class="block h-px flex-1 bg-slate-300"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-800" style="letter-spacing:0.2em;">ICBLL-2026</span>
+          <span class="block h-px flex-1 bg-slate-300"></span>
         </div>
 
-        <!-- CTA Buttons -->
         <div class="h-rise d5 mt-6 flex flex-wrap gap-3">
           <a id="hero-cta-primary"
              href="https://cmt3.research.microsoft.com/"
              target="_blank" rel="noopener noreferrer"
-             class="btn btn-lg btn-navy"
+             class="btn btn-lg btn-green"
              data-i18n="hero.cta_primary">
             সারসংক্ষেপ জমা দিন
             <i data-lucide="external-link" class="w-4 h-4"></i>
@@ -216,7 +201,6 @@
       <!-- Right: Stats + Countdown Card -->
       <aside aria-label="Conference facts and countdown">
 
-        <!-- Stat row -->
         <div class="grid grid-cols-3 gap-3 h-rise d2">
           <div class="hero-stat-card">
             <div class="hero-stat-num" data-i18n="hero.stat_days_num">২</div>
@@ -232,14 +216,12 @@
           </div>
         </div>
 
-        <!-- Live Countdown -->
-        <div class="h-rise d3 mt-5 rounded-2xl border p-6"
-             style="background:var(--white); border-color:var(--line); box-shadow:var(--shadow-md);">
-          <p class="text-center text-xs font-bold uppercase tracking-widest mb-4"
-             style="color:var(--gold); letter-spacing:0.18em;"
+        <div class="h-rise d3 mt-5 rounded-2xl border border-slate-300 p-6 bg-white shadow-md">
+          <p class="text-center text-xs font-extrabold uppercase tracking-widest mb-4 text-emerald-800"
+             style="letter-spacing:0.18em;"
              data-i18n="countdown.intro">সম্মেলন শুরু হতে বাকি</p>
           <div class="grid grid-cols-4 gap-2">
-            <div class="cd-cell gold">
+            <div class="cd-cell green">
               <span id="cd-days" class="cd-num">00</span>
               <span class="cd-lbl" data-i18n="countdown.days">দিন</span>
             </div>
@@ -257,26 +239,21 @@
             </div>
           </div>
 
-          <!-- Host logos/details strip -->
-          <div class="mt-5 pt-4 flex items-center gap-3 border-t" style="border-color:var(--line);">
-            <div class="w-9 h-9 rounded-full overflow-hidden border flex-shrink-0" style="border-color:var(--line);">
-              <img src="assets/sust-logo.png" alt="SUST" class="w-full h-full object-cover"
-                   onerror="this.style.display='none'">
-            </div>
+          <div class="mt-5 pt-4 flex items-center gap-3 border-t border-slate-200">
+            <img src="assets/sust-logo.png" alt="SUST Logo" class="h-9 w-auto object-contain shrink-0">
             <div>
-              <p class="text-xs font-bold" style="color:var(--navy);">বাংলা বিভাগ, শাবিপ্রবি</p>
-              <p class="text-[11px]" style="color:var(--ink-light);">সিলেট-৩১১৪, বাংলাদেশ</p>
+              <p class="text-xs font-bold text-slate-950">বাংলা বিভাগ, শাবিপ্রবি</p>
+              <p class="text-[11px] font-medium text-slate-600">সিলেট-৩১১৪, বাংলাদেশ</p>
             </div>
           </div>
         </div>
 
-        <!-- Campus image collage — small, tasteful -->
         <div class="h-rise d4 mt-4 grid grid-cols-2 gap-2">
-          <div class="rounded-xl overflow-hidden" style="height:100px;">
+          <div class="rounded-xl overflow-hidden h-24 border border-slate-200">
             <img src="assets/sust-gate.jpeg" alt="SUST Main Gate"
                  class="w-full h-full object-cover">
           </div>
-          <div class="rounded-xl overflow-hidden" style="height:100px;">
+          <div class="rounded-xl overflow-hidden h-24 border border-slate-200">
             <img src="assets/sust-auditorium.jpeg" alt="SUST Tree-lined Avenue"
                  class="w-full h-full object-cover">
           </div>
@@ -286,96 +263,53 @@
     </div>
   </header>
 
-  <!-- ── OVERVIEW / ABOUT ──────────────────────────────────── -->
-  <section id="about" class="section-py subtle-grid" aria-labelledby="about-heading">
+  <!-- ── 1. OVERVIEW / ABOUT — (বিভাগ · ০১) ────────────────── -->
+  <section id="about" class="section-py subtle-grid bg-white border-b-2 border-slate-200" aria-labelledby="about-heading">
     <div class="reveal mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
 
-      <!-- Images side: 3-card editorial collage with real SUST campus photos -->
       <div class="relative h-[380px] max-w-lg mx-auto w-full lg:order-last">
-        <!-- Top-left: Old iconic gate -->
-        <div class="absolute top-0 left-0 w-[62%] h-48 rounded-2xl overflow-hidden shadow-lg border-4"
-             style="border-color:var(--white);">
-          <img src="assets/sust-lake.jpeg" alt="SUST Historic Gate"
-               class="w-full h-full object-cover object-center">
+        <div class="absolute top-0 left-0 w-[62%] h-48 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+          <img src="assets/sust-lake.jpeg" alt="SUST Historic Gate" class="w-full h-full object-cover">
         </div>
-        <!-- Bottom-right: Green tree-lined avenue -->
-        <div class="absolute bottom-0 right-0 w-[62%] h-52 rounded-2xl overflow-hidden shadow-xl border-4"
-             style="border-color:var(--white);">
-          <img src="assets/sust-auditorium.jpeg" alt="SUST Tree-lined Campus Avenue"
-               class="w-full h-full object-cover object-center">
+        <div class="absolute bottom-0 right-0 w-[62%] h-52 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+          <img src="assets/sust-auditorium.jpeg" alt="SUST Tree-lined Campus Avenue" class="w-full h-full object-cover">
         </div>
-        <!-- Center-front (most prominent): Modern SUST entrance gate -->
-        <div class="absolute top-[28%] left-[22%] w-[52%] h-[200px] rounded-2xl overflow-hidden shadow-2xl border-4"
-             style="border-color:var(--white);">
-          <img src="assets/sust-gate.jpeg" alt="SUST Main Campus Entrance"
-               class="w-full h-full object-cover object-center">
+        <div class="absolute top-[28%] left-[22%] w-[52%] h-[200px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+          <img src="assets/sust-gate.jpeg" alt="SUST Main Campus Entrance" class="w-full h-full object-cover">
         </div>
       </div>
 
-      <!-- Text side -->
       <div>
         <span class="section-eyebrow" data-i18n="about.section_label">বিভাগ · ০১</span>
-        <h2 id="about-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading"
-            style="color:var(--navy);" data-i18n="about.heading">সম্মেলন পরিচিতি</h2>
+        <h2 id="about-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading text-slate-950"
+            data-i18n="about.heading">সম্মেলন পরিচিতি</h2>
         <span class="section-rule"></span>
 
         <blockquote class="pull-quote mt-8">
-          <p class="font-display italic text-lg font-semibold leading-snug"
-             style="color:var(--navy);"
+          <p class="font-display italic text-lg font-bold leading-snug text-emerald-950"
              data-i18n="about.quote">
             ঐতিহাসিকভাবেই সিলেট অঞ্চল সাহিত্য, সংস্কৃতি ও মুক্তচিন্তা চর্চার এক উর্বর ভূমি।
           </p>
         </blockquote>
 
-        <div id="about-paragraphs" class="mt-6 space-y-4 text-base leading-relaxed"
-             style="color:var(--ink-light);">
-          <!-- populated via script.js from content.json -->
+        <div id="about-paragraphs" class="mt-6 space-y-4 text-base font-medium leading-relaxed text-slate-800">
+          <!-- populated via script.js -->
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ── TRUST / PUBLICATION STRIP ─────────────────────────── -->
-  <section id="publication" class="trust-strip py-12">
-    <div class="mx-auto max-w-6xl px-6 text-center space-y-5">
-      <span class="inline-block rounded-full px-4 py-1 text-xs font-bold uppercase tracking-widest"
-            style="background:var(--gold-lt); color:#7a5420; letter-spacing:0.15em;">
-        Academic Integrity &amp; Publication Assurance
-      </span>
-      <h2 class="font-display text-2xl sm:text-3xl font-bold text-white max-w-3xl mx-auto">
-        পিয়ার-রিভিউড প্রকাশনা ও আন্তর্জাতিক জার্নাল ইনডেক্সিং
-      </h2>
-      <p class="text-sm max-w-2xl mx-auto leading-relaxed" style="color:#c8d0e0;">
-        কনফারেন্সে উপস্থাপিত সকল গবেষণা প্রবন্ধ বিচারকমণ্ডলীর পিয়ার-রিভিউ প্রক্রিয়ার মাধ্যমে নির্বাচিত হবে এবং আন্তর্জাতিক ISBN সহ SUST Press ও ইনডেক্সড জার্নালে প্রকাশিত হবে।
-      </p>
-      <div class="flex flex-wrap justify-center gap-6 text-xs font-bold pt-2" style="color:#a8b4c8;">
-        <span class="flex items-center gap-2">
-          <i data-lucide="check-circle-2" class="w-4 h-4" style="color:var(--gold);"></i>
-          Double-Blind Peer Review
-        </span>
-        <span class="flex items-center gap-2">
-          <i data-lucide="check-circle-2" class="w-4 h-4" style="color:var(--gold);"></i>
-          Official ISBN Conference Proceedings
-        </span>
-        <span class="flex items-center gap-2">
-          <i data-lucide="check-circle-2" class="w-4 h-4" style="color:var(--gold);"></i>
-          Indexed Journal Issue Selection
-        </span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CALL FOR PAPERS ───────────────────────────────────── -->
-  <section id="cfp" class="section-py" style="background:var(--white);" aria-labelledby="cfp-heading">
+  <!-- ── 2. CALL FOR PAPERS & TRACKS — (বিভাগ · ০২) ────────── -->
+  <section id="cfp" class="section-py bg-slate-50 border-b-2 border-slate-200" aria-labelledby="cfp-heading">
     <div class="mx-auto max-w-7xl px-6">
 
       <div class="reveal text-center max-w-2xl mx-auto">
         <span class="section-eyebrow" data-i18n="cfp.section_label">বিভাগ · ০২</span>
-        <h2 id="cfp-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading"
-            style="color:var(--navy);" data-i18n="cfp.heading">প্রবন্ধ আহ্বান</h2>
+        <h2 id="cfp-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading text-slate-950"
+            data-i18n="cfp.heading">প্রবন্ধ আহ্বান ও গবেষণা ক্ষেত্রসমূহ</h2>
         <span class="section-rule centered"></span>
-        <p class="mt-5 text-base leading-relaxed" style="color:var(--ink-light);"
+        <p class="mt-5 text-base font-medium leading-relaxed text-slate-700"
            data-i18n="cfp.subtitle">
           নিম্নলিখিত ক্ষেত্রসমূহে মৌলিক ও অপ্রকাশিত গবেষণা প্রবন্ধ আহ্বান করা হচ্ছে।
         </p>
@@ -388,165 +322,18 @@
     </div>
   </section>
 
-  <!-- ── PROGRAMME SCHEDULE ────────────────────────────────── -->
-  <section id="schedule" class="section-py subtle-grid" aria-labelledby="schedule-heading"
-           style="border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-    <div class="mx-auto max-w-6xl px-6">
-
-      <div class="reveal text-center max-w-2xl mx-auto">
-        <span class="section-eyebrow">বিভাগ · ০৩</span>
-        <h2 id="schedule-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading"
-            style="color:var(--navy);">Programme Schedule</h2>
-        <span class="section-rule centered"></span>
-        <p class="mt-5 text-base leading-relaxed" style="color:var(--ink-light);">
-          ২৭–২৮ নভেম্বর ২০২৬ — দুই দিনব্যাপী কনফারেন্সের সম্পূর্ণ কার্যক্রম।
-        </p>
-      </div>
-
-      <!-- Day Switcher -->
-      <div class="reveal mt-10 flex flex-wrap justify-center gap-3">
-        <button id="sched-tab-day1" class="sched-tab active" type="button">
-          Day 1 — ২৭ নভেম্বর ২০২৬
-        </button>
-        <button id="sched-tab-day2" class="sched-tab" type="button">
-          Day 2 — ২৮ নভেম্বর ২০২৬
-        </button>
-      </div>
-
-      <!-- Schedule Events Container -->
-      <div id="schedule-events-container" class="reveal mt-8 space-y-3">
-        <!-- Default Day 1 events rendered here -->
-        <div class="schedule-row">
-          <span class="schedule-time">09:00 – 10:30</span>
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-2 mb-1">
-              <span class="badge badge-keynote">Keynote</span>
-            </div>
-            <h4 class="text-sm font-bold" style="color:var(--navy);">উদ্বোধনী অধিবেশন ও মূল প্রবন্ধ উপস্থাপন (Inaugural Session)</h4>
-            <p class="text-xs mt-1" style="color:var(--ink-light);">কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি</p>
-          </div>
-        </div>
-        <div class="schedule-row">
-          <span class="schedule-time">11:00 – 13:00</span>
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-2 mb-1">
-              <span class="badge badge-paper">Paper Sessions</span>
-            </div>
-            <h4 class="text-sm font-bold" style="color:var(--navy);">প্যারালাল টেকনিক্যাল সেশন ১ (Parallel Paper Presentations: Tracks 01–03)</h4>
-            <p class="text-xs mt-1" style="color:var(--ink-light);">একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩</p>
-          </div>
-        </div>
-        <div class="schedule-row">
-          <span class="schedule-time">13:00 – 14:30</span>
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-2 mb-1">
-              <span class="badge badge-break">Break</span>
-            </div>
-            <h4 class="text-sm font-bold" style="color:var(--navy);">মধ্যাহ্নভোজ ও নামাজের বিরতি (Lunch &amp; Prayer Break)</h4>
-            <p class="text-xs mt-1" style="color:var(--ink-light);">বিশ্ববিদ্যালয় ক্যাফেটেরিয়া</p>
-          </div>
-        </div>
-        <div class="schedule-row">
-          <span class="schedule-time">14:30 – 17:00</span>
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-2 mb-1">
-              <span class="badge badge-paper">Paper Sessions</span>
-            </div>
-            <h4 class="text-sm font-bold" style="color:var(--navy);">প্যারালাল টেকনিক্যাল সেশন ২ (Parallel Paper Presentations: Tracks 04–06)</h4>
-            <p class="text-xs mt-1" style="color:var(--ink-light);">একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩</p>
-          </div>
-        </div>
-        <div class="schedule-row">
-          <span class="schedule-time">18:30 – 20:30</span>
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-2 mb-1">
-              <span class="badge badge-cultural">Cultural</span>
-            </div>
-            <h4 class="text-sm font-bold" style="color:var(--navy);">সাংস্কৃতিক সন্ধ্যা — সিলেটে নজরুল ও লোকঐতিহ্য (Cultural Evening &amp; Gala)</h4>
-            <p class="text-xs mt-1" style="color:var(--ink-light);">মুক্তমঞ্চ · শাবিপ্রবি ক্যাম্পাস</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── DOWNLOADS ──────────────────────────────────────────── -->
-  <section id="downloads" class="section-py" style="background:var(--white);" aria-labelledby="downloads-heading">
-    <div class="mx-auto max-w-6xl px-6">
-
-      <div class="reveal text-center max-w-2xl mx-auto">
-        <span class="section-eyebrow">বিভাগ · ০৪</span>
-        <h2 id="downloads-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading"
-            style="color:var(--navy);">Download Hub</h2>
-        <span class="section-rule centered"></span>
-        <p class="mt-5 text-base leading-relaxed" style="color:var(--ink-light);">
-          গবেষকদের জন্য প্রয়োজনীয় টেমপ্লেট, নির্দেশিকা এবং আনুষঙ্গিক উপকরণ।
-        </p>
-      </div>
-
-      <div class="reveal mt-12 grid gap-5 md:grid-cols-3">
-
-        <div class="resource-card">
-          <div class="resource-icon" style="background:var(--smoke); color:var(--navy);">
-            <i data-lucide="file-text" class="w-6 h-6"></i>
-          </div>
-          <div>
-            <h3 class="font-bold text-base" style="color:var(--navy);">Abstract Template (.docx)</h3>
-            <p class="text-xs mt-1 leading-relaxed" style="color:var(--ink-light);">বাংলা ও ইংরেজি সারসংক্ষেপ রচনার অফিশিয়াল টেমপ্লেট ও ফন্ট নির্দেশিকা।</p>
-          </div>
-          <a href="#" onclick="alert('Abstract Template downloading...'); return false;"
-             class="btn btn-md btn-navy mt-auto">
-            <i data-lucide="download" class="w-4 h-4"></i> Download DOCX
-          </a>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-icon" style="background:var(--gold-pale); color:var(--gold);">
-            <i data-lucide="file-down" class="w-6 h-6"></i>
-          </div>
-          <div>
-            <h3 class="font-bold text-base" style="color:var(--navy);">CFP Circular (PDF)</h3>
-            <p class="text-xs mt-1 leading-relaxed" style="color:var(--ink-light);">পূর্ণাঙ্গ সারসংক্ষেপ আহ্বান বিজ্ঞপ্তি ও নিয়মাবলী সংক্রান্ত অফিশিয়াল নির্দেশিকা।</p>
-          </div>
-          <a href="#" onclick="alert('CFP Circular downloading...'); return false;"
-             class="btn btn-md btn-gold mt-auto">
-            <i data-lucide="download" class="w-4 h-4"></i> Download PDF
-          </a>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-icon" style="background:#eff6ff; color:#1e40af;">
-            <i data-lucide="book-open" class="w-6 h-6"></i>
-          </div>
-          <div>
-            <h3 class="font-bold text-base" style="color:var(--navy);">Conference Brochure</h3>
-            <p class="text-xs mt-1 leading-relaxed" style="color:var(--ink-light);">সম্মেলনের উদ্দেশ্য, কমিটি, ভেন্যু ও বিষয়বস্তু সমৃদ্ধ তথ্যপুস্তিকা।</p>
-          </div>
-          <a href="#" onclick="alert('Brochure downloading...'); return false;"
-             class="btn btn-md mt-auto" style="background:var(--navy-dark); color:#fff; border-radius:999px;">
-            <i data-lucide="download" class="w-4 h-4"></i> Download Brochure
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── IMPORTANT DATES ───────────────────────────────────── -->
-  <section id="dates" class="section-py subtle-grid"
-           style="border-top:1px solid var(--line); border-bottom:1px solid var(--line);"
-           aria-labelledby="dates-heading">
+  <!-- ── 3. IMPORTANT DATES — (বিভাগ · ০৩) ─────────────────── -->
+  <section id="dates" class="section-py subtle-grid bg-white border-b-2 border-slate-200" aria-labelledby="dates-heading">
     <div class="reveal mx-auto max-w-6xl px-6">
 
       <div class="text-center max-w-2xl mx-auto">
-        <span class="section-eyebrow" data-i18n="important_dates.section_label">বিভাগ · ০৫</span>
-        <h2 id="dates-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading"
-            style="color:var(--navy);" data-i18n="important_dates.heading">গুরুত্বপূর্ণ তারিখ</h2>
+        <span class="section-eyebrow" data-i18n="important_dates.section_label">বিভাগ · ০৩</span>
+        <h2 id="dates-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading text-slate-950"
+            data-i18n="important_dates.heading">গুরুত্বপূর্ণ তারিখ ও সময়সীমা</h2>
         <span class="section-rule centered"></span>
-        <p class="mt-5 text-base leading-relaxed" style="color:var(--ink-light);"
+        <p class="mt-5 text-base font-medium leading-relaxed text-slate-700"
            data-i18n="important_dates.subtitle">
-          সারসংক্ষেপ জমা থেকে উপস্থাপনা পর্যন্ত সব গুরুত্বপূর্ণ সময়সীমা।
+          সারসংক্ষেপ জমা থেকে উপস্থাপন পর্যন্ত সব গুরুত্বপূর্ণ সময়সীমা।
         </p>
       </div>
 
@@ -557,16 +344,16 @@
     </div>
   </section>
 
-  <!-- ── KEYNOTE SPEAKERS ──────────────────────────────────── -->
-  <section id="speakers" class="section-py" style="background:var(--white);" aria-labelledby="speakers-heading">
+  <!-- ── 4. KEYNOTE SPEAKERS — (বিভাগ · ০৪) ────────────────── -->
+  <section id="speakers" class="section-py bg-slate-50 border-b-2 border-slate-200" aria-labelledby="speakers-heading">
     <div class="mx-auto max-w-7xl px-6">
 
       <div class="reveal text-center max-w-2xl mx-auto">
-        <span class="section-eyebrow" data-i18n="speakers.section_label">বিভাগ · ০৬</span>
-        <h2 id="speakers-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading"
-            style="color:var(--navy);" data-i18n="speakers.heading">মূখ্য আলোচক</h2>
+        <span class="section-eyebrow" data-i18n="speakers.section_label">বিভাগ · ০৪</span>
+        <h2 id="speakers-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading text-slate-950"
+            data-i18n="speakers.heading">মূখ্য আলোচক ও আমন্ত্রিত বক্তাগণ</h2>
         <span class="section-rule centered"></span>
-        <p class="mt-5 text-base leading-relaxed" style="color:var(--ink-light);"
+        <p class="mt-5 text-base font-medium leading-relaxed text-slate-700"
            data-i18n="speakers.subtitle">
           দেশ ও বিদেশের খ্যাতিমান গবেষক ও সমালোচক। কার্ডে ক্লিক করে বিস্তারিত বায়ো দেখুন।
         </p>
@@ -584,36 +371,30 @@
   <div id="speaker-bio-modal" class="modal-backdrop" role="dialog" aria-modal="true"
        aria-labelledby="modal-speaker-name">
     <div class="modal-box">
-      <!-- Header -->
-      <div class="px-7 py-6 border-b" style="border-color:var(--line);">
+      <div class="px-7 py-6 border-b border-slate-200">
         <div class="flex items-center gap-4">
           <div id="modal-speaker-avatar"
-               class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center border"
-               style="background:var(--smoke); border-color:var(--line); color:var(--navy);">
+               class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center border border-slate-200 bg-emerald-50 text-emerald-800">
             <i data-lucide="user-round" class="w-8 h-8"></i>
           </div>
           <div class="flex-1 min-w-0">
-            <h3 id="modal-speaker-name" class="font-display font-bold text-xl leading-tight"
-                style="color:var(--navy);">--</h3>
-            <p id="modal-speaker-affiliation" class="text-xs font-semibold mt-1"
-               style="color:var(--forest);">--</p>
+            <h3 id="modal-speaker-name" class="font-display font-bold text-xl leading-tight text-slate-950">--</h3>
+            <p id="modal-speaker-affiliation" class="text-xs font-bold mt-1 text-emerald-800">--</p>
           </div>
           <button id="modal-close-btn" type="button" aria-label="Close"
-                  class="w-9 h-9 flex items-center justify-center rounded-lg flex-shrink-0"
-                  style="background:var(--smoke); color:var(--ink-light);">
+                  class="w-9 h-9 flex items-center justify-center rounded-lg flex-shrink-0 bg-slate-100 text-slate-700">
             <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </div>
       </div>
-      <!-- Body -->
       <div class="px-7 py-6 space-y-5">
         <div>
-          <p class="text-[10px] font-extrabold uppercase tracking-widest mb-2" style="color:var(--gold); letter-spacing:0.2em;">Keynote Topic</p>
-          <h4 id="modal-speaker-topic" class="font-bold text-sm leading-snug" style="color:var(--navy);">--</h4>
+          <p class="text-[10px] font-extrabold uppercase tracking-widest mb-2 text-amber-700" style="letter-spacing:0.2em;">মূল প্রবন্ধের বিষয়</p>
+          <h4 id="modal-speaker-topic" class="font-bold text-sm leading-snug text-slate-950">--</h4>
         </div>
         <div>
-          <p class="text-[10px] font-extrabold uppercase tracking-widest mb-2" style="color:var(--ink-light); letter-spacing:0.2em;">Biography</p>
-          <p id="modal-speaker-bio" class="text-sm leading-relaxed" style="color:var(--ink-light);">
+          <p class="text-[10px] font-extrabold uppercase tracking-widest mb-2 text-slate-600" style="letter-spacing:0.2em;">জীবনবৃত্তান্ত</p>
+          <p id="modal-speaker-bio" class="text-sm font-medium leading-relaxed text-slate-700">
             প্রখ্যাত গবেষক ও শিক্ষাবিদ। বাংলা সাহিত্য, লোকসংস্কৃতি ও নন্দনতত্ত্ব বিষয়ে দীর্ঘ গবেষণা অভিজ্ঞতা সম্পন্ন।
           </p>
         </div>
@@ -621,18 +402,74 @@
     </div>
   </div>
 
-  <!-- ── COMMITTEES ─────────────────────────────────────────── -->
-  <section id="committees" class="section-py subtle-grid"
-           style="border-top:1px solid var(--line);"
-           aria-labelledby="committees-heading">
+  <!-- ── 5. PROGRAMME SCHEDULE — (বিভাগ · ০৫) ───────────────── -->
+  <section id="schedule" class="section-py subtle-grid bg-white border-b-2 border-slate-200" aria-labelledby="schedule-heading">
+    <div class="mx-auto max-w-6xl px-6">
+
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <span class="section-eyebrow">বিভাগ · ০৫</span>
+        <h2 id="schedule-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading text-slate-950" data-i18n="nav.schedule">অনুষ্ঠানসূচি ও সেশন প্ল্যান</h2>
+        <span class="section-rule centered"></span>
+        <p class="mt-5 text-base font-medium leading-relaxed text-slate-700">
+          ২৭–২৮ নভেম্বর ২০২৬ — দুই দিনব্যাপী কনফারেন্সের সম্পূর্ণ সময়সূচি।
+        </p>
+      </div>
+
+      <div class="reveal mt-10 flex flex-wrap justify-center gap-3">
+        <button id="sched-tab-day1" class="sched-tab active" type="button">
+          ১ম দিন — ২৭ নভেম্বর ২০২৬
+        </button>
+        <button id="sched-tab-day2" class="sched-tab" type="button">
+          ২য় দিন — ২৮ নভেম্বর ২০২৬
+        </button>
+      </div>
+
+      <div id="schedule-events-container" class="reveal mt-8 space-y-3">
+        <!-- Default Day 1 events rendered via script.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 6. TRUST / PUBLICATION STRIP — (বিভাগ · ০৬) ────────── -->
+  <section id="publication" class="trust-strip py-12 border-b-2 border-emerald-950">
+    <div class="mx-auto max-w-6xl px-6 text-center space-y-5">
+      <span class="inline-block rounded-full px-4 py-1 text-xs font-bold uppercase tracking-widest bg-emerald-800 text-emerald-100">
+        একাডেমিক সততা ও প্রকাশনা নিশ্চয়তা
+      </span>
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-white max-w-3xl mx-auto">
+        পিয়ার-রিভিউড প্রকাশনা ও আন্তর্জাতিক জার্নাল ইনডেক্সিং
+      </h2>
+      <p class="text-sm max-w-2xl mx-auto leading-relaxed text-emerald-100 font-medium">
+        কনফারেন্সে উপস্থাপিত সকল গবেষণা প্রবন্ধ বিচারকমণ্ডলীর পিয়ার-রিভিউ প্রক্রিয়ার মাধ্যমে নির্বাচিত হবে এবং আন্তর্জাতিক ISBN সহ SUST Press ও ইনডেক্সড জার্নালে প্রকাশিত হবে।
+      </p>
+      <div class="flex flex-wrap justify-center gap-6 text-xs font-bold pt-2 text-emerald-100">
+        <span class="flex items-center gap-2">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400"></i>
+          ডাবল-ব্লাইন্ড পিয়ার-রিভিউ (Double-Blind Review)
+        </span>
+        <span class="flex items-center gap-2">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400"></i>
+          অফিশিয়াল ISBN সম্মেলন কার্যবিবরণী (Proceedings)
+        </span>
+        <span class="flex items-center gap-2">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400"></i>
+          ইনডেক্সড জার্নাল নির্বাচন (Indexed Journals)
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. COMMITTEES — (বিভাগ · ০৭) ───────────────────────── -->
+  <section id="committees" class="section-py subtle-grid bg-white border-b-2 border-slate-200" aria-labelledby="committees-heading">
     <div class="reveal mx-auto max-w-6xl px-6">
 
       <div class="text-center max-w-2xl mx-auto">
         <span class="section-eyebrow" data-i18n="committees.section_label">বিভাগ · ০৭</span>
-        <h2 id="committees-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading"
-            style="color:var(--navy);" data-i18n="committees.heading">সম্মেলন কমিটি</h2>
+        <h2 id="committees-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading text-slate-950"
+            data-i18n="committees.heading">সম্মেলন কমিটি ও পরিচালনা পর্ষদ</h2>
         <span class="section-rule centered"></span>
-        <p class="mt-5 text-base leading-relaxed" style="color:var(--ink-light);"
+        <p class="mt-5 text-base font-medium leading-relaxed text-slate-700"
            data-i18n="committees.subtitle">
           উপদেষ্টা পরিষদ ও আয়োজক কমিটি যৌথভাবে সম্মেলনের একাডেমিক সততা ও সেশন পরিচালনা নিশ্চিত করে।
         </p>
@@ -640,21 +477,18 @@
 
       <div class="mt-12 grid gap-12 lg:grid-cols-[.75fr_1.25fr]">
 
-        <!-- Advisory -->
         <div>
-          <h3 class="font-display text-xl font-bold mb-4" style="color:var(--navy);"
+          <h3 class="font-display text-xl font-bold mb-4 text-slate-950"
               data-i18n="committees.advisory_heading">উপদেষ্টামণ্ডলী</h3>
-          <div id="advisory-list" class="divide-y" style="border-color:var(--line);">
+          <div id="advisory-list" class="divide-y divide-slate-200">
             <!-- Rendered via script.js -->
           </div>
         </div>
 
-        <!-- Convenors -->
         <div>
-          <h3 class="font-display text-xl font-bold mb-4" style="color:var(--navy);"
+          <h3 class="font-display text-xl font-bold mb-4 text-slate-950"
               data-i18n="committees.organizing_heading">আহ্বায়কবৃন্দ</h3>
-          <div id="local-list" class="grid md:grid-cols-2 gap-x-8 divide-y md:divide-y-0"
-               style="border-color:var(--line);">
+          <div id="local-list" class="grid md:grid-cols-2 gap-x-8 divide-y md:divide-y-0 divide-slate-200">
             <!-- Rendered via script.js -->
           </div>
         </div>
@@ -663,90 +497,140 @@
     </div>
   </section>
 
-  <!-- ── SYLHET TRAVEL GUIDE ────────────────────────────────── -->
-  <section id="travel" class="section-py" style="background:var(--white); border-top:1px solid var(--line);"
-           aria-labelledby="travel-heading">
+  <!-- ── 8. DOWNLOADS — (বিভাগ · ০৮) ────────────────────────── -->
+  <section id="downloads" class="section-py bg-slate-50 border-b-2 border-slate-200" aria-labelledby="downloads-heading">
+    <div class="mx-auto max-w-6xl px-6">
+
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <span class="section-eyebrow">বিভাগ · ০৮</span>
+        <h2 id="downloads-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading text-slate-950">প্রয়োজনীয় ফাইল ও ডাউনলোড হাব</h2>
+        <span class="section-rule centered"></span>
+        <p class="mt-5 text-base font-medium leading-relaxed text-slate-700">
+          গবেষকদের জন্য প্রয়োজনীয় টেমপ্লেট, নির্দেশিকা এবং আনুষঙ্গিক উপকরণ।
+        </p>
+      </div>
+
+      <div class="reveal mt-12 grid gap-5 md:grid-cols-3">
+
+        <div class="resource-card">
+          <div class="resource-icon bg-emerald-50 text-emerald-700">
+            <i data-lucide="file-text" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-base text-slate-950">সারসংক্ষেপ টেমপ্লেট (.docx)</h3>
+            <p class="text-xs mt-1 font-medium leading-relaxed text-slate-700">বাংলা ও ইংরেজি সারসংক্ষেপ রচনার অফিশিয়াল টেমপ্লেট ও ফন্ট নির্দেশিকা।</p>
+          </div>
+          <a href="#" onclick="alert('Abstract Template downloading...'); return false;"
+             class="btn btn-md btn-green mt-auto">
+            <i data-lucide="download" class="w-4 h-4"></i> ডাউনলোড DOCX
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon bg-amber-50 text-amber-600">
+            <i data-lucide="file-down" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-base text-slate-950">সারসংক্ষেপ আহ্বান বিজ্ঞপ্তি (PDF)</h3>
+            <p class="text-xs mt-1 font-medium leading-relaxed text-slate-700">পূর্ণাঙ্গ সারসংক্ষেপ আহ্বান বিজ্ঞপ্তি ও নিয়মাবলী সংক্রান্ত অফিশিয়াল নির্দেশিকা।</p>
+          </div>
+          <a href="#" onclick="alert('CFP Circular downloading...'); return false;"
+             class="btn btn-md btn-gold mt-auto">
+            <i data-lucide="download" class="w-4 h-4"></i> ডাউনলোড PDF
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon bg-slate-100 text-slate-800">
+            <i data-lucide="book-open" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-base text-slate-950">সম্মেলন ব্রোশিয়ার (Brochure)</h3>
+            <p class="text-xs mt-1 font-medium leading-relaxed text-slate-700">সম্মেলনের উদ্দেশ্য, কমিটি, ভেন্যু ও বিষয়বস্তু সমৃদ্ধ তথ্যপুস্তিকা।</p>
+          </div>
+          <a href="#" onclick="alert('Brochure downloading...'); return false;"
+             class="btn btn-md btn-navy mt-auto">
+            <i data-lucide="download" class="w-4 h-4"></i> ব্রোশিয়ার ডাউনলোড
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. SYLHET TRAVEL GUIDE — (বিভাগ · ০৯) ──────────────── -->
+  <section id="travel" class="section-py subtle-grid bg-white border-b-2 border-slate-200" aria-labelledby="travel-heading">
     <div class="reveal mx-auto max-w-6xl px-6">
 
       <div class="text-center max-w-2xl mx-auto">
-        <span class="section-eyebrow">বিভাগ · ০৮</span>
-        <h2 id="travel-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading"
-            style="color:var(--navy);">Sylhet Travel Guide</h2>
+        <span class="section-eyebrow">বিভাগ · ০৯</span>
+        <h2 id="travel-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading text-slate-950">সিলেট ভ্রমণ ও আবাসন নির্দেশিকা</h2>
         <span class="section-rule centered"></span>
-        <p class="mt-5 text-base leading-relaxed" style="color:var(--ink-light);">
+        <p class="mt-5 text-base font-medium leading-relaxed text-slate-700">
           প্রাকৃতিক সৌন্দর্য ও সুফি ঐতিহ্যের শহর সিলেটে আগত গবেষক ও অতিথিদের জন্য আবাসন ও দর্শনীয় স্থানের নির্দেশিকা।
         </p>
       </div>
 
-      <!-- Hotels -->
       <div class="mt-12">
-        <h3 class="font-display text-xl font-semibold flex items-center gap-2 mb-6" style="color:var(--navy);">
-          <i data-lucide="hotel" class="w-5 h-5" style="color:var(--forest);"></i>
-          Recommended Accommodations
+        <h3 class="font-display text-xl font-bold flex items-center gap-2 mb-6 text-slate-950">
+          <i data-lucide="hotel" class="w-5 h-5 text-emerald-700"></i>
+          আবাসন ব্যবস্থা (Recommended Accommodations)
         </h3>
         <div class="grid gap-4 md:grid-cols-3">
           <div class="panel p-5 space-y-2">
-            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded"
-                  style="background:#dcfce7; color:#14532d;">5 Star Standard</span>
-            <h4 class="font-bold text-sm" style="color:var(--navy);">Rose View Hotel, Sylhet</h4>
-            <p class="text-xs leading-relaxed" style="color:var(--ink-light);">শাহজালাল উপশহর, সিলেট। শাবিপ্রবি ক্যাম্পাস থেকে ২০ মিনিট।</p>
-            <p class="text-xs font-bold" style="color:var(--gold);">কনফারেন্স ডেলিগেটদের জন্য ১৫% ছাড়</p>
+            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-100 text-emerald-900">৫ তারকা মানসম্মত</span>
+            <h4 class="font-bold text-sm text-slate-950">Rose View Hotel, Sylhet</h4>
+            <p class="text-xs font-medium leading-relaxed text-slate-700">শাহজালাল উপশহর, সিলেট। শাবিপ্রবি ক্যাম্পাস থেকে ২০ মিনিট।</p>
+            <p class="text-xs font-bold text-amber-700">কনফারেন্স ডেলিগেটদের জন্য ১৫% বিশেষ ডিসকাউন্ট</p>
           </div>
           <div class="panel p-5 space-y-2">
-            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded"
-                  style="background:#dcfce7; color:#14532d;">4 Star Luxury</span>
-            <h4 class="font-bold text-sm" style="color:var(--navy);">Grand Sylhet Hotel &amp; Resort</h4>
-            <p class="text-xs leading-relaxed" style="color:var(--ink-light);">বিমানবন্দর রোড। গ্রুপ ডিসকাউন্ট প্রযোজ্য।</p>
-            <p class="text-xs font-bold" style="color:var(--gold);">স্পেশাল গ্রুপ ডিসকাউন্ট</p>
+            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-100 text-emerald-900">৪ তারকা লাক্সারি রিসোর্ট</span>
+            <h4 class="font-bold text-sm text-slate-950">Grand Sylhet Hotel &amp; Resort</h4>
+            <p class="text-xs font-medium leading-relaxed text-slate-700">বিমানবন্দর রোড। গ্রুপ ডিসকাউন্ট সুবিধা।</p>
+            <p class="text-xs font-bold text-amber-700">স্পেশাল গ্রুপ ডিসকাউন্ট সুবিধা</p>
           </div>
           <div class="panel p-5 space-y-2">
-            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded"
-                  style="background:#dbeafe; color:#1e3a8a;">Budget / Deluxe</span>
-            <h4 class="font-bold text-sm" style="color:var(--navy);">Hotel Star Pacific</h4>
-            <p class="text-xs leading-relaxed" style="color:var(--ink-light);">দরগাহ গেট। শাহজালাল মাজারের সন্নিকটে।</p>
-            <p class="text-xs font-bold" style="color:var(--navy);">সাশ্রয়ী পারিবারিক কক্ষ</p>
+            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-sky-100 text-sky-900">বাজেট ও সুসজ্জিত</span>
+            <h4 class="font-bold text-sm text-slate-950">Hotel Star Pacific</h4>
+            <p class="text-xs font-medium leading-relaxed text-slate-700">দরগাহ গেট। হযরত শাহজালাল (রঃ) মাজারের সন্নিকটে।</p>
+            <p class="text-xs font-bold text-slate-800">সাশ্রয়ী পারিবারিক আবাসন</p>
           </div>
         </div>
       </div>
 
-      <!-- Sightseeing -->
       <div class="mt-12">
-        <h3 class="font-display text-xl font-semibold flex items-center gap-2 mb-6" style="color:var(--navy);">
-          <i data-lucide="compass" class="w-5 h-5" style="color:var(--gold);"></i>
-          Sightseeing Spots
+        <h3 class="font-display text-xl font-bold flex items-center gap-2 mb-6 text-slate-950">
+          <i data-lucide="compass" class="w-5 h-5 text-amber-600"></i>
+          দর্শনীয় স্থানসমূহ (Sightseeing Spots)
         </h3>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div class="panel p-5 text-center space-y-3">
-            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center"
-                 style="background:#dcfce7; color:var(--forest);">
+            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center bg-emerald-50 text-emerald-700">
               <i data-lucide="trees" class="w-5 h-5"></i>
             </div>
-            <h4 class="font-bold text-sm" style="color:var(--navy);">রাতারগুল সোয়াম্প ফরেস্ট</h4>
-            <p class="text-xs" style="color:var(--ink-light);">বাংলাদেশের একমাত্র স্বাদু পানির জলাবন</p>
+            <h4 class="font-bold text-sm text-slate-950">রাতারগুল সোয়াম্প ফরেস্ট</h4>
+            <p class="text-xs font-medium text-slate-700">বাংলাদেশের একমাত্র স্বাদু পানির জলাবন</p>
           </div>
           <div class="panel p-5 text-center space-y-3">
-            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center"
-                 style="background:#dbeafe; color:#1e40af;">
+            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center bg-sky-50 text-sky-700">
               <i data-lucide="waves" class="w-5 h-5"></i>
             </div>
-            <h4 class="font-bold text-sm" style="color:var(--navy);">জাফলং ও জিরো পয়েন্ট</h4>
-            <p class="text-xs" style="color:var(--ink-light);">খাসিয়া পাহাড়ের পাদদেশে স্বচ্ছ নদী</p>
+            <h4 class="font-bold text-sm text-slate-950">জাফলং ও জিরো পয়েন্ট</h4>
+            <p class="text-xs font-medium text-slate-700">খাসিয়া পাহাড়ের পাদদেশে স্বচ্ছ নদী</p>
           </div>
           <div class="panel p-5 text-center space-y-3">
-            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center"
-                 style="background:var(--gold-pale); color:var(--gold);">
+            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center bg-amber-50 text-amber-700">
               <i data-lucide="sprout" class="w-5 h-5"></i>
             </div>
-            <h4 class="font-bold text-sm" style="color:var(--navy);">মালনীছড়া চা বাগান</h4>
-            <p class="text-xs" style="color:var(--ink-light);">উপমহাদেশের প্রাচীনতম চা বাগান</p>
+            <h4 class="font-bold text-sm text-slate-950">মালনীছড়া চা বাগান</h4>
+            <p class="text-xs font-medium text-slate-700">উপমহাদেশের প্রাচীনতম চা বাগান</p>
           </div>
           <div class="panel p-5 text-center space-y-3">
-            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center"
-                 style="background:#ede9fe; color:#5b21b6;">
+            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center bg-purple-50 text-purple-700">
               <i data-lucide="landmark" class="w-5 h-5"></i>
             </div>
-            <h4 class="font-bold text-sm" style="color:var(--navy);">হযরত শাহজালাল (রঃ) মাজার</h4>
-            <p class="text-xs" style="color:var(--ink-light);">ঐতিহাসিক সুফি আধ্যাত্মিক কেন্দ্র</p>
+            <h4 class="font-bold text-sm text-slate-950">হযরত শাহজালাল (রঃ) মাজার</h4>
+            <p class="text-xs font-medium text-slate-700">ঐতিহাসিক সুফি আধ্যাত্মিক কেন্দ্র</p>
           </div>
         </div>
       </div>
@@ -754,32 +638,28 @@
     </div>
   </section>
 
-  <!-- ── CONTACT ────────────────────────────────────────────── -->
-  <section id="contact" class="section-py subtle-grid"
-           style="border-top:1px solid var(--line);"
-           aria-labelledby="contact-heading">
+  <!-- ── 10. CONTACT — (বিভাগ · ১০) ──────────────────────────── -->
+  <section id="contact" class="section-py bg-slate-50 border-b-2 border-slate-200" aria-labelledby="contact-heading">
     <div class="reveal mx-auto max-w-4xl px-6 text-center">
 
-      <span class="section-eyebrow" data-i18n="contact_info.section_label">বিভাগ · ০৯</span>
-      <h2 id="contact-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading"
-          style="color:var(--navy);" data-i18n="contact_info.heading">যোগাযোগ ও সহায়তা</h2>
+      <span class="section-eyebrow" data-i18n="contact_info.section_label">বিভাগ · ১০</span>
+      <h2 id="contact-heading" class="font-display mt-2 text-3xl sm:text-4xl font-bold section-heading text-slate-950"
+          data-i18n="contact_info.heading">যোগাযোগ ও সহায়তাকেন্দ্র</h2>
       <span class="section-rule centered"></span>
-      <p class="mt-5 text-base leading-relaxed" style="color:var(--ink-light);"
+      <p class="mt-5 text-base font-medium leading-relaxed text-slate-700"
          data-i18n="contact_info.subtitle">
         সম্মেলন, ভ্রমণ বা নিবন্ধন সংক্রান্ত সহায়তার জন্য আয়োজক কমিটির সাথে যোগাযোগ করুন।
       </p>
 
-      <div class="mt-10 rounded-2xl border p-8 text-center space-y-5"
-           style="background:var(--white); border-color:var(--line); box-shadow:var(--shadow-md);">
-        <div class="w-14 h-14 rounded-2xl mx-auto flex items-center justify-center"
-             style="background:var(--gold-pale); color:var(--gold);">
+      <div class="mt-10 rounded-2xl border border-slate-300 p-8 text-center space-y-5 bg-white shadow-md">
+        <div class="w-14 h-14 rounded-2xl mx-auto flex items-center justify-center bg-emerald-50 text-emerald-700">
           <i data-lucide="mail" class="w-7 h-7"></i>
         </div>
-        <h3 class="font-display font-bold text-2xl" style="color:var(--navy);">বাংলা বিভাগ, শাবিপ্রবি</h3>
-        <p class="text-sm" style="color:var(--ink-light);">শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়, সিলেট-৩১১৪, বাংলাদেশ</p>
+        <h3 class="font-display font-bold text-2xl text-slate-950">বাংলা বিভাগ, শাবিপ্রবি</h3>
+        <p class="text-sm font-medium text-slate-700">শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়, সিলেট-৩১১৪, বাংলাদেশ</p>
         <div class="flex flex-wrap justify-center gap-3 pt-2">
           <a href="mailto:bangladepartment@yahoo.com"
-             class="btn btn-md btn-navy">
+             class="btn btn-md btn-green">
             <i data-lucide="mail" class="w-4 h-4"></i>
             bangladepartment@yahoo.com
           </a>
@@ -797,17 +677,15 @@
 </main>
 
 <!-- ── FOOTER ─────────────────────────────────────────────────── -->
-<footer id="site-footer"
-        style="background:var(--navy-dark); border-top:4px solid var(--gold); color:#c8d0e0;"
-        class="px-6 py-12">
+<footer id="site-footer" class="bg-slate-900 border-t-4 border-emerald-600 text-slate-300 px-6 py-12">
   <div class="mx-auto max-w-7xl grid gap-8 md:grid-cols-3 text-sm">
     <div>
-      <p class="font-display font-bold text-base" style="color:#e8d5a8;" data-i18n="footer.dept">বাংলা বিভাগ</p>
-      <p class="mt-2" style="color:#8896b0;" data-i18n="footer.uni">শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়</p>
+      <p class="font-display font-bold text-base text-emerald-400" data-i18n="footer.dept">বাংলা বিভাগ</p>
+      <p class="mt-2 text-slate-400" data-i18n="footer.uni">শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়</p>
     </div>
     <div>
-      <p style="color:#8896b0;" data-i18n="footer.address">সিলেট-৩১১৪, বাংলাদেশ</p>
-      <p class="mt-2" style="color:#8896b0;" data-i18n="footer.email">ইমেইল: bangladepartment@yahoo.com</p>
+      <p class="text-slate-400" data-i18n="footer.address">সিলেট-৩১১৪, বাংলাদেশ</p>
+      <p class="mt-2 text-slate-400" data-i18n="footer.email">ইমেইল: bangladepartment@yahoo.com</p>
     </div>
     <div class="md:text-right">
       <p class="font-semibold text-white" data-i18n="footer.rights">
@@ -817,29 +695,27 @@
   </div>
 
   <!-- Developer Credit -->
-  <div class="mx-auto max-w-7xl mt-8 pt-6 border-t flex flex-col sm:flex-row items-center justify-center gap-1.5 text-center"
-       style="border-color:rgba(255,255,255,0.08);">
-    <span class="text-xs" style="color:#4a5568;">Designed &amp; Developed by</span>
-    <span class="text-xs font-bold" style="color:#8896b0;">Md Golam Mubasshir Rafi</span>
+  <div class="mx-auto max-w-7xl mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-center gap-1.5 text-center">
+    <span class="text-xs text-slate-400">Designed &amp; Developed by</span>
+    <span class="text-xs font-bold text-slate-200">Md Golam Mubasshir Rafi</span>
   </div>
 </footer>
 
 <!-- ── STICKY DEADLINE BAR ───────────────────────────────────── -->
 <div id="deadline-sticky-bar" class="sticky-bar px-5 py-3 flex items-center justify-between gap-4"
      role="complementary" aria-label="Abstract deadline reminder">
-  <div class="flex items-center gap-3 text-xs sm:text-sm font-semibold">
-    <span class="w-2.5 h-2.5 rounded-full animate-pulse flex-shrink-0"
-          style="background:var(--gold);"></span>
-    <span style="color:#c8d0e0;" data-i18n="sticky.label">Abstract Deadline:</span>
-    <strong style="color:var(--gold);" data-i18n="sticky.date">01 October 2026</strong>
+  <div class="flex items-center gap-3 text-xs sm:text-sm font-semibold text-slate-200">
+    <span class="w-2.5 h-2.5 rounded-full animate-pulse flex-shrink-0 bg-emerald-400"></span>
+    <span data-i18n="sticky.label">সারসংক্ষেপ জমার শেষ তারিখ:</span>
+    <strong class="text-amber-400" data-i18n="sticky.date">01 October 2026</strong>
   </div>
   <div class="flex items-center gap-3">
     <a href="registration.html"
-       class="btn btn-sm btn-gold">
+       class="btn btn-sm btn-green">
       নিবন্ধন করুন
     </a>
     <button id="deadline-bar-close" type="button" aria-label="Dismiss"
-            style="color:#8896b0;" class="hover:text-white transition-colors">
+            class="text-slate-400 hover:text-white transition-colors">
       <i data-lucide="x" class="w-4 h-4"></i>
     </button>
   </div>

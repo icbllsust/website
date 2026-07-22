@@ -18,6 +18,17 @@
     );
   }
 
+  /* ── Simple client-side search highlight ── */
+  window.handleSearch = function(query) {
+    const q = (query || '').trim().toLowerCase();
+    const cards = document.querySelectorAll('.track-card, .speaker-card, .date-card, .schedule-row');
+    cards.forEach(el => {
+      if (!q) { el.style.opacity = '1'; return; }
+      const text = el.textContent.toLowerCase();
+      el.style.opacity = text.includes(q) ? '1' : '0.25';
+    });
+  };
+
   function esc(str) {
     return String(str || "")
       .replace(/&/g, "&amp;")
@@ -185,6 +196,12 @@
     const container = document.getElementById("schedule-events-container");
     if (!btnDay1 || !btnDay2 || !container) return;
 
+    const lang = document.documentElement.getAttribute("data-lang") || "bn";
+    const isBn = lang === "bn";
+
+    if (btnDay1) btnDay1.textContent = isBn ? "১ম দিন — ২৭ নভেম্বর ২০২৬" : "Day 1 — 27 November 2026";
+    if (btnDay2) btnDay2.textContent = isBn ? "২য় দিন — ২৮ নভেম্বর ২০২৬" : "Day 2 — 28 November 2026";
+
     function makeRow(time, badgeClass, badgeText, title, venue) {
       return `<div class="schedule-row">
         <span class="schedule-time">${esc(time)}</span>
@@ -192,25 +209,36 @@
           <div class="flex flex-wrap items-center gap-2 mb-1">
             <span class="badge ${badgeClass}">${badgeText}</span>
           </div>
-          <h4 class="text-sm font-bold" style="color:var(--navy);">${esc(title)}</h4>
-          <p class="text-xs mt-1" style="color:var(--ink-light);">${esc(venue)}</p>
+          <h4 class="text-sm font-bold text-slate-900">${esc(title)}</h4>
+          <p class="text-xs mt-1 text-slate-600">${esc(venue)}</p>
         </div>
       </div>`;
     }
 
-    const day1 = [
-      makeRow("09:00 – 10:30", "badge-keynote", "Keynote", "উদ্বোধনী অধিবেশন ও মূল প্রবন্ধ উপস্থাপন (Inaugural Session)", "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"),
-      makeRow("11:00 – 13:00", "badge-paper", "Paper Sessions", "প্যারালাল টেকনিক্যাল সেশন ১ (Tracks 01–03)", "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"),
-      makeRow("13:00 – 14:30", "badge-break", "Break", "মধ্যাহ্নভোজ ও নামাজের বিরতি (Lunch & Prayer Break)", "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"),
-      makeRow("14:30 – 17:00", "badge-paper", "Paper Sessions", "প্যারালাল টেকনিক্যাল সেশন ২ (Tracks 04–06)", "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"),
-      makeRow("18:30 – 20:30", "badge-cultural", "Cultural", "সাংস্কৃতিক সন্ধ্যা — সিলেটে নজরুল ও লোকঐতিহ্য (Cultural Evening & Gala)", "মুক্তমঞ্চ · শাবিপ্রবি ক্যাম্পাস"),
+    const day1 = isBn ? [
+      makeRow("০৯:০০ – ১০:৩০", "badge-keynote", "মূল প্রবন্ধ", "উদ্বোধনী অধিবেশন ও মূল প্রবন্ধ উপস্থাপন", "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"),
+      makeRow("১১:০০ – ১৩:০০", "badge-paper", "গবেষণা সেশন", "প্যারালাল টেকনিক্যাল সেশন ১ (ট্র্যাক ০১–০৩)", "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"),
+      makeRow("১৩:০০ – ১৪:৩০", "badge-break", "বিরতি", "মধ্যাহ্নভোজ ও নামাজের বিরতি", "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"),
+      makeRow("১৪:৩০ – ১৭:০০", "badge-paper", "গবেষণা সেশন", "প্যারালাল টেকনিক্যাল সেশন ২ (ট্র্যাক ০৪–০৬)", "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"),
+      makeRow("১৮:৩০ – ২০:৩০", "badge-cultural", "সাংস্কৃতিক অনুষ্ঠান", "সাংস্কৃতিক সন্ধ্যা — সিলেটে নজরুল ও লোকঐতিহ্য", "মুক্তমঞ্চ · শাবিপ্রবি ক্যাম্পাস"),
+    ] : [
+      makeRow("09:00 – 10:30", "badge-keynote", "Keynote", "Inaugural Session & Keynote Presentation", "Central Auditorium, SUST"),
+      makeRow("11:00 – 13:00", "badge-paper", "Paper Sessions", "Parallel Technical Sessions 1 (Tracks 01–03)", "Academic Building · Seminar Rooms 1, 2 & 3"),
+      makeRow("13:00 – 14:30", "badge-break", "Break", "Lunch & Prayer Break", "University Cafeteria"),
+      makeRow("14:30 – 17:00", "badge-paper", "Paper Sessions", "Parallel Technical Sessions 2 (Tracks 04–06)", "Academic Building · Seminar Rooms 1, 2 & 3"),
+      makeRow("18:30 – 20:30", "badge-cultural", "Cultural", "Cultural Evening — Nazrul in Sylhet & Folk Heritage", "Open Air Stage, SUST Campus"),
     ];
 
-    const day2 = [
-      makeRow("09:30 – 11:30", "badge-plenary", "Plenary", "বিশেষ প্লেনারি সেশন: শতবর্ষে মুসলিম সাহিত্য সমাজ (Special Plenary)", "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"),
-      makeRow("11:30 – 13:30", "badge-keynote", "Panel Discussion", "বিশেষজ্ঞ প্যানেল আলোচনা — মুক্তচিন্তা ও দ্রোহ (Expert Panel Discussion)", "মিনি অডিটোরিয়াম"),
-      makeRow("13:30 – 14:30", "badge-break", "Break", "মধ্যাহ্নভোজ ও নামাজের বিরতি (Lunch & Prayer Break)", "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"),
-      makeRow("15:00 – 17:00", "badge-paper", "Valedictory", "সমাপনী অনুষ্ঠান ও সেরা গবেষণা প্রবন্ধ পুরস্কার বিতরণ (Valedictory Session)", "কেন্দ্রীয় অডিটোরিয়াম"),
+    const day2 = isBn ? [
+      makeRow("০৯:৩০ – ১১:৩০", "badge-plenary", "প্লেনারি সেশন", "বিশেষ প্লেনারি সেশন: শতবর্ষে মুসলিম সাহিত্য সমাজ", "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"),
+      makeRow("১১:৩০ – ১৩:৩০", "badge-keynote", "প্যানেল আলোচনা", "বিশেষজ্ঞ প্যানেল আলোচনা — মুক্তচিন্তা ও দ্রোহ", "মিনি অডিটোরিয়াম · শাবিপ্রবি"),
+      makeRow("১৩:৩০ – ১৪:৩০", "badge-break", "বিরতি", "মধ্যাহ্নভোজ ও নামাজের বিরতি", "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"),
+      makeRow("১৫:০০ – ১৭:০০", "badge-paper", "সমাপনী সেশন", "সমাপনী অনুষ্ঠান ও সেরা গবেষণা প্রবন্ধ পুরস্কার বিতরণ", "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"),
+    ] : [
+      makeRow("09:30 – 11:30", "badge-plenary", "Plenary", "Special Plenary Session: Centenary of Muslim Sahitya Samaj", "Central Auditorium, SUST"),
+      makeRow("11:30 – 13:30", "badge-keynote", "Panel Discussion", "Expert Panel Discussion — Intellectual Freedom & Resistance", "Mini Auditorium, SUST"),
+      makeRow("13:30 – 14:30", "badge-break", "Break", "Lunch & Prayer Break", "University Cafeteria"),
+      makeRow("15:00 – 17:00", "badge-paper", "Valedictory", "Valedictory Session & Best Paper Award Ceremony", "Central Auditorium, SUST"),
     ];
 
     function renderDay(events) {
