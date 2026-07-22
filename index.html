@@ -43,34 +43,32 @@
       </div>
     </a>
 
-    <!-- Desktop Nav — 5 Logical Core Items -->
+    <!-- Desktop Nav — 5 Core Academic Items -->
     <div class="hidden lg:flex items-center gap-7">
       <a href="#about"      class="nav-link" data-i18n="nav.about">পরিচিতি</a>
       <a href="#cfp"        class="nav-link" data-i18n="nav.cfp">প্রবন্ধ আহ্বান</a>
-      <a href="#dates"        class="nav-link" data-i18n="nav.dates">গুরুত্বপূর্ণ তারিখ</a>
+      <a href="#dates"      class="nav-link" data-i18n="nav.dates">গুরুত্বপূর্ণ তারিখ</a>
       <a href="#speakers"   class="nav-link" data-i18n="nav.speakers">মূখ্য আলোচক</a>
       <a href="#schedule"   class="nav-link" data-i18n="nav.schedule">অনুষ্ঠানসূচি</a>
     </div>
 
-    <!-- Right Cluster: Language + CTA -->
-    <div class="flex items-center gap-3">
-      <!-- Search Input -->
-      <div class="hidden xl:flex items-center gap-2 rounded-lg px-3 py-1.5 text-xs bg-slate-100 border border-slate-300">
-        <i data-lucide="search" class="w-3.5 h-3.5 text-slate-500"></i>
-        <input type="search" placeholder="গবেষক বা বিষয় খুঁজুন…"
-               class="bg-transparent outline-none w-36 text-slate-900 placeholder:text-slate-500 text-xs font-medium"
-               oninput="handleSearch(this.value)">
-      </div>
-
+    <!-- Right Cluster: Language + Dual CTAs -->
+    <div class="flex items-center gap-2.5">
       <div role="group" aria-label="Language selector" class="lang-switch">
         <button id="lang-bn" type="button" aria-pressed="true"  class="lang-btn is-active">বাংলা</button>
         <button id="lang-en" type="button" aria-pressed="false" class="lang-btn">EN</button>
       </div>
 
+      <a href="submission.html"
+         class="btn btn-sm sm:btn-md btn-green hidden sm:inline-flex">
+        সারসংক্ষেপ জমা দিন
+      </a>
+
       <a id="nav-cta-btn" href="registration.html"
-         class="btn btn-md btn-green hidden sm:inline-flex">
+         class="btn btn-sm sm:btn-md btn-gold hidden sm:inline-flex">
         নিবন্ধন করুন
       </a>
+    </div>
 
       <!-- Mobile toggle -->
       <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav"
@@ -181,6 +179,7 @@
              href="https://cmt3.research.microsoft.com/"
              target="_blank" rel="noopener noreferrer"
              class="btn btn-lg btn-green"
+             style="background:#006a4e !important; color:#ffffff !important; box-shadow:0 4px 16px rgba(0,106,78,0.35);"
              data-i18n="hero.cta_primary">
             সারসংক্ষেপ জমা দিন
             <i data-lucide="external-link" class="w-4 h-4"></i>
@@ -317,6 +316,67 @@
 
       <div id="tracks-grid" class="reveal mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         <!-- Rendered via script.js -->
+      </div>
+
+      <!-- Submission Guidelines Box -->
+      <div class="reveal mt-12 rounded-2xl border border-slate-300 bg-white p-8 shadow-md">
+        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-[var(--forest-bright)] flex items-center justify-center font-bold">
+            <i data-lucide="file-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-extrabold text-slate-950">সারসংক্ষেপ জমাদানের নিয়মাবলী ও নির্দেশিকা</h3>
+            <p class="text-xs font-semibold text-slate-600">গবেষকদের জন্য অনুষঙ্গ ও রচনার আবশ্যকীয় শর্তসমূহ</p>
+          </div>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 text-sm leading-relaxed text-slate-800">
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-950 font-extrabold text-xs flex items-center justify-center mt-0.5">১</span>
+              <div>
+                <strong class="text-slate-950 font-bold block mb-0.5">সারসংক্ষেপের দৈর্ঘ্য ও বিন্যাস (Word Limit):</strong>
+                সারসংক্ষেপ সর্বোচ্চ <span class="text-emerald-900 font-extrabold">৩০০ শব্দের</span> মধ্যে হতে হবে। সারসংক্ষেপের শেষে ৪–৬টি মূলশব্দ (Keywords) সংযুক্ত করতে হবে।
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-950 font-extrabold text-xs flex items-center justify-center mt-0.5">২</span>
+              <div>
+                <strong class="text-slate-950 font-bold block mb-0.5">ফন্ট ও টাইপোগ্রাফি (Font &amp; Format):</strong>
+                বাংলা লেখার ক্ষেত্রে <span class="text-emerald-900 font-extrabold">নিখোশ (Nikosh)</span> / <span class="text-emerald-900 font-extrabold">কালপুরুষ (Kalpurush)</span> বা সুতুন্নিএমজে (SutonnijMJ) ফন্ট (সাইজ ১২) এবং ইংরেজিতে <span class="text-emerald-900 font-extrabold">Times New Roman</span> ফন্ট ব্যবহার করতে হবে।
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-950 font-extrabold text-xs flex items-center justify-center mt-0.5">৩</span>
+              <div>
+                <strong class="text-slate-950 font-bold block mb-0.5">লেখক পরিচিতি ও ফরম্যাট (Author Details):</strong>
+                ফাইলের শিরোনামে গবেষকের নাম, পদবি, প্রাতিষ্ঠানিক ঠিকানা, সচল ইমেইল ও মোবাইল নম্বর উল্লেখ করে <span class="text-emerald-900 font-extrabold">.docx</span> বা <span class="text-emerald-900 font-extrabold">.pdf</span> ফরম্যাটে জমা দিতে হবে।
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-950 font-extrabold text-xs flex items-center justify-center mt-0.5">৪</span>
+              <div>
+                <strong class="text-slate-950 font-bold block mb-0.5">মৌলিকতা ও পিয়ার-রিভিউ (Originality):</strong>
+                প্রবন্ধটি মৌলিক ও পূর্বে অপ্রকাশিত হতে হবে। জমা পড়া সকল সারসংক্ষেপ অন্ধ পিয়ার-রিভিউ (Double-Blind Review) প্রক্রিয়ার মাধ্যমে বাছাই করা হবে।
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4 bg-slate-50 p-4 rounded-xl">
+          <div class="flex items-center gap-2 text-xs font-bold text-slate-800">
+            <i data-lucide="info" class="w-4 h-4 text-amber-600"></i>
+            সারসংক্ষেপ জমাদানের শেষ সময়: <strong class="text-emerald-900 font-extrabold">০১ অক্টোবর ২০২৬</strong>
+          </div>
+          <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer"
+             class="btn btn-sm btn-green">
+            সারসংক্ষেপ জমা দিতে CMT3 পোর্টালে যান
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
       </div>
 
     </div>
@@ -603,34 +663,45 @@
           <i data-lucide="compass" class="w-5 h-5 text-amber-600"></i>
           দর্শনীয় স্থানসমূহ (Sightseeing Spots)
         </h3>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="panel p-5 text-center space-y-3">
-            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center bg-emerald-50 text-emerald-700">
-              <i data-lucide="trees" class="w-5 h-5"></i>
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="panel overflow-hidden space-y-3 shadow-sm hover:shadow-md transition-shadow">
+            <div class="h-36 overflow-hidden">
+              <img src="assets/sylhet-ratargul.jpg" alt="Ratargul Swamp Forest" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
             </div>
-            <h4 class="font-bold text-sm text-slate-950">রাতারগুল সোয়াম্প ফরেস্ট</h4>
-            <p class="text-xs font-medium text-slate-700">বাংলাদেশের একমাত্র স্বাদু পানির জলাবন</p>
+            <div class="p-4 pt-1 text-center space-y-1">
+              <h4 class="font-bold text-sm text-slate-950">রাতারগুল সোয়াম্প ফরেস্ট</h4>
+              <p class="text-xs font-medium text-slate-700">বাংলাদেশের একমাত্র স্বাদু পানির জলাবন</p>
+            </div>
           </div>
-          <div class="panel p-5 text-center space-y-3">
-            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center bg-sky-50 text-sky-700">
-              <i data-lucide="waves" class="w-5 h-5"></i>
+
+          <div class="panel overflow-hidden space-y-3 shadow-sm hover:shadow-md transition-shadow">
+            <div class="h-36 overflow-hidden">
+              <img src="assets/sylhet-jaflong.jpg" alt="Jaflong Zero Point" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
             </div>
-            <h4 class="font-bold text-sm text-slate-950">জাফলং ও জিরো পয়েন্ট</h4>
-            <p class="text-xs font-medium text-slate-700">খাসিয়া পাহাড়ের পাদদেশে স্বচ্ছ নদী</p>
+            <div class="p-4 pt-1 text-center space-y-1">
+              <h4 class="font-bold text-sm text-slate-950">জাফলং ও জিরো পয়েন্ট</h4>
+              <p class="text-xs font-medium text-slate-700">খাসিয়া পাহাড়ের পাদদেশে স্বচ্ছ নদী</p>
+            </div>
           </div>
-          <div class="panel p-5 text-center space-y-3">
-            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center bg-amber-50 text-amber-700">
-              <i data-lucide="sprout" class="w-5 h-5"></i>
+
+          <div class="panel overflow-hidden space-y-3 shadow-sm hover:shadow-md transition-shadow">
+            <div class="h-36 overflow-hidden">
+              <img src="assets/sylhet-tea.jpg" alt="Malnicherra Tea Estate" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
             </div>
-            <h4 class="font-bold text-sm text-slate-950">মালনীছড়া চা বাগান</h4>
-            <p class="text-xs font-medium text-slate-700">উপমহাদেশের প্রাচীনতম চা বাগান</p>
+            <div class="p-4 pt-1 text-center space-y-1">
+              <h4 class="font-bold text-sm text-slate-950">মালনীছড়া চা বাগান</h4>
+              <p class="text-xs font-medium text-slate-700">উপমহাদেশের প্রাচীনতম চা বাগান</p>
+            </div>
           </div>
-          <div class="panel p-5 text-center space-y-3">
-            <div class="w-10 h-10 rounded-xl mx-auto flex items-center justify-center bg-purple-50 text-purple-700">
-              <i data-lucide="landmark" class="w-5 h-5"></i>
+
+          <div class="panel overflow-hidden space-y-3 shadow-sm hover:shadow-md transition-shadow">
+            <div class="h-36 overflow-hidden">
+              <img src="assets/sylhet-mazar.jpg" alt="Hazrat Shah Jalal Mazar" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
             </div>
-            <h4 class="font-bold text-sm text-slate-950">হযরত শাহজালাল (রঃ) মাজার</h4>
-            <p class="text-xs font-medium text-slate-700">ঐতিহাসিক সুফি আধ্যাত্মিক কেন্দ্র</p>
+            <div class="p-4 pt-1 text-center space-y-1">
+              <h4 class="font-bold text-sm text-slate-950">হযরত শাহজালাল (রঃ) মাজার</h4>
+              <p class="text-xs font-medium text-slate-700">ঐতিহাসিক সুফি আধ্যাত্মিক কেন্দ্র</p>
+            </div>
           </div>
         </div>
       </div>
@@ -709,13 +780,17 @@
     <span data-i18n="sticky.label">সারসংক্ষেপ জমার শেষ তারিখ:</span>
     <strong class="text-amber-400" data-i18n="sticky.date">01 October 2026</strong>
   </div>
-  <div class="flex items-center gap-3">
-    <a href="registration.html"
+  <div class="flex items-center gap-2 sm:gap-3">
+    <a href="submission.html"
        class="btn btn-sm btn-green">
+      সারসংক্ষেপ জমা দিন
+    </a>
+    <a href="registration.html"
+       class="btn btn-sm btn-gold">
       নিবন্ধন করুন
     </a>
     <button id="deadline-bar-close" type="button" aria-label="Dismiss"
-            class="text-slate-400 hover:text-white transition-colors">
+            class="text-slate-400 hover:text-white transition-colors ml-1">
       <i data-lucide="x" class="w-4 h-4"></i>
     </button>
   </div>
