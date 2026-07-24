@@ -1,0 +1,8 @@
+{
+  "name": "icbll-sust-website",
+  "version": "1.0.0",
+  "description": "ICBLL SUST Static Website",
+  "scripts": {
+    "build": "echo 'Static site, no build needed'"
+  }
+}
