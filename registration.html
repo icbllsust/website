@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>নিবন্ধন ও ফি পরিশোধ পোর্টাল — ICBLL-2026</title>
+  <title>নিবন্ধন ও ফি পরিশোধ পোর্টাল | ICBLL-2026</title>
   <meta name="description" content="প্রথম আন্তর্জাতিক বাংলা ভাষা ও সাহিত্য সম্মেলন-২০২৬ (ICBLL-2026), শাবিপ্রবি-র অফিশিয়াল নিবন্ধন ও পেমেন্ট পোর্টাল।">
 
   <!-- Preconnect for fonts -->
@@ -78,16 +78,11 @@
         <p class="text-center text-xs font-extrabold uppercase tracking-widest text-[var(--forest-bright)] mb-4" style="letter-spacing:0.18em;">
           নিবন্ধন ও ফি পরিশোধের সময়সীমা (Payment Deadlines)
         </p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-center">
           <div class="cd-cell green">
-            <span class="text-[11px] font-bold text-slate-600 block">অগ্রিম নিবন্ধন (Early Bird)</span>
-            <span class="text-sm font-extrabold text-[var(--forest-dark)] block mt-0.5">৩০ অক্টোবর ২০২৬</span>
-            <span class="text-[10px] font-bold text-emerald-800 block mt-0.5">১৫% বিশেষ ছাড়</span>
-          </div>
-          <div class="cd-cell">
-            <span class="text-[11px] font-bold text-slate-600 block">নিয়মিত নিবন্ধন (Regular)</span>
-            <span class="text-sm font-extrabold text-amber-700 block mt-0.5">১০ নভেম্বর ২০২৬</span>
-            <span class="text-[10px] font-bold text-slate-700 block mt-0.5">নিয়মিত ফি</span>
+            <span class="text-[11px] font-bold text-slate-600 block">নিবন্ধন (Registration)</span>
+            <span class="text-sm font-extrabold text-[var(--forest-dark)] block mt-0.5">১০ নভেম্বর ২০২৬</span>
+            <span class="text-[10px] font-bold text-emerald-800 block mt-0.5">ফি পরিশোধের শেষ সময়</span>
           </div>
           <div class="cd-cell">
             <span class="text-[11px] font-bold text-slate-600 block">সম্মেলন তারিখ</span>
@@ -227,7 +222,7 @@
               <span id="calc-currency-symbol" class="text-3xl font-bold text-slate-900">৳</span>
               <span id="calc-total-amount" class="text-5xl font-display font-black text-emerald-900 tracking-tight">৩,০০০</span>
             </div>
-            <span class="inline-block mt-3 text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
+            <span id="calc-currency-label" class="inline-block mt-3 text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
               জনপ্রতি ফি (BDT)
             </span>
           </div>
@@ -334,9 +329,9 @@
           <span class="badge badge-keynote">Online Form</span>
         </div>
         <p class="text-sm font-medium leading-relaxed text-slate-700 mb-4">
-          শুধুমাত্র অ্যাবস্ট্রাক্ট বা সারসংক্ষেপ জমা দিতে এবং পেমেন্ট সম্পন্ন করার পর ট্রানজ্যাকশন আইডি (TrxID) নিশ্চিত করতে নিচের লিংকে ক্লিক করুন।
+          শুধুমাত্র অ্যাবস্ট্রাক্ট বা সারসংক্ষেপ জমা দিতে নিচের লিংকে ক্লিক করুন।
         </p>
-        <a href="#" target="_blank" rel="noopener noreferrer"
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQtKEGDDVI4JACXwc8_UuNVYEIvnmnLODzmjoPBUkG7FN7TA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer"
            class="btn btn-md btn-gold w-full flex items-center justify-center gap-2 mt-auto" style="border-radius:var(--radius-md);">
           <i data-lucide="external-link" class="w-4 h-4"></i>
           গুগল ফর্মে জমা দিন
@@ -429,24 +424,66 @@
 </main>
 
 <!-- ── FOOTER ─────────────────────────────────────────────── -->
-<footer class="bg-slate-900 border-t-4 border-emerald-600 text-slate-300 px-6 py-12 text-sm">
-  <div class="mx-auto max-w-7xl grid gap-8 md:grid-cols-3">
-    <div>
-      <p class="font-display font-bold text-base text-emerald-400">বাংলা বিভাগ</p>
-      <p class="mt-2 text-slate-400">শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়</p>
+<footer id="site-footer" class="bg-gradient-to-b from-slate-50 to-emerald-50/50 border-t-4 border-emerald-700 text-slate-900 px-6 pt-16 pb-12">
+  <div class="mx-auto max-w-7xl grid gap-10 md:grid-cols-12 text-sm">
+    
+    <!-- Col 1: Brand & Identity -->
+    <div class="md:col-span-5 space-y-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/sust-logo.png" alt="SUST Logo" class="h-12 w-auto object-contain">
+        <div>
+          <h3 class="font-display font-bold text-lg text-slate-950 leading-tight">
+            প্রথম আন্তর্জাতিক বাংলা ভাষা ও সাহিত্য সম্মেলন-২০২৬
+          </h3>
+          <p class="text-xs font-semibold text-emerald-800 mt-0.5">
+            বাংলা বিভাগ, শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়
+          </p>
+        </div>
+      </div>
+      <p class="text-xs leading-relaxed text-slate-900 font-medium max-w-md">
+        শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়ের সেন্ট্রাল অডিটোরিয়ামে দুই দিনব্যাপী ঐতিহ্যবাহী আন্তর্জাতিক জ্ঞানচর্চা ও উচ্চতর গবেষণা সম্মেলন।
+      </p>
     </div>
-    <div>
-      <p class="text-slate-400">সিলেট-৩১১৪, বাংলাদেশ</p>
-      <p class="mt-2 text-slate-400">ইমেইল: bangladepartment@yahoo.com</p>
+
+    <!-- Col 2: Quick Links -->
+    <div class="md:col-span-3 space-y-3">
+      <h4 class="font-display font-bold text-slate-950 uppercase text-xs tracking-wider border-b border-emerald-200 pb-2">
+        দ্রুত লিংক
+      </h4>
+      <ul class="space-y-2 text-xs font-semibold text-slate-900">
+        <li><a href="index.html#about" class="hover:text-emerald-700 transition-colors flex items-center gap-1.5"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-600"></i>সম্মেলন পরিচিতি</a></li>
+        <li><a href="index.html#cfp" class="hover:text-emerald-700 transition-colors flex items-center gap-1.5"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-600"></i>প্রবন্ধ আহ্বান</a></li>
+        <li><a href="index.html#dates" class="hover:text-emerald-700 transition-colors flex items-center gap-1.5"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-600"></i>গুরুত্বপূর্ণ সময়সীমা</a></li>
+        <li><a href="registration.html" class="hover:text-emerald-700 transition-colors flex items-center gap-1.5"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-600"></i>নিবন্ধন ও ফি পোর্টাল</a></li>
+      </ul>
     </div>
-    <div class="md:text-right">
-      <p class="font-semibold text-white">© 2026 বাংলা বিভাগ, শাবিপ্রবি।</p>
+
+    <!-- Col 3: Contact & Venue -->
+    <div class="md:col-span-4 space-y-3">
+      <h4 class="font-display font-bold text-slate-950 uppercase text-xs tracking-wider border-b border-emerald-200 pb-2">
+        ঠিকানা
+      </h4>
+      <div class="space-y-2 text-xs font-medium text-slate-900">
+        <p class="flex items-start gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-emerald-700 shrink-0 mt-0.5"></i>
+          <span><strong class="text-slate-900">বাংলা বিভাগ</strong>, শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়, সিলেট-৩১১৪, বাংলাদেশ</span>
+        </p>
+        <p class="flex items-center gap-2">
+          <i data-lucide="mail" class="w-4 h-4 text-emerald-700 shrink-0"></i>
+          <a href="mailto:icbll2026bng@gmail.com" class="hover:underline text-emerald-800 font-bold">icbll2026bng@gmail.com</a>
+        </p>
+      </div>
     </div>
+
   </div>
 
-  <div class="mx-auto max-w-7xl mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-center gap-1.5 text-center">
-    <span class="text-xs text-slate-400">Designed &amp; Developed by</span>
-    <span class="text-xs font-bold text-slate-200">Md Golam Mubasshir Rafi</span>
+  <!-- Developer Credit & Rights -->
+  <div class="mx-auto max-w-7xl mt-12 pt-6 border-t border-slate-400/70 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-slate-900">
+    <p>© ২০২৬ বাংলা বিভাগ, শাবিপ্রবি। সর্বস্বত্ব সংরক্ষিত।</p>
+    <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm">
+      <span>Designed & Developed by</span>
+      <span class="font-extrabold text-emerald-800">Md Golam Mubasshir Rafi</span>
+    </div>
   </div>
 </footer>
 
@@ -480,11 +517,11 @@
 
       if (currency === "USD") {
         totalEl.textContent = total;
-        currEl.textContent  = "United States Dollar (USD)";
+        if(currEl) currEl.textContent = "জনপ্রতি ফি (USD)";
         if(currencySym) currencySym.textContent = "$";
       } else {
         totalEl.textContent = total.toLocaleString("bn-BD");
-        currEl.textContent  = "Bangladeshi Taka (BDT)";
+        if(currEl) currEl.textContent = "জনপ্রতি ফি (BDT)";
         if(currencySym) currencySym.textContent = "৳";
       }
 

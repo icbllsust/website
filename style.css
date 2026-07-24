@@ -554,15 +554,6 @@ body {
 .sticky-bar.visible { transform: translateY(0); }
 .sticky-bar span, .sticky-bar strong { color: #f8fafc; font-weight: 600; }
 
-/* Footer Soothing Slate Text */
-footer {
-  color: #cbd5e1;
-}
-footer p, footer span, footer a {
-  color: #cbd5e1;
-  font-weight: 500;
-}
-footer .text-emerald-400 { color: #34d399; font-weight: 700; }
 
 /* Focus visible */
 :focus-visible {
