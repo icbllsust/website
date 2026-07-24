@@ -242,17 +242,17 @@
       if (!container || !list) return;
       container.innerHTML = list.map((m, idx) => {
         if (isSub) {
-          return `<div class="committee-member bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-            <h4 class="font-bold text-sm text-slate-900 leading-tight" data-i18n="committees.subcommittees.${idx}.title">${esc(m.title)}</h4>
-            <p class="text-xs mt-1 text-slate-600 font-medium" data-i18n="committees.subcommittees.${idx}.convenor">${esc(m.convenor)}</p>
+          // Subcommittee: m.convenor has the person's name, m.title has the committee name
+          return `<div class="committee-member bg-white p-5 rounded-2xl border border-slate-100 shadow-[0_2px_10px_rgba(15,23,42,0.04)] text-center">
+            <h4 class="font-bold text-base text-slate-900 leading-tight" data-i18n="committees.subcommittees.${idx}.convenor">${esc(m.convenor)}</h4>
+            <p class="text-xs mt-1.5 text-emerald-700 font-semibold" data-i18n="committees.subcommittees.${idx}.title">${esc(m.title)}</p>
           </div>`;
         } else {
-          // It's a person
+          // Standard Member: m.name has the name, m.role/affiliation have the designation
           const pathBase = containerId.replace("-list", "").replace("-", "_");
-          // e.g. chief-patron-list -> chief_patron
-          return `<div class="committee-member py-3 first:pt-1 last:pb-1">
-            <p class="font-bold text-sm text-slate-900" data-i18n="committees.${pathBase}.${idx}.name">${esc(m.name)}</p>
-            <p class="text-xs mt-0.5 text-slate-600 font-medium" data-i18n="committees.${pathBase}.${idx}.role">${esc(m.role)} &middot; <span data-i18n="committees.${pathBase}.${idx}.affiliation">${esc(m.affiliation)}</span></p>
+          return `<div class="committee-member bg-white p-5 rounded-2xl border border-slate-100 shadow-[0_2px_10px_rgba(15,23,42,0.04)] text-center">
+            <h4 class="font-bold text-base text-slate-900 leading-tight" data-i18n="committees.${pathBase}.${idx}.name">${esc(m.name)}</h4>
+            <p class="text-xs mt-1.5 text-emerald-700 font-semibold" data-i18n="committees.${pathBase}.${idx}.role">${esc(m.role)} &middot; <span data-i18n="committees.${pathBase}.${idx}.affiliation">${esc(m.affiliation)}</span></p>
           </div>`;
         }
       }).join("");
