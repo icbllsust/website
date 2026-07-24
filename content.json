@@ -198,41 +198,39 @@
       ]
     },
     "registration_fees": {
-      "section_label": "SECTION · 05",
+      "section_label": "Section · 06",
       "heading": "Registration Fees",
-      "category_label": "Category",
-      "featured_label": "DEMO",
-      "early_bird_label": "Early",
-      "regular_label": "Regular",
-      "note": "DEMO: Fees breakdown below is a draft and will be officially finalized soon.",
-      "bank_title": "Bank Payment Details",
-      "bank_acc_name_lbl": "Account Name",
-      "bank_acc_num_lbl": "Account Number",
-      "bank_name_lbl": "Bank Name",
-      "bank_branch_lbl": "Branch",
+      "note": "Official registration fees are listed below.",
       "rows": [
         {
-          "category": "DEMO: Faculty / Researcher",
-          "early_bird": "DEMO: 000 BDT",
-          "regular": "DEMO: 000 BDT"
+          "category": "Teacher / Domestic Researcher (Presenter)",
+          "price": "BDT 2,500"
         },
         {
-          "category": "DEMO: Student / Research Fellow",
-          "early_bird": "DEMO: 000 BDT",
-          "regular": "DEMO: 000 BDT"
+          "category": "International Teacher or Researcher (Presenter)",
+          "price": "USD "
         },
         {
-          "category": "DEMO: SAARC / International Delegate",
-          "early_bird": "DEMO: $00",
-          "regular": "DEMO: $00"
+          "category": "International Student (Presenter)",
+          "price": "USD "
+        },
+        {
+          "category": "Student (Presenter - Domestic)",
+          "price": "BDT 1,500"
+        },
+        {
+          "category": "SUST Bangla Dept Student",
+          "price": "BDT 1,000"
         }
       ],
+      "bank_title": "ব্যাংক ও বিকাশ তথ্য",
       "bank_details": {
         "account_name": "International Conference Dept of Bangla",
         "account_number": "5632502001242",
-        "bank_name": "SONALI BANK PLC",
-        "branch": "Amborkhana Branch, Sylhet"
-      }
+        "bank_name": "সোনালী ব্যাংক পিএলসি, শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয় শাখা, সিলেট"
+      },
+      "bkash": "01351475668",
+      "addons_notice": "পরে জানানো হবে"
     },
     "sponsorship": {
       "heading": "Sponsorship & Souvenir Opportunities",
@@ -408,85 +406,10 @@
       "foot": "For invitation letters or visa clarification, write to bangladeparment@yahoo.com with a minimum lead time of 6 weeks."
     },
     "schedule": {
-      "section_label": "Section · 11",
+      "section_label": "Section · 05",
       "eyebrow": "Programme",
-      "heading": "Parallel Sessions Schedule",
-      "lede": "The 2-day conference inaugural, technical sessions, and valedictory program are listed below.",
-      "days": [
-        {
-          "tab_label": "Day 1 — 27 November 2026",
-          "events": [
-            {
-              "time": "09:00 – 10:30",
-              "badgeClass": "badge-keynote",
-              "badgeText": "Keynote",
-              "title": "Inaugural Session & Keynote Presentation",
-              "venue": "Central Auditorium, SUST"
-            },
-            {
-              "time": "11:00 – 13:00",
-              "badgeClass": "badge-paper",
-              "badgeText": "Paper Sessions",
-              "title": "Parallel Technical Sessions 1 (Tracks 01–03)",
-              "venue": "Academic Building · Seminar Rooms 1, 2 & 3"
-            },
-            {
-              "time": "13:00 – 14:30",
-              "badgeClass": "badge-break",
-              "badgeText": "Break",
-              "title": "Lunch & Prayer Break",
-              "venue": "University Cafeteria"
-            },
-            {
-              "time": "14:30 – 17:00",
-              "badgeClass": "badge-paper",
-              "badgeText": "Paper Sessions",
-              "title": "Parallel Technical Sessions 2 (Tracks 04–06)",
-              "venue": "Academic Building · Seminar Rooms 1, 2 & 3"
-            },
-            {
-              "time": "18:30 – 20:30",
-              "badgeClass": "badge-cultural",
-              "badgeText": "Cultural",
-              "title": "Cultural Evening — Nazrul in Sylhet & Folk Heritage",
-              "venue": "Open Air Stage, SUST Campus"
-            }
-          ]
-        },
-        {
-          "tab_label": "Day 2 — 28 November 2026",
-          "events": [
-            {
-              "time": "09:30 – 11:30",
-              "badgeClass": "badge-plenary",
-              "badgeText": "Plenary",
-              "title": "Special Plenary Session: Centenary of Muslim Sahitya Samaj",
-              "venue": "Central Auditorium, SUST"
-            },
-            {
-              "time": "11:30 – 13:30",
-              "badgeClass": "badge-keynote",
-              "badgeText": "Panel Discussion",
-              "title": "Expert Panel Discussion — Intellectual Freedom & Resistance",
-              "venue": "Mini Auditorium, SUST"
-            },
-            {
-              "time": "13:30 – 14:30",
-              "badgeClass": "badge-break",
-              "badgeText": "Break",
-              "title": "Lunch & Prayer Break",
-              "venue": "University Cafeteria"
-            },
-            {
-              "time": "15:00 – 17:00",
-              "badgeClass": "badge-paper",
-              "badgeText": "Valedictory",
-              "title": "Valedictory Session & Best Paper Award Ceremony",
-              "venue": "Central Auditorium, SUST"
-            }
-          ]
-        }
-      ]
+      "heading": "Event Schedule",
+      "notice": "Detailed schedule will be updated later"
     },
     "contact_info": {
       "section_label": "SECTION · 06",
@@ -550,7 +473,8 @@
       "stat_global_lbl": "অংশগ্রহণকারী দেশ",
       "stat_days_tag": "পরিসর",
       "stat_tracks_tag": "ট্র্যাক",
-      "stat_global_tag": "প্রসার"
+      "stat_global_tag": "প্রসার",
+      "primary_cta": "সারসংক্ষেপ জমা (Google Form)"
     },
     "countdown": {
       "intro": "সম্মেলন শুরু হবে",
@@ -703,41 +627,39 @@
       ]
     },
     "registration_fees": {
-      "section_label": "বিভাগ · ০৫",
+      "section_label": "বিভাগ · ০৬",
       "heading": "নিবন্ধন ফি",
-      "category_label": "শ্রেণী",
-      "featured_label": "নমুনা",
-      "early_bird_label": "আর্লি বার্ড",
-      "regular_label": "রেগুলার",
-      "note": "নমুনা: নিচের নিবন্ধনের ফির হার খসড়া এবং শীঘ্রই আনুষ্ঠানিকভাবে চূড়ান্ত করা হবে।",
-      "bank_title": "ব্যাংক হিসাব তথ্য",
-      "bank_acc_name_lbl": "অ্যাকাউন্টের নাম",
-      "bank_acc_num_lbl": "অ্যাকাউন্ট নম্বর",
-      "bank_name_lbl": "ব্যাংকের নাম",
-      "bank_branch_lbl": "শাখা",
+      "note": "সম্মেলনে অংশগ্রহণের জন্য অফিশিয়াল নিবন্ধন ফি নিচে দেওয়া হলো।",
       "rows": [
         {
-          "category": "নমুনা: সাধারণ শিক্ষক/গবেষক ফি",
-          "early_bird": "নমুনা: ০০০ টাকা",
-          "regular": "নমুনা: ০০০ টাকা"
+          "category": "শিক্ষক / দেশীয় গবেষক (পেপার উপস্থাপনকারী)",
+          "price": "৳ ২,৫০০"
         },
         {
-          "category": "নমুনা: শিক্ষার্থী ফি",
-          "early_bird": "নমুনা: ০০০ টাকা",
-          "regular": "নমুনা: ০০০ টাকা"
+          "category": "আন্তর্জাতিক শিক্ষক বা গবেষক (পেপার উপস্থাপনকারী)",
+          "price": ""
         },
         {
-          "category": "নমুনা: সার্ক/আন্তর্জাতিক ডেলিগেট ফি",
-          "early_bird": "নমুনা: $০০ মার্কিন ডলার",
-          "regular": "নমুনা: $০০ মার্কিন ডলার"
+          "category": "আন্তর্জাতিক শিক্ষার্থী (পেপার উপস্থাপনকারী)",
+          "price": ""
+        },
+        {
+          "category": "শিক্ষার্থী (পেপার উপস্থাপনকারী - দেশীয়)",
+          "price": "৳ ১,৫০০"
+        },
+        {
+          "category": "শাবিপ্রবি বাংলা বিভাগের শিক্ষার্থী",
+          "price": "৳ ১,০০০"
         }
       ],
+      "bank_title": "ব্যাংক ও বিকাশ তথ্য",
       "bank_details": {
         "account_name": "International Conference Dept of Bangla",
         "account_number": "5632502001242",
-        "bank_name": "সোনালী ব্যাংক পিএলসি (SONALI BANK PLC)",
-        "branch": "আম্বরখানা শাখা, সিলেট"
-      }
+        "bank_name": "সোনালী ব্যাংক পিএলসি, শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয় শাখা, সিলেট"
+      },
+      "bkash": "01351475668",
+      "addons_notice": "পরে জানানো হবে"
     },
     "sponsorship": {
       "heading": "স্পনসরশিপ ও স্যুভেনির সুযোগ",
@@ -913,85 +835,10 @@
       "foot": "ভিসা সংক্রান্ত তথ্যের জন্য অন্তত ৬ সপ্তাহ পূর্বে bangladeparment@yahoo.com এ ইমেল করুন।"
     },
     "schedule": {
-      "section_label": "বিভাগ · ১১",
-      "eyebrow": "অনুষ্ঠানসূচী",
-      "heading": "সমান্তরাল অনুষ্ঠানের সময়সূচি",
-      "lede": "২ দিনব্যাপী সম্মেলনের উদ্বোধন, টেকনিক্যাল সেশন এবং সনদ বিতরণ কর্মসূচী নিচে দেওয়া হলো।",
-      "days": [
-        {
-          "tab_label": "১ম দিন — ২৭ নভেম্বর ২০২৬",
-          "events": [
-            {
-              "time": "০৯:০০ – ১০:৩০",
-              "badgeClass": "badge-keynote",
-              "badgeText": "মূল প্রবন্ধ",
-              "title": "উদ্বোধনী অধিবেশন ও মূল প্রবন্ধ উপস্থাপন",
-              "venue": "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"
-            },
-            {
-              "time": "১১:০০ – ১৩:০০",
-              "badgeClass": "badge-paper",
-              "badgeText": "গবেষণা সেশন",
-              "title": "প্যারালাল টেকনিক্যাল সেশন ১ (ট্র্যাক ০১–০৩)",
-              "venue": "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"
-            },
-            {
-              "time": "১৩:০০ – ১৪:৩০",
-              "badgeClass": "badge-break",
-              "badgeText": "বিরতি",
-              "title": "মধ্যাহ্নভোজ ও নামাজের বিরতি",
-              "venue": "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"
-            },
-            {
-              "time": "১৪:৩০ – ১৭:০০",
-              "badgeClass": "badge-paper",
-              "badgeText": "গবেষণা সেশন",
-              "title": "প্যারালাল টেকনিক্যাল সেশন ২ (ট্র্যাক ০৪–০৬)",
-              "venue": "একাডেমিক ভবন · সেমিনার রুম ১, ২ ও ৩"
-            },
-            {
-              "time": "১৮:৩০ – ২০:৩০",
-              "badgeClass": "badge-cultural",
-              "badgeText": "সাংস্কৃতিক অনুষ্ঠান",
-              "title": "সাংস্কৃতিক সন্ধ্যা — সিলেটে নজরুল ও লোকঐতিহ্য",
-              "venue": "মুক্তমঞ্চ · শাবিপ্রবি ক্যাম্পাস"
-            }
-          ]
-        },
-        {
-          "tab_label": "২য় দিন — ২৮ নভেম্বর ২০২৬",
-          "events": [
-            {
-              "time": "০৯:৩০ – ১১:৩০",
-              "badgeClass": "badge-plenary",
-              "badgeText": "প্লেনারি সেশন",
-              "title": "বিশেষ প্লেনারি সেশন: শতবর্ষে মুসলিম সাহিত্য সমাজ",
-              "venue": "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"
-            },
-            {
-              "time": "১১:৩০ – ১৩:৩০",
-              "badgeClass": "badge-keynote",
-              "badgeText": "প্যানেল আলোচনা",
-              "title": "বিশেষজ্ঞ প্যানেল আলোচনা — মুক্তচিন্তা ও দ্রোহ",
-              "venue": "মিনি অডিটোরিয়াম · শাবিপ্রবি"
-            },
-            {
-              "time": "১৩:৩০ – ১৪:৩০",
-              "badgeClass": "badge-break",
-              "badgeText": "বিরতি",
-              "title": "মধ্যাহ্নভোজ ও নামাজের বিরতি",
-              "venue": "বিশ্ববিদ্যালয় ক্যাফেটেরিয়া"
-            },
-            {
-              "time": "১৫:০০ – ১৭:০০",
-              "badgeClass": "badge-paper",
-              "badgeText": "সমাপনী সেশন",
-              "title": "সমাপনী অনুষ্ঠান ও সেরা গবেষণা প্রবন্ধ পুরস্কার বিতরণ",
-              "venue": "কেন্দ্রীয় অডিটোরিয়াম · শাবিপ্রবি"
-            }
-          ]
-        }
-      ]
+      "section_label": "বিভাগ · ০৫",
+      "eyebrow": "অনুষ্ঠানসূচি",
+      "heading": "ইভেন্ট শিডিউল",
+      "notice": "সময়সূচী পরবর্তীতে আপডেট করা হবে"
     },
     "contact_info": {
       "section_label": "বিভাগ · ০৬",
