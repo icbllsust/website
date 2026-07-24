@@ -46,6 +46,14 @@
 /* ── Base Reset & Gentle Eye-Comfort Typography ── */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* ── Bilingual i18n Toggle System ── */
+/* Base State (Bengali Active by default) */
+.lang-en { display: none !important; }
+
+/* Active State (English Active) */
+body.lang-en-active .lang-bn { display: none !important; }
+body.lang-en-active .lang-en { display: inline-block !important; }
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -517,11 +525,9 @@ body {
 
 /* Scroll Reveal */
 .reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1);
+  opacity: 1;
+  transform: none;
 }
-.reveal.visible { opacity: 1; transform: none; }
 
 /* Hero Rise Animations */
 @keyframes hero-rise {
