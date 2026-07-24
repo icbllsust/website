@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://icbll.sust.edu/sitemap.xml
