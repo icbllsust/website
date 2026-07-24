@@ -537,32 +537,35 @@
 
       <div class="mt-12 space-y-12">
 
-        <!-- Chief Patron -->
-        <div class="max-w-3xl mx-auto text-center">
-          <h3 class="font-display text-2xl font-bold mb-6 text-slate-950" data-i18n="committees.chief_patron_heading">চিফ পেট্রন</h3>
-          <div id="chief-patron-list" class="bg-slate-50 p-6 rounded-2xl border border-slate-200"></div>
+        <!-- Top Tier: Chief Patron, Patron, Advisory -->
+        <div class="grid lg:grid-cols-3 gap-8 items-start">
+          <!-- Chief Patron -->
+          <div>
+            <h3 class="font-display text-xl font-bold mb-5 text-center text-slate-950" data-i18n="committees.chief_patron_heading">চিফ পেট্রন</h3>
+            <div id="chief-patron-list" class="bg-slate-50 p-5 rounded-2xl border border-slate-200"></div>
+          </div>
+
+          <!-- Patrons -->
+          <div>
+            <h3 class="font-display text-xl font-bold mb-5 text-center text-slate-950" data-i18n="committees.patron_heading">পেট্রন</h3>
+            <div id="patron-list" class="grid gap-4"></div>
+          </div>
+
+          <!-- Advisory -->
+          <div>
+            <h3 class="font-display text-xl font-bold mb-5 text-center text-slate-950" data-i18n="committees.advisory_heading">উপদেষ্টামণ্ডলী</h3>
+            <div id="advisory-list" class="grid gap-4"></div>
+          </div>
         </div>
 
-        <!-- Patrons -->
-        <div class="max-w-4xl mx-auto">
-          <h3 class="font-display text-2xl font-bold mb-6 text-center text-slate-950" data-i18n="committees.patron_heading">পেট্রন</h3>
-          <div id="patron-list" class="grid sm:grid-cols-2 gap-6"></div>
-        </div>
-
-        <!-- Advisory -->
-        <div class="max-w-4xl mx-auto">
-          <h3 class="font-display text-2xl font-bold mb-6 text-center text-slate-950" data-i18n="committees.advisory_heading">উপদেষ্টামণ্ডলী</h3>
-          <div id="advisory-list" class="grid sm:grid-cols-2 gap-6"></div>
-        </div>
-
-        <!-- Core Committee -->
-        <div class="max-w-5xl mx-auto">
+        <!-- Middle Tier: Core Committee -->
+        <div class="max-w-5xl mx-auto pt-6 border-t border-slate-100">
           <h3 class="font-display text-2xl font-bold mb-6 text-center text-slate-950" data-i18n="committees.core_heading">মূল কমিটি</h3>
           <div id="core-list" class="grid sm:grid-cols-3 gap-6"></div>
         </div>
 
-        <!-- Subcommittees -->
-        <div class="max-w-5xl mx-auto">
+        <!-- Bottom Tier: Subcommittees -->
+        <div class="max-w-5xl mx-auto pt-6 border-t border-slate-100">
           <h3 class="font-display text-2xl font-bold mb-6 text-center text-slate-950" data-i18n="committees.sub_heading">উপকমিটির আহ্বায়কবৃন্দ</h3>
           <div id="subcommittee-list" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
         </div>
