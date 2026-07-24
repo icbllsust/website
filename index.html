@@ -537,19 +537,31 @@
 
       <div class="mt-12 grid gap-12 lg:grid-cols-[.75fr_1.25fr]">
 
-        <div>
-          <h3 class="font-display text-xl font-bold mb-4 text-slate-950"
-              data-i18n="committees.advisory_heading">উপদেষ্টামণ্ডলী</h3>
-          <div id="advisory-list" class="divide-y divide-slate-200">
-            <!-- Rendered via script.js -->
+        <!-- Left Column: Patrons & Advisory -->
+        <div class="space-y-10">
+          <div>
+            <h3 class="font-display text-xl font-bold mb-4 text-slate-950" data-i18n="committees.chief_patron_heading">চিফ পেট্রন</h3>
+            <div id="chief-patron-list" class="divide-y divide-slate-200 bg-slate-50 p-4 rounded-xl border border-slate-100"></div>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold mb-4 text-slate-950" data-i18n="committees.patron_heading">পেট্রন</h3>
+            <div id="patron-list" class="divide-y divide-slate-200 bg-slate-50 p-4 rounded-xl border border-slate-100"></div>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold mb-4 text-slate-950" data-i18n="committees.advisory_heading">উপদেষ্টামণ্ডলী</h3>
+            <div id="advisory-list" class="divide-y divide-slate-200 bg-emerald-50/50 p-4 rounded-xl border border-emerald-100/50"></div>
           </div>
         </div>
 
-        <div>
-          <h3 class="font-display text-xl font-bold mb-4 text-slate-950"
-              data-i18n="committees.organizing_heading">আহ্বায়কবৃন্দ</h3>
-          <div id="local-list" class="grid md:grid-cols-2 gap-x-8 divide-y md:divide-y-0 divide-slate-200">
-            <!-- Rendered via script.js -->
+        <!-- Right Column: Core & Subcommittees -->
+        <div class="space-y-10">
+          <div>
+            <h3 class="font-display text-xl font-bold mb-4 text-slate-950" data-i18n="committees.core_heading">মূল কমিটি</h3>
+            <div id="core-list" class="grid md:grid-cols-2 gap-4"></div>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold mb-4 text-slate-950" data-i18n="committees.sub_heading">উপকমিটির আহ্বায়কবৃন্দ</h3>
+            <div id="subcommittee-list" class="grid md:grid-cols-2 gap-4"></div>
           </div>
         </div>
 

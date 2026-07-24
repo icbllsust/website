@@ -30,11 +30,7 @@
   };
 
   function esc(str) {
-    return String(str || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+    return String(str || ""); // Removed HTML escaping to allow <strong> tags
   }
 
   function toBn(numStr) {
@@ -51,7 +47,7 @@
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const path = el.getAttribute("data-i18n");
       const val = getPath(data, path);
-      if (val && typeof val === "string") el.textContent = val;
+      if (val && typeof val === "string") el.innerHTML = val;
     });
   }
 
@@ -239,34 +235,34 @@
   /* ── Committees ─────────────────────────────────────────── */
   function renderCommittees(lang) {
     const c = CONTENT[lang]?.committees;
-    const advEl = document.getElementById("advisory-list");
-    const locEl = document.getElementById("local-list");
     if (!c) return;
 
-    if (advEl && c.advisory) {
-      advEl.innerHTML = c.advisory
-        .map(
-          (m, idx) => `
-        <div class="committee-member">
-          <p class="font-bold text-sm" style="color:var(--navy);" data-i18n="committees.advisory.${idx}.name">${esc(m.name)}</p>
-          <p class="text-xs mt-0.5" style="color:var(--ink-light);" data-i18n="committees.advisory.${idx}.affiliation">${esc(m.role || m.affiliation || "")}</p>
-        </div>`
-        )
-        .join("");
+    function renderList(containerId, list, isSub = false) {
+      const container = document.getElementById(containerId);
+      if (!container || !list) return;
+      container.innerHTML = list.map((m, idx) => {
+        if (isSub) {
+          return `<div class="committee-member bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+            <h4 class="font-bold text-sm text-slate-900 leading-tight" data-i18n="committees.subcommittees.${idx}.title">${esc(m.title)}</h4>
+            <p class="text-xs mt-1 text-slate-600 font-medium" data-i18n="committees.subcommittees.${idx}.convenor">${esc(m.convenor)}</p>
+          </div>`;
+        } else {
+          // It's a person
+          const pathBase = containerId.replace("-list", "").replace("-", "_");
+          // e.g. chief-patron-list -> chief_patron
+          return `<div class="committee-member py-3 first:pt-1 last:pb-1">
+            <p class="font-bold text-sm text-slate-900" data-i18n="committees.${pathBase}.${idx}.name">${esc(m.name)}</p>
+            <p class="text-xs mt-0.5 text-slate-600 font-medium" data-i18n="committees.${pathBase}.${idx}.role">${esc(m.role)} &middot; <span data-i18n="committees.${pathBase}.${idx}.affiliation">${esc(m.affiliation)}</span></p>
+          </div>`;
+        }
+      }).join("");
     }
 
-    if (locEl && (c.local || c.convenors)) {
-      const list = c.local || c.convenors;
-      locEl.innerHTML = list
-        .map(
-          (m, idx) => `
-        <div class="committee-member">
-          <p class="font-bold text-sm" style="color:var(--navy);" data-i18n="committees.local.${idx}.name">${esc(m.name)}</p>
-          <p class="text-xs mt-0.5" style="color:var(--ink-light);" data-i18n="committees.local.${idx}.affiliation">${esc(m.role || m.affiliation || "")}</p>
-        </div>`
-        )
-        .join("");
-    }
+    renderList("chief-patron-list", c.chief_patron);
+    renderList("patron-list", c.patrons); // using patron_list as id, but patrons as json key
+    renderList("advisory-list", c.advisory);
+    renderList("core-list", c.core);
+    renderList("subcommittee-list", c.subcommittees, true);
   }
 
   /* ── Registration Fees (legacy) ─────────────────────────── */
@@ -527,8 +523,8 @@
               el.dataset.editorInit = "true";
               el.addEventListener('input', (ev) => {
                 const path = el.getAttribute("data-i18n");
-                // Avoid capturing HTML tags, just raw text for JSON strings
-                changedPaths[path] = el.innerText.trim();
+                // Capture HTML tags so formatting (like bold) is preserved
+                changedPaths[path] = el.innerHTML.trim();
                 hasPendingChanges = true;
                 saveBtn.classList.add('visible');
               });
