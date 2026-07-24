@@ -246,125 +246,91 @@
       ]
     },
     "committees": {
-      "section_label": "SECTION · 07",
-      "eyebrow": "Governance · কমিটি",
-      "heading": "Conference Committees",
-      "lede": "An advisory body and sub-committees oversee the academic integrity, peer-review process, and execution of ICBLL-2026.",
-      "advisory_heading": "Advisors",
-      "local_heading": "Convenors Team",
-      "subcommittees_heading": "Sub-Committees & Members",
-      "online_session_note": "International scholars who face visa or travel difficulties may participate via a special online technical session.",
+      "section_label": "Section · 07",
+      "eyebrow": "Governance · Committee",
+      "heading": "Conference Committee",
+      "lede": "The following committees have been formed for the overall guidance and smooth functioning of the conference.",
+      "chief_patron_heading": "Chief Patron",
+      "chief_patron": [
+        {
+          "name": "Professor Dr. Md. Khairul Islam",
+          "role": "ভাইস চ্যান্সেলর",
+          "affiliation": "শাবিপ্রবি"
+        }
+      ],
+      "patron_heading": "Patrons",
+      "patrons": [
+        {
+          "name": "Professor Dr. Md. Shajedul Karim",
+          "role": "প্রো-ভাইস চ্যান্সেলর",
+          "affiliation": "শাবিপ্রবি"
+        },
+        {
+          "name": "Professor Dr. Md. Ismail Hossain",
+          "role": "ট্রেজারার",
+          "affiliation": "শাবিপ্রবি"
+        }
+      ],
+      "advisory_heading": "Advisory Board",
       "advisory": [
         {
-          "code": "A-01",
-          "name": "Prof. Dr. Sharadindu Bhattacharjee",
-          "role": "Advisor",
-          "affiliation": "SUST, Bangladesh"
+          "name": "প্রফেসর ড. শরদিন্দু ভট্টাচার্য",
+          "role": "উপদেষ্টা",
+          "affiliation": "শাবিপ্রবি"
         },
         {
-          "code": "A-02",
-          "name": "Prof. Dr. Md. Ashraful Karim",
-          "role": "Advisor",
-          "affiliation": "SUST, Bangladesh"
+          "name": "প্রফেসর ড. মো: আশরাফুল করিম",
+          "role": "উপদেষ্টা",
+          "affiliation": "শাবিপ্রবি"
         }
       ],
-      "local": [
+      "core_heading": "Core Committee",
+      "core": [
         {
-          "code": "L-01",
-          "name": "Prof. Dr. Farjana Siddika",
-          "role": "Academic & Event Committee Convenor",
-          "affiliation": "SUST"
+          "name": "প্রফেসর ড. মো. রিয়াজুল ইসলাম",
+          "role": "আহ্বায়ক",
+          "affiliation": "শাবিপ্রবি"
         },
         {
-          "code": "L-02",
-          "name": "Prof. Dr. Md. Zaphir Uddin",
-          "role": "Paper Session Management Convenor",
-          "affiliation": "SUST"
+          "name": "প্রফেসর ড. মো. ফয়জুল হক",
+          "role": "সদস্য সচিব",
+          "affiliation": "শাবিপ্রবি"
         },
         {
-          "code": "L-03",
-          "name": "Prof. Dr. Md. Jahangir Alam",
-          "role": "Registration, Certificate & Pub. Convenor",
-          "affiliation": "SUST"
-        },
-        {
-          "code": "L-04",
-          "name": "Prof. Dr. Nilufa Akter",
-          "role": "Publicity Sub-Committee Convenor",
-          "affiliation": "SUST"
-        },
-        {
-          "code": "L-05",
-          "name": "Dr. Md. Masud Parvez",
-          "role": "Entertainment, Accomm., Transport Convenor",
-          "affiliation": "SUST"
-        },
-        {
-          "code": "L-06",
-          "name": "Prof. Dr. Md. Riazul Islam",
-          "role": "Fundraising Sub-Committee Convenor",
-          "affiliation": "SUST"
+          "name": "প্রফেসর ড. শিরিন আকতার সরকার",
+          "role": "কোষাধ্যক্ষ",
+          "affiliation": "শাবিপ্রবি"
         }
       ],
+      "sub_heading": "Sub-committee Convenors",
       "subcommittees": [
         {
-          "title": "Academic Committee",
-          "convenor": "Prof. Dr. Farjana Siddika",
-          "members": [
-            "Prof. Dr. Md. Zaphir Uddin",
-            "Prof. Dr. Md. Jahangir Alam",
-            "Dr. Mst. Anjumanara Begum"
-          ]
+          "title": "ইভেন্ট ম্যানেজমেন্ট অ্যান্ড কালচারাল সাব-কমিটি",
+          "convenor": "প্রফেসর ড. ফারজানা সিদ্দিকা (আহ্বায়ক)"
         },
         {
-          "title": "Event Management & Cultural Sub-Committee",
-          "convenor": "Prof. Dr. Farjana Siddika",
-          "members": [
-            "Ms. Moshrefa Begum Misu",
-            "Ms. Habiba Akter",
-            "Mr. Md. Shamsuddin"
-          ]
+          "title": "পেপার সেশন ম্যানেজমেন্ট সাব-কমিটি",
+          "convenor": "প্রফেসর ড. মো. জফির উদ্দিন (আহ্বায়ক)"
         },
         {
-          "title": "Paper Session Management Sub-Committee",
-          "convenor": "Prof. Dr. Md. Zaphir Uddin",
-          "members": [
-            "Mr. Md. Monirul Islam",
-            "Mr. Muha. Zakir Hossain",
-            "Mr. Golam Rabbani"
-          ]
+          "title": "রেজিস্ট্রেশন সার্টিফিকেশন অ্যান্ড পাবলিকেশন ম্যানেজমেন্ট সাব-কমিটি",
+          "convenor": "প্রফেসর ড. মো. জাহাঙ্গীর আলম (আহ্বায়ক)"
         },
         {
-          "title": "Registration, Certificate & Publication Sub-Committee",
-          "convenor": "Prof. Dr. Md. Jahangir Alam",
-          "members": [
-            "Mr. Md. Sohel Rana",
-            "Mr. Muha. Zakir Hossain"
-          ]
+          "title": "এন্টারটেইনমেন্ট, অ্যাকমোডেশন-ট্রান্সপোর্ট-ট্যুর সাব-কমিটি",
+          "convenor": "ড. মো. মাসুদ পারভেজ (আহ্বায়ক)"
         },
         {
-          "title": "Entertainment, Accommodation, Transport & Tour Sub-Committee",
-          "convenor": "Dr. Md. Masud Parvez",
-          "members": [
-            "Ms. Habiba Akter",
-            "Mr. Muha. Zakir Hossain",
-            "Mr. Md. Shamsuddin"
-          ]
+          "title": "ফান্ডরেইজিং সাব-কমিটি",
+          "convenor": "প্রফেসর ড. মো. রিয়াজুল ইসলাম (আহ্বায়ক)"
         },
         {
-          "title": "Fundraising Sub-Committee",
-          "convenor": "Prof. Dr. Md. Riazul Islam",
-          "members": [
-            "All Professors of the Department"
-          ]
+          "title": "পাবলিসিটি সাব-কমিটি",
+          "convenor": "প্রফেসর ড. নিলুফা আক্তার (আহ্বায়ক)"
         },
         {
-          "title": "Publicity Sub-Committee",
-          "convenor": "Prof. Dr. Nilufa Akter",
-          "members": [
-            "Dr. Mst. Anjumanara Begum",
-            "Mr. Golam Rabbani"
-          ]
+          "title": "একাডেমিক কমিটি",
+          "convenor": "প্রফেসর ড. ফারজানা সিদ্দিকা (আহ্বায়ক)"
         }
       ]
     },
@@ -788,122 +754,88 @@
       "section_label": "বিভাগ · ০৭",
       "eyebrow": "পরিচালনা · কমিটি",
       "heading": "সম্মেলন কমিটি",
-      "lede": "একটি উপদেষ্টা পরিষদ এবং বিভিন্ন উপ-কমিটি যৌথভাবে ICBLL-2026 এর একাডেমিক সততা ও সেশন পরিচালনা নিশ্চিত করে।",
+      "lede": "সম্মেলনের সার্বিক দিকনির্দেশনা ও সুষ্ঠু পরিচালনার জন্য নিম্নলিখিত কমিটিসমূহ গঠিত হয়েছে।",
+      "chief_patron_heading": "চিফ পেট্রন",
+      "chief_patron": [
+        {
+          "name": "প্রফেসর ড. মো. খায়রুল ইসলাম",
+          "role": "ভাইস চ্যান্সেলর",
+          "affiliation": "শাবিপ্রবি"
+        }
+      ],
+      "patron_heading": "পেট্রন",
+      "patrons": [
+        {
+          "name": "প্রফেসর ড. মো. সাজেদুল করিম",
+          "role": "প্রো-ভাইস চ্যান্সেলর",
+          "affiliation": "শাবিপ্রবি"
+        },
+        {
+          "name": "প্রফেসর ড. মো. ইসমাইল হোসেন",
+          "role": "ট্রেজারার",
+          "affiliation": "শাবিপ্রবি"
+        }
+      ],
       "advisory_heading": "উপদেষ্টামণ্ডলী",
-      "local_heading": "আহ্বায়কবৃন্দ",
-      "subcommittees_heading": "উপ-কমিটি ও সদস্যবৃন্দ",
-      "online_session_note": "বিদেশি স্কলারদের ভিসা বা ভ্রমণে কোনো জটিলতা থাকলে তাদের জন্য বিশেষ অনলাইন টেকনিক্যাল সেশনের সুবিধা থাকবে।",
       "advisory": [
         {
-          "code": "A-০১",
           "name": "প্রফেসর ড. শরদিন্দু ভট্টাচার্য",
           "role": "উপদেষ্টা",
-          "affiliation": "শাবিপ্রবি, বাংলাদেশ"
+          "affiliation": "শাবিপ্রবি"
         },
         {
-          "code": "A-০২",
           "name": "প্রফেসর ড. মো: আশরাফুল করিম",
           "role": "উপদেষ্টা",
-          "affiliation": "শাবিপ্রবি, বাংলাদেশ"
+          "affiliation": "শাবিপ্রবি"
         }
       ],
-      "local": [
+      "core_heading": "মূল কমিটি",
+      "core": [
         {
-          "code": "L-০১",
-          "name": "প্রফেসর ড. ফারজানা সিদ্দিকা",
-          "role": "একাডেমিক ও ইভেন্ট উপ-কমিটি আহ্বায়ক",
-          "affiliation": "শাবিপ্রবি"
-        },
-        {
-          "code": "L-০২",
-          "name": "প্রফেসর ড. মো. জফির উদ্দিন",
-          "role": "পেপার সেশন ম্যানেজমেন্ট আহ্বায়ক",
-          "affiliation": "শাবিপ্রবি"
-        },
-        {
-          "code": "L-০৩",
-          "name": "প্রফেসর ড. মো. জাহাঙ্গীর আলম",
-          "role": "রেজিস্ট্রেশন, সার্টিফিকেট ও পাবলিকেশন আহ্বায়ক",
-          "affiliation": "শাবিপ্রবি"
-        },
-        {
-          "code": "L-০৪",
-          "name": "প্রফেসর ড. নিলুফা আক্তার",
-          "role": "পাবলিসিটি উপ-কমিটি আহ্বায়ক",
-          "affiliation": "শাবিপ্রবি"
-        },
-        {
-          "code": "L-০৫",
-          "name": "ড. মো. মাসুদ পারভেজ",
-          "role": "বিনোদন, আবাসন, পরিবহন ও ট্যুর আহ্বায়ক",
-          "affiliation": "শাবিপ্রবি"
-        },
-        {
-          "code": "L-০৬",
           "name": "প্রফেসর ড. মো. রিয়াজুল ইসলাম",
-          "role": "ফান্ডরেইজিং উপ-কমিটি আহ্বায়ক",
+          "role": "আহ্বায়ক",
+          "affiliation": "শাবিপ্রবি"
+        },
+        {
+          "name": "প্রফেসর ড. মো. ফয়জুল হক",
+          "role": "সদস্য সচিব",
+          "affiliation": "শাবিপ্রবি"
+        },
+        {
+          "name": "প্রফেসর ড. শিরিন আকতার সরকার",
+          "role": "কোষাধ্যক্ষ",
           "affiliation": "শাবিপ্রবি"
         }
       ],
+      "sub_heading": "উপকমিটির আহ্বায়কবৃন্দ",
       "subcommittees": [
         {
-          "title": "একাডেমিক কমিটি",
-          "convenor": "প্রফেসর ড. ফারজানা সিদ্দিকা",
-          "members": [
-            "প্রফেসর ড. মো. জফির উদ্দিন",
-            "প্রফেসর ড. মো. জাহাঙ্গীর আলম",
-            "ড. মোছাঃ আঞ্জুমানআরা বেগম"
-          ]
-        },
-        {
           "title": "ইভেন্ট ম্যানেজমেন্ট অ্যান্ড কালচারাল সাব-কমিটি",
-          "convenor": "প্রফেসর ড. ফারজানা সিদ্দিকা",
-          "members": [
-            "জনাব মোশরেফা বেগম মিসু",
-            "জনাব হাবিবা আক্তার",
-            "জনাব মোঃ শামছুদ্দীন"
-          ]
+          "convenor": "প্রফেসর ড. ফারজানা সিদ্দিকা (আহ্বায়ক)"
         },
         {
           "title": "পেপার সেশন ম্যানেজমেন্ট সাব-কমিটি",
-          "convenor": "প্রফেসর ড. মো. জফির উদ্দিন",
-          "members": [
-            "জনাব মো. মনিরুল ইসলাম",
-            "জনাব মুহা. জাকির হোসাইন",
-            "জনাব গোলাম রব্বানী"
-          ]
+          "convenor": "প্রফেসর ড. মো. জফির উদ্দিন (আহ্বায়ক)"
         },
         {
-          "title": "রেজিস্ট্রেশন, সার্টিফিকেট অ্যান্ড পাবলিকেশন সাব-কমিটি",
-          "convenor": "প্রফেসর ড. মো. জাহাঙ্গীর আলম",
-          "members": [
-            "জনাব মো. সোহেল রানা",
-            "জনাব মুহা. জাকির হোসাইন"
-          ]
+          "title": "রেজিস্ট্রেশন সার্টিফিকেশন অ্যান্ড পাবলিকেশন ম্যানেজমেন্ট সাব-কমিটি",
+          "convenor": "প্রফেসর ড. মো. জাহাঙ্গীর আলম (আহ্বায়ক)"
         },
         {
-          "title": "এন্টারটেইনমেন্ট, অ্যাকোমোডেশন, ট্রান্সপোর্ট অ্যান্ড ট্যুর সাব-কমিটি",
-          "convenor": "ড. মো. মাসুদ পারভেজ",
-          "members": [
-            "জনাব হাবিবা আক্তার",
-            "জনাব মুহা. জাকির হোসাইন",
-            "জনাব মোঃ শামছুদ্দীন"
-          ]
+          "title": "এন্টারটেইনমেন্ট, অ্যাকমোডেশন-ট্রান্সপোর্ট-ট্যুর সাব-কমিটি",
+          "convenor": "ড. মো. মাসুদ পারভেজ (আহ্বায়ক)"
         },
         {
           "title": "ফান্ডরেইজিং সাব-কমিটি",
-          "convenor": "প্রফেসর ড. মো. রিয়াজুল ইসলাম",
-          "members": [
-            "বিভাগীয় সকল অধ্যাপক"
-          ]
+          "convenor": "প্রফেসর ড. মো. রিয়াজুল ইসলাম (আহ্বায়ক)"
         },
         {
           "title": "পাবলিসিটি সাব-কমিটি",
-          "convenor": "প্রফেসর ড. নিলুফা আক্তার",
-          "members": [
-            "ড. মোছাঃ আঞ্জুমানআরা বেগম",
-            "জনাব গোলাম রব্বানী"
-          ]
+          "convenor": "প্রফেসর ড. নিলুফা আক্তার (আহ্বায়ক)"
+        },
+        {
+          "title": "একাডেমিক কমিটি",
+          "convenor": "প্রফেসর ড. ফারজানা সিদ্দিকা (আহ্বায়ক)"
         }
       ]
     },
