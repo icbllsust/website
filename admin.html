@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K6X1LHPP5S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K6X1LHPP5S');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICBLL-2026 Admin Dashboard</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- JSONEditor -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.10.0/jsoneditor.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.10.0/jsoneditor.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --primary: #0d6e53;
+      --navy: #1e293b;
+    }
+    body {
+      background-color: #f8fafc;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .jsoneditor {
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .jsoneditor-menu {
+      background-color: var(--navy);
+      border-bottom: none;
+    }
+    #login-screen {
+      backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+<body class="text-slate-800 h-screen flex flex-col">
+
+  <!-- LOGIN SCREEN (Basic Frontend Protection) -->
+  <div id="login-screen" class="fixed inset-0 z-50 flex items-center justify-center">
+    <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-sm w-full border border-slate-200 text-center">
+      <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i data-lucide="lock" class="w-8 h-8"></i>
+      </div>
+      <h2 class="text-2xl font-bold text-slate-900 mb-2">অ্যাডমিন প্যানেল</h2>
+      <p class="text-sm text-slate-500 mb-6">কন্টেন্ট এডিট করতে পাসওয়ার্ড দিন (Password: admin)</p>
+      
+      <input type="password" id="password-input" placeholder="পাসওয়ার্ড লিখুন..." 
+             class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 mb-4 transition-colors">
+      
+      <button onclick="checkPassword()" 
+              class="w-full bg-[#0d6e53] hover:bg-[#095641] text-white font-bold py-3 px-4 rounded-lg transition-colors flex justify-center items-center gap-2">
+        লগইন করুন <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+      <p id="login-error" class="text-red-500 text-sm mt-3 hidden font-medium">ভুল পাসওয়ার্ড! আবার চেষ্টা করুন।</p>
+    </div>
+  </div>
+
+  <!-- MAIN DASHBOARD (Hidden by default) -->
+  <div id="dashboard" class="hidden flex-1 flex flex-col h-screen">
+    
+    <!-- Top Header -->
+    <header class="bg-[#1e293b] text-white px-6 py-4 flex justify-between items-center shadow-md">
+      <div class="flex items-center gap-3">
+        <div class="bg-white p-1.5 rounded">
+          <img src="assets/sust-logo.png" alt="SUST Logo" class="h-6 w-6 object-contain">
+        </div>
+        <div>
+          <h1 class="text-lg font-bold">ICBLL-2026 CMS</h1>
+          <p class="text-xs text-slate-400">স্ট্যাটিক কন্টেন্ট ম্যানেজমেন্ট সিস্টেম</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="/" target="_blank" class="text-sm text-slate-300 hover:text-white flex items-center gap-1.5">
+          <i data-lucide="external-link" class="w-4 h-4"></i> ওয়েবসাইট দেখুন
+        </a>
+        <button onclick="saveContent()" id="save-btn"
+                class="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-bold py-2 px-5 rounded-full transition-colors flex items-center gap-2 shadow-lg shadow-emerald-500/30">
+          <i data-lucide="save" class="w-4 h-4"></i> সেভ করুন
+        </button>
+      </div>
+    </header>
+
+    <!-- Editor Workspace -->
+    <main class="flex-1 p-6 flex flex-col gap-4 overflow-hidden">
+      
+      <div class="flex justify-between items-end">
+        <div>
+          <h2 class="text-xl font-bold text-slate-800">ওয়েবসাইটের লেখা এডিট করুন (content.json)</h2>
+          <p class="text-sm text-slate-500 mt-1">নিচের বক্স থেকে সরাসরি বাংলা বা ইংরেজি লেখা পরিবর্তন করে সেভ বাটনে ক্লিক করুন।</p>
+        </div>
+        <div id="status-msg" class="hidden px-4 py-2 rounded-lg bg-green-100 text-green-800 text-sm font-bold flex items-center gap-2">
+          <i data-lucide="check-circle-2" class="w-4 h-4"></i> সফলভাবে সেভ হয়েছে!
+        </div>
+      </div>
+
+      <!-- JSON Editor Container -->
+      <div id="jsoneditor" class="flex-1 w-full bg-white"></div>
+      
+    </main>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Basic Frontend Password Check
+    function checkPassword() {
+      const pwd = document.getElementById('password-input').value;
+      if (pwd === 'admin' || pwd === 'admin123') { // Simple password for local use
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('dashboard').classList.remove('hidden');
+        loadContent();
+      } else {
+        document.getElementById('login-error').classList.remove('hidden');
+      }
+    }
+
+    // Allow Enter key to login
+    document.getElementById('password-input').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') checkPassword();
+    });
+
+    // Initialize JSON Editor
+    const container = document.getElementById('jsoneditor');
+    const options = {
+      mode: 'tree', // Tree mode is very user-friendly
+      modes: ['tree', 'code', 'form'],
+      name: 'Website Content',
+      search: true,
+      navigationBar: false,
+      statusBar: false
+    };
+    const editor = new JSONEditor(container, options);
+
+    // Load content.json from server
+    async function loadContent() {
+      try {
+        const response = await fetch('/content.json');
+        const json = await response.json();
+        editor.set(json);
+        editor.expandAll(); // Expand the tree by default for easy viewing
+      } catch (error) {
+        console.error('Error loading content.json:', error);
+        alert('কন্টেন্ট লোড করতে সমস্যা হয়েছে। সার্ভার চালু আছে কিনা চেক করুন।');
+      }
+    }
+
+    // Save content back to server
+    async function saveContent() {
+      const btn = document.getElementById('save-btn');
+      const msg = document.getElementById('status-msg');
+      
+      try {
+        btn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> সেভ হচ্ছে...';
+        btn.classList.add('opacity-75', 'cursor-not-allowed');
+
+        const updatedJson = editor.get(); // Get edited JSON
+
+        const response = await fetch('/api/save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updatedJson)
+        });
+
+        const result = await response.json();
+        
+        if (result.success) {
+          msg.classList.remove('hidden');
+          msg.classList.add('flex');
+          setTimeout(() => {
+            msg.classList.add('hidden');
+            msg.classList.remove('flex');
+          }, 3000);
+        } else {
+          alert('সেভ করতে সমস্যা হয়েছে: ' + result.message);
+        }
+      } catch (error) {
+        console.error('Save error:', error);
+        alert('সেভ করা যায়নি! সার্ভার চলছে কিনা চেক করুন।');
+      } finally {
+        btn.innerHTML = '<i data-lucide="save" class="w-4 h-4"></i> সেভ করুন';
+        btn.classList.remove('opacity-75', 'cursor-not-allowed');
+        lucide.createIcons();
+      }
+    }
+  </script>
+</body>
+</html>
