@@ -39,10 +39,28 @@
   }
 
   function getInitialLang() {
+    // 1. Check URL query param (?lang=en or ?lang=bn)
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    if (urlLang === 'en' || urlLang === 'bn') {
+      localStorage.setItem(LANG_KEY, urlLang);
+      return urlLang;
+    }
+    
+    // 2. Check URL hash (#en or #bn)
+    const hashLang = window.location.hash.substring(1);
+    if (hashLang === 'en' || hashLang === 'bn') {
+      localStorage.setItem(LANG_KEY, hashLang);
+      return hashLang;
+    }
+
+    // 3. Fallback to LocalStorage
     try {
       const stored = localStorage.getItem(LANG_KEY);
       if (stored === "en" || stored === "bn") return stored;
     } catch (_) {}
+    
+    // 4. Default to Bengali
     return "bn";
   }
 
