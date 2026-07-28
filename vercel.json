@@ -49,6 +49,11 @@
   ],
   "redirects": [
     {
+      "source": "/reg",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfYvZNr2o6CBR6lXIy1UEAtIwGSCDZdEz9bNnsLDpEulWlPOQ/viewform",
+      "permanent": false
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
